@@ -111,3 +111,25 @@ Never put a `values` entry on a multi-input child, such as `add.first.in_1` or `
 ```
 
 Use the same pattern for a constant array that should auto-loop through a scalar operator. Literals are fine on ordinary named ports (`create_mesh_cube.width`) and on ports that are already array-typed. `validate_native_graph.py` reports violations as `MULTI_INPUT_CHILD_LITERAL`.
+
+## Iterate loops (verified 2026-10-29, CityGen streamlines)
+
+An iterate loop is a local compound definition with an `iterateCompound` block, instanced by its unqualified name. Shipped example: `Simulation::Particles::Internal::emit_from_sources/.../iterate` in `particles_all.json`.
+
+```json
+{"name": "trace_step",
+ "ports": [{"portName": "steps", "portDirection": "input", "portType": "long", "portIterationLimit": "true"},
+           {"portName": "index", "portDirection": "input", "portType": "long", "portIterationCounter": "true"},
+           {"portName": "positions", "portDirection": "input", "portType": "array<Math::float3>"},
+           {"portName": "positions_out", "portDirection": "output", "portType": "array<Math::float3>"},
+           {"portName": "trail", "portDirection": "output", "portIterationTarget": "true"}],
+ "iterateCompound": {"ports": [{"portKind": "state", "inputPortName": "positions", "outputPortName": "positions_out"}]}}
+```
+
+- A state pair carries a value from one iteration to the next. Other inputs are the same on every iteration.
+- An output marked `portIterationTarget` collects one element per iteration, so outside the loop it is an array of what is wired inside. **Leave its `portType` off.** A declared type is read as the outside type: typing `trail` as `array<Math::float3>` while wiring an `array<Math::float3>` inside fails with "no promotion exists from a value of type 'array<Math::float3>' to a value of type 'Math::float3'".
+- A loop body can call registered compounds, including ones defined in the same library file. Calling a field-evaluation compound once per step on every tracer at once gives a fully vectorised streamline tracer.
+
+Nested loops work the same way: the inner iterate definition goes in the outer loop's own `compounds` array, the scope that calls it. In CityGen v003 an outer loop over candidate seeds carries the growing road point and offset arrays as state, and an inner loop traces each seed. Use `Core::Array::array_bounds.min_bound` over `length(points - p)` for a nearest-distance test, and guard an empty array with `array_is_empty` before trusting the result. Joining and filtering use `filter_array` (bool mask), `reverse_array`, `slice_array`, and `flatten_nested_array` over `build_array(a, b)` to concatenate.
+
+`verify_compound.py` treats a call into a compound installed in the user's library (another file of the same tool, say) as resolved rather than as an evidence gap, and lists it as "uses installed compound". Compile and evaluate load the installed libraries, so they check the call for real.

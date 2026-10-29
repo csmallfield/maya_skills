@@ -135,10 +135,18 @@ def verify(path: Path, compound_name: str | None, sets: list[str], fast: bool,
     report = {"file": str(path), "stages": {}}
 
     static = validate_native_graph.validate_document(document)
+    # A call into a compound installed in the user's library (e.g. another file of the same tool) is not
+    # an evidence gap: compile and evaluate load the installed libraries and check it for real.
+    installed_now = installed_names()
+    gaps = [w for w in static["evidence_warnings"]
+            if not (w["code"] == "UNKNOWN_EXTERNAL_TYPE" and w["detail"] in installed_now)]
+    uses_installed = sorted({w["detail"] for w in static["evidence_warnings"]} - {w["detail"] for w in gaps})
     report["stages"]["static"] = {
-        "ok": not static["errors"] and not static["evidence_warnings"],
-        "errors": static["errors"][:20], "evidence_warnings": static["evidence_warnings"][:20],
+        "ok": not static["errors"] and not gaps,
+        "errors": static["errors"][:20], "evidence_warnings": gaps[:20],
         "stats": static["stats"]}
+    if uses_installed:
+        report["stages"]["static"]["installed_dependencies"] = uses_installed
     if static["errors"] and any(e["code"] == "NOT_NATIVE_COMPOUND" for e in static["errors"]):
         report["verdict"] = "FAILED"
         return report
@@ -204,6 +212,8 @@ def summarize(report: dict) -> str:
         lines.append(f"  {stage:9} {'ok' if data.get('ok') else 'FAIL'}")
         for item in data.get("errors", [])[:10]:
             lines.append(f"      error: {item if isinstance(item, str) else item['code'] + ' ' + item['path'] + ': ' + item['detail']}")
+        for dep in data.get("installed_dependencies", []):
+            lines.append(f"      uses installed compound: {dep}")
         for item in data.get("evidence_warnings", [])[:10]:
             lines.append(f"      gap: {item['code']} {item['path']}: {item['detail']}")
         if data.get("fatal"):
