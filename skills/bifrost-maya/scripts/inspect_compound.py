@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse, json, pathlib
+import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 DATA = HERE.parent / 'references' / 'compound-data'
@@ -21,6 +22,7 @@ def find_id(query):
 
 
 def main():
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
     ap = argparse.ArgumentParser()
     ap.add_argument('compound')
     ap.add_argument('--connections', type=int, default=30)

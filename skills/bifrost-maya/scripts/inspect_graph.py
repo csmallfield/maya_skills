@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import argparse,json,pathlib,collections
+import sys
 
 def main():
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
     ap=argparse.ArgumentParser(description='Print a compact summary of a normalized Bifrost graph.')
     ap.add_argument('graph_id')
     ap.add_argument('--data',type=pathlib.Path,default=pathlib.Path(__file__).resolve().parents[1]/'references'/'workflow-data')

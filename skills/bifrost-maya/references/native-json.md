@@ -98,3 +98,16 @@ Require a negative regression: remove the tier-local helper from a copy of v3.1 
 Record separately: JSON parse, structural preflight, source/interface evidence, independent numeric checks, user-reported Maya result, assistant-performed Maya result, and timing measurements. Do not promote one level into another. The old v3 static report missed scope resolution; it is superseded, not proof of correctness.
 
 Provide a file that exists, the exact public compound name, required toolkit dependencies and the intended output. Use a new versioned name for a repair and a fresh instance for testing; preserve the user's successful loading workflow. Keep optional mesh expansion out of the interactive test. Avoid speculative install instructions when the actual failure is inside the graph.
+
+
+## Constants on multi-input ports
+
+Never put a `values` entry on a multi-input child, such as `add.first.in_1` or `multiply.first.b`, i.e. any child listed in the node's `multiInPortNames`. Bifrost drops it and treats the child as 0, with no error (see `regression-history.md`, Case E). Add a value node and connect it instead:
+
+```json
+{"nodeName": "two", "valueType": "float"}                                  // in compoundNodes
+{"valueName": "two.value", "valueType": "float", "value": "2f"}             // in values
+{"source": "two.output", "target": "times_two.first.in_1"}                  // in connections
+```
+
+Use the same pattern for a constant array that should auto-loop through a scalar operator. Literals are fine on ordinary named ports (`create_mesh_cube.width`) and on ports that are already array-typed. `validate_native_graph.py` reports violations as `MULTI_INPUT_CHILD_LITERAL`.

@@ -56,6 +56,31 @@ Notes:
 - Scalar output ports become readable Maya attributes: `cmds.getAttr(g + ".total_height")`. Object ports have attribute type `bifData` and can't be read with `getAttr`.
 - `bifrostGraph` has no query mode; `q=True` raises "Invalid flag 'q'".
 
+## Fan-in: connecting into an array port
+
+`vnnConnect` can't target the parent of a fan-in port, so an `Object` going into `array<Object>` (for example `create_instances.instance_geometries`) fails with "Maya command error". Autodesk's `bifrost_usd/graph_api.py` (`connect_to_fanin_port`, BIFROST-9071) creates a child port and connects to that. Verified headless and live on 3.0:
+
+```python
+cmds.vnnChangeBracket(g, open=True)
+cmds.vnnNode(g, "/instances", createInputPort=("instance_geometries.cube_mesh", "auto"))
+cmds.vnnConnect(g, "/rock.cube_mesh", "/instances.instance_geometries.cube_mesh")
+cmds.vnnChangeBracket(g, close=True)
+```
+
+Name the child after the source port, and add a number suffix if one exists (`vnnNode(g, "/n", listPortChildren=port)` lists them). In a `bifrost_headless.py` spec, write the target as `"instances.instance_geometries[]"`.
+
+## Checking the look
+
+Counts and bounds can't show whether something looks right. In live Maya, render one frame to a PNG and view it:
+
+```python
+cmds.setAttr("persp.translate", 22, 16, 22, type="double3"); cmds.setAttr("persp.rotate", -32, 45, 0, type="double3")
+cmds.playblast(completeFilename="C:/tmp/look.png", format="image", compression="png", frame=[1],
+               widthHeight=[960, 540], percent=100, viewer=False, showOrnaments=False, forceOverwrite=True, offScreen=True)
+```
+
+This moves the user's `persp` camera, so say so, or use a new camera. Bifrost instances display directly from the graph shape, with no conversion.
+
 ## What crashes Maya
 
 - **`cmds.vnnNode(g, "/", createOutputPort=(...))`**: creating a port on the graph root crashes Maya outright. This crashed the user's session and was reproduced headless ("Fatal Error"). Graph ports always go on `/output` or `/input`.

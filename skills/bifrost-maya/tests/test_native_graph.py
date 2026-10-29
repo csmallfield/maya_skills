@@ -36,9 +36,15 @@ class NativeGraphTests(unittest.TestCase):
     def assert_error(self, d, code):
         self.assertIn(code, [e["code"] for e in self.check(d)["errors"]])
 
+    def known_defect_free(self, errors):
+        """Drop the one latent defect in the unmodified v3.1 file (see regression-history.md, Case E)."""
+        return [e for e in errors if not (e["code"] == "MULTI_INPUT_CHILD_LITERAL"
+                                          and e["detail"].startswith("minimum_opening_dimension.first.a"))]
+
     def test_01_user_confirmed_v3_1(self):
         report = self.check(self.good)
-        self.assertEqual([], report["errors"])
+        self.assertEqual(["MULTI_INPUT_CHILD_LITERAL"], [e["code"] for e in report["errors"]])
+        self.assertEqual([], self.known_defect_free(report["errors"]))
         self.assertEqual([], report["evidence_warnings"])
         self.assertEqual(12, report["stats"]["local_calls"])
         self.assertEqual(11, report["stats"]["definition_scopes"])
@@ -50,10 +56,18 @@ class NativeGraphTests(unittest.TestCase):
         tier = child(layout, "nyc_for_each_tier")
         tier["compounds"] = [c for c in tier["compounds"] if c["name"] != "nyc_affine_box_points"]
         self.assertTrue(any(c["name"] == "nyc_affine_box_points" for c in layout["compounds"]))
-        errors = self.check(d)["errors"]
+        errors = self.known_defect_free(self.check(d)["errors"])
         self.assertEqual(1, len(errors))
         self.assertEqual("UNRESOLVED_LOCAL_TYPE", errors[0]["code"])
         self.assertIn("tier_trim_records -> nyc_affine_box_points", errors[0]["detail"])
+
+    def test_02b_multi_input_child_literal_is_an_error(self):
+        # bifcmd proof: multiply(x=5, first.in_1 literal 2f) returns 0; a wired value node returns 10.
+        d = passthrough()
+        c = d["compounds"][0]
+        c["compoundNodes"] = [{"nodeName": "times_two", "nodeType": "Core::Math::multiply", "multiInPortNames": ["in_0", "in_1"]}]
+        c["values"] = [{"valueName": "times_two.first.in_1", "valueType": "float", "value": "2f"}]
+        self.assert_error(d, "MULTI_INPUT_CHILD_LITERAL")
 
     def test_03_blueprint_is_not_native(self):
         self.assert_error({"name": "skyscraper", "nodes": [], "connections": []}, "NOT_NATIVE_COMPOUND")

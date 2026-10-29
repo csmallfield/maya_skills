@@ -20,7 +20,8 @@ if single:
 session = {"graphs": [], "timing": {}}
 report = None
 SCALAR_TYPES = {"bool", "char", "unsigned char", "short", "unsigned short", "int", "unsigned int",
-                "long", "unsigned long", "float", "double", "string"}
+                "long", "unsigned long", "float", "double", "string",
+                "uint", "ulong", "uchar", "ushort"}
 
 
 def step(label, fn):
@@ -117,8 +118,29 @@ def run_graph(index, spec):
         node, _, port = path.partition(".")
         step(f"set {path} = {value}", lambda: cmds.vnnNode(
             graph, f"/{names.get(node, node)}", setPortDefaultValues=(port, str(value))))
+    def connect_fan_in(source, target):
+        # "node.port[]": a new fan-in child named after the source port, as Autodesk's
+        # bifrost_usd graph_api.connect_to_fanin_port does (vnnConnect can't target the
+        # parent of a fan-in port directly).
+        node, _, parent = target[:-2].partition(".")
+        child = source.rpartition(".")[2]
+        existing = cmds.vnnNode(graph, f"/{names.get(node, node)}", listPortChildren=parent) or []
+        name, suffix = child, 1
+        while name in existing:
+            name, suffix = f"{child}{suffix}", suffix + 1
+        cmds.vnnChangeBracket(graph, open=True)
+        try:
+            cmds.vnnNode(graph, f"/{names.get(node, node)}", createInputPort=(f"{parent}.{name}", "auto"))
+            cmds.vnnConnect(graph, endpoint(source), f"/{names.get(node, node)}.{parent}.{name}")
+        finally:
+            cmds.vnnChangeBracket(graph, close=True)
+        return f"{parent}.{name}"
+
     for source, target in spec.get("connections", []):
-        step(f"connect {source} -> {target}", lambda: cmds.vnnConnect(graph, endpoint(source), endpoint(target)))
+        if target.endswith("[]"):
+            step(f"connect {source} -> {target}", lambda: connect_fan_in(source, target))
+        else:
+            step(f"connect {source} -> {target}", lambda: cmds.vnnConnect(graph, endpoint(source), endpoint(target)))
 
     for attr, value in spec.get("attributes", {}).items():
         step(f"setAttr {attr} = {value}", lambda: cmds.setAttr(f"{graph}.{attr}", value))

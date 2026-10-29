@@ -28,6 +28,8 @@ Spec (every key optional except what you need):
   examples (`bifrostGraph -importGraphAsShape <name>`). Its output ports are
   already there: list them under `outputs` to read them, no connections needed.
 - Endpoints are `node.port`; `.port` is the graph boundary (an output port).
+  A target ending in `[]` (`instances.instance_geometries[]`) makes a fan-in
+  child named after the source port, for Object -> array<Object> connections.
 - Scalar outputs are read with getAttr. Object outputs are converted with
   `bifrostGraph -createMayaGeometry` and reported as mesh/vertex/face counts.
 - Values use Bifrost literal text as the graph editor would accept it.

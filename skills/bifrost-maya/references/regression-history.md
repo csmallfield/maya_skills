@@ -32,6 +32,34 @@ The user subsequently confirmed v3.1 worked "much much better". Treat this as us
 
 Regression: delete only that tier-local definition from a copy of the bundled v3.1 file. Confirm the validator flags the unresolved local call even though another definition with the same name remains elsewhere. Validate the intact example successfully. Keep this negative test when changing scope handling.
 
+## Case E: literals on multi-input children are dropped (2026-10-29)
+
+`CityGen::Restart::cg_flat_layout_v001` failed to compile on 3.0 with 19 errors like *"no promotion exists from a value of type 'float' to a value of type 'array<float>'"*. Its arrays were built as `multiply(scalar input, constant array)`, with the constant typed as a literal on the multi-input child `multiply.first.in_1`.
+
+Root cause, proven with bifcmd: **Bifrost ignores a literal on a multi-input child port and treats that child as 0.** `multiply(x=5, first.in_1 = 2f)` returns 0, while the same 2 from a wired value node returns 10. Both compile. So:
+- An array literal on a child never reaches the node, no auto-looping happens, and the node resolves to `float`. That gives the compile errors.
+- A scalar literal on a child silently becomes 0. In the same file every "× 2" in `cg_dimensions` returned 0, so `ground_extent` was 7 instead of 233 and the lot width was 93 instead of 77. It compiled and looked plausible.
+
+Autodesk's 105 shipped graphs never put a literal on a multi-input child. They wire in a value node, or set the fixed `second` port. The fix in `cg_flat_layout_v002` moved all 71 such literals onto value nodes (`{"nodeName": ..., "valueType": ...}` plus `<node>.value`, connected to the child). It is VERIFIED: ground ±1165 units, lot 77 m, 12 road quads, 9 junctions, 16 sidewalks.
+
+The unmodified v3.1 skyscraper has one instance: `nyc_ppg_bay_master/minimum_opening_dimension.first.a = 3.6f` on a `subtract`. So it computes `0 − margins`, the minimum-opening guard never applies, and the building still generates. It hasn't been changed, because it is the user's confirmed file.
+
+Regression: `validate_native_graph.py` reports `MULTI_INPUT_CHILD_LITERAL` as an error. The tests expect exactly this one defect in v3.1. `tests/test_headless_harness.py` has the live 0-vs-10 proof.
+
+Also from this case: `verify_compound.py` didn't read `array<Object>` outputs, so the first VERIFIED said nothing about the geometry. The evaluate stage now merges each array output (`merge_geometry`) and counts its elements (`array_size`).
+
+## Case F: a PPG extrude that selected nothing still VERIFIED (2026-10-29)
+
+`Claude::Tests::ppg_inset_block_v001` put `PPG_extrude.tag_expression = "face_top_tag"` on a `create_mesh_cube`. PPG reads its own face tags, not Bifrost component tags, so nothing was selected and the cube passed through unchanged. Every stage passed and the verdict was VERIFIED. Only the prediction (10 faces, 12 vertices) against the actual output (6 faces, 8 vertices) exposed it. v002 adds `PPG::select_faces_by_normal` (with `tag_expression ""`, `invert true` and `set_face_tag "top_faces"`), then extrudes `top_faces`, and gives the predicted 10 faces and 12 vertices.
+
+Lessons: predict outputs before verifying, and create PPG tags before selecting by them. Both are now in SKILL.md.
+
+## Phase 5 test tasks (2026-10-29)
+
+1. **Fix `cg_flat_layout_v001`** (Case E). Result: `work/cg_flat_layout/cg_flat_layout_v002.json` in the repo, VERIFIED, not installed.
+2. **Scatter graph from scratch.** Headless, then live (`claude_scatterShape`): 200 points, and the baked mesh had 1600 vertices and 1200 faces (8 and 6 per cube). A playblast confirmed the look. This needed the fan-in recipe for `create_instances.instance_geometries`. Two self-inflicted port-name errors were caught by node-index hints.
+3. **PPG compound from scratch** (Case F). Result: `work/ppg_inset_block/ppg_inset_block_v002.json`, VERIFIED with the predicted counts.
+
 ## Evidence inventory and limits
 
 - `assets/native-examples/manifest.json`: exact source digests, declared libraries and confirmation status.

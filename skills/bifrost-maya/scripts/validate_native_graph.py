@@ -284,6 +284,13 @@ def validate_document(document: Any, evidence: dict[str, Any] | None = None) -> 
             values.add(name)
             if "value" not in value or not value.get("valueType"):
                 issue("UNTYPED_VALUE", path, name)
+            node_name, _, port_path = name.partition(".")
+            root_port, _, child = port_path.partition(".")
+            if child and child in (nodes.get(node_name, {}).get("multiInPortNames") or []):
+                # Bifrost silently ignores a literal on a multi-input child and treats the
+                # child as 0: multiply(5, first.in_1=2f) returns 0. Feed it from a value node.
+                issue("MULTI_INPUT_CHILD_LITERAL", path,
+                      f"{name} = {value.get('value')!r} is ignored at runtime; connect a value node to {name} instead")
             endpoint(name, "input")
         degree = Counter({n: 0 for n in nodes})
         for followers in adjacency.values():

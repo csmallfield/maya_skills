@@ -1,3 +1,11 @@
+# Bifrost Maya skill - phase 5 real-task testing, 2026-10-29
+
+- New rule: Bifrost drops a literal on a multi-input child port (`multiply.first.in_1`) and treats it as 0. `validate_native_graph.py` reports `MULTI_INPUT_CHILD_LITERAL` as an error. This was the root cause of both bugs in `cg_flat_layout_v001`, and it is a latent defect in the v3.1 skyscraper (`minimum_opening_dimension`). There is an offline test, plus a live bifcmd proof (literal gives 0, a wired value node gives 10).
+- `verify_compound.py` now reads `array<Object>` outputs: it merges each one (`merge_geometry`) and counts its elements (`array_size`). It also places the compound as a node, and `--set` passes literal input values.
+- `bifrost_headless.py`: `node.port[]` targets make a fan-in child, following Autodesk's `connect_to_fanin_port`. `uint`, `ulong`, `uchar` and `ushort` are now read as scalars.
+- `search_graph_examples.py` now ranks by name, then category and description, then node types, then capped docs, with stopwords. The inspect and search scripts now print UTF-8.
+- SKILL.md: expose few input ports (the user noted Astra promoted every option to a port; Autodesk's examples expose a median of 0); look up ports before writing specs; predict outputs before verifying; PPG selects by its own face tags; the fan-in and playblast recipes; the multi-input literal rule. Regression history adds Cases E and F and the three test tasks.
+
 # Bifrost Maya skill - 3.0 verification and PPG 2.80, 2026-10-29
 
 - `scripts/verify_compound.py`: one verdict (VERIFIED / PARTIAL / FAILED) from three stages: static validation, bifcmd compile, and headless evaluation that reads outputs. It renames installed duplicates, since a duplicate name crashes bifcmd.

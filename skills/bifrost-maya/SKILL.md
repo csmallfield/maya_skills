@@ -43,9 +43,9 @@ Version facts from the 3.0 install: operators declare `Amino 3.0.0.0`, while shi
 
 1. Classify the task by domain and by the output data type it needs.
 2. Read `references/concepts.md` when architecture, debugging, simulation, transforms, fields or properties matter.
-3. Find candidate nodes with `node_info.py --search`, browsing `references/nodes-*.md` for vocabulary. Confirm every node you'll use with `node_info.py <name>`.
+3. Find candidate nodes with `node_info.py --search`, browsing `references/nodes-*.md` for vocabulary. Run `node_info.py <name>` on every node you'll use **before** you write a spec or a file, and copy the port names and types from its output, not from memory. Most self-inflicted errors in testing were remembered port names (`point_count` for `count`, `mesh` for `merged_meshes`) and type spellings (`unsigned int` for `uint`).
 4. If the request mentions PPG, VHH or another supplied compound, read `references/compound-concepts.md`. Then run `scripts/search_compounds.py` and `scripts/inspect_compound.py` on the best match.
-5. Before inventing a complex built-in pattern, search Autodesk examples with `scripts/search_graph_examples.py "<intent, nodes, concepts>"`. Inspect one to three close matches with `scripts/inspect_graph.py <graph_id>`. Ranking is keyword-based and can miss the obvious example (for example `basic_scatter_example`), so also browse `references/workflow-index.md` by category.
+5. Before inventing a complex built-in pattern, search Autodesk examples with `scripts/search_graph_examples.py "<intent, nodes, concepts>"`. Inspect one to three close matches with `scripts/inspect_graph.py <graph_id>`. Ranking weights the graph's name, then its category and description, then its node types, with its documentation counting least. Browse `references/workflow-index.md` by category when a query is vague.
 6. Design hierarchically: main dataflow first, then key compounds, properties and fields, controls, diagnostics, caching and output. For PPG buildings or repeated detail, read `references/ppg-building-design.md` first.
 7. Deliver the artifact that was asked for. For a Maya-loadable compound, read `references/native-json.md` and follow the native gate below.
 8. In live Maya, build in stages and inspect as you go (see Maya execution). Otherwise, keep offline checks separate from runtime results.
@@ -80,9 +80,13 @@ Version facts from the 3.0 install: operators declare `Amino 3.0.0.0`, while shi
 
 Use this structure when it helps: **Intent and output**, **Inputs**, **Main dataflow**, **Key properties** (names, domains, types), **Controls** (with ranges), **Diagnostics**, **Performance** (resolution, accelerators, instancing, caching), and **Version notes**. When implementation detail is asked for, expand the dataflow into exact node instances and `source.port -> target.port` connections, with each port checked in `node_info.py`.
 
+**Expose few input ports.** Make a value a compound input only if an artist will realistically change it per use: the handful of controls that define the result, such as size, count, seed or style, and the input geometry. Everything else stays inside as a value or value node: unit conversions, epsilons, tag names, debug and display toggles, internal ratios, and settings with one sensible answer. Users can still dig in and edit an internal value; a wall of ports buries the few that matter. For reference, Autodesk's 105 example graphs expose a median of 0 inputs (103 of them expose 3 or fewer), while the Astra-era files expose 15 (`cg_flat_layout_v001`), 21 (skyscraper v3.1) and 56 (`ppg_urban_multistyle_v4_3`). Astra tended to promote every option to a port; don't. When a design needs more than about 6 to 8 inputs, list which ones are truly per-use, and keep the rest internal or group them behind one preset or style input. When the user asks to fix or extend an existing file, keep its public interface unless they ask to trim it, and suggest the trim separately.
+
 ## Native JSON and scope gate
 
 A request for a compound JSON to load in Maya means native Bifrost serialization, not a blueprint. Follow `references/native-json.md`. Use the user-confirmed v3.1 example for layout, loop, dynamic-input and literal conventions.
+
+**Never put a literal on a multi-input child port** (`add.first.in_1`, `multiply.first.b`). Bifrost drops it and treats the child as 0, and it still compiles, so `x × 2` silently becomes 0. Feed constants into multi-input ports from a wired value node, and do the same for a constant array meant to auto-loop through a scalar operator. The v3.1 example itself has one such defect (`regression-history.md`, Case E), so don't copy its literal placement onto multi-input ports.
 
 Before delivery, run `python -I scripts/verify_compound.py FILE [--set PORT=VALUE]` and fix everything it reports. It runs three stages and gives one verdict:
 
@@ -90,13 +94,15 @@ Before delivery, run `python -I scripts/verify_compound.py FILE [--set PORT=VALU
 2. **compile**: `bifcmd` loads and compiles the file directly, in about 10 s.
 3. **evaluate**: a headless Maya loads the file from a scratch library, unpacks the compound and reads its outputs, in about 40 s.
 
-Claim a file works only when the verdict is VERIFIED. Then say what was read, such as output values or mesh counts, and what wasn't, such as array outputs or the look. `--fast` skips evaluate and gives PARTIAL. If the compound is already installed under the same name, the script checks a renamed temporary copy, because a duplicate name crashes `bifcmd`. When the validator or bundled examples change, run `python -I -m unittest discover -s tests -v`.
+Before running verify, write down what the outputs should be, such as face and vertex counts, bounds or derived values. Then compare: a VERIFIED file whose outputs don't match the prediction is wrong (in testing, an extrude that selected nothing still verified, with an unchanged 6-face cube). Claim a file works only when the verdict is VERIFIED and the outputs match. Then say what was read (scalar values; mesh, vertex and face counts with bounds; for `array<Object>` outputs, the element count and the merged mesh) and what wasn't (custom types, the look). Check the numbers against the inputs: a plausible-looking value isn't proof. `--fast` skips evaluate and gives PARTIAL. If the compound is already installed under the same name, the script checks a renamed temporary copy, because a duplicate name crashes `bifcmd`. When the validator or bundled examples change, run `python -I -m unittest discover -s tests -v`.
 
 Deliver the actual file, its exact registered name, dependencies, the verify verdict with its outputs, and any untested behavior. For a scope or registration fix, use a fresh versioned name rather than assuming an existing scene node picks up the replaced file. Installing a file means copying it into the user's compounds folder, and Maya only sees it after the Bifrost plugin reloads or Maya restarts. Ask before writing there.
 
 ## PPG performance gate
 
 Read `references/ppg-building-design.md`. Keep shared PPG prototype topology separate from lightweight tier and elevation placement and from retained native instancing. Use supported quad-relative cuts, deliberate tags and edge orientation, and explicit counts and repeat modes. Keep material splits, welds and normal work off the full-building path wherever prototype processing is enough.
+
+**PPG selects faces by its own face tags**, not Bifrost component tags. `PPG_extrude` with `tag_expression "face_top_tag"` on a `create_mesh_cube` selects nothing and silently passes the mesh through. Create PPG tags first: use `PPG::select_faces_by_normal` (with `tag_expression ""` and `invert true` to consider every face, and `set_face_tag` naming the result), or `set_face_tag` / `set_face_ID_tags`. Then select by that tag. `tag_expression ""` plus `invert true` selects all faces, which is the pattern the v3.1 skyscraper uses.
 
 Don't assume `PPG_instance` keeps native instances; check its supplied implementation. Say whether modules stretch with the prototype or keep absolute detail sizes. Measure warm evaluation separately from compile, display and bake.
 
@@ -113,6 +119,8 @@ Read `references/maya-graph-commands.md` before building graphs with commands. I
 - Check the Bifrost version (`cmds.pluginInfo('bifrostGraph', q=True, version=True)`) when node availability matters.
 - Build a minimal graph that produces inspectable output, then add one logical block at a time and check after each major block.
 - Keep node names meaningful and compound boundaries intact. Don't make scene changes the request didn't ask for, and don't write into the user's compounds folder without asking.
+- An `Object` can't connect directly into an `array<Object>` port (for example `create_instances.instance_geometries`). It needs a fan-in child: in a spec, target `node.port[]`; live, see the fan-in recipe in `references/maya-graph-commands.md`.
+- To check the look, playblast one frame to a PNG and view the image (recipe in `references/maya-graph-commands.md`). Counts and bounds don't show whether something looks right.
 - Report what you created and tested (headless or live) separately from what is still a proposal.
 
 ## Scripts

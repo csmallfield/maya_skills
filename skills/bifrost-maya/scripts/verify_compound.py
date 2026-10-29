@@ -10,8 +10,9 @@
               unpacks the compound as a graph and reads its outputs: scalar
               values, or mesh/vertex/face counts for Object outputs. About 40 s.
 
-`--fast` skips stage 3. `--set` sets compound inputs for stage 3 (Maya
-attribute values such as `floors=12`). Later stages still run after an
+`--fast` skips stage 3. `--set` sets compound input values for stage 3
+(Bifrost literals such as `floors=12`). Array<Object> outputs are merged and
+counted. Later stages still run after an
 earlier failure so one report shows everything, except that stage 3 is
 skipped when compile fails.
 
@@ -34,7 +35,8 @@ import bifrost_headless  # noqa: E402
 import validate_native_graph  # noqa: E402
 
 SCALARS = {"bool", "char", "unsigned char", "short", "unsigned short", "int",
-           "unsigned int", "long", "unsigned long", "float", "double", "string"}
+           "unsigned int", "long", "unsigned long", "float", "double", "string",
+           "uint", "ulong", "uchar", "ushort"}
 
 
 def public_compound(document: dict, wanted: str | None) -> dict:
@@ -80,16 +82,34 @@ def renamed_copy(document: dict, name: str, folder: Path) -> tuple[Path, str]:
     return path, new_name
 
 
-def coerce(text: str):
-    lowered = text.lower()
-    if lowered in ("true", "false"):
-        return lowered == "true"
-    for kind in (int, float):
-        try:
-            return kind(text)
-        except ValueError:
-            pass
-    return text
+def evaluation_spec(name: str, outputs: dict[str, str], sets: list[str]) -> tuple[dict, set[str]]:
+    """Headless spec that places the compound as a node and wires every readable output.
+
+    Scalars and Object outputs are wired straight to graph outputs. An
+    array<Object> output gets a `merge_geometry` (read as one mesh) and an
+    `array_size` (element count), so arrays of meshes are checked too.
+    """
+    spec = {"nodes": [{"type": name, "name": "c"}], "outputs": {}, "connections": [],
+            "values": {f"c.{k}": v for k, v in (item.split("=", 1) for item in sets)}}
+    readable = set()
+    for port, ptype in outputs.items():
+        if ptype in SCALARS or ptype == "Object":
+            spec["outputs"][port] = ptype
+            spec["connections"].append([f"c.{port}", f".{port}"])
+        elif ptype == "array<Object>":
+            spec["nodes"] += [{"type": "Modeling::Common::merge_geometry", "name": f"merge_{port}"},
+                              {"type": "Core::Array::array_size", "name": f"size_{port}"}]
+            spec["outputs"][f"{port}__count"] = "long"
+            spec["outputs"][f"{port}__merged"] = "Object"
+            spec["connections"] += [[f"c.{port}", f"merge_{port}.geometry"], [f"c.{port}", f"size_{port}.array"],
+                                    [f"size_{port}.size", f".{port}__count"],
+                                    [f"merge_{port}.merged", f".{port}__merged"]]
+        else:
+            continue
+        readable.add(port)
+    return spec, readable
+
+
 
 
 def verify(path: Path, compound_name: str | None, sets: list[str], fast: bool) -> dict:
@@ -127,15 +147,13 @@ def verify(path: Path, compound_name: str | None, sets: list[str], fast: bool) -
     elif not compiled.get("ok"):
         report["stages"]["evaluate"] = {"skipped": "compile failed"}
     else:
-        readable = {port: ptype for port, ptype in outputs.items() if ptype in SCALARS or ptype == "Object"}
-        spec = {"graph": name, "outputs": readable,
-                "attributes": {k: coerce(v) for k, v in (item.split("=", 1) for item in sets)}}
+        spec, readable = evaluation_spec(name, outputs, sets)
         session, _ = bifrost_headless.run([spec], timeout=900, library_files=[str(path)])
         graph = (session.get("graphs") or [{}])[0]
         report["stages"]["evaluate"] = {
             "ok": bool(graph.get("ok")) and not session.get("fatal"),
             "outputs": graph.get("outputs", {}),
-            "not_read": sorted(set(outputs) - set(readable)),
+            "not_read": sorted(set(outputs) - readable),
             "failed_steps": [s for s in graph.get("steps", []) if "error" in s],
             "log": graph.get("log", [])[:20],
             "fatal": session.get("fatal"),

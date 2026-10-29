@@ -15,6 +15,7 @@ def walk(compound: dict, path: str):
 
 
 def main() -> int:
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("file", type=Path)
     parser.add_argument("--path", default="root")

@@ -1,0 +1,127 @@
+{
+    "header": {
+        "metadata": [
+            {
+                "metaName": "adskFileFormatVersion",
+                "metaValue": "100L"
+            }
+        ]
+    },
+    "namespaces": [],
+    "types": [],
+    "compounds": [
+        {
+            "name": "Claude::Tests::ppg_inset_block_v001",
+            "metadata": [
+                {
+                    "metaName": "documentation",
+                    "metaType": "string",
+                    "metaValue": "A box whose top face is inset and recessed with PPG_extrude. Phase 5 test of the bifrost-maya skill."
+                }
+            ],
+            "ports": [
+                {
+                    "portName": "width",
+                    "portDirection": "input",
+                    "portType": "float",
+                    "portDefault": "4f"
+                },
+                {
+                    "portName": "height",
+                    "portDirection": "input",
+                    "portType": "float",
+                    "portDefault": "2f"
+                },
+                {
+                    "portName": "inset",
+                    "portDirection": "input",
+                    "portType": "float",
+                    "portDefault": "0.4f"
+                },
+                {
+                    "portName": "recess_depth",
+                    "portDirection": "input",
+                    "portType": "float",
+                    "portDefault": "-0.3f"
+                },
+                {
+                    "portName": "mesh",
+                    "portDirection": "output",
+                    "portType": "Object"
+                }
+            ],
+            "compoundNodes": [
+                {
+                    "nodeName": "block",
+                    "nodeType": "Modeling::Primitive::create_mesh_cube"
+                },
+                {
+                    "nodeName": "recess_top",
+                    "nodeType": "PPG::PPG_extrude"
+                }
+            ],
+            "connections": [
+                {
+                    "source": ".width",
+                    "target": "block.width"
+                },
+                {
+                    "source": ".width",
+                    "target": "block.length"
+                },
+                {
+                    "source": ".height",
+                    "target": "block.height"
+                },
+                {
+                    "source": "block.cube_mesh",
+                    "target": "recess_top.mesh"
+                },
+                {
+                    "source": ".inset",
+                    "target": "recess_top.offset"
+                },
+                {
+                    "source": ".recess_depth",
+                    "target": "recess_top.extrude_depth"
+                },
+                {
+                    "source": "recess_top.extruded_mesh",
+                    "target": ".mesh"
+                }
+            ],
+            "values": [
+                {
+                    "valueName": "block.base_to_pivot",
+                    "valueType": "bool",
+                    "value": "true"
+                },
+                {
+                    "valueName": "recess_top.tag_expression",
+                    "valueType": "string",
+                    "value": "face_top_tag"
+                },
+                {
+                    "valueName": "recess_top.keep_faces_together",
+                    "valueType": "bool",
+                    "value": "true"
+                },
+                {
+                    "valueName": "recess_top.extrude_face_tag",
+                    "valueType": "string",
+                    "value": "recess_floor"
+                },
+                {
+                    "valueName": "recess_top.sides_face_tag",
+                    "valueType": "string",
+                    "value": "recess_walls"
+                }
+            ],
+            "libraryDependencies": {
+                "Amino": "2.15.0.9",
+                "bif": "2.15.0.9",
+                "geometries": "2.15.0.9"
+            }
+        }
+    ]
+}

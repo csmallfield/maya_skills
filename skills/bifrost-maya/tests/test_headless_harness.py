@@ -124,5 +124,35 @@ class BifcmdTests(unittest.TestCase):
         self.assertTrue(any("unknown node definition 'nyc_affine_box_points'" in e for e in result["errors"]))
 
 
+class BifcmdMultiInputTests(BifcmdTests):
+    def compound(self, literal):
+        c = {"name": f"Claude::Tests::multi_{'literal' if literal else 'valuenode'}", "metadata": [],
+             "ports": [{"portName": "x", "portDirection": "input", "portType": "float", "portDefault": "5f"},
+                       {"portName": "y", "portDirection": "output", "portType": "float"}],
+             "compoundNodes": [{"nodeName": "times_two", "nodeType": "Core::Math::multiply", "multiInPortNames": ["in_0", "in_1"]}],
+             "connections": [{"source": ".x", "target": "times_two.first.in_0"}, {"source": "times_two.output", "target": ".y"}],
+             "values": [], "libraryDependencies": {"Amino": "2.15.0.9"}}
+        if literal:
+            c["values"].append({"valueName": "times_two.first.in_1", "valueType": "float", "value": "2f"})
+        else:
+            c["compoundNodes"].append({"nodeName": "two", "valueType": "float"})
+            c["values"].append({"valueName": "two.value", "valueType": "float", "value": "2f"})
+            c["connections"].append({"source": "two.output", "target": "times_two.first.in_1"})
+        return {"header": {"metadata": [{"metaName": "adskFileFormatVersion", "metaValue": "100L"}]},
+                "namespaces": [], "types": [], "compounds": [c]}
+
+    def test_literal_on_multi_input_child_is_ignored(self):
+        results = {}
+        for literal in (True, False):
+            document = self.compound(literal)
+            result, code = self.check(self.write(document, "m.json"), document["compounds"][0]["name"], True, [], None, False, 300)
+            self.assertEqual(code, 0, result)
+            results[literal] = next(o["value"] for o in result["outputs"] if o["name"] == "y")
+        self.assertEqual(float(results[True]), 0.0)    # the literal 2 is dropped
+        self.assertEqual(float(results[False]), 10.0)  # a wired value node works
+
+    test_scope_bug_fails_compile_and_intact_file_compiles = None
+
+
 if __name__ == "__main__":
     unittest.main()

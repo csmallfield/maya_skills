@@ -68,5 +68,18 @@ class NodeIndexTests(unittest.TestCase):
         self.assertIn("cube_mesh: Object", result.stdout)
 
 
+class ExampleSearchTests(unittest.TestCase):
+    def top(self, query):
+        result = subprocess.run([sys.executable, "-I", str(ROOT / "scripts/search_graph_examples.py"), query, "--limit", "1"],
+                                capture_output=True, text=True, encoding="utf-8")
+        return result.stdout.split()[1]
+
+    def test_obvious_examples_rank_first(self):
+        # Before the scoring change, long-documented graphs (procedural_stream) outranked these.
+        self.assertEqual(self.top("scatter instances on a plane random rotation scale"), "basic_scatter_example")
+        self.assertEqual(self.top("smoke plume"), "billowy_smoke_plume")
+        self.assertEqual(self.top("ocean waves with spray"), "ocean_wave_with_spray")
+
+
 if __name__ == "__main__":
     unittest.main()

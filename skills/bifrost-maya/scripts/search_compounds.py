@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse, json, pathlib, re
+import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 DATA = HERE.parent / 'references' / 'compound-data'
@@ -36,6 +37,7 @@ def score_record(rec, query_tokens):
 
 
 def main():
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
     ap = argparse.ArgumentParser()
     ap.add_argument('query')
     ap.add_argument('--limit', type=int, default=12)
