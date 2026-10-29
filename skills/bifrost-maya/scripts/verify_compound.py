@@ -67,20 +67,31 @@ def installed_names() -> dict[str, str]:
     return names
 
 
-def renamed_copy(document: dict, name: str, folder: Path) -> tuple[Path, str]:
-    """Write a copy whose public compound has a unique name.
+def renamed_copy(document: dict, names: set[str], folder: Path) -> Path:
+    """Write a copy in which every top-level compound named in `names` gets a `__verify` suffix.
 
-    Loading a file that redefines an installed compound crashes bifcmd, and the
-    installed copy would shadow the file in a headless Maya.
+    Loading a file that redefines an installed compound crashes bifcmd (or, for a
+    library file with several compounds, fails with "same input ports signature
+    as a previously defined operator"), and the installed copy would shadow the
+    file in a headless Maya. Calls to renamed compounds inside the file are
+    rewritten too, so a compound that chains its siblings tests the file's versions.
     """
-    new_name = f"{name}__verify"
     copy = json.loads(json.dumps(document))
+
+    def rewrite(compound: dict) -> None:
+        for node in compound.get("compoundNodes", []):
+            if node.get("nodeType") in names:
+                node["nodeType"] += "__verify"
+        for child in compound.get("compounds", []):
+            rewrite(child)
+
     for compound in copy["compounds"]:
-        if compound.get("name") == name:
-            compound["name"] = new_name
+        if compound.get("name") in names:
+            compound["name"] += "__verify"
+        rewrite(compound)
     path = folder / "verify_copy.json"
     path.write_text(json.dumps(copy), encoding="utf-8")
-    return path, new_name
+    return path
 
 
 def evaluation_spec(name: str, outputs: dict[str, str], sets: list[str],
@@ -139,11 +150,15 @@ def verify(path: Path, compound_name: str | None, sets: list[str], fast: bool,
                if p.get("portDirection") == "output"}
 
     scratch = tempfile.TemporaryDirectory(prefix="verify_compound_")
-    clash = installed_names().get(name)
-    if clash:
-        path, name = renamed_copy(document, name, Path(scratch.name))
-        report["note"] = (f"{report['compound']} is already installed ({clash}); verified a temporary copy "
-                          f"named {name}, so the installed one doesn't shadow or clash with it")
+    installed = installed_names()
+    clashes = {c.get("name") for c in document.get("compounds", []) if c.get("name") in installed}
+    if clashes:
+        path = renamed_copy(document, clashes, Path(scratch.name))
+        where = installed.get(name) or installed[sorted(clashes)[0]]
+        if name in clashes:
+            name += "__verify"
+        report["note"] = (f"{len(clashes)} compound(s) in this file are already installed ({where}); verified a "
+                          f"temporary copy with __verify names, so the installed ones don't shadow or clash")
 
     compiled, _ = bifcmd_check.check(path, name, False, [], None, False, 300)
     report["stages"]["compile"] = {key: compiled.get(key) for key in ("ok", "stages", "errors", "warnings", "fatal")

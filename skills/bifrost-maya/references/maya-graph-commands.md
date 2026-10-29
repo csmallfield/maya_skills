@@ -144,3 +144,17 @@ If you skip either, every sampled frame returns the frame-1 state, and each fram
 ## USD pack outside Maya
 
 bifcmd only loads `packs/usd_pack/<ver>` when these are on PATH: MayaUSD's `C:/Program Files/Autodesk/MayaUSD/Maya2026/<mayausd>/mayausd/USD_<ver>/lib` and `.../bin`, and `C:/Program Files/Autodesk/Maya2026/bin`. Also set `PXR_PLUGINPATH_NAME` to `.../USD_<ver>/lib/usd`. Without these, the pack fails with "Default value function not found for value of type 'BifrostUsd::Stage'" and `configFilesLoadedOk` is false. `bifcmd_check.usd_environment()` finds them. Headless mayapy needs none of this.
+
+## Multi-input math in headless specs
+
+`vnnConnect` can't wire the operands of multi-input operators (`Core::Math::add`, `subtract`, `multiply`, `divide`, `max`, `Core::Array::build_array`) in a fresh graph: `add.first` fails with "A port named first was not found", and `add.first[]` fails the same way. The node then compiles with "the multi-in node add has no input port". So a `bifrost_headless.py` spec can't build math chains yet (seen 2026-10-29). Write those graphs as native compound JSON instead (`first.in_0`, `first.in_1` listed in `multiInPortNames`; subtract and divide take the first child minus or divided by the rest), and test them with `verify_compound.py`, or with `--library FILE` plus a spec that places the compound as a node.
+
+## USD point instancer from Bifrost instances
+
+Verified 2026-10-29 (CityGen slice, `.usda` written by `export_stage_to_file`): feed a `create_instances` result straight into `USD::Prim::define_usd_point_instancer.points` and leave `prototype_definitions` empty. Its implementation sees `point_instance_id` and builds the prototypes from the instance shapes itself: `<instancer>/prototypes/obj_N` scopes, each with `_render` and `_proxy` meshes, plus a default material. `protoIndices`, `positions`, `orientations` (from `point_orientation`) and `scales` (from `point_scale`) are filled in, so no per-prototype `define_usd_mesh` loop is needed. Gaps: the stage has no `metersPerUnit` or `upAxis` metadata, and `/City`-style parent prims are created as typeless `def`s. Mesh prims passed to the same `add_to_stage` fan-in can use full paths such as `/City/Ground`.
+
+`mayapy -I` can't import `pxr` (MayaUSD adds it through the environment that `-I` ignores). Read a `.usda` as text, or run mayapy without `-I` for pxr checks.
+
+## Library files with several compounds
+
+A file that holds a whole pipeline (several top-level compounds, one chaining the others) installs as one file: `install_compound.py FILE --compound NS::top --yes --reload`. `verify_compound.py` renames **every** top-level compound in the file that is already installed (and rewrites calls to them), so re-verifying after install works. Before that fix, the siblings failed compile with "overloaded operator ... has the same input ports signature as a previously defined operator".

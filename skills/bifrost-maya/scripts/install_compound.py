@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Install a verified compound file into the user's compounds folder, then optionally reload Bifrost live.
 
-    install_compound.py FILE.json --yes [--reload] [--folder DIR] [--skip-verify] [--frames A B]
+    install_compound.py FILE.json --yes [--reload] [--compound NS::name] [--folder DIR] [--skip-verify] [--frames A B]
+
+A library file holding several top-level compounds installs as one file; name the
+compound to verify (normally the one that chains the others) with --compound.
 
 Only run this after the user has said to install the file. `--yes` is required
 so it is never run by accident. Steps:
@@ -73,6 +76,7 @@ def main() -> int:
     parser.add_argument("--folder", type=Path, default=Path.home() / "Autodesk" / "Bifrost" / "Compounds")
     parser.add_argument("--skip-verify", action="store_true", help="install without verifying (not recommended)")
     parser.add_argument("--frames", nargs=2, type=int, metavar=("START", "END"), help="verify as a simulation")
+    parser.add_argument("--compound", help="top-level compound to verify in a multi-compound library file")
     args = parser.parse_args()
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     source = args.file.resolve()
@@ -80,10 +84,10 @@ def main() -> int:
         print(f"Refusing: pass --yes once the user has asked to install {source.name} into {args.folder}.")
         return 1
     document = json.loads(source.read_text(encoding="utf-8-sig"))
-    name = verify_compound.public_compound(document, None)["name"]
+    name = verify_compound.public_compound(document, args.compound)["name"]
 
     if not args.skip_verify:
-        report = verify_compound.verify(source, None, [], False, args.frames)
+        report = verify_compound.verify(source, args.compound, [], False, args.frames)
         print(verify_compound.summarize(report))
         if report["verdict"] != "VERIFIED":
             print(f"Refusing to install: verdict {report['verdict']}.")
