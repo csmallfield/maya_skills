@@ -164,3 +164,21 @@ A file that holds a whole pipeline (several top-level compounds, one chaining th
 - `Sdf.Layer.Find(path).Reload()` on a layer that a mayaUsdProxyShape's stage composes raises "Detected usd threading violation. Concurrent changes to layer(s) composed in stage ...".
 - Wrapping that in `maya.utils.executeInMainThreadWithResult` **hung Maya**: the process stayed alive but the command port stopped answering. Command-port code already runs on the main thread, so the call waits on itself.
 - Deleting and recreating the proxy shape does **not** pick up changed asset files: the referenced layers stay loaded in the session's layer registry (`Sdf.Layer.GetLoadedLayers()` still lists them). Changed assets show after a new scene/Maya start. Ask the user before anything that could block their session.
+
+## Reading Maya geometry into a graph by path (verified live 2026-10-29)
+
+Autodesk's USD pack (`bifrost_usd/author_usd_graph.py`, `_add_maya_mesh_to_stage`) reads Maya meshes into a graph through an IO node with a path option. From a script:
+
+```python
+io = cmds.vnnCompound(g, "/", addIONode=True)[0]          # a new input node, e.g. "input1"
+cmds.vnnNode(g, "/" + io, createOutputPort=("basis_mesh", "Object"),
+             portOptions="pathinfo={path=|grp|meshTransform|meshShape;setOperation=+;active=true}")
+port = cmds.vnnNode(g, "/" + io, listPorts=True)[0]       # "input1.basis_mesh"
+cmds.vnnConnect(g, "/" + port, "/some_node.mesh")
+```
+
+- Give the **mesh shape** path. It arrives in world space and updates live when the mesh is edited. A transform or group path gives an empty Object, and wildcards give 0 points.
+- One path per port. `pathinfo={...}{...}` and `pathinfo={...},{...}` raise "Invalid port options".
+- Port names are unique across **all** input nodes: a second `m` becomes `m1`, so read the real name back with `listPorts`.
+- `bifrostGraph(g, inputByPathSuggestedTypes=path)` returned an empty list for locators and meshes alike, so don't rely on it.
+- Shipped graphs (`generate_data_example.ma`) store locator inputs as `array<Math::float4x4>` ports with space-separated `/`-style paths. Recreating that from a script returned no matrices; unresolved.
