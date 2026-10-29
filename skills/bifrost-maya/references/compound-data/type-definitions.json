@@ -1,0 +1,194 @@
+[
+  {
+    "kind": "enum",
+    "members": [
+      {
+        "key": "X",
+        "value": "0"
+      },
+      {
+        "key": "Y",
+        "value": "1"
+      },
+      {
+        "key": "Z",
+        "value": "2"
+      }
+    ],
+    "name": "ValHallen::Axis",
+    "source_path": "VHH/enum/axis_enum.json"
+  },
+  {
+    "kind": "enum",
+    "members": [
+      {
+        "key": "box",
+        "value": "0"
+      },
+      {
+        "key": "sphere",
+        "value": "1"
+      },
+      {
+        "key": "rect_x",
+        "value": "2"
+      },
+      {
+        "key": "rect_y",
+        "value": "3"
+      },
+      {
+        "key": "rect_z",
+        "value": "4"
+      }
+    ],
+    "name": "ValHallen::Bounds",
+    "source_path": "VHH/enum/bounds_enum.json"
+  },
+  {
+    "kind": "enum",
+    "members": [
+      {
+        "key": "equal [==]",
+        "value": "0"
+      },
+      {
+        "key": "less [<]",
+        "value": "1"
+      },
+      {
+        "key": "greater [>]",
+        "value": "2"
+      },
+      {
+        "key": "less or equal [<=]",
+        "value": "3"
+      },
+      {
+        "key": "greater or equal [>=]",
+        "value": "4"
+      },
+      {
+        "key": "not equal [!=}",
+        "value": "5"
+      }
+    ],
+    "name": "VHH::comparisons",
+    "source_path": "VHH/enum/comparison_enum.json"
+  },
+  {
+    "kind": "enum",
+    "members": [
+      {
+        "key": "Euclidian",
+        "value": "0"
+      },
+      {
+        "key": "Manhattan",
+        "value": "1"
+      },
+      {
+        "key": "Chebyshev",
+        "value": "2"
+      }
+    ],
+    "name": "ValHallen::Distance",
+    "source_path": "VHH/enum/distanceenum.json"
+  },
+  {
+    "kind": "enum",
+    "members": [
+      {
+        "key": "constant",
+        "value": "0"
+      },
+      {
+        "key": "bounding box",
+        "value": "1"
+      },
+      {
+        "key": "random",
+        "value": "2"
+      },
+      {
+        "key": "from property",
+        "value": "3"
+      },
+      {
+        "key": "random from property",
+        "value": "4"
+      }
+    ],
+    "name": "ValHallen::Ramp",
+    "source_path": "VHH/enum/enum_ramp.json"
+  },
+  {
+    "kind": "enum",
+    "members": [
+      {
+        "key": "+",
+        "value": "0"
+      },
+      {
+        "key": "-",
+        "value": "1"
+      },
+      {
+        "key": "*",
+        "value": "2"
+      },
+      {
+        "key": "/",
+        "value": "3"
+      }
+    ],
+    "name": "ValHallen::Functions",
+    "source_path": "VHH/enum/functions.json"
+  },
+  {
+    "kind": "enum",
+    "members": [
+      {
+        "key": "Ease_in",
+        "value": "0"
+      },
+      {
+        "key": "Ease_out",
+        "value": "1"
+      },
+      {
+        "key": "Exponent",
+        "value": "2"
+      },
+      {
+        "key": "Smooth",
+        "value": "3"
+      },
+      {
+        "key": "Off",
+        "value": "4"
+      }
+    ],
+    "name": "ValHallen::Sphere",
+    "source_path": "VHH/enum/sphere_enum.json"
+  },
+  {
+    "kind": "enum",
+    "members": [
+      {
+        "key": "Bounds Cube",
+        "value": "0"
+      },
+      {
+        "key": "Bounds Sphere",
+        "value": "1"
+      },
+      {
+        "key": "on Object",
+        "value": "2"
+      }
+    ],
+    "name": "ValHallen::wScatter",
+    "source_path": "VHH/enum/worley_scatter_enum.json"
+  }
+]

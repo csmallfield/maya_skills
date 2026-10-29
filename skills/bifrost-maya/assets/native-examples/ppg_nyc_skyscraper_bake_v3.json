@@ -1,0 +1,355 @@
+{
+  "header": {
+    "metadata": [
+      {
+        "metaName": "adskFileFormatVersion",
+        "metaValue": "100L"
+      }
+    ]
+  },
+  "namespaces": [],
+  "types": [],
+  "compounds": [
+    {
+      "name": "Procedural::Buildings::ppg_nyc_skyscraper_bake_v3",
+      "metadata": [
+        {
+          "metaName": "io_nodes",
+          "metadata": [
+            {
+              "metaName": "io_inodes",
+              "metadata": [
+                {
+                  "metaName": "input",
+                  "metadata": [
+                    {
+                      "metaName": "DisplayMode",
+                      "metaType": "string",
+                      "metaValue": "2"
+                    },
+                    {
+                      "metaName": "io_ports",
+                      "metadata": [
+                        {
+                          "metaName": "building"
+                        }
+                      ]
+                    },
+                    {
+                      "metaName": "LayoutPos",
+                      "metaType": "string",
+                      "metaValue": "-600 0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "metaName": "io_onodes",
+              "metadata": [
+                {
+                  "metaName": "output",
+                  "metadata": [
+                    {
+                      "metaName": "DisplayMode",
+                      "metaType": "string",
+                      "metaValue": "2"
+                    },
+                    {
+                      "metaName": "io_ports",
+                      "metadata": [
+                        {
+                          "metaName": "meshes"
+                        },
+                        {
+                          "metaName": "merged_mesh"
+                        }
+                      ]
+                    },
+                    {
+                      "metaName": "LayoutPos",
+                      "metaType": "string",
+                      "metaValue": "950 0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "metaName": "author",
+          "metaType": "string",
+          "metaValue": "OpenAI"
+        },
+        {
+          "metaName": "category",
+          "metaType": "string",
+          "metaValue": "Modeling"
+        },
+        {
+          "metaName": "description",
+          "metaType": "string",
+          "metaValue": "Optional downstream mesh expansion. Keep disconnected during interactive editing. Merging can lose per-prototype material distinctions; use instanced building for rendering."
+        },
+        {
+          "metaName": "ViewportRect",
+          "metaType": "string",
+          "metaValue": "-700 -250 2250 650"
+        }
+      ],
+      "ports": [
+        {
+          "portName": "building",
+          "portDirection": "input",
+          "portType": "array<Object>"
+        },
+        {
+          "portName": "meshes",
+          "portDirection": "output",
+          "portType": "array<Object>"
+        },
+        {
+          "portName": "merged_mesh",
+          "portDirection": "output",
+          "portType": "Object"
+        }
+      ],
+      "compounds": [
+        {
+          "name": "nyc_bake_each_instance_group",
+          "metadata": [
+            {
+              "metaName": "io_nodes",
+              "metadata": [
+                {
+                  "metaName": "io_inodes",
+                  "metadata": [
+                    {
+                      "metaName": "input",
+                      "metadata": [
+                        {
+                          "metaName": "DisplayMode",
+                          "metaType": "string",
+                          "metaValue": "2"
+                        },
+                        {
+                          "metaName": "io_ports",
+                          "metadata": [
+                            {
+                              "metaName": "instances"
+                            }
+                          ]
+                        },
+                        {
+                          "metaName": "LayoutPos",
+                          "metaType": "string",
+                          "metaValue": "-600 0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "metaName": "io_onodes",
+                  "metadata": [
+                    {
+                      "metaName": "output",
+                      "metadata": [
+                        {
+                          "metaName": "DisplayMode",
+                          "metaType": "string",
+                          "metaValue": "2"
+                        },
+                        {
+                          "metaName": "io_ports",
+                          "metadata": [
+                            {
+                              "metaName": "meshes"
+                            }
+                          ]
+                        },
+                        {
+                          "metaName": "LayoutPos",
+                          "metaType": "string",
+                          "metaValue": "500 0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "metaName": "author",
+              "metaType": "string",
+              "metaValue": "OpenAI"
+            },
+            {
+              "metaName": "category",
+              "metaType": "string",
+              "metaValue": "Modeling"
+            },
+            {
+              "metaName": "description",
+              "metaType": "string",
+              "metaValue": "Explicit mesh expansion, parallel per material group. Use only downstream for export."
+            },
+            {
+              "metaName": "ViewportRect",
+              "metaType": "string",
+              "metaValue": "-700 -250 1800 725"
+            }
+          ],
+          "ports": [
+            {
+              "portName": "instances",
+              "portDirection": "input",
+              "portType": "array<Object>",
+              "portIterationTarget": "true"
+            },
+            {
+              "portName": "meshes",
+              "portDirection": "output",
+              "portType": "array<Object>",
+              "portIterationTarget": "true"
+            }
+          ],
+          "compounds": [],
+          "compoundNodes": [
+            {
+              "nodeName": "expand_instances",
+              "nodeType": "Modeling::Instances::bake_instanced_geometry",
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "0 0"
+                }
+              ]
+            }
+          ],
+          "connections": [
+            {
+              "source": ".instances",
+              "target": "expand_instances.instances"
+            },
+            {
+              "source": "expand_instances.merged_meshes",
+              "target": ".meshes"
+            }
+          ],
+          "values": [
+            {
+              "valueName": "expand_instances.prefer_preview_geometry",
+              "valueType": "bool",
+              "value": "false"
+            },
+            {
+              "valueName": "expand_instances.properties",
+              "valueType": "string",
+              "value": "*"
+            },
+            {
+              "valueName": "expand_instances.point_properties",
+              "valueType": "string",
+              "value": ""
+            }
+          ],
+          "reservedNodeNames": [
+            {
+              "name": "input"
+            },
+            {
+              "name": "output"
+            }
+          ],
+          "libraryDependencies": {
+            "Amino": "2.15.0.9",
+            "bif": "2.15.0.9",
+            "geometries": "2.15.0.9"
+          },
+          "forEachCompound": {
+            "ports": []
+          }
+        }
+      ],
+      "compoundNodes": [
+        {
+          "nodeName": "bake_groups",
+          "nodeType": "nyc_bake_each_instance_group",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            },
+            {
+              "metaName": "LayoutPos",
+              "metaType": "string",
+              "metaValue": "0 0"
+            }
+          ]
+        },
+        {
+          "nodeName": "single_mesh",
+          "nodeType": "Modeling::Common::merge_geometry",
+          "fanInPortNames": {
+            "geometry": [
+              "part_0"
+            ]
+          },
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            },
+            {
+              "metaName": "LayoutPos",
+              "metaType": "string",
+              "metaValue": "450 0"
+            }
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "source": ".building",
+          "target": "bake_groups.instances"
+        },
+        {
+          "source": "bake_groups.meshes",
+          "target": ".meshes"
+        },
+        {
+          "source": "bake_groups.meshes",
+          "target": "single_mesh.geometry.part_0"
+        },
+        {
+          "source": "single_mesh.merged",
+          "target": ".merged_mesh"
+        }
+      ],
+      "values": [],
+      "reservedNodeNames": [
+        {
+          "name": "input"
+        },
+        {
+          "name": "output"
+        }
+      ],
+      "libraryDependencies": {
+        "Amino": "2.15.0.9",
+        "bif": "2.15.0.9",
+        "geometries": "2.15.0.9"
+      }
+    }
+  ]
+}

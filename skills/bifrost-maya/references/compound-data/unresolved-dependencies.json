@@ -1,0 +1,300 @@
+{
+  "Deep_Learning::Network::Activations::sigmoid": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "Hyuu::Logic::and_conditional": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Hyuu::merge_vertices_clean",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__merge_vertices_clean"
+    }
+  ],
+  "MJCG::Core::Array::array_average": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 3,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Core::Array::fill_interpolated_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 4,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Core::Array::flatten_2D_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 7,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Diagnostic::Display::point_transform_scope": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_point_binormal": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_point_orientation": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_point_ratio": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_point_tangent": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_strand_length": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Strands::check_strands_orientations": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "USD::Attribute::define_usd_attribute": [
+    {
+      "collection": "CJS_points_to_USD_points.json",
+      "compound": "User::Compounds::CJS_points_to_USD_points",
+      "count": 4,
+      "id": "CJS_points_to_USD_points"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 2,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::USD::define_usd_pbr_preview_surface",
+      "count": 73,
+      "id": "VHH__USD__PBR_Preview_Surface"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 2,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Attribute::define_usd_display_color": [
+    {
+      "collection": "CJS_points_to_USD_points.json",
+      "compound": "User::Compounds::CJS_points_to_USD_points",
+      "count": 1,
+      "id": "CJS_points_to_USD_points"
+    },
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 2,
+      "id": "GL_replace_point_instancer_prototype"
+    }
+  ],
+  "USD::Attribute::define_usd_transform": [
+    {
+      "collection": "CJS_simple_usd_loader.json",
+      "compound": "User::Compounds::CJS_simple_usd_loader",
+      "count": 1,
+      "id": "CJS_simple_usd_loader"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Attribute::get_usd_attribute_value": [
+    {
+      "collection": "GL_usd_point_instancer_scope.json",
+      "compound": "User::Compounds::GL_usd_point_instancer_scope",
+      "count": 2,
+      "id": "GL_usd_point_instancer_scope"
+    }
+  ],
+  "USD::PointInstancer::define_usd_point_instancer": [
+    {
+      "collection": "CJS_usd_scatter.json",
+      "compound": "User::Compounds::CJS_usd_scatter",
+      "count": 1,
+      "id": "CJS_usd_scatter"
+    }
+  ],
+  "USD::Prim::clear_relationship_targets": [
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 1,
+      "id": "GL_replace_point_instancer_prototype"
+    }
+  ],
+  "USD::Prim::define_usd_mesh": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Prim::define_usd_prim": [
+    {
+      "collection": "CJS_points_to_USD_points.json",
+      "compound": "User::Compounds::CJS_points_to_USD_points",
+      "count": 1,
+      "id": "CJS_points_to_USD_points"
+    },
+    {
+      "collection": "CJS_simple_usd_loader.json",
+      "compound": "User::Compounds::CJS_simple_usd_loader",
+      "count": 1,
+      "id": "CJS_simple_usd_loader"
+    },
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 2,
+      "id": "GL_replace_point_instancer_prototype"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::USD::define_usd_pbr_preview_surface",
+      "count": 11,
+      "id": "VHH__USD__PBR_Preview_Surface"
+    }
+  ],
+  "USD::Prim::define_usd_reference_from_file": [
+    {
+      "collection": "CJS_simple_usd_loader.json",
+      "compound": "User::Compounds::CJS_simple_usd_loader",
+      "count": 1,
+      "id": "CJS_simple_usd_loader"
+    }
+  ],
+  "USD::Prim::define_usd_relationship": [
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 1,
+      "id": "GL_replace_point_instancer_prototype"
+    }
+  ],
+  "USD::Stage::add_to_stage": [
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 1,
+      "id": "GL_replace_point_instancer_prototype"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Stage::create_usd_stage": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Stage::save_usd_stage": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Utils::create_child_prim_path": [
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 1,
+      "id": "GL_replace_point_instancer_prototype"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::USD::define_usd_pbr_preview_surface",
+      "count": 11,
+      "id": "VHH__USD__PBR_Preview_Surface"
+    }
+  ]
+}

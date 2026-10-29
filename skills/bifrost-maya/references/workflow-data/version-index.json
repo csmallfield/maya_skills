@@ -1,0 +1,720 @@
+{
+  "Amino:2.15.0.11": [
+    "biped_modules",
+    "edge_damage_slice",
+    "voronoi_fracture"
+  ],
+  "Amino:2.15.0.9": [
+    "MPM_rubber",
+    "aero_colors",
+    "aero_combustion_wedging",
+    "aero_fields_sourcing",
+    "aero_uvw_field_noise",
+    "aim_matrix",
+    "bake_texture",
+    "basic_raycast_example",
+    "basic_scatter_example",
+    "billowy_smoke_plume",
+    "blend_matrix",
+    "boiling_noise",
+    "burning_barrel",
+    "cigarette_smoke",
+    "compute_transform_chain",
+    "confetti_pop",
+    "dam_break_foam",
+    "dam_break_particles",
+    "dancing_skeleton",
+    "dry_ice",
+    "dynamic_boat_wake",
+    "dynamic_raindrops",
+    "embroidery",
+    "fast_aero",
+    "fireworks",
+    "flame_torch",
+    "flat_hurricane_noise",
+    "flocking_solver",
+    "flowers",
+    "gel_checker",
+    "gradient_advection",
+    "grass_wind",
+    "ground_mist",
+    "ice_cream",
+    "incircle_packing",
+    "liquid_meshing",
+    "mega_explosion",
+    "missile_hit",
+    "ocean_wave_with_spray",
+    "pick_matrix",
+    "plastic_deformation",
+    "point_infection",
+    "powder_explosion",
+    "procedural_gear",
+    "procedural_stream",
+    "pyroclastic_explosion",
+    "ragged_cloud",
+    "random_particle_rotations",
+    "read_texture",
+    "resample_matrix_chain",
+    "rubber_helix",
+    "sample_points_by_radius",
+    "sand_grain_instances",
+    "sand_pile",
+    "scatter_around_strand",
+    "scatter_in_volume",
+    "scatter_on_points",
+    "scatter_orientations_example",
+    "smoke_trail",
+    "snow_activation",
+    "snow_aero",
+    "snow_shadows",
+    "snowball_throw",
+    "standard_explosion",
+    "steamy_breath",
+    "tearing_cloth",
+    "test_inside_mesh_example",
+    "texture_scatter",
+    "valley_forest",
+    "vehicle_exhaust",
+    "view_based_ocean",
+    "walking_centipede",
+    "waterfall_mist"
+  ],
+  "Amino:2.16.0.10": [
+    "glue_constraints"
+  ],
+  "Amino:2.16.0.11": [
+    "eye_module",
+    "guided_liquid",
+    "rope_module",
+    "scatter_and_settle_instant",
+    "simple_RBD",
+    "surface_tension_implicit"
+  ],
+  "Amino:2.16.0.12": [
+    "rigid_body_instances",
+    "surface_tension_explicit"
+  ],
+  "Amino:2.16.0.2": [
+    "boolean_fracture",
+    "dust_motes",
+    "edge_damage_intersection",
+    "fiber_dust_motes",
+    "glass_shatter",
+    "large_turbulent_fire",
+    "muzzle_flash",
+    "post_aero_refinement"
+  ],
+  "Amino:2.16.0.5": [
+    "twist_rainbow_shell"
+  ],
+  "Amino:2.16.0.6": [
+    "swinging_coil"
+  ],
+  "Amino:2.16.0.7": [
+    "elastic_skeleton",
+    "wobbling_plant"
+  ],
+  "Amino:2.16.0.9": [
+    "scatter_and_settle"
+  ],
+  "Amino:3.0.0.0": [
+    "constrain_by_tag",
+    "multi_constraints"
+  ],
+  "bif:2.15.0.11": [
+    "biped_modules",
+    "edge_damage_slice",
+    "voronoi_fracture"
+  ],
+  "bif:2.15.0.9": [
+    "MPM_rubber",
+    "aero_colors",
+    "aero_combustion_wedging",
+    "aero_fields_sourcing",
+    "aero_uvw_field_noise",
+    "aim_matrix",
+    "bake_texture",
+    "basic_raycast_example",
+    "basic_scatter_example",
+    "billowy_smoke_plume",
+    "blend_matrix",
+    "boiling_noise",
+    "burning_barrel",
+    "cigarette_smoke",
+    "compute_transform_chain",
+    "confetti_pop",
+    "dam_break_foam",
+    "dam_break_particles",
+    "dancing_skeleton",
+    "dry_ice",
+    "dynamic_boat_wake",
+    "dynamic_raindrops",
+    "embroidery",
+    "fast_aero",
+    "fireworks",
+    "flame_torch",
+    "flat_hurricane_noise",
+    "flocking_solver",
+    "flowers",
+    "gel_checker",
+    "gradient_advection",
+    "grass_wind",
+    "ground_mist",
+    "ice_cream",
+    "incircle_packing",
+    "liquid_meshing",
+    "mega_explosion",
+    "missile_hit",
+    "ocean_wave_with_spray",
+    "pick_matrix",
+    "plastic_deformation",
+    "point_infection",
+    "powder_explosion",
+    "procedural_gear",
+    "procedural_stream",
+    "pyroclastic_explosion",
+    "ragged_cloud",
+    "random_particle_rotations",
+    "read_texture",
+    "resample_matrix_chain",
+    "rubber_helix",
+    "sample_points_by_radius",
+    "sand_grain_instances",
+    "sand_pile",
+    "scatter_around_strand",
+    "scatter_in_volume",
+    "scatter_on_points",
+    "scatter_orientations_example",
+    "smoke_trail",
+    "snow_activation",
+    "snow_aero",
+    "snow_shadows",
+    "snowball_throw",
+    "standard_explosion",
+    "steamy_breath",
+    "tearing_cloth",
+    "test_inside_mesh_example",
+    "texture_scatter",
+    "valley_forest",
+    "vehicle_exhaust",
+    "view_based_ocean",
+    "walking_centipede",
+    "waterfall_mist"
+  ],
+  "bif:2.16.0.10": [
+    "glue_constraints"
+  ],
+  "bif:2.16.0.11": [
+    "eye_module",
+    "guided_liquid",
+    "rope_module",
+    "scatter_and_settle_instant",
+    "simple_RBD",
+    "surface_tension_implicit"
+  ],
+  "bif:2.16.0.12": [
+    "rigid_body_instances",
+    "surface_tension_explicit"
+  ],
+  "bif:2.16.0.2": [
+    "boolean_fracture",
+    "dust_motes",
+    "edge_damage_intersection",
+    "fiber_dust_motes",
+    "glass_shatter",
+    "large_turbulent_fire",
+    "muzzle_flash",
+    "post_aero_refinement"
+  ],
+  "bif:2.16.0.5": [
+    "twist_rainbow_shell"
+  ],
+  "bif:2.16.0.6": [
+    "swinging_coil"
+  ],
+  "bif:2.16.0.7": [
+    "elastic_skeleton",
+    "wobbling_plant"
+  ],
+  "bif:2.16.0.9": [
+    "scatter_and_settle"
+  ],
+  "bif:3.0.0.0": [
+    "constrain_by_tag",
+    "multi_constraints"
+  ],
+  "fields:2.15.0.11": [
+    "edge_damage_slice",
+    "voronoi_fracture"
+  ],
+  "fields:2.15.0.9": [
+    "MPM_rubber",
+    "aero_colors",
+    "aero_combustion_wedging",
+    "aero_fields_sourcing",
+    "aero_uvw_field_noise",
+    "bake_texture",
+    "basic_scatter_example",
+    "billowy_smoke_plume",
+    "boiling_noise",
+    "burning_barrel",
+    "cigarette_smoke",
+    "confetti_pop",
+    "dam_break_foam",
+    "dry_ice",
+    "dynamic_boat_wake",
+    "dynamic_raindrops",
+    "fireworks",
+    "flame_torch",
+    "flat_hurricane_noise",
+    "flowers",
+    "gel_checker",
+    "gradient_advection",
+    "grass_wind",
+    "ground_mist",
+    "ice_cream",
+    "incircle_packing",
+    "liquid_meshing",
+    "mega_explosion",
+    "missile_hit",
+    "ocean_wave_with_spray",
+    "powder_explosion",
+    "procedural_stream",
+    "pyroclastic_explosion",
+    "ragged_cloud",
+    "random_particle_rotations",
+    "rubber_helix",
+    "sand_grain_instances",
+    "sand_pile",
+    "scatter_around_strand",
+    "scatter_in_volume",
+    "scatter_on_points",
+    "scatter_orientations_example",
+    "smoke_trail",
+    "snow_activation",
+    "snow_aero",
+    "snow_shadows",
+    "snowball_throw",
+    "standard_explosion",
+    "steamy_breath",
+    "tearing_cloth",
+    "valley_forest",
+    "vehicle_exhaust",
+    "view_based_ocean",
+    "walking_centipede",
+    "waterfall_mist"
+  ],
+  "fields:2.16.0.11": [
+    "guided_liquid",
+    "scatter_and_settle_instant",
+    "surface_tension_implicit"
+  ],
+  "fields:2.16.0.12": [
+    "rigid_body_instances",
+    "surface_tension_explicit"
+  ],
+  "fields:2.16.0.2": [
+    "boolean_fracture",
+    "dust_motes",
+    "edge_damage_intersection",
+    "fiber_dust_motes",
+    "glass_shatter",
+    "large_turbulent_fire",
+    "post_aero_refinement"
+  ],
+  "fields:2.16.0.9": [
+    "scatter_and_settle"
+  ],
+  "fields:3.0.0.0": [
+    "multi_constraints"
+  ],
+  "file:2.15.0.9": [
+    "aero_combustion_wedging",
+    "bake_texture",
+    "billowy_smoke_plume",
+    "dam_break_foam",
+    "gel_checker",
+    "ice_cream",
+    "missile_hit",
+    "procedural_stream",
+    "pyroclastic_explosion",
+    "ragged_cloud",
+    "read_texture",
+    "rubber_helix",
+    "sand_grain_instances",
+    "smoke_trail",
+    "snow_activation",
+    "snow_aero",
+    "texture_scatter"
+  ],
+  "file:2.16.0.11": [
+    "guided_liquid"
+  ],
+  "file:2.16.0.12": [
+    "surface_tension_explicit"
+  ],
+  "file:3.0.0.0": [
+    "constrain_by_tag"
+  ],
+  "fluids:2.15.0.9": [
+    "aero_colors",
+    "aero_combustion_wedging",
+    "aero_fields_sourcing",
+    "aero_uvw_field_noise",
+    "billowy_smoke_plume",
+    "burning_barrel",
+    "cigarette_smoke",
+    "confetti_pop",
+    "dam_break_foam",
+    "dam_break_particles",
+    "dry_ice",
+    "fast_aero",
+    "flame_torch",
+    "gradient_advection",
+    "ground_mist",
+    "mega_explosion",
+    "missile_hit",
+    "powder_explosion",
+    "procedural_stream",
+    "pyroclastic_explosion",
+    "smoke_trail",
+    "snow_aero",
+    "standard_explosion",
+    "steamy_breath",
+    "vehicle_exhaust",
+    "walking_centipede",
+    "waterfall_mist"
+  ],
+  "fluids:2.16.0.11": [
+    "guided_liquid",
+    "surface_tension_implicit"
+  ],
+  "fluids:2.16.0.12": [
+    "surface_tension_explicit"
+  ],
+  "fluids:2.16.0.2": [
+    "large_turbulent_fire",
+    "post_aero_refinement"
+  ],
+  "geometries:2.15.0.11": [
+    "edge_damage_slice",
+    "voronoi_fracture"
+  ],
+  "geometries:2.15.0.9": [
+    "MPM_rubber",
+    "aero_colors",
+    "aero_combustion_wedging",
+    "aero_fields_sourcing",
+    "aero_uvw_field_noise",
+    "basic_raycast_example",
+    "billowy_smoke_plume",
+    "burning_barrel",
+    "cigarette_smoke",
+    "confetti_pop",
+    "dam_break_foam",
+    "dam_break_particles",
+    "dry_ice",
+    "dynamic_raindrops",
+    "fast_aero",
+    "fireworks",
+    "flame_torch",
+    "flat_hurricane_noise",
+    "flocking_solver",
+    "flowers",
+    "gel_checker",
+    "gradient_advection",
+    "grass_wind",
+    "ground_mist",
+    "ice_cream",
+    "incircle_packing",
+    "liquid_meshing",
+    "mega_explosion",
+    "missile_hit",
+    "ocean_wave_with_spray",
+    "plastic_deformation",
+    "point_infection",
+    "powder_explosion",
+    "procedural_stream",
+    "pyroclastic_explosion",
+    "ragged_cloud",
+    "random_particle_rotations",
+    "rubber_helix",
+    "sand_grain_instances",
+    "sand_pile",
+    "scatter_in_volume",
+    "smoke_trail",
+    "snow_activation",
+    "snow_aero",
+    "snow_shadows",
+    "snowball_throw",
+    "standard_explosion",
+    "steamy_breath",
+    "tearing_cloth",
+    "test_inside_mesh_example",
+    "vehicle_exhaust",
+    "walking_centipede",
+    "waterfall_mist"
+  ],
+  "geometries:2.16.0.10": [
+    "glue_constraints"
+  ],
+  "geometries:2.16.0.11": [
+    "guided_liquid",
+    "scatter_and_settle_instant",
+    "surface_tension_implicit"
+  ],
+  "geometries:2.16.0.12": [
+    "rigid_body_instances",
+    "surface_tension_explicit"
+  ],
+  "geometries:2.16.0.2": [
+    "boolean_fracture",
+    "dust_motes",
+    "edge_damage_intersection",
+    "fiber_dust_motes",
+    "glass_shatter",
+    "large_turbulent_fire",
+    "muzzle_flash",
+    "post_aero_refinement"
+  ],
+  "geometries:2.16.0.5": [
+    "twist_rainbow_shell"
+  ],
+  "geometries:2.16.0.9": [
+    "scatter_and_settle"
+  ],
+  "geometries:3.0.0.0": [
+    "constrain_by_tag",
+    "multi_constraints"
+  ],
+  "mpm:2.15.0.9": [
+    "MPM_rubber",
+    "gel_checker",
+    "ice_cream",
+    "liquid_meshing",
+    "plastic_deformation",
+    "rubber_helix",
+    "sand_grain_instances",
+    "sand_pile",
+    "snow_activation",
+    "snow_aero",
+    "snowball_throw",
+    "tearing_cloth",
+    "waterfall_mist"
+  ],
+  "mpm:2.16.0.5": [
+    "twist_rainbow_shell"
+  ],
+  "ocean:2.15.0.9": [
+    "dynamic_boat_wake",
+    "dynamic_raindrops",
+    "ocean_wave_with_spray",
+    "view_based_ocean"
+  ],
+  "ocean:2.16.0.11": [
+    "guided_liquid"
+  ],
+  "particles:2.15.0.9": [
+    "aero_combustion_wedging",
+    "confetti_pop",
+    "dynamic_raindrops",
+    "fireworks",
+    "gradient_advection",
+    "mega_explosion",
+    "missile_hit",
+    "ocean_wave_with_spray",
+    "powder_explosion",
+    "random_particle_rotations",
+    "steamy_breath"
+  ],
+  "particles:2.16.0.2": [
+    "dust_motes",
+    "fiber_dust_motes"
+  ],
+  "rigging:2.15.0.11": [
+    "biped_modules"
+  ],
+  "rigging:2.15.0.9": [
+    "aim_matrix",
+    "blend_matrix",
+    "compute_transform_chain",
+    "dancing_skeleton",
+    "pick_matrix",
+    "procedural_gear",
+    "procedural_stream",
+    "resample_matrix_chain",
+    "walking_centipede"
+  ],
+  "rigging:2.16.0.11": [
+    "eye_module",
+    "rope_module"
+  ],
+  "rigging:2.16.0.6": [
+    "swinging_coil"
+  ],
+  "rigging:2.16.0.7": [
+    "elastic_skeleton",
+    "wobbling_plant"
+  ],
+  "rigid_bodies:2.16.0.10": [
+    "glue_constraints"
+  ],
+  "rigid_bodies:2.16.0.11": [
+    "scatter_and_settle_instant",
+    "simple_RBD"
+  ],
+  "rigid_bodies:2.16.0.12": [
+    "rigid_body_instances"
+  ],
+  "rigid_bodies:2.16.0.2": [
+    "glass_shatter"
+  ],
+  "rigid_bodies:2.16.0.9": [
+    "scatter_and_settle"
+  ],
+  "rigid_bodies:3.0.0.0": [
+    "constrain_by_tag",
+    "multi_constraints"
+  ],
+  "scatter:2.15.0.11": [
+    "edge_damage_slice",
+    "voronoi_fracture"
+  ],
+  "scatter:2.15.0.9": [
+    "MPM_rubber",
+    "aim_matrix",
+    "bake_texture",
+    "basic_scatter_example",
+    "boiling_noise",
+    "dancing_skeleton",
+    "dry_ice",
+    "dynamic_boat_wake",
+    "flat_hurricane_noise",
+    "flocking_solver",
+    "flowers",
+    "gradient_advection",
+    "grass_wind",
+    "ice_cream",
+    "incircle_packing",
+    "pick_matrix",
+    "plastic_deformation",
+    "point_infection",
+    "procedural_gear",
+    "procedural_stream",
+    "pyroclastic_explosion",
+    "ragged_cloud",
+    "random_particle_rotations",
+    "sand_grain_instances",
+    "sand_pile",
+    "scatter_around_strand",
+    "scatter_in_volume",
+    "scatter_on_points",
+    "scatter_orientations_example",
+    "snow_activation",
+    "snow_shadows",
+    "test_inside_mesh_example",
+    "texture_scatter",
+    "valley_forest"
+  ],
+  "scatter:2.16.0.10": [
+    "glue_constraints"
+  ],
+  "scatter:2.16.0.11": [
+    "guided_liquid",
+    "scatter_and_settle_instant",
+    "simple_RBD"
+  ],
+  "scatter:2.16.0.12": [
+    "rigid_body_instances"
+  ],
+  "scatter:2.16.0.2": [
+    "boolean_fracture",
+    "edge_damage_intersection",
+    "glass_shatter"
+  ],
+  "scatter:2.16.0.5": [
+    "twist_rainbow_shell"
+  ],
+  "scatter:2.16.0.9": [
+    "scatter_and_settle"
+  ],
+  "scatter:3.0.0.0": [
+    "constrain_by_tag",
+    "multi_constraints"
+  ],
+  "simulation:2.15.0.11": [
+    "voronoi_fracture"
+  ],
+  "simulation:2.15.0.9": [
+    "MPM_rubber",
+    "aero_colors",
+    "aero_combustion_wedging",
+    "aero_fields_sourcing",
+    "billowy_smoke_plume",
+    "burning_barrel",
+    "cigarette_smoke",
+    "confetti_pop",
+    "dam_break_foam",
+    "dam_break_particles",
+    "dry_ice",
+    "dynamic_raindrops",
+    "fireworks",
+    "flame_torch",
+    "gel_checker",
+    "gradient_advection",
+    "grass_wind",
+    "ground_mist",
+    "ice_cream",
+    "liquid_meshing",
+    "mega_explosion",
+    "missile_hit",
+    "ocean_wave_with_spray",
+    "plastic_deformation",
+    "point_infection",
+    "powder_explosion",
+    "procedural_gear",
+    "procedural_stream",
+    "pyroclastic_explosion",
+    "random_particle_rotations",
+    "rubber_helix",
+    "sand_grain_instances",
+    "sand_pile",
+    "smoke_trail",
+    "snow_activation",
+    "snow_aero",
+    "snowball_throw",
+    "standard_explosion",
+    "steamy_breath",
+    "vehicle_exhaust",
+    "waterfall_mist"
+  ],
+  "simulation:2.16.0.10": [
+    "glue_constraints"
+  ],
+  "simulation:2.16.0.11": [
+    "guided_liquid",
+    "scatter_and_settle_instant"
+  ],
+  "simulation:2.16.0.12": [
+    "rigid_body_instances",
+    "surface_tension_explicit"
+  ],
+  "simulation:2.16.0.2": [
+    "boolean_fracture",
+    "dust_motes",
+    "edge_damage_intersection",
+    "fiber_dust_motes",
+    "glass_shatter",
+    "large_turbulent_fire"
+  ],
+  "simulation:2.16.0.9": [
+    "scatter_and_settle"
+  ],
+  "simulation:3.0.0.0": [
+    "constrain_by_tag",
+    "multi_constraints"
+  ],
+  "wedging:2.15.0.9": [
+    "aero_combustion_wedging"
+  ]
+}

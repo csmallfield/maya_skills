@@ -1,0 +1,2328 @@
+{
+  "header": {
+    "metadata": [
+      {
+        "metaName": "adskFileFormatVersion",
+        "metaValue": "100L"
+      }
+    ]
+  },
+  "namespaces": [],
+  "types": [],
+  "compounds": [
+    {
+      "name": "FX::Goo::cs_green_goo_v5",
+      "metadata": [
+        {
+          "metaName": "io_nodes",
+          "metadata": [
+            {
+              "metaName": "io_inodes",
+              "metadata": [
+                {
+                  "metaName": "input",
+                  "metadata": [
+                    {
+                      "metaName": "DisplayMode",
+                      "metaType": "string",
+                      "metaValue": "2"
+                    },
+                    {
+                      "metaName": "io_ports",
+                      "metadata": [
+                        {
+                          "metaName": "geometry"
+                        },
+                        {
+                          "metaName": "liquidity"
+                        },
+                        {
+                          "metaName": "start_frame"
+                        },
+                        {
+                          "metaName": "detail_size"
+                        },
+                        {
+                          "metaName": "scene_units_in_meters"
+                        }
+                      ]
+                    },
+                    {
+                      "metaName": "LayoutPos",
+                      "metaType": "string",
+                      "metaValue": "-1650 -250"
+                    },
+                    {
+                      "metaName": "zValue",
+                      "metaType": "string",
+                      "metaValue": "50.000000"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "metaName": "io_onodes",
+              "metadata": [
+                {
+                  "metaName": "output",
+                  "metadata": [
+                    {
+                      "metaName": "DisplayMode",
+                      "metaType": "string",
+                      "metaValue": "2"
+                    },
+                    {
+                      "metaName": "io_ports",
+                      "metadata": [
+                        {
+                          "metaName": "goo_mesh"
+                        },
+                        {
+                          "metaName": "sim_particles"
+                        },
+                        {
+                          "metaName": "raw_mesh"
+                        },
+                        {
+                          "metaName": "shaded_goo_mesh"
+                        }
+                      ]
+                    },
+                    {
+                      "metaName": "LayoutPos",
+                      "metaType": "string",
+                      "metaValue": "1700 -250"
+                    },
+                    {
+                      "metaName": "zValue",
+                      "metaType": "string",
+                      "metaValue": "51.000000"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "metaName": "materials",
+          "metaValue": "true"
+        },
+        {
+          "metaName": "ViewportRect",
+          "metaType": "string",
+          "metaValue": "-1850 -900 3800 1900"
+        },
+        {
+          "metaName": "author",
+          "metaType": "string",
+          "metaValue": "OpenAI"
+        },
+        {
+          "metaName": "category",
+          "metaType": "string",
+          "metaValue": "MPM"
+        },
+        {
+          "metaName": "description",
+          "metaType": "string",
+          "metaValue": "Arbitrary-geometry MPM green goo with independent simulation and surface reconstruction controls."
+        }
+      ],
+      "terminalStates": [
+        {
+          "name": "Core::Graph::terminal::final",
+          "enabled": "false"
+        },
+        {
+          "name": "Core::Graph::terminal::proxy",
+          "enabled": "false"
+        },
+        {
+          "name": "Core::Graph::terminal::diagnostic",
+          "enabled": "false"
+        }
+      ],
+      "ports": [
+        {
+          "portName": "geometry",
+          "portDirection": "input",
+          "portType": "Object"
+        },
+        {
+          "portName": "liquidity",
+          "portDirection": "input",
+          "portType": "float",
+          "portDefault": "0.66f",
+          "metadata": [
+            {
+              "metaName": "UISoftMin",
+              "metaType": "string",
+              "metaValue": "0"
+            },
+            {
+              "metaName": "UISoftMax",
+              "metaType": "string",
+              "metaValue": "1"
+            }
+          ]
+        },
+        {
+          "portName": "start_frame",
+          "portDirection": "input",
+          "portType": "float",
+          "portDefault": "1f"
+        },
+        {
+          "portName": "detail_size",
+          "portDirection": "input",
+          "portType": "float",
+          "portDefault": "0.1f",
+          "metadata": [
+            {
+              "metaName": "UISoftMin",
+              "metaType": "string",
+              "metaValue": "0.02"
+            },
+            {
+              "metaName": "UISoftMax",
+              "metaType": "string",
+              "metaValue": "5"
+            }
+          ]
+        },
+        {
+          "portName": "scene_units_in_meters",
+          "portDirection": "input",
+          "portType": "float",
+          "portDefault": "0.1f"
+        },
+        {
+          "portName": "surface_radius",
+          "portDirection": "input",
+          "portType": "float",
+          "portDefault": "2.5f",
+          "metadata": [
+            {
+              "metaName": "UISoftMin",
+              "metaType": "string",
+              "metaValue": "0.5"
+            },
+            {
+              "metaName": "UISoftMax",
+              "metaType": "string",
+              "metaValue": "6"
+            }
+          ]
+        },
+        {
+          "portName": "surface_resolution",
+          "portDirection": "input",
+          "portType": "float",
+          "portDefault": "1f",
+          "metadata": [
+            {
+              "metaName": "UISoftMin",
+              "metaType": "string",
+              "metaValue": "0.25"
+            },
+            {
+              "metaName": "UISoftMax",
+              "metaType": "string",
+              "metaValue": "4"
+            }
+          ]
+        },
+        {
+          "portName": "particles_per_voxel",
+          "portDirection": "input",
+          "portType": "float",
+          "portDefault": "80f",
+          "metadata": [
+            {
+              "metaName": "UISoftMin",
+              "metaType": "string",
+              "metaValue": "8"
+            },
+            {
+              "metaName": "UISoftMax",
+              "metaType": "string",
+              "metaValue": "512"
+            }
+          ]
+        },
+        {
+          "portName": "goo_mesh",
+          "portDirection": "output",
+          "portType": "Object"
+        },
+        {
+          "portName": "sim_particles",
+          "portDirection": "output",
+          "portType": "Object"
+        },
+        {
+          "portName": "raw_mesh",
+          "portDirection": "output",
+          "portType": "Object"
+        },
+        {
+          "portName": "shaded_goo_mesh",
+          "portDirection": "output",
+          "portType": "Object"
+        }
+      ],
+      "compounds": [
+        {
+          "name": "mesh_mpm_particles",
+          "metadata": [
+            {
+              "metaName": "io_nodes",
+              "metadata": [
+                {
+                  "metaName": "io_inodes",
+                  "metadata": [
+                    {
+                      "metaName": "input",
+                      "metadata": [
+                        {
+                          "metaName": "DisplayMode",
+                          "metaType": "string",
+                          "metaValue": "2"
+                        },
+                        {
+                          "metaName": "LayoutPos",
+                          "metaType": "string",
+                          "metaValue": "-1157.35 -85.7511"
+                        },
+                        {
+                          "metaName": "io_ports",
+                          "metadata": [
+                            {
+                              "metaName": "first_object"
+                            },
+                            {
+                              "metaName": "output"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "metaName": "io_onodes",
+                  "metadata": [
+                    {
+                      "metaName": "output",
+                      "metadata": [
+                        {
+                          "metaName": "DisplayMode",
+                          "metaType": "string",
+                          "metaValue": "2"
+                        },
+                        {
+                          "metaName": "LayoutPos",
+                          "metaType": "string",
+                          "metaValue": "1856.35 -461.533"
+                        },
+                        {
+                          "metaName": "io_ports",
+                          "metadata": [
+                            {
+                              "metaName": "meshes"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "metaName": "_recentNode_",
+              "metaType": "string",
+              "metaValue": "BifrostGraph,Core::Math,multiply"
+            },
+            {
+              "metaName": "_recentNode_",
+              "metaType": "string",
+              "metaValue": "backdrop"
+            },
+            {
+              "metaName": "_recentNode_",
+              "metaType": "string",
+              "metaValue": "BifrostGraph,Core::Constants,float"
+            },
+            {
+              "metaName": "_recentNode_",
+              "metaType": "string",
+              "metaValue": "BifrostGraph,Core::Graph,terminal"
+            },
+            {
+              "metaName": "_recentNode_",
+              "metaType": "string",
+              "metaValue": "BifrostGraph,Simulation::Common,memory_cache"
+            },
+            {
+              "metaName": "ViewportRect",
+              "metaType": "string",
+              "metaValue": "-1044.53 -1067.05 1388.45 1770.5"
+            }
+          ],
+          "ports": [
+            {
+              "portName": "first_object",
+              "portDirection": "input",
+              "portType": "Object"
+            },
+            {
+              "portName": "output",
+              "portDirection": "input",
+              "portType": "float"
+            },
+            {
+              "portName": "surface_radius",
+              "portDirection": "input",
+              "portType": "float",
+              "portDefault": "2.5f"
+            },
+            {
+              "portName": "surface_resolution",
+              "portDirection": "input",
+              "portType": "float",
+              "portDefault": "1f"
+            },
+            {
+              "portName": "meshes",
+              "portDirection": "output",
+              "portType": "array<Object>"
+            }
+          ],
+          "compoundNodes": [
+            {
+              "nodeName": "divide1",
+              "nodeType": "Core::Math::divide",
+              "multiInPortNames": [
+                "output1",
+                "output2"
+              ],
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "198.585 293.992"
+                }
+              ]
+            },
+            {
+              "nodeName": "points_to_volume1",
+              "nodeType": "Geometry::Converters::points_to_volume",
+              "fanInPortNames": {
+                "base_resolution": [],
+                "half_resolution": [],
+                "quarter_resolution": [],
+                "eighth_resolution": []
+              },
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "PortExpandedState",
+                  "metadata": [
+                    {
+                      "metaName": "eighth_resolution",
+                      "metaType": "string",
+                      "metaValue": "0"
+                    },
+                    {
+                      "metaName": "quarter_resolution",
+                      "metaType": "string",
+                      "metaValue": "0"
+                    },
+                    {
+                      "metaName": "half_resolution",
+                      "metaType": "string",
+                      "metaValue": "0"
+                    },
+                    {
+                      "metaName": "base_resolution",
+                      "metaType": "string",
+                      "metaValue": "0"
+                    },
+                    {
+                      "metaName": "Resolution",
+                      "metaType": "string",
+                      "metaValue": "0"
+                    }
+                  ]
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "541.005 -469.893"
+                }
+              ]
+            },
+            {
+              "nodeName": "set_geo_property1",
+              "nodeType": "Geometry::Properties::set_geo_property",
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "208.685 -454.193"
+                }
+              ]
+            },
+            {
+              "nodeName": "smooth_voxel_property",
+              "nodeType": "Geometry::Volume::smooth_voxel_property",
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "842.355 -447.993"
+                }
+              ]
+            },
+            {
+              "nodeName": "value2",
+              "valueType": "float",
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "-157.645 404.345"
+                }
+              ]
+            },
+            {
+              "nodeName": "volume_to_mesh",
+              "nodeType": "Geometry::Converters::volume_to_mesh",
+              "fanInPortNames": {
+                "volumes": [
+                  "out_volume"
+                ]
+              },
+              "terminalStates": [
+                {
+                  "name": "Core::Graph::terminal::final",
+                  "enabled": "false"
+                },
+                {
+                  "name": "Core::Graph::terminal::proxy",
+                  "enabled": "false"
+                },
+                {
+                  "name": "Core::Graph::terminal::diagnostic",
+                  "enabled": "true"
+                }
+              ],
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "PortExpandedState",
+                  "metadata": [
+                    {
+                      "metaName": "volumes",
+                      "metaType": "string",
+                      "metaValue": "1"
+                    }
+                  ]
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "1368.87 -469.443"
+                }
+              ]
+            },
+            {
+              "nodeName": "multiply",
+              "nodeType": "Core::Math::multiply",
+              "multiInPortNames": [
+                "output1",
+                "output2"
+              ],
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "-99.2822 -85.78"
+                }
+              ]
+            },
+            {
+              "nodeName": "multiply_resolution",
+              "nodeType": "Core::Math::multiply",
+              "multiInPortNames": [
+                "output1",
+                "output2"
+              ],
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                }
+              ]
+            }
+          ],
+          "connections": [
+            {
+              "source": ".output",
+              "target": "divide1.first.output1"
+            },
+            {
+              "source": "divide1.output",
+              "target": "points_to_volume1.detail_size"
+            },
+            {
+              "source": "set_geo_property1.out_geometry",
+              "target": "points_to_volume1.points"
+            },
+            {
+              "source": "points_to_volume1.volume",
+              "target": "smooth_voxel_property.volume"
+            },
+            {
+              "source": "volume_to_mesh.meshes",
+              "target": ".meshes"
+            },
+            {
+              "source": ".output",
+              "target": "multiply.first.output1"
+            },
+            {
+              "source": ".surface_radius",
+              "target": "multiply.first.output2"
+            },
+            {
+              "source": "multiply.output",
+              "target": "set_geo_property1.data"
+            },
+            {
+              "source": ".first_object",
+              "target": "set_geo_property1.geometry"
+            },
+            {
+              "source": "smooth_voxel_property.out_volume",
+              "target": "volume_to_mesh.volumes.out_volume"
+            },
+            {
+              "source": "value2.output",
+              "target": "multiply_resolution.first.output1"
+            },
+            {
+              "source": ".surface_resolution",
+              "target": "multiply_resolution.first.output2"
+            },
+            {
+              "source": "multiply_resolution.output",
+              "target": "divide1.first.output2"
+            }
+          ],
+          "values": [
+            {
+              "valueName": "points_to_volume1.offset",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "points_to_volume1.store_level_set",
+              "valueType": "bool",
+              "value": "true"
+            },
+            {
+              "valueName": "points_to_volume1.store_fog_density",
+              "valueType": "bool",
+              "value": "false"
+            },
+            {
+              "valueName": "points_to_volume1.fog_density",
+              "valueType": "float",
+              "value": "1f"
+            },
+            {
+              "valueName": "points_to_volume1.properties",
+              "valueType": "string",
+              "value": "point_velocity"
+            },
+            {
+              "valueName": "points_to_volume1.resolution_mode",
+              "valueType": "Geometry::Volume::ResolutionType",
+              "value": "Absolute"
+            },
+            {
+              "valueName": "points_to_volume1.detail_size",
+              "valueType": "float",
+              "value": "0.0199999996f"
+            },
+            {
+              "valueName": "points_to_volume1.adaptivity",
+              "valueType": "Geometry::Volume::Adaptivity",
+              "value": "Off"
+            },
+            {
+              "valueName": "points_to_volume1.adaptivity_property",
+              "valueType": "string",
+              "value": ""
+            },
+            {
+              "valueName": "points_to_volume1.enable_resolution_bounds",
+              "valueType": "bool",
+              "value": "false"
+            },
+            {
+              "valueName": "points_to_volume1.enable_bandwidth",
+              "valueType": "bool",
+              "value": "false"
+            },
+            {
+              "valueName": "points_to_volume1.bandwidth",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "points_to_volume1.volume_subdivision_structure",
+              "valueType": "Geometry::Volume::AutoSubdivisionStructure",
+              "value": "Automatic"
+            },
+            {
+              "valueName": "points_to_volume1.base_resolution",
+              "valueType": "array<Object>",
+              "value": []
+            },
+            {
+              "valueName": "points_to_volume1.half_resolution",
+              "valueType": "array<Object>",
+              "value": []
+            },
+            {
+              "valueName": "points_to_volume1.quarter_resolution",
+              "valueType": "array<Object>",
+              "value": []
+            },
+            {
+              "valueName": "points_to_volume1.eighth_resolution",
+              "valueType": "array<Object>",
+              "value": []
+            },
+            {
+              "valueName": "set_geo_property1.property",
+              "valueType": "string",
+              "value": "point_size"
+            },
+            {
+              "valueName": "set_geo_property1.target",
+              "valueType": "string",
+              "value": "point_component"
+            },
+            {
+              "valueName": "smooth_voxel_property.property",
+              "valueType": "string",
+              "value": "voxel_signed_distance"
+            },
+            {
+              "valueName": "smooth_voxel_property.voxel_standard_deviation",
+              "valueType": "float",
+              "value": "2f"
+            },
+            {
+              "valueName": "smooth_voxel_property.voxel_filter_width",
+              "valueType": "int",
+              "value": "5L"
+            },
+            {
+              "valueName": "value2.value",
+              "valueType": "float",
+              "value": "1.60000002f"
+            },
+            {
+              "valueName": "volume_to_mesh.level_set_threshold",
+              "valueType": "float",
+              "value": "0.00499999989f"
+            },
+            {
+              "valueName": "volume_to_mesh.properties",
+              "valueType": "string",
+              "value": "*"
+            },
+            {
+              "valueName": "volume_to_mesh.mesh_mode",
+              "valueType": "Geometry::Converters::MeshMode",
+              "value": "Automatic"
+            },
+            {
+              "valueName": "volume_to_mesh.custom_mesh_property",
+              "valueType": "string",
+              "value": ""
+            },
+            {
+              "valueName": "volume_to_mesh.property_threshold",
+              "valueType": "float",
+              "value": "0.00999999978f"
+            },
+            {
+              "valueName": "volume_to_mesh.custom_interior_mode",
+              "valueType": "Geometry::Converters::Interior",
+              "value": "Greater"
+            },
+            {
+              "valueName": "volume_to_mesh.detail_size_scale",
+              "valueType": "float",
+              "value": "1f"
+            },
+            {
+              "valueName": "volume_to_mesh.adaptivity",
+              "valueType": "Geometry::Common::Adaptivity",
+              "value": "Off"
+            },
+            {
+              "valueName": "volume_to_mesh.adaptivity_property",
+              "valueType": "string",
+              "value": "voxel_detail_size"
+            },
+            {
+              "valueName": "volume_to_mesh.smoothing",
+              "valueType": "float",
+              "value": "0f"
+            }
+          ],
+          "reservedNodeNames": [
+            {
+              "name": "input"
+            },
+            {
+              "name": "output"
+            }
+          ],
+          "libraryDependencies": {
+            "Amino": "2.15.0.9",
+            "bif": "2.15.0.9",
+            "fields": "2.15.0.9",
+            "geometries": "2.15.0.9"
+          },
+          "compounds": []
+        },
+        {
+          "name": "green_goo_material",
+          "metadata": [
+            {
+              "metaName": "io_nodes",
+              "metadata": [
+                {
+                  "metaName": "io_inodes",
+                  "metadata": [
+                    {
+                      "metaName": "input",
+                      "metadata": [
+                        {
+                          "metaName": "io_ports",
+                          "metadata": [
+                            {
+                              "metaName": "first"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "metaName": "io_onodes",
+                  "metadata": [
+                    {
+                      "metaName": "output",
+                      "metadata": [
+                        {
+                          "metaName": "io_ports",
+                          "metadata": [
+                            {
+                              "metaName": "out_mesh"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "ports": [
+            {
+              "portName": "first",
+              "portDirection": "input"
+            },
+            {
+              "portName": "out_mesh",
+              "portDirection": "output",
+              "portType": "Object"
+            }
+          ],
+          "compoundNodes": [
+            {
+              "nodeName": "assign_material2",
+              "nodeType": "Rendering::Materials::assign_material",
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "6574.48 2275.44"
+                }
+              ]
+            },
+            {
+              "nodeName": "set_Arnold_mesh_settings",
+              "nodeType": "Rendering::Arnold::set_Arnold_mesh_settings",
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "6945.97 2307.74"
+                }
+              ]
+            },
+            {
+              "nodeName": "standard_surface_ice_cream",
+              "nodeType": "Rendering::Materials::standard_surface_mat",
+              "metadata": [
+                {
+                  "metaName": "DisplayMode",
+                  "metaType": "string",
+                  "metaValue": "2"
+                },
+                {
+                  "metaName": "LayoutPos",
+                  "metaType": "string",
+                  "metaValue": "5740.85 2614.1"
+                },
+                {
+                  "metaName": "PortExpandedState",
+                  "metadata": [
+                    {
+                      "metaName": "Subsurface",
+                      "metaType": "string",
+                      "metaValue": "1"
+                    },
+                    {
+                      "metaName": "Emission",
+                      "metaType": "string",
+                      "metaValue": "0"
+                    },
+                    {
+                      "metaName": "Sheen",
+                      "metaType": "string",
+                      "metaValue": "0"
+                    },
+                    {
+                      "metaName": "Coat",
+                      "metaType": "string",
+                      "metaValue": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "connections": [
+            {
+              "source": ".first",
+              "target": "assign_material2.geometry"
+            },
+            {
+              "source": "assign_material2.out_geometry",
+              "target": "set_Arnold_mesh_settings.mesh"
+            },
+            {
+              "source": "set_Arnold_mesh_settings.out_mesh",
+              "target": ".out_mesh"
+            },
+            {
+              "source": "standard_surface_ice_cream.standard_surface",
+              "target": "assign_material2.surface_material"
+            }
+          ],
+          "values": [
+            {
+              "valueName": "assign_material2.geometry",
+              "valueType": "Object",
+              "value": {}
+            },
+            {
+              "valueName": "assign_material2.set_surface",
+              "valueType": "bool",
+              "value": "true"
+            },
+            {
+              "valueName": "assign_material2.set_displacement",
+              "valueType": "bool",
+              "value": "true"
+            },
+            {
+              "valueName": "assign_material2.set_volume",
+              "valueType": "bool",
+              "value": "true"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.subdiv_type",
+              "valueType": "Rendering::Arnold::SubdivType",
+              "value": "Catmull-Clark"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.subdiv_iterations",
+              "valueType": "int",
+              "value": "1L"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.subdiv_adaptive_error",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.subdiv_adaptive_metric",
+              "valueType": "Rendering::Arnold::SubdivAdaptiveMetric",
+              "value": "Auto"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.subdiv_adaptive_space",
+              "valueType": "Rendering::Arnold::SubdivAdaptiveSpace",
+              "value": "Raster"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.subdiv_frustum_ignore",
+              "valueType": "bool",
+              "value": "false"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.subdiv_uv_smoothing",
+              "valueType": "Rendering::Arnold::SubdivUVSmoothing",
+              "value": "Pin Corners"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.subdiv_smooth_derivs",
+              "valueType": "bool",
+              "value": "false"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.disp_padding",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.disp_height",
+              "valueType": "float",
+              "value": "1f"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.disp_zero_value",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.disp_autobump",
+              "valueType": "bool",
+              "value": "false"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.autobump_visibility_by_ray_type",
+              "valueType": "uchar",
+              "value": "255"
+            },
+            {
+              "valueName": "set_Arnold_mesh_settings.smoothing",
+              "valueType": "bool",
+              "value": "true"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.name",
+              "valueType": "string",
+              "value": ""
+            },
+            {
+              "valueName": "standard_surface_ice_cream.base",
+              "valueType": "float",
+              "value": "1f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.base_color",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "0.03f",
+                "y": "0.35f",
+                "z": "0.05f"
+              }
+            },
+            {
+              "valueName": "standard_surface_ice_cream.diffuse_roughness",
+              "valueType": "float",
+              "value": "0.18f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.metalness",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.specular",
+              "valueType": "float",
+              "value": "1f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.specular_color",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "1f",
+                "y": "1f",
+                "z": "1f"
+              }
+            },
+            {
+              "valueName": "standard_surface_ice_cream.specular_roughness",
+              "valueType": "float",
+              "value": "0.22f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.specular_IOR",
+              "valueType": "float",
+              "value": "1.38f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.specular_anisotropy",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.specular_rotation",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.transmission",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.transmission_color",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "1f",
+                "y": "1f",
+                "z": "1f"
+              }
+            },
+            {
+              "valueName": "standard_surface_ice_cream.transmission_depth",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.transmission_scatter",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "0f",
+                "y": "0f",
+                "z": "0f"
+              }
+            },
+            {
+              "valueName": "standard_surface_ice_cream.transmission_scatter_anisotropy",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.transmission_dispersion",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.transmission_extra_roughness",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.transmit_aovs",
+              "valueType": "bool",
+              "value": "false"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.subsurface",
+              "valueType": "float",
+              "value": "0.55f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.subsurface_color",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "0.02f",
+                "y": "0.22f",
+                "z": "0.03f"
+              }
+            },
+            {
+              "valueName": "standard_surface_ice_cream.subsurface_radius",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "0.25f",
+                "y": "0.75f",
+                "z": "0.22f"
+              }
+            },
+            {
+              "valueName": "standard_surface_ice_cream.subsurface_scale",
+              "valueType": "float",
+              "value": "0.12f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.subsurface_type",
+              "valueType": "char",
+              "value": "2"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.subsurface_anisotropy",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.coat",
+              "valueType": "float",
+              "value": "0.3f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.coat_color",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "1f",
+                "y": "1f",
+                "z": "1f"
+              }
+            },
+            {
+              "valueName": "standard_surface_ice_cream.coat_roughness",
+              "valueType": "float",
+              "value": "0.12f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.coat_IOR",
+              "valueType": "float",
+              "value": "1.29999995f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.coat_anisotropy",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.coat_rotation",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.sheen",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.sheen_color",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "0f",
+                "y": "0f",
+                "z": "0f"
+              }
+            },
+            {
+              "valueName": "standard_surface_ice_cream.sheen_roughness",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.emission",
+              "valueType": "float",
+              "value": "0f"
+            },
+            {
+              "valueName": "standard_surface_ice_cream.emission_color",
+              "valueType": "Math::float3",
+              "value": {
+                "x": "0f",
+                "y": "0f",
+                "z": "0f"
+              }
+            }
+          ],
+          "reservedNodeNames": [
+            {
+              "name": "input"
+            },
+            {
+              "name": "output"
+            }
+          ],
+          "libraryDependencies": {
+            "Amino": "2.15.0.9",
+            "bif": "2.15.0.9"
+          },
+          "compounds": []
+        }
+      ],
+      "compoundNodes": [
+        {
+          "nodeName": "source_mpm_gel",
+          "nodeType": "Simulation::MPM::source_mpm_gel",
+          "fanInPortNames": {
+            "geometry": [
+              "out_geometry"
+            ],
+            "additional_properties": [
+              "out_object"
+            ]
+          },
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            },
+            {
+              "metaName": "PortExpandedState",
+              "metadata": [
+                {
+                  "metaName": "General",
+                  "metaType": "string",
+                  "metaValue": "0"
+                },
+                {
+                  "metaName": "geometry",
+                  "metaType": "string",
+                  "metaValue": "1"
+                },
+                {
+                  "metaName": "additional_properties",
+                  "metaType": "string",
+                  "metaValue": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeName": "source_color_property",
+          "nodeType": "Simulation::Common::source_color_property",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "simulate_mpm",
+          "nodeType": "Simulation::MPM::simulate_mpm",
+          "fanInPortNames": {
+            "sources": [
+              "gel_source"
+            ],
+            "colliders": [],
+            "influences": [
+              "out_influence"
+            ]
+          },
+          "terminalStates": [
+            {
+              "name": "Core::Graph::terminal::final",
+              "enabled": "false"
+            },
+            {
+              "name": "Core::Graph::terminal::proxy",
+              "enabled": "false"
+            },
+            {
+              "name": "Core::Graph::terminal::diagnostic",
+              "enabled": "false"
+            }
+          ],
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            },
+            {
+              "metaName": "PortExpandedState",
+              "metadata": [
+                {
+                  "metaName": "sources",
+                  "metaType": "string",
+                  "metaValue": "1"
+                },
+                {
+                  "metaName": "influences",
+                  "metaType": "string",
+                  "metaValue": "1"
+                },
+                {
+                  "metaName": "colliders",
+                  "metaType": "string",
+                  "metaValue": "1"
+                },
+                {
+                  "metaName": "materials",
+                  "metaType": "string",
+                  "metaValue": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeName": "mpm_solver_settings",
+          "nodeType": "Simulation::MPM::mpm_solver_settings",
+          "fanInPortNames": {
+            "additional_settings": []
+          },
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            },
+            {
+              "metaName": "PortExpandedState",
+              "metadata": [
+                {
+                  "metaName": "General",
+                  "metaType": "string",
+                  "metaValue": "0"
+                },
+                {
+                  "metaName": "MPM Solver Globals",
+                  "metaType": "string",
+                  "metaValue": "1"
+                },
+                {
+                  "metaName": "MPM Solver Globals.Resolution",
+                  "metaType": "string",
+                  "metaValue": "1"
+                },
+                {
+                  "metaName": "MPM Solver Globals.Accuracy",
+                  "metaType": "string",
+                  "metaValue": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeName": "ground_plane_influence",
+          "nodeType": "Simulation::Influence::ground_plane_influence",
+          "terminalStates": [
+            {
+              "name": "Core::Graph::terminal::final",
+              "enabled": "false"
+            },
+            {
+              "name": "Core::Graph::terminal::proxy",
+              "enabled": "false"
+            },
+            {
+              "name": "Core::Graph::terminal::diagnostic",
+              "enabled": "false"
+            }
+          ],
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            },
+            {
+              "metaName": "PortExpandedState",
+              "metadata": [
+                {
+                  "metaName": "Ground Plane Properties",
+                  "metaType": "string",
+                  "metaValue": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeName": "first_sim_particle_object",
+          "nodeType": "Core::Array::first_in_array",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "first_mesh",
+          "nodeType": "Core::Array::first_in_array",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "liquidity_to_field",
+          "nodeType": "Core::Fields::to_field",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "yield_curve",
+          "nodeType": "Core::Fields::fcurve_field",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "viscosity_curve",
+          "nodeType": "Core::Fields::fcurve_field",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "volume_curve",
+          "nodeType": "Core::Fields::fcurve_field",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "vibration_curve",
+          "nodeType": "Core::Fields::fcurve_field",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "mesh_mpm_particles",
+          "nodeType": "mesh_mpm_particles",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        },
+        {
+          "nodeName": "green_goo_material",
+          "nodeType": "green_goo_material",
+          "metadata": [
+            {
+              "metaName": "DisplayMode",
+              "metaType": "string",
+              "metaValue": "2"
+            }
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "source": ".geometry",
+          "target": "source_mpm_gel.geometry.out_geometry"
+        },
+        {
+          "source": ".start_frame",
+          "target": "source_mpm_gel.start_frame"
+        },
+        {
+          "source": ".start_frame",
+          "target": "source_mpm_gel.end_frame"
+        },
+        {
+          "source": ".start_frame",
+          "target": "mpm_solver_settings.master_start_frame"
+        },
+        {
+          "source": "source_color_property.out_object",
+          "target": "source_mpm_gel.additional_properties.out_object"
+        },
+        {
+          "source": "source_mpm_gel.gel_source",
+          "target": "simulate_mpm.sources.gel_source"
+        },
+        {
+          "source": "mpm_solver_settings.solver_settings",
+          "target": "simulate_mpm.settings"
+        },
+        {
+          "source": "ground_plane_influence.out_influence",
+          "target": "simulate_mpm.influences.out_influence"
+        },
+        {
+          "source": ".particles_per_voxel",
+          "target": "source_mpm_gel.particles_per_voxel"
+        },
+        {
+          "source": ".detail_size",
+          "target": "mpm_solver_settings.detail_size"
+        },
+        {
+          "source": ".scene_units_in_meters",
+          "target": "mpm_solver_settings.scene_units_in_meters"
+        },
+        {
+          "source": ".liquidity",
+          "target": "liquidity_to_field.value"
+        },
+        {
+          "source": "liquidity_to_field.out_field",
+          "target": "yield_curve.field"
+        },
+        {
+          "source": "liquidity_to_field.out_field",
+          "target": "viscosity_curve.field"
+        },
+        {
+          "source": "liquidity_to_field.out_field",
+          "target": "volume_curve.field"
+        },
+        {
+          "source": "liquidity_to_field.out_field",
+          "target": "vibration_curve.field"
+        },
+        {
+          "source": "yield_curve.out_field",
+          "target": "source_mpm_gel.yield_stress"
+        },
+        {
+          "source": "viscosity_curve.out_field",
+          "target": "source_mpm_gel.viscosity"
+        },
+        {
+          "source": "volume_curve.out_field",
+          "target": "source_mpm_gel.volume_preservation"
+        },
+        {
+          "source": "vibration_curve.out_field",
+          "target": "source_mpm_gel.vibration_speed"
+        },
+        {
+          "source": "simulate_mpm.granular_particles",
+          "target": "first_sim_particle_object.array"
+        },
+        {
+          "source": "first_sim_particle_object.first",
+          "target": "mesh_mpm_particles.first_object"
+        },
+        {
+          "source": ".detail_size",
+          "target": "mesh_mpm_particles.output"
+        },
+        {
+          "source": ".surface_radius",
+          "target": "mesh_mpm_particles.surface_radius"
+        },
+        {
+          "source": ".surface_resolution",
+          "target": "mesh_mpm_particles.surface_resolution"
+        },
+        {
+          "source": "mesh_mpm_particles.meshes",
+          "target": "first_mesh.array"
+        },
+        {
+          "source": "first_mesh.first",
+          "target": "green_goo_material.first"
+        },
+        {
+          "source": "first_sim_particle_object.first",
+          "target": ".sim_particles"
+        },
+        {
+          "source": "first_mesh.first",
+          "target": ".raw_mesh"
+        },
+        {
+          "source": "first_mesh.first",
+          "target": ".goo_mesh"
+        },
+        {
+          "source": "green_goo_material.out_mesh",
+          "target": ".shaded_goo_mesh"
+        }
+      ],
+      "values": [
+        {
+          "valueName": "source_mpm_gel.enable",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "source_mpm_gel.use_end_frame",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "source_mpm_gel.particle_display_scale",
+          "valueType": "float",
+          "value": "1f"
+        },
+        {
+          "valueName": "source_mpm_gel.passthrough_points",
+          "valueType": "bool",
+          "value": "false"
+        },
+        {
+          "valueName": "source_mpm_gel.passthrough_properties",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "valueName": "source_mpm_gel.distribution_mode",
+          "valueType": "Simulation::Distribution_Type",
+          "value": "Volume"
+        },
+        {
+          "valueName": "source_mpm_gel.use_solver_detail_size",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "source_mpm_gel.resolution_mode",
+          "valueType": "Geometry::Volume::ResolutionType",
+          "value": "Relative"
+        },
+        {
+          "valueName": "source_mpm_gel.geo_detail_size",
+          "valueType": "float",
+          "value": "0.05f"
+        },
+        {
+          "valueName": "source_mpm_gel.geo_volume_mode",
+          "valueType": "Geometry::Volume::Mode",
+          "value": "Solid"
+        },
+        {
+          "valueName": "source_mpm_gel.geo_volume_offset",
+          "valueType": "float",
+          "value": "0f"
+        },
+        {
+          "valueName": "source_mpm_gel.optimal_adaptivity",
+          "valueType": "bool",
+          "value": "false"
+        },
+        {
+          "valueName": "source_mpm_gel.display_diagnostic",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "source_mpm_gel.mass_density",
+          "valueType": "float",
+          "value": "1000f"
+        },
+        {
+          "valueName": "source_mpm_gel.initial_speed",
+          "valueType": "float",
+          "value": "0f"
+        },
+        {
+          "valueName": "source_mpm_gel.direction",
+          "valueType": "Math::float3",
+          "value": {
+            "x": "0f",
+            "y": "0f",
+            "z": "0f"
+          }
+        },
+        {
+          "valueName": "source_mpm_gel.inherit_velocity",
+          "valueType": "float",
+          "value": "1f"
+        },
+        {
+          "valueName": "source_mpm_gel.active",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "source_color_property.property",
+          "valueType": "string",
+          "value": "color"
+        },
+        {
+          "valueName": "source_color_property.base_color",
+          "valueType": "Math::float3",
+          "value": {
+            "x": "0.035f",
+            "y": "0.42f",
+            "z": "0.055f"
+          }
+        },
+        {
+          "valueName": "mpm_solver_settings.enable_solver",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "mpm_solver_settings.use_master_start_frame",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "mpm_solver_settings.master_start_frame",
+          "valueType": "float",
+          "value": "1f"
+        },
+        {
+          "valueName": "mpm_solver_settings.label_point_id",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "mpm_solver_settings.label_sources",
+          "valueType": "bool",
+          "value": "false"
+        },
+        {
+          "valueName": "mpm_solver_settings.detect_discontinuity",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "mpm_solver_settings.link_collider_detail",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "mpm_solver_settings.use_mesh_resolution",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "mpm_solver_settings.detail_size_scale",
+          "valueType": "float",
+          "value": "1f"
+        },
+        {
+          "valueName": "mpm_solver_settings.enable_gravity",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "mpm_solver_settings.gravity",
+          "valueType": "Math::float3",
+          "value": {
+            "x": "0f",
+            "y": "-9.8f",
+            "z": "0f"
+          }
+        },
+        {
+          "valueName": "mpm_solver_settings.simulation_speed",
+          "valueType": "float",
+          "value": "1f"
+        },
+        {
+          "valueName": "mpm_solver_settings.style",
+          "valueType": "Simulation::MPM::Style",
+          "value": "automatic_from_sources"
+        },
+        {
+          "valueName": "mpm_solver_settings.time_step_size",
+          "valueType": "float",
+          "value": "0.4f"
+        },
+        {
+          "valueName": "mpm_solver_settings.min_steps",
+          "valueType": "int",
+          "value": "1L"
+        },
+        {
+          "valueName": "mpm_solver_settings.max_steps",
+          "valueType": "int",
+          "value": "1000L"
+        },
+        {
+          "valueName": "mpm_solver_settings.shape",
+          "valueType": "Geometry::PointShapes",
+          "value": "Sphere"
+        },
+        {
+          "valueName": "mpm_solver_settings.face_camera",
+          "valueType": "bool",
+          "value": "false"
+        },
+        {
+          "valueName": "mpm_solver_settings.numeric_property",
+          "valueType": "string",
+          "value": "point_position"
+        },
+        {
+          "valueName": "mpm_solver_settings.max_voxel_movement",
+          "valueType": "float",
+          "value": "1f"
+        },
+        {
+          "valueName": "mpm_solver_settings.max_retries",
+          "valueType": "int",
+          "value": "2L"
+        },
+        {
+          "valueName": "mpm_solver_settings.lag_colliders",
+          "valueType": "bool",
+          "value": "false"
+        },
+        {
+          "valueName": "mpm_solver_settings.display_volume",
+          "valueType": "bool",
+          "value": "false"
+        },
+        {
+          "valueName": "mpm_solver_settings.diagnostic_point_shape",
+          "valueType": "Geometry::PointShapes",
+          "value": "Sphere"
+        },
+        {
+          "valueName": "mpm_solver_settings.draw_fraction",
+          "valueType": "float",
+          "value": "1f"
+        },
+        {
+          "valueName": "mpm_solver_settings.seed",
+          "valueType": "uint",
+          "value": "0U"
+        },
+        {
+          "valueName": "mpm_solver_settings.coloring_mode",
+          "valueType": "Diagnostic::ColoringMode",
+          "value": "ColoredPropertyMagnitude"
+        },
+        {
+          "valueName": "mpm_solver_settings.sample_property",
+          "valueType": "string",
+          "value": "point_velocity"
+        },
+        {
+          "valueName": "mpm_solver_settings.arrow_scale",
+          "valueType": "float",
+          "value": "1f"
+        },
+        {
+          "valueName": "ground_plane_influence.enabled",
+          "valueType": "bool",
+          "value": "true"
+        },
+        {
+          "valueName": "ground_plane_influence.position",
+          "valueType": "Math::float3",
+          "value": {
+            "x": "0f",
+            "y": "0f",
+            "z": "0f"
+          }
+        },
+        {
+          "valueName": "ground_plane_influence.normal",
+          "valueType": "Math::float3",
+          "value": {
+            "x": "0f",
+            "y": "1f",
+            "z": "0f"
+          }
+        },
+        {
+          "valueName": "ground_plane_influence.bounciness",
+          "valueType": "float",
+          "value": "0f"
+        },
+        {
+          "valueName": "ground_plane_influence.friction",
+          "valueType": "float",
+          "value": "0.75f"
+        },
+        {
+          "valueName": "ground_plane_influence.pushout",
+          "valueType": "float",
+          "value": "0f"
+        },
+        {
+          "valueName": "ground_plane_influence.offset",
+          "valueType": "float",
+          "value": "0f"
+        },
+        {
+          "valueName": "yield_curve.fcurve",
+          "valueType": "Math::FCurve",
+          "value": {
+            "version": "2",
+            "preExtrapolation": "0",
+            "postExtrapolation": "0",
+            "points": [
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "-0.0833333333",
+                    "yp": "5000",
+                    "x": "0",
+                    "y": "5000",
+                    "xn": "0.0833333333",
+                    "yn": "5000"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.22",
+                    "yp": "700",
+                    "x": "0.33",
+                    "y": "700",
+                    "xn": "0.44",
+                    "yn": "700"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.55",
+                    "yp": "25",
+                    "x": "0.66",
+                    "y": "25",
+                    "xn": "0.77",
+                    "yn": "25"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.916666667",
+                    "yp": "0.1",
+                    "x": "1",
+                    "y": "0.1",
+                    "xn": "1.08333333",
+                    "yn": "0.1"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "valueName": "viscosity_curve.fcurve",
+          "valueType": "Math::FCurve",
+          "value": {
+            "version": "2",
+            "preExtrapolation": "0",
+            "postExtrapolation": "0",
+            "points": [
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "-0.0833333333",
+                    "yp": "0.1",
+                    "x": "0",
+                    "y": "0.1",
+                    "xn": "0.0833333333",
+                    "yn": "0.1"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.22",
+                    "yp": "8",
+                    "x": "0.33",
+                    "y": "8",
+                    "xn": "0.44",
+                    "yn": "8"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.55",
+                    "yp": "1200",
+                    "x": "0.66",
+                    "y": "1200",
+                    "xn": "0.77",
+                    "yn": "1200"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.916666667",
+                    "yp": "1",
+                    "x": "1",
+                    "y": "1",
+                    "xn": "1.08333333",
+                    "yn": "1"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "valueName": "volume_curve.fcurve",
+          "valueType": "Math::FCurve",
+          "value": {
+            "version": "2",
+            "preExtrapolation": "0",
+            "postExtrapolation": "0",
+            "points": [
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "-0.0833333333",
+                    "yp": "0.2",
+                    "x": "0",
+                    "y": "0.2",
+                    "xn": "0.0833333333",
+                    "yn": "0.2"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.22",
+                    "yp": "0.55",
+                    "x": "0.33",
+                    "y": "0.55",
+                    "xn": "0.44",
+                    "yn": "0.55"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.55",
+                    "yp": "0.85",
+                    "x": "0.66",
+                    "y": "0.85",
+                    "xn": "0.77",
+                    "yn": "0.85"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.916666667",
+                    "yp": "1",
+                    "x": "1",
+                    "y": "1",
+                    "xn": "1.08333333",
+                    "yn": "1"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "valueName": "vibration_curve.fcurve",
+          "valueType": "Math::FCurve",
+          "value": {
+            "version": "2",
+            "preExtrapolation": "0",
+            "postExtrapolation": "0",
+            "points": [
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "-0.0833333333",
+                    "yp": "120",
+                    "x": "0",
+                    "y": "120",
+                    "xn": "0.0833333333",
+                    "yn": "120"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.22",
+                    "yp": "75",
+                    "x": "0.33",
+                    "y": "75",
+                    "xn": "0.44",
+                    "yn": "75"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.55",
+                    "yp": "30",
+                    "x": "0.66",
+                    "y": "30",
+                    "xn": "0.77",
+                    "yn": "30"
+                  }
+                }
+              },
+              {
+                "point": {
+                  "locked": "1",
+                  "interpolation": "1",
+                  "curveInterpolation": "0",
+                  "pcn": {
+                    "xp": "0.916666667",
+                    "yp": "12",
+                    "x": "1",
+                    "y": "12",
+                    "xn": "1.08333333",
+                    "yn": "12"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "reservedNodeNames": [
+        {
+          "name": "output"
+        }
+      ],
+      "libraryDependencies": {
+        "Amino": "2.15.0.9",
+        "bif": "2.15.0.9",
+        "fields": "2.15.0.9",
+        "file": "2.15.0.9",
+        "geometries": "2.15.0.9",
+        "mpm": "2.15.0.9",
+        "scatter": "2.15.0.9",
+        "simulation": "2.15.0.9"
+      }
+    }
+  ]
+}

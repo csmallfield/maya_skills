@@ -1,0 +1,81 @@
+{
+"bifrost_root": "C:/Program Files/Autodesk/Bifrost/Maya2026/3.0.0.0/bifrost",
+"bifrost_version": "3.0.0.0",
+"builtins": 30,
+"compounds": 1227,
+"nodes": 2020,
+"operator_overloads": 9631,
+"public_nodes": 1227,
+"renames": 127,
+"sources": [
+{
+"file": "resources/amino/jsonLibs/amino_all.json",
+"sha256": "423a9be40ae8ea7f447b2f84902898e0b0baa7ae68fc235a1fe2decc41631af0"
+},
+{
+"file": "resources/bif/jsonLibs/bif_all.json",
+"sha256": "0c82485b77ef8333581d111ef29bd47fcaa24f2bd881fdaccdc8a6aea60eddbc"
+},
+{
+"file": "resources/fields/jsonLibs/riv_all.json",
+"sha256": "83abebf8db20483016006c3b75a6ed76e3690828c1e10917e25756515e80b145"
+},
+{
+"file": "resources/file/jsonLibs/fileio_all.json",
+"sha256": "4b3bc68fdcaa0cda5c85cee848ce818c16f654ea860bd78d1fd6e1942badb857"
+},
+{
+"file": "resources/fluids/jsonLibs/fluids_all.json",
+"sha256": "3e94f96210ff720ded8571edc3409afd76c4a94436fad02080d121a183d2492d"
+},
+{
+"file": "resources/geometries/jsonLibs/geometries_all.json",
+"sha256": "f704d27b9cf5293988043908b465839bd8b18955f7517a344cb3173bab42f104"
+},
+{
+"file": "resources/machine_learning/jsonLibs/machine_learning_all.json",
+"sha256": "86d0663a51eddbeb60efc41550350845e891cdbeb7c824e52fe4c23bd8fc763e"
+},
+{
+"file": "resources/mpm/jsonLibs/mpm_all.json",
+"sha256": "3b254d765f3e2ebd3fe683254006dcdf9c1025ecf09bf80b54a54ae64e0f3668"
+},
+{
+"file": "resources/nucleus/jsonLibs/nucleus_all.json",
+"sha256": "dc01105ece7712b2fb0ab10bd0983c5378d6d8945721e744e5064909b6780246"
+},
+{
+"file": "resources/ocean/jsonLibs/ocean_all.json",
+"sha256": "45c4c1b6ebc838bfa262b857f56431dd8a2e329edc8a85a5e50155bf6394246c"
+},
+{
+"file": "resources/particles/jsonLibs/particles_all.json",
+"sha256": "dfe3a76065f254e730722b543afd49600b9f14aa056f2406cf16a383786d25f5"
+},
+{
+"file": "resources/rigging/jsonLibs/rigging_all.json",
+"sha256": "e0db1295a7edc564a0ef08ec8df70e04e38cfe239d4e1d5b545c09f0f755aeec"
+},
+{
+"file": "resources/rigid_bodies/jsonLibs/rigid_bodies_all.json",
+"sha256": "c4d1884f322b8bc3fd0e81c263287ca7bea0d766c8ac779018ad4543bd375776"
+},
+{
+"file": "resources/scatter/jsonLibs/scatter_all.json",
+"sha256": "db01d288a46d5010e83f03b3771cd699718e3c599c11eadf35302d62a29f4a11"
+},
+{
+"file": "resources/simulation/jsonLibs/simulation_all.json",
+"sha256": "fe81a180ea9017587ac4cead3befe632909d79b7a4ef085e55a2b29ad00398b8"
+},
+{
+"file": "resources/wedging/jsonLibs/wedging_all.json",
+"sha256": "3b49cf14fda8f3a42ea4dc900f517012cd453be67fffc26206c17038c28b0737"
+},
+{
+"file": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"sha256": "54e4672941c9da66efd18411e6670cd5df6a3bcba30a47790fcccea91d2456da"
+}
+],
+"types": 372
+}

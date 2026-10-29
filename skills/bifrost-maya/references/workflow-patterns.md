@@ -1,0 +1,189 @@
+# Bifrost Workflow Patterns
+
+These frequencies are derived from Autodesk-shipped example graphs. Treat them as retrieval hints, not universal rules.
+
+## Most frequent node types
+
+- `Core::Math::multiply` — 597 occurrences
+- `Core::Graph::pass` — 552 occurrences
+- `Core::Logic::if` — 465 occurrences
+- `Core::Array::get_from_array` — 452 occurrences
+- `Core::Math::add` — 414 occurrences
+- `Value::Math::float3` — 333 occurrences
+- `Core::Math::subtract` — 269 occurrences
+- `Core::Conversion::vector3_to_scalar` — 219 occurrences
+- `Value::float` — 212 occurrences
+- `Core::Graph::terminal` — 188 occurrences
+- `Core::Math::divide` — 188 occurrences
+- `Core::Array::build_array` — 184 occurrences
+- `Rendering::Materials::assign_material` — 179 occurrences
+- `Core::Array::array_size` — 173 occurrences
+- `Core::Math::SRT_to_matrix` — 155 occurrences
+- `Geometry::Properties::get_point_position` — 143 occurrences
+- `Core::Type_Conversion::to_float` — 142 occurrences
+- `Rendering::Materials::standard_surface_mat` — 129 occurrences
+- `Geometry::Properties::set_geo_property` — 122 occurrences
+- `Modeling::Primitive::create_mesh_cube` — 113 occurrences
+- `Core::Math::half_of` — 109 occurrences
+- `Core::Math::increment` — 106 occurrences
+- `Core::Array::first_in_array` — 102 occurrences
+- `Core::Fields::scalar_field` — 102 occurrences
+- `Geometry::Properties::get_geo_property` — 100 occurrences
+- `Core::Array::sequence_array` — 91 occurrences
+- `Core::Logic::equal` — 90 occurrences
+- `Modeling::Points::transform_points` — 88 occurrences
+- `Core::Type_Conversion::to_unsigned_int` — 85 occurrences
+- `Core::Conversion::scalar_to_vector3` — 81 occurrences
+- `Core::Object::get_property` — 81 occurrences
+- `Core::Time::time` — 79 occurrences
+- `Diagnostic::Display::assign_diagnostic_material` — 78 occurrences
+- `Rendering::Materials::set_geo_property_reference` — 75 occurrences
+- `Core::Math::negate` — 73 occurrences
+- `Modeling::Primitive::create_mesh_sphere` — 69 occurrences
+- `Core::FCurve::evaluate_fcurve` — 69 occurrences
+- `Core::Array::array_bounds` — 69 occurrences
+- `Core::Array::set_in_array` — 68 occurrences
+- `Core::Fields::fractal_noise_field` — 66 occurrences
+- `Value::string` — 65 occurrences
+- `Core::Math::decrement` — 60 occurrences
+- `Core::Math::normalize` — 59 occurrences
+- `Core::Math::change_range` — 59 occurrences
+- `Core::Randomization::random_value` — 59 occurrences
+- `Core::Math::modulo` — 58 occurrences
+- `Simulation::Common::vary_source_property` — 56 occurrences
+- `Geometry::Points::get_bounding_box` — 55 occurrences
+- `Core::Logic::greater` — 53 occurrences
+- `Core::Logic::less` — 53 occurrences
+- `Core::Math::length` — 52 occurrences
+- `Value::long` — 51 occurrences
+- `for_each` — 47 occurrences
+- `Geometry::Points::construct_points` — 45 occurrences
+- `Modeling::Primitive::create_mesh_plane` — 44 occurrences
+- `Core::String::string_to_array` — 44 occurrences
+- `Value::Math::uint3` — 44 occurrences
+- `Simulation::Common::compute_on_frame` — 43 occurrences
+- `Geometry::Properties::set_point_position` — 43 occurrences
+- `Core::Array::resize_array` — 41 occurrences
+- `Core::Object::set_property` — 40 occurrences
+- `Core::Array::slice_array` — 40 occurrences
+- `Geometry::Strands::construct_strands` — 39 occurrences
+- `Modeling::Common::merge_geometry` — 38 occurrences
+- `Modeling::Points::displace_points` — 38 occurrences
+- `Core::Math::clamp` — 37 occurrences
+- `Core::Fields::fcurve_field` — 37 occurrences
+- `Value::array<Math::float3>` — 37 occurrences
+- `Core::Math::sin` — 37 occurrences
+- `Core::Array::sum_array` — 37 occurrences
+- `Modeling::Mesh::extrude_faces` — 35 occurrences
+- `Core::Math::matrix_multiply` — 35 occurrences
+- `Core::Math::axis_angle_to_quaternion` — 35 occurrences
+- `Core::Array::flatten_nested_array` — 35 occurrences
+- `Core::Randomization::random_value_array` — 35 occurrences
+- `Simulation::Common::collider` — 33 occurrences
+- `Modeling::Primitive::create_mesh_cylinder` — 33 occurrences
+- `Core::Array::last_in_array` — 33 occurrences
+- `Core::Math::dot` — 33 occurrences
+- `Core::Conversion::degrees_to_radians` — 33 occurrences
+
+## Most frequent node-to-node type connections
+
+- ` -> Core::Array::get_from_array` — 434 connections
+- ` -> Core::Logic::if` — 366 connections
+- ` -> Core::Math::multiply` — 311 connections
+- `Core::Logic::if -> ` — 228 connections
+- ` -> Core::Math::subtract` — 192 connections
+- ` -> Core::Array::build_array` — 179 connections
+- ` -> Core::Graph::pass` — 179 connections
+- `Core::Math::multiply -> Core::Math::add` — 160 connections
+- ` -> Core::Math::add` — 146 connections
+- `get_halves -> Value::Math::float3` — 144 connections
+- `Value::Math::uint3 -> Core::Array::build_array` — 132 connections
+- `Core::Graph::pass -> Core::Math::add` — 112 connections
+- `Core::Conversion::vector3_to_scalar -> Core::Array::build_array` — 108 connections
+- `Core::Graph::pass -> Core::Graph::pass` — 107 connections
+- `Value::float -> Core::Math::multiply` — 100 connections
+- `Core::Array::get_from_array -> ` — 100 connections
+- `Core::Math::add -> ` — 96 connections
+- `Core::Array::array_bounds -> Core::Math::change_range` — 95 connections
+- ` -> Geometry::Properties::get_point_position` — 92 connections
+- `Rendering::Materials::assign_material -> Core::Graph::terminal` — 92 connections
+- `Rendering::Materials::assign_material -> ` — 88 connections
+- ` -> Core::Math::SRT_to_matrix` — 87 connections
+- `Value::Math::float3 -> Core::Math::add` — 86 connections
+- ` -> Core::Math::change_range` — 86 connections
+- ` -> Core::Conversion::vector3_to_scalar` — 83 connections
+- ` -> Core::Math::divide` — 79 connections
+- `Rendering::Materials::standard_surface_mat -> Rendering::Materials::assign_material` — 78 connections
+- ` -> Geometry::Properties::get_geo_property` — 77 connections
+- `Value::Math::float3 -> Core::Array::build_array` — 75 connections
+- `Core::Conversion::vector3_to_scalar -> Core::Math::multiply` — 75 connections
+- `Core::Math::SRT_to_matrix -> Modeling::Points::transform_points` — 74 connections
+- ` -> Core::Array::array_size` — 74 connections
+- `Core::Array::build_array -> ` — 73 connections
+- `Core::Math::add -> Core::Conversion::vector3_to_scalar` — 73 connections
+- `Core::Math::multiply -> ` — 71 connections
+- `Core::Type_Conversion::to_float -> Core::Math::divide` — 66 connections
+- `Rendering::Materials::set_geo_property_reference -> Rendering::Materials::assign_material` — 65 connections
+- ` -> Core::Math::modulo` — 64 connections
+- ` -> Core::Object::set_property` — 59 connections
+- `Core::Logic::equal -> Core::Logic::if` — 59 connections
+- ` -> Geometry::Properties::set_geo_property` — 59 connections
+- `Core::Fields::scalar_field -> Core::Math::subtract` — 55 connections
+- `Value::float -> Modeling::Primitive::create_mesh_cube` — 55 connections
+- ` -> Core::Array::set_in_array` — 54 connections
+- ` -> Core::Math::half_of` — 53 connections
+- `indices -> Core::Array::get_from_array` — 52 connections
+- ` -> Core::Randomization::random_value` — 52 connections
+- `Core::Logic::if -> Core::Logic::if` — 51 connections
+- ` -> Core::Type_Conversion::to_float` — 51 connections
+- ` -> Core::Logic::equal` — 49 connections
+- ` -> Core::Fields::scalar_field` — 48 connections
+- `Geometry::Points::get_bounding_box -> snap_points` — 48 connections
+- `Core::Math::divide -> ` — 48 connections
+- `Rendering::Materials::standard_surface_mat -> Rendering::Materials::set_geo_property_reference` — 47 connections
+- ` -> Core::Logic::greater` — 45 connections
+- ` -> for_each` — 45 connections
+- `Core::Conversion::vector3_to_scalar -> Value::Math::float3` — 44 connections
+- `Core::Math::half_of -> ` — 44 connections
+- ` -> Core::Array::sequence_array` — 44 connections
+- `Core::Array::slice_array -> Core::Array::get_from_array` — 43 connections
+- ` -> Core::Randomization::random_value_array` — 42 connections
+- ` -> Core::Object::get_property` — 41 connections
+- `Value::Math::float3 -> Core::Math::multiply` — 41 connections
+- ` -> Core::Math::increment` — 41 connections
+- `Core::Array::get_from_array -> Core::Math::multiply` — 40 connections
+- `Core::Array::get_from_array -> Core::Math::subtract` — 40 connections
+- ` -> Rendering::Materials::assign_material` — 39 connections
+- ` -> Core::FCurve::evaluate_fcurve` — 39 connections
+- `Core::Math::divide -> Core::Math::multiply` — 39 connections
+- ` -> Geometry::Common::access_offset_array` — 39 connections
+- ` -> Core::Fields::fractal_noise_field` — 38 connections
+- `Core::Graph::pass -> Core::Object::get_property` — 38 connections
+- `Modeling::Points::transform_points -> ` — 37 connections
+- `Core::Logic::greater -> Core::Logic::if` — 37 connections
+- `Core::Array::sum_array -> Core::Math::divide` — 37 connections
+- `Core::Math::subtract -> Core::Math::multiply` — 37 connections
+- `Core::Array::get_from_array -> Core::Object::get_property` — 36 connections
+- `Core::Object::get_property -> Value::Math::float3` — 36 connections
+- `Core::Conversion::vector3_to_scalar -> get_halves` — 36 connections
+- ` -> Value::Math::float3` — 36 connections
+- `Geometry::Properties::set_geo_property -> ` — 36 connections
+- `Core::Math::multiply -> Core::Math::subtract` — 35 connections
+- `Core::Time::time -> Core::Math::multiply` — 34 connections
+- `Diagnostic::Display::assign_diagnostic_material -> Core::Graph::terminal` — 34 connections
+- `Core::Math::multiply -> Core::Conversion::scalar_to_vector3` — 34 connections
+- ` -> Core::Math::clamp` — 34 connections
+- `Modeling::Primitive::create_mesh_cube -> Modeling::Common::merge_geometry` — 34 connections
+- `Geometry::Properties::set_point_position -> ` — 33 connections
+- ` -> iterate` — 33 connections
+- `Core::Logic::less -> Core::Logic::if` — 33 connections
+- `Core::Math::SRT_to_matrix -> Core::Math::matrix_multiply` — 32 connections
+- ` -> Rendering::Materials::standard_surface_mat` — 32 connections
+- ` -> Modeling::Primitive::create_mesh_cylinder` — 32 connections
+- `Simulation::Aero::source_air -> Simulation::Aero::simulate_aero` — 31 connections
+- ` -> Core::Array::array_bounds` — 31 connections
+- ` -> Rigging::Module::variable_fk_module` — 31 connections
+- `Core::Math::subtract -> Core::Math::length` — 31 connections
+- `Core::Math::add -> Core::Logic::if` — 31 connections
+- `Geometry::Points::get_bounding_box -> ` — 30 connections
+- `Core::Type_Conversion::to_float -> Core::Math::multiply` — 30 connections

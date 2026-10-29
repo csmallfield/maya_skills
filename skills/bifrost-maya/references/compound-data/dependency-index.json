@@ -1,0 +1,1940 @@
+{
+  "Deep_Learning::Network::Activations::sigmoid": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "Hyuu::Geometry::Properties::face_vertex_slice": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_chip_off",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_chip_off"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_extrude",
+      "count": 4,
+      "id": "PPG_V2.0__compounds__PPG_extrude"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Hyuu::merge_vertices_clean",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__merge_vertices_clean"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::merge_vertices_clean_tags",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__merge_vertices_clean_tags"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_shape",
+      "count": 4,
+      "id": "PPG_V2.0__compounds__select_faces_by_shape"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_visibility",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_visibility"
+    }
+  ],
+  "Hyuu::Logic::and_conditional": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Hyuu::merge_vertices_clean",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__merge_vertices_clean"
+    }
+  ],
+  "Hyuu::Logic::is_odd": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::create_pattern",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__create_pattern"
+    }
+  ],
+  "Hyuu::Utility::autoport_to_array": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    }
+  ],
+  "MJCG::Core::Array::array_average": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 3,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Core::Array::fill_interpolated_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 4,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Core::Array::flatten_2D_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 7,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Core::Math::angle_between_vectors": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::edge_selection",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__edge_selection"
+    }
+  ],
+  "MJCG::Diagnostic::Display::point_transform_scope": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_point_binormal": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_point_orientation": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_point_ratio": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_point_tangent": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Properties::get_strand_length": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "MJCG::Geometry::Strands::check_strands_orientations": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::strand_to_mesh",
+      "count": 1,
+      "id": "VHH__geo__strand_to_mesh"
+    }
+  ],
+  "PPG::PPG_arch": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    }
+  ],
+  "PPG::PPG_dome": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    }
+  ],
+  "PPG::PPG_wedge": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    }
+  ],
+  "PPG::assign_material_to_tags": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::bulk_assign_material",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__bulk_assign_material"
+    }
+  ],
+  "PPG::assign_random_colors": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_diagnostc",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_diagnostc"
+    }
+  ],
+  "PPG::check_face_tags": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_arch",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_chip_off",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_chip_off"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_extrude",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__PPG_extrude"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_wedge",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__PPG_wedge"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::rename_face_tag",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__rename_face_tag"
+    }
+  ],
+  "PPG::create_pattern": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 6,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::pattern_rename",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__pattern_rename"
+    }
+  ],
+  "PPG::display_face_tags": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_diagnostc",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_diagnostc"
+    }
+  ],
+  "PPG::display_selected_edges": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_arch",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_transform",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_transform"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_wedge",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_wedge"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::get_face_info",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__get_face_info"
+    }
+  ],
+  "PPG::edge_selection": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_arch",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_transform",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_transform"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_wedge",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_wedge"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::get_face_info",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__get_face_info"
+    }
+  ],
+  "PPG::faces_ID_input": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_wedge",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_wedge"
+    }
+  ],
+  "PPG::faces_from_origin_XZ": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    }
+  ],
+  "PPG::faces_to_origin_XZ": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    }
+  ],
+  "PPG::get_all_faces": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_chip_off",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_chip_off"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_extrude",
+      "count": 6,
+      "id": "PPG_V2.0__compounds__PPG_extrude"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_wedge",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_wedge"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::create_arch",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__create_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::get_face_indices",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__get_face_indices"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::get_tag_faces",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__get_tag_faces"
+    }
+  ],
+  "PPG::get_face_indices": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_arch",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_chip_off",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_chip_off"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_extrude",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_extrude"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_transform",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_transform"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_wedge",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_wedge"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::assign_manual_colors",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__assign_manual_colors"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::assign_material_to_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__assign_material_to_tags"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::display_face_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__display_face_tags"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::get_face_info",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__get_face_info"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::new_face_tag",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__new_face_tag"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_area",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_area"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_field",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_field"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_normal",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_normal"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_shape",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_shape"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_visibility",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_visibility"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_inside_mesh",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_inside_mesh"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_random_faces",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_random_faces"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::set_face_ID_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__set_face_ID_tags"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::set_face_color",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__set_face_color"
+    }
+  ],
+  "PPG::get_face_orientation": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    }
+  ],
+  "PPG::get_faces_from_tags": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::get_face_indices",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__get_face_indices"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::rename_face_tag",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__rename_face_tag"
+    }
+  ],
+  "PPG::get_points_per_face": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_chip_off",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_chip_off"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_extrude",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_extrude"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_field",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_field"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_inside_mesh",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_inside_mesh"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::set_face_ID_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__set_face_ID_tags"
+    }
+  ],
+  "PPG::get_tag_faces": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_area",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_area"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_field",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_field"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_normal",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_normal"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_shape",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_shape"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_visibility",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_by_visibility"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_inside_mesh",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_faces_inside_mesh"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_random_faces",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__select_random_faces"
+    }
+  ],
+  "PPG::match_expression": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_extrude",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_extrude"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::get_faces_from_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__get_faces_from_tags"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::get_maya_component_tags",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__get_maya_component_tags"
+    }
+  ],
+  "PPG::merge_vertices_clean_tags": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_arch",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_chip_off",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_chip_off"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_extrude",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_extrude"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_sequence_cut",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_sequence_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_transform",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_transform"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_wedge",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_wedge"
+    }
+  ],
+  "PPG::new_face_tag": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::create_arch",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__create_arch"
+    }
+  ],
+  "PPG::rename_face_tag": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::face_tag_renamer",
+      "count": 8,
+      "id": "PPG_V2.0__compounds__face_tag_renamer"
+    }
+  ],
+  "PPG::rewrite_face_tags": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::check_face_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__check_face_tags"
+    }
+  ],
+  "PPG::select_faces_by_shape": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_arch",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_arch"
+    }
+  ],
+  "PPG::set_face_tag": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_arch",
+      "count": 6,
+      "id": "PPG_V2.0__compounds__PPG_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_chip_off",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_chip_off"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_dome",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_dome"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_extrude",
+      "count": 4,
+      "id": "PPG_V2.0__compounds__PPG_extrude"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_cut",
+      "count": 8,
+      "id": "PPG_V2.0__compounds__PPG_multi_cut"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_wedge",
+      "count": 7,
+      "id": "PPG_V2.0__compounds__PPG_wedge"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::create_arch",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__create_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::new_face_tag",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__new_face_tag"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::pattern_rename",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__pattern_rename"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::rename_face_tag",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__rename_face_tag"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_area",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__select_faces_by_area"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_field",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__select_faces_by_field"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_normal",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__select_faces_by_normal"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_shape",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__select_faces_by_shape"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_by_visibility",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__select_faces_by_visibility"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_faces_inside_mesh",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__select_faces_inside_mesh"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::select_random_faces",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__select_random_faces"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::set_face_ID_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__set_face_ID_tags"
+    }
+  ],
+  "Print::any_array_min_max": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::array_info_string",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__supporting_compounds__array_info_string"
+    }
+  ],
+  "Print::any_to_string": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::display_face_tags",
+      "count": 16,
+      "id": "PPG_V2.0__compounds__display_face_tags"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::array_info_string",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__supporting_compounds__array_info_string"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::value_to_string",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__supporting_compounds__value_to_string"
+    }
+  ],
+  "Print::array_info_string": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::display_face_tags",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__display_face_tags"
+    }
+  ],
+  "Print::array_min_max": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::any_array_min_max",
+      "count": 9,
+      "id": "PPG_V2.0__compounds__supporting_compounds__any_array_min_max"
+    }
+  ],
+  "Print::degrees_to_quaternion": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_instance",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_transform",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__PPG_transform"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::create_arch",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__create_arch"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::display_face_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__display_face_tags"
+    }
+  ],
+  "Print::float_to_string": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::any_to_string",
+      "count": 36,
+      "id": "PPG_V2.0__compounds__supporting_compounds__any_to_string"
+    }
+  ],
+  "Print::hex_color_palette": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::display_face_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__display_face_tags"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::commands_and_palette",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__supporting_compounds__commands_and_palette"
+    }
+  ],
+  "Print::set_print_material": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::display_face_tags",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__display_face_tags"
+    }
+  ],
+  "Print::string_to_ASCII": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::display_face_tags",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__display_face_tags"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::create_fast_text_NF",
+      "count": 1,
+      "id": "PPG_V2.0__compounds__supporting_compounds__create_fast_text_NF"
+    }
+  ],
+  "Print::value_to_hex": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::assign_random_colors",
+      "count": 3,
+      "id": "PPG_V2.0__compounds__assign_random_colors"
+    }
+  ],
+  "Print::value_to_string": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::any_array_min_max",
+      "count": 14,
+      "id": "PPG_V2.0__compounds__supporting_compounds__any_array_min_max"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "Print::array_min_max",
+      "count": 2,
+      "id": "PPG_V2.0__compounds__supporting_compounds__array_min_max"
+    }
+  ],
+  "Stormvn::Cloud::cloud_volume_shader": [
+    {
+      "collection": "Stormvn",
+      "compound": "Stormvn::Cloud::basic_cloud",
+      "count": 1,
+      "id": "Stormvn__compounds__cloud__basic_cloud"
+    }
+  ],
+  "USD::Attribute::define_usd_attribute": [
+    {
+      "collection": "CJS_points_to_USD_points.json",
+      "compound": "User::Compounds::CJS_points_to_USD_points",
+      "count": 4,
+      "id": "CJS_points_to_USD_points"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 2,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::USD::define_usd_pbr_preview_surface",
+      "count": 73,
+      "id": "VHH__USD__PBR_Preview_Surface"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 2,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Attribute::define_usd_display_color": [
+    {
+      "collection": "CJS_points_to_USD_points.json",
+      "compound": "User::Compounds::CJS_points_to_USD_points",
+      "count": 1,
+      "id": "CJS_points_to_USD_points"
+    },
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 2,
+      "id": "GL_replace_point_instancer_prototype"
+    }
+  ],
+  "USD::Attribute::define_usd_transform": [
+    {
+      "collection": "CJS_simple_usd_loader.json",
+      "compound": "User::Compounds::CJS_simple_usd_loader",
+      "count": 1,
+      "id": "CJS_simple_usd_loader"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Attribute::get_usd_attribute_value": [
+    {
+      "collection": "GL_usd_point_instancer_scope.json",
+      "compound": "User::Compounds::GL_usd_point_instancer_scope",
+      "count": 2,
+      "id": "GL_usd_point_instancer_scope"
+    }
+  ],
+  "USD::PointInstancer::define_usd_point_instancer": [
+    {
+      "collection": "CJS_usd_scatter.json",
+      "compound": "User::Compounds::CJS_usd_scatter",
+      "count": 1,
+      "id": "CJS_usd_scatter"
+    }
+  ],
+  "USD::Prim::clear_relationship_targets": [
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 1,
+      "id": "GL_replace_point_instancer_prototype"
+    }
+  ],
+  "USD::Prim::define_usd_mesh": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Prim::define_usd_prim": [
+    {
+      "collection": "CJS_points_to_USD_points.json",
+      "compound": "User::Compounds::CJS_points_to_USD_points",
+      "count": 1,
+      "id": "CJS_points_to_USD_points"
+    },
+    {
+      "collection": "CJS_simple_usd_loader.json",
+      "compound": "User::Compounds::CJS_simple_usd_loader",
+      "count": 1,
+      "id": "CJS_simple_usd_loader"
+    },
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 2,
+      "id": "GL_replace_point_instancer_prototype"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::USD::define_usd_pbr_preview_surface",
+      "count": 11,
+      "id": "VHH__USD__PBR_Preview_Surface"
+    }
+  ],
+  "USD::Prim::define_usd_reference_from_file": [
+    {
+      "collection": "CJS_simple_usd_loader.json",
+      "compound": "User::Compounds::CJS_simple_usd_loader",
+      "count": 1,
+      "id": "CJS_simple_usd_loader"
+    }
+  ],
+  "USD::Prim::define_usd_relationship": [
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 1,
+      "id": "GL_replace_point_instancer_prototype"
+    }
+  ],
+  "USD::Stage::add_to_stage": [
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 1,
+      "id": "GL_replace_point_instancer_prototype"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Stage::create_usd_stage": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Stage::save_usd_stage": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_display",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_display"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::AOBox",
+      "count": 1,
+      "id": "VHH__tool__aoBox"
+    }
+  ],
+  "USD::Utils::create_child_prim_path": [
+    {
+      "collection": "GL_replace_point_instancer_prototype.json",
+      "compound": "User::Compounds::GL_replace_point_instancer_prototype",
+      "count": 1,
+      "id": "GL_replace_point_instancer_prototype"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::USD::define_usd_pbr_preview_surface",
+      "count": 11,
+      "id": "VHH__USD__PBR_Preview_Surface"
+    }
+  ],
+  "User::Compounds::case": [
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::PPG_multi_instance",
+      "count": 8,
+      "id": "PPG_V2.0__compounds__PPG_multi_instance"
+    },
+    {
+      "collection": "PPG_V2.0",
+      "compound": "PPG::create_pattern",
+      "count": 5,
+      "id": "PPG_V2.0__compounds__create_pattern"
+    }
+  ],
+  "User::Compounds::fit_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_gradient",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_gradient"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::fresnel_viz",
+      "count": 1,
+      "id": "VHH__display__fresnel_viz"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::split_strand_by_property",
+      "count": 1,
+      "id": "VHH__geo__split_strand_by_property"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Math::fractal_tiling_noise",
+      "count": 1,
+      "id": "VHH__math__fractal_tiling_noise"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::test_centroid",
+      "count": 1,
+      "id": "VHH__prototypes__WIP_centroid"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::displacer",
+      "count": 2,
+      "id": "VHH__tool__displacer"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::optimised_AO",
+      "count": 1,
+      "id": "VHH__tool__optimised_ao"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 7,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Array::average_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::show_normals",
+      "count": 2,
+      "id": "VHH__display__show_normals"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::delete_components_by_volume",
+      "count": 1,
+      "id": "VHH__geo__delete_components_by_volume"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::exploded_view",
+      "count": 1,
+      "id": "VHH__geo__exploded_view"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::extrude_loop",
+      "count": 1,
+      "id": "VHH__geo__extrude_loop"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::get_face_centers",
+      "count": 1,
+      "id": "VHH__geo__get_face_centers"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::mapUV_from_camera",
+      "count": 1,
+      "id": "VHH__geo__mapUV_from_camera"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::rockify",
+      "count": 1,
+      "id": "VHH__geo__rockify"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::test_centroid",
+      "count": 2,
+      "id": "VHH__prototypes__WIP_centroid"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Random::worley_F1",
+      "count": 1,
+      "id": "VHH__random__worley_F1"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Random::worley_F2",
+      "count": 1,
+      "id": "VHH__random__worley_F2"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::optimised_AO",
+      "count": 1,
+      "id": "VHH__tool__optimised_ao"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Array::pop_from_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Animation::move_points_along_strand",
+      "count": 1,
+      "id": "VHH__anim__move_points_along_strand"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::update_cloud_neighbors",
+      "count": 1,
+      "id": "VHH__points__update_cloud_neighbors"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Fields::change_range_field": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Fields::adjust_field_in_place",
+      "count": 2,
+      "id": "VHH__fields__adjust_field_in_place"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Fields::adjust_field_in_place",
+      "count": 2,
+      "id": "VHH__fields__adjust_field_in_place"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Fields::fit_field_range",
+      "count": 1,
+      "id": "VHH__fields__fit_field_range"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Fields::fit_field_range",
+      "count": 1,
+      "id": "VHH__fields__fit_field_range"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::displacer",
+      "count": 2,
+      "id": "VHH__tool__displacer"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise2d_billow",
+      "count": 2,
+      "id": "VHH__tool__noise2d_billow"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise2d_cell",
+      "count": 2,
+      "id": "VHH__tool__noise2d_cell"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise2d_curl",
+      "count": 2,
+      "id": "VHH__tool__noise2d_curl"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise2d_fractal",
+      "count": 2,
+      "id": "VHH__tool__noise2d_fractal"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise2d_fractal_cell",
+      "count": 2,
+      "id": "VHH__tool__noise2d_fractal_cell"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise2d_simplex",
+      "count": 2,
+      "id": "VHH__tool__noise2d_simplex"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise2d_sine",
+      "count": 2,
+      "id": "VHH__tool__noise2d_sine"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise3d_curl",
+      "count": 2,
+      "id": "VHH__tool__noise3d_curl"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise3d_curve",
+      "count": 2,
+      "id": "VHH__tool__noise3d_curve"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise3d_outward",
+      "count": 2,
+      "id": "VHH__tool__noise3d_outward"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::noise3d_radial_axis",
+      "count": 2,
+      "id": "VHH__tool__noise3d_radial_axis"
+    }
+  ],
+  "VHH::Core::Geometry::get_face_centers": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Geometry::mapUV_auto_six": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::rockify",
+      "count": 2,
+      "id": "VHH__geo__rockify"
+    }
+  ],
+  "VHH::Core::Geometry::test_centroid": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 4,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Geometry::update_point_curvature": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::setup_strand_properties",
+      "count": 1,
+      "id": "VHH__geo__setup_strand_properties"
+    }
+  ],
+  "VHH::Core::Geometry::update_point_gradient": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::rockify",
+      "count": 1,
+      "id": "VHH__geo__rockify"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Logic::switch": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::bounds",
+      "count": 1,
+      "id": "VHH__geo__bounds"
+    }
+  ],
+  "VHH::Core::Logic::weighted_activation": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 9,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Math::find_point_on_line": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Math::gauss": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 2,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Math::gaussian_property_blur": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::displacer",
+      "count": 2,
+      "id": "VHH__tool__displacer"
+    }
+  ],
+  "VHH::Core::Math::median_property_blur": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::extrude_and_average",
+      "count": 1,
+      "id": "VHH__geo__extrude_and_average"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::rockify",
+      "count": 1,
+      "id": "VHH__geo__rockify"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::displacer",
+      "count": 2,
+      "id": "VHH__tool__displacer"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Math::prime_sequence": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::rockify",
+      "count": 1,
+      "id": "VHH__geo__rockify"
+    }
+  ],
+  "VHH::Core::Math::quat_to_forward": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::LB_locator_transform",
+      "count": 1,
+      "id": "VHH__LightBox__compounds__LB_locator_transform"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Math::round_to": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Math::vector_to_color": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::optimised_AO",
+      "count": 1,
+      "id": "VHH__tool__optimised_ao"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Core::Random::worley_F1": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::rockify",
+      "count": 1,
+      "id": "VHH__geo__rockify"
+    }
+  ],
+  "VHH::Tool::file_path": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::USD::define_usd_pbr_preview_surface",
+      "count": 2,
+      "id": "VHH__USD__PBR_Preview_Surface"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::image_filter",
+      "count": 1,
+      "id": "VHH__tool__image_filter"
+    }
+  ],
+  "VHH::Visualize::Display::RGB": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::ramp_switch",
+      "count": 4,
+      "id": "VHH__display__switch_ramp"
+    }
+  ],
+  "VHH::Visualize::Display::eval_fCurve_with_mag": [
+    {
+      "collection": "CJS_genRock.json",
+      "compound": "User::Compounds::CJS_genRock",
+      "count": 1,
+      "id": "CJS_genRock"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::point_color_by_property",
+      "count": 4,
+      "id": "VHH__display__point_color_by_property"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::delete_components_by_volume",
+      "count": 2,
+      "id": "VHH__geo__delete_components_by_volume"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::rockify",
+      "count": 1,
+      "id": "VHH__geo__rockify"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::scatter_on_scatter",
+      "count": 1,
+      "id": "VHH__points__scatter_on_scatter"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Visualize::Display::pnt_display": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::curve_road",
+      "count": 1,
+      "id": "VHH__geo__curve_road"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::rockify",
+      "count": 1,
+      "id": "VHH__geo__rockify"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Random::worley_F1",
+      "count": 1,
+      "id": "VHH__random__worley_F1"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Random::worley_F2",
+      "count": 2,
+      "id": "VHH__random__worley_F2"
+    }
+  ],
+  "VHH::Visualize::Display::point_color_by_property": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::split_strand_by_property",
+      "count": 1,
+      "id": "VHH__geo__split_strand_by_property"
+    }
+  ],
+  "VHH::Visualize::Display::pos_display": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Tool::scatter_plus",
+      "count": 1,
+      "id": "VHH__tool__scatter_plus"
+    }
+  ],
+  "VHH::Visualize::Display::ramp_switch": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::fresnel_viz",
+      "count": 1,
+      "id": "VHH__display__fresnel_viz"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::point_color_by_property",
+      "count": 1,
+      "id": "VHH__display__point_color_by_property"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::Core::Geometry::proximity_sort",
+      "count": 1,
+      "id": "VHH__geo__proximity_sort"
+    }
+  ],
+  "VHH::Visualize::Display::random_color_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::point_color_by_property",
+      "count": 1,
+      "id": "VHH__display__point_color_by_property"
+    }
+  ],
+  "ValHallen::Helpers::find_in_string_array": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::ramp",
+      "count": 1,
+      "id": "VHH__display__ramp"
+    }
+  ],
+  "ValHallen::Helpers::nPointRamp": [
+    {
+      "collection": "VHH",
+      "compound": "VHH::Visualize::Display::ramp",
+      "count": 1,
+      "id": "VHH__display__ramp"
+    }
+  ]
+}

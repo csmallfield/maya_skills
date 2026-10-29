@@ -1,0 +1,817 @@
+{
+  "scope": "Observed endpoint spellings only, not complete signatures or overload validation. The optional baker is source-derived, not user-confirmed.",
+  "nodes": {
+    "Core::Array::array_size": {
+      "inputs": [
+        "array"
+      ],
+      "outputs": [
+        "size"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Core::Array::build_array": {
+      "inputs": [
+        "first"
+      ],
+      "outputs": [
+        "array"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": [
+        "first"
+      ]
+    },
+    "Core::Array::first_in_array": {
+      "inputs": [
+        "array"
+      ],
+      "outputs": [
+        "first"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Core::Conversion::scalar_to_vector3": {
+      "inputs": [
+        "x",
+        "y",
+        "z"
+      ],
+      "outputs": [
+        "vector3"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Core::Fields::fcurve_field": {
+      "inputs": [
+        "fcurve",
+        "field"
+      ],
+      "outputs": [
+        "out_field"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Core::Fields::to_field": {
+      "inputs": [
+        "value"
+      ],
+      "outputs": [
+        "out_field"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Core::Math::SRT_to_matrix": {
+      "inputs": [
+        "quaternion",
+        "scale",
+        "translation"
+      ],
+      "outputs": [
+        "transform"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Core::Math::add": {
+      "inputs": [
+        "first"
+      ],
+      "outputs": [
+        "output"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": [
+        "first"
+      ]
+    },
+    "Core::Math::clamp": {
+      "inputs": [
+        "max",
+        "min",
+        "value"
+      ],
+      "outputs": [
+        "clamped"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Core::Math::divide": {
+      "inputs": [
+        "first"
+      ],
+      "outputs": [
+        "output"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json",
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": [
+        "first"
+      ]
+    },
+    "Core::Math::max": {
+      "inputs": [
+        "first"
+      ],
+      "outputs": [
+        "maximum"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": [
+        "first"
+      ]
+    },
+    "Core::Math::multiply": {
+      "inputs": [
+        "first"
+      ],
+      "outputs": [
+        "output"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json",
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": [
+        "first"
+      ]
+    },
+    "Core::Math::subtract": {
+      "inputs": [
+        "first"
+      ],
+      "outputs": [
+        "output"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": [
+        "first"
+      ]
+    },
+    "Core::Type_Conversion::to_float": {
+      "inputs": [
+        "from"
+      ],
+      "outputs": [
+        "float"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Geometry::Converters::points_to_volume": {
+      "inputs": [
+        "adaptivity",
+        "adaptivity_property",
+        "bandwidth",
+        "base_resolution",
+        "detail_size",
+        "eighth_resolution",
+        "enable_bandwidth",
+        "enable_resolution_bounds",
+        "fog_density",
+        "half_resolution",
+        "offset",
+        "points",
+        "properties",
+        "quarter_resolution",
+        "resolution_mode",
+        "store_fog_density",
+        "store_level_set",
+        "volume_subdivision_structure"
+      ],
+      "outputs": [
+        "volume"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [
+        "base_resolution",
+        "eighth_resolution",
+        "half_resolution",
+        "quarter_resolution"
+      ],
+      "multi_input_roots": []
+    },
+    "Geometry::Converters::volume_to_mesh": {
+      "inputs": [
+        "adaptivity",
+        "adaptivity_property",
+        "custom_interior_mode",
+        "custom_mesh_property",
+        "detail_size_scale",
+        "level_set_threshold",
+        "mesh_mode",
+        "properties",
+        "property_threshold",
+        "smoothing",
+        "volumes"
+      ],
+      "outputs": [
+        "meshes"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [
+        "volumes"
+      ],
+      "multi_input_roots": []
+    },
+    "Geometry::Instances::set_instance_geometry": {
+      "inputs": [
+        "instance_geometries",
+        "instance_id_property",
+        "overwrite_instance_id",
+        "points",
+        "wrap_out_of_range"
+      ],
+      "outputs": [
+        "instances"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [
+        "instance_geometries",
+        "preview_geometries"
+      ],
+      "multi_input_roots": []
+    },
+    "Geometry::Mesh::soften_harden_edges": {
+      "inputs": [
+        "angle",
+        "mesh"
+      ],
+      "outputs": [
+        "out_mesh"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Geometry::Mesh::update_face_centers": {
+      "inputs": [
+        "mesh"
+      ],
+      "outputs": [
+        "face_center"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Geometry::Points::construct_points": {
+      "inputs": [
+        "point_position"
+      ],
+      "outputs": [
+        "points"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Geometry::Properties::get_geo_property": {
+      "inputs": [
+        "geometry",
+        "property",
+        "type"
+      ],
+      "outputs": [
+        "data"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Geometry::Properties::get_point_position": {
+      "inputs": [
+        "geometry"
+      ],
+      "outputs": [
+        "point_position"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Geometry::Properties::set_geo_property": {
+      "inputs": [
+        "data",
+        "geometry",
+        "property",
+        "target"
+      ],
+      "outputs": [
+        "out_geometry"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json",
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Geometry::Properties::set_point_position": {
+      "inputs": [
+        "geometry",
+        "positions"
+      ],
+      "outputs": [
+        "out_geometry"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Geometry::Volume::smooth_voxel_property": {
+      "inputs": [
+        "property",
+        "volume",
+        "voxel_filter_width",
+        "voxel_standard_deviation"
+      ],
+      "outputs": [
+        "out_volume"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Modeling::Common::merge_geometry": {
+      "inputs": [
+        "geometry"
+      ],
+      "outputs": [
+        "merged"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_bake_v3.json",
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [
+        "geometry"
+      ],
+      "multi_input_roots": []
+    },
+    "Modeling::Instances::bake_instanced_geometry": {
+      "inputs": [
+        "instances",
+        "point_properties",
+        "prefer_preview_geometry",
+        "properties"
+      ],
+      "outputs": [
+        "merged_meshes"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_bake_v3.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Modeling::Mesh::delete_faces": {
+      "inputs": [
+        "faces_to_delete",
+        "mesh",
+        "properties"
+      ],
+      "outputs": [
+        "out_mesh"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Modeling::Points::transform_points": {
+      "inputs": [
+        "local_point_space",
+        "points",
+        "transform",
+        "weights"
+      ],
+      "outputs": [
+        "out_points"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Modeling::Primitive::create_mesh_cube": {
+      "inputs": [
+        "base_to_pivot",
+        "create_UVs",
+        "height",
+        "length",
+        "position",
+        "up_axis",
+        "width"
+      ],
+      "outputs": [
+        "cube_mesh"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Modeling::Primitive::create_mesh_plane": {
+      "inputs": [
+        "create_UVs",
+        "length",
+        "length_segments",
+        "position",
+        "up_axis",
+        "width",
+        "width_segments"
+      ],
+      "outputs": [
+        "plane_mesh"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "PPG::PPG_extrude": {
+      "inputs": [
+        "depth_vector_type",
+        "do_only_chip_off",
+        "enable",
+        "extrude_depth",
+        "extrude_face_tag",
+        "inherit_source_tags",
+        "invert",
+        "keep_faces_together",
+        "merge_vertices",
+        "mesh",
+        "offset",
+        "sides_face_tag",
+        "source_face_mode",
+        "tag_expression",
+        "tolerance"
+      ],
+      "outputs": [
+        "extruded_mesh"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "PPG::PPG_multi_cut": {
+      "inputs": [
+        "Point_Index",
+        "cutting_method",
+        "direction_method",
+        "direction_vector",
+        "enable",
+        "fixed_orientation",
+        "fixed_subdivs",
+        "flexible",
+        "inherit_source_tags",
+        "inner_size",
+        "inner_tag",
+        "invert",
+        "merge_vertices",
+        "mesh",
+        "mode",
+        "next_edge",
+        "only_selected_edge",
+        "opposite_edge",
+        "outer_size",
+        "outer_tag",
+        "rotate_around_normal",
+        "subdivs",
+        "tag_expression",
+        "tolerance",
+        "use_reference"
+      ],
+      "outputs": [
+        "out_mesh"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "PPG::get_face_indices": {
+      "inputs": [
+        "enable",
+        "invert",
+        "mesh",
+        "tag_expression"
+      ],
+      "outputs": [
+        "face_IDs"
+      ],
+      "sources": [
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Rendering::Arnold::set_Arnold_mesh_settings": {
+      "inputs": [
+        "autobump_visibility_by_ray_type",
+        "disp_autobump",
+        "disp_height",
+        "disp_padding",
+        "disp_zero_value",
+        "mesh",
+        "smoothing",
+        "subdiv_adaptive_error",
+        "subdiv_adaptive_metric",
+        "subdiv_adaptive_space",
+        "subdiv_frustum_ignore",
+        "subdiv_iterations",
+        "subdiv_smooth_derivs",
+        "subdiv_type",
+        "subdiv_uv_smoothing"
+      ],
+      "outputs": [
+        "out_mesh"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Rendering::Materials::assign_material": {
+      "inputs": [
+        "geometry",
+        "set_displacement",
+        "set_surface",
+        "set_volume",
+        "surface_material"
+      ],
+      "outputs": [
+        "out_geometry"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json",
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Rendering::Materials::standard_surface_mat": {
+      "inputs": [
+        "base",
+        "base_color",
+        "coat",
+        "coat_IOR",
+        "coat_anisotropy",
+        "coat_color",
+        "coat_rotation",
+        "coat_roughness",
+        "diffuse_roughness",
+        "emission",
+        "emission_color",
+        "metalness",
+        "name",
+        "sheen",
+        "sheen_color",
+        "sheen_roughness",
+        "specular",
+        "specular_IOR",
+        "specular_anisotropy",
+        "specular_color",
+        "specular_rotation",
+        "specular_roughness",
+        "subsurface",
+        "subsurface_anisotropy",
+        "subsurface_color",
+        "subsurface_radius",
+        "subsurface_scale",
+        "subsurface_type",
+        "transmission",
+        "transmission_color",
+        "transmission_depth",
+        "transmission_dispersion",
+        "transmission_extra_roughness",
+        "transmission_scatter",
+        "transmission_scatter_anisotropy",
+        "transmit_aovs"
+      ],
+      "outputs": [
+        "standard_surface"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json",
+        "ppg_nyc_skyscraper_v3_1_fast.json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Simulation::Common::source_color_property": {
+      "inputs": [
+        "base_color",
+        "property"
+      ],
+      "outputs": [
+        "out_object"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Simulation::Influence::ground_plane_influence": {
+      "inputs": [
+        "bounciness",
+        "enabled",
+        "friction",
+        "normal",
+        "offset",
+        "position",
+        "pushout"
+      ],
+      "outputs": [
+        "out_influence"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [],
+      "multi_input_roots": []
+    },
+    "Simulation::MPM::mpm_solver_settings": {
+      "inputs": [
+        "arrow_scale",
+        "coloring_mode",
+        "detail_size",
+        "detail_size_scale",
+        "detect_discontinuity",
+        "diagnostic_point_shape",
+        "display_volume",
+        "draw_fraction",
+        "enable_gravity",
+        "enable_solver",
+        "face_camera",
+        "gravity",
+        "label_point_id",
+        "label_sources",
+        "lag_colliders",
+        "link_collider_detail",
+        "master_start_frame",
+        "max_retries",
+        "max_steps",
+        "max_voxel_movement",
+        "min_steps",
+        "numeric_property",
+        "sample_property",
+        "scene_units_in_meters",
+        "seed",
+        "shape",
+        "simulation_speed",
+        "style",
+        "time_step_size",
+        "use_master_start_frame",
+        "use_mesh_resolution"
+      ],
+      "outputs": [
+        "solver_settings"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [
+        "additional_settings"
+      ],
+      "multi_input_roots": []
+    },
+    "Simulation::MPM::simulate_mpm": {
+      "inputs": [
+        "influences",
+        "settings",
+        "sources"
+      ],
+      "outputs": [
+        "granular_particles"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [
+        "colliders",
+        "influences",
+        "sources"
+      ],
+      "multi_input_roots": []
+    },
+    "Simulation::MPM::source_mpm_gel": {
+      "inputs": [
+        "active",
+        "additional_properties",
+        "direction",
+        "display_diagnostic",
+        "distribution_mode",
+        "enable",
+        "end_frame",
+        "geo_detail_size",
+        "geo_volume_mode",
+        "geo_volume_offset",
+        "geometry",
+        "inherit_velocity",
+        "initial_speed",
+        "mass_density",
+        "optimal_adaptivity",
+        "particle_display_scale",
+        "particles_per_voxel",
+        "passthrough_points",
+        "passthrough_properties",
+        "resolution_mode",
+        "start_frame",
+        "use_end_frame",
+        "use_solver_detail_size",
+        "vibration_speed",
+        "viscosity",
+        "volume_preservation",
+        "yield_stress"
+      ],
+      "outputs": [
+        "gel_source"
+      ],
+      "sources": [
+        "cs_green_goo_v5(1).json"
+      ],
+      "fan_in_roots": [
+        "additional_properties",
+        "geometry"
+      ],
+      "multi_input_roots": []
+    }
+  }
+}

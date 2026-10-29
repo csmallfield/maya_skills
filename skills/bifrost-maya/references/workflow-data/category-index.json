@@ -1,0 +1,153 @@
+{
+  "Cloth": [
+    "tearing_cloth"
+  ],
+  "Fields": [
+    "boiling_noise",
+    "flat_hurricane_noise"
+  ],
+  "Fire": [
+    "burning_barrel",
+    "flame_torch",
+    "large_turbulent_fire",
+    "mega_explosion",
+    "missile_hit",
+    "pyroclastic_explosion",
+    "standard_explosion"
+  ],
+  "Fracture": [
+    "boolean_fracture",
+    "edge_damage_intersection",
+    "edge_damage_slice",
+    "voronoi_fracture"
+  ],
+  "Gel": [
+    "gel_checker",
+    "ice_cream"
+  ],
+  "Geometry Queries": [
+    "basic_raycast_example",
+    "sample_points_by_radius",
+    "snow_shadows",
+    "test_inside_mesh_example"
+  ],
+  "Liquid": [
+    "dam_break_foam",
+    "dam_break_particles",
+    "guided_liquid",
+    "liquid_meshing",
+    "procedural_stream",
+    "surface_tension_explicit",
+    "surface_tension_implicit"
+  ],
+  "Machine Learning": [
+    "generate_data",
+    "neural_network"
+  ],
+  "Ocean": [
+    "dynamic_boat_wake",
+    "dynamic_raindrops",
+    "ocean_wave_with_spray",
+    "view_based_ocean"
+  ],
+  "Particles": [
+    "confetti_pop",
+    "dust_motes",
+    "fiber_dust_motes",
+    "fireworks",
+    "gradient_advection",
+    "random_particle_rotations"
+  ],
+  "Rigging": [
+    "aim_matrix",
+    "arm_module",
+    "biped_modules",
+    "blend_matrix",
+    "compute_transform_chain",
+    "dancing_skeleton",
+    "elastic_skeleton",
+    "eye_module",
+    "parent_matrix",
+    "pick_matrix",
+    "resample_matrix_chain",
+    "rope_module",
+    "skeleton_to_strands",
+    "swinging_coil",
+    "walking_centipede",
+    "wobbling_plant"
+  ],
+  "Rigid Body": [
+    "constrain_by_tag",
+    "glass_shatter",
+    "glue_constraints",
+    "multi_constraints",
+    "rigid_body_instances",
+    "scatter_and_settle",
+    "scatter_and_settle_instant",
+    "simple_RBD"
+  ],
+  "Rubber": [
+    "MPM_rubber",
+    "rubber_helix"
+  ],
+  "Sand": [
+    "sand_grain_instances",
+    "sand_pile"
+  ],
+  "Scatter Pack": [
+    "basic_scatter_example",
+    "flocking_solver",
+    "incircle_packing",
+    "point_infection",
+    "scatter_around_strand",
+    "scatter_in_volume",
+    "scatter_on_points",
+    "scatter_orientations_example",
+    "valley_forest"
+  ],
+  "Shell": [
+    "plastic_deformation",
+    "twist_rainbow_shell"
+  ],
+  "Smoke": [
+    "aero_colors",
+    "aero_fields_sourcing",
+    "aero_uvw_field_noise",
+    "billowy_smoke_plume",
+    "cigarette_smoke",
+    "dry_ice",
+    "fast_aero",
+    "ground_mist",
+    "post_aero_refinement",
+    "powder_explosion",
+    "smoke_trail",
+    "steamy_breath",
+    "vehicle_exhaust",
+    "waterfall_mist"
+  ],
+  "Snow": [
+    "snow_activation",
+    "snow_aero",
+    "snowball_throw"
+  ],
+  "Strands": [
+    "embroidery",
+    "grass_wind"
+  ],
+  "Tags": [
+    "flowers",
+    "procedural_gear"
+  ],
+  "Texture": [
+    "bake_texture",
+    "read_texture",
+    "texture_scatter"
+  ],
+  "Volumes": [
+    "muzzle_flash",
+    "ragged_cloud"
+  ],
+  "Wedging": [
+    "aero_combustion_wedging"
+  ]
+}

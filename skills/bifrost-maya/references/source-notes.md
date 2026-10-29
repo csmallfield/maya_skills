@@ -1,0 +1,73 @@
+# Source corpus and provenance
+
+## Node reference
+
+The bundled node reference is the user-provided parsed Bifrost documentation, split into an index plus six topical reference files. Use it for node purpose, property conventions and discovery. Treat compact signatures as summaries: working native exports and exact public interfaces take precedence for serialization. The cube and plane summaries were corrected from the user-confirmed exports; the other summaries are not silently assumed exact.
+
+## Autodesk workflow corpus
+
+The workflow corpus is derived from the user-provided collection of Autodesk/Maya-shipped Bifrost example graphs. The source archive contained 105 graph JSON files and 85 accompanying English Markdown explanations. Raw UI layout data is omitted from this normalized workflow corpus. Separately bundled native examples preserve it for serialization evidence.
+
+The deterministic parser preserves the parts most useful for reasoning:
+
+- fully qualified node types and instance names;
+- nested compound hierarchy;
+- port-to-port connections;
+- authored values and value types;
+- graph ports and terminal states;
+- library dependencies/version strings;
+- Autodesk category, description, documentation text, and teaching/sticky-note text.
+
+It removes or ignores context-heavy presentation metadata such as node coordinates, z-order, viewport rectangles, colors, and thumbnail references.
+
+## Normalized data
+
+`references/workflow-data/normalized/<graph>.json` contains one normalized record per graph.
+
+Indexes:
+
+- `graph-index.json` — graph metadata and size summaries;
+- `category-index.json` — category to graph IDs;
+- `node-usage-index.json` — node type to example graphs;
+- `edge-pattern-index.json` — node-type connection patterns to example graphs;
+- `version-index.json` — library/version to graph IDs.
+
+Use the scripts in `scripts/` to query these files rather than loading the full corpus into context.
+
+
+## User-provided custom compound corpus
+
+The expanded compound corpus is derived from the user-provided `Compounds.zip`. It contains 235 JSON files. Of these, 226 contain compound definitions and 8 contain VHH enum/type definitions; one additional JSON is library configuration rather than a compound. The two largest collections are VHH (141 source JSON files) and PPG 2.0 (74 source JSON files).
+
+This corpus is not labeled as Autodesk-shipped material. Treat its compound implementations and accompanying Markdown as source evidence for the supplied libraries, and keep that provenance separate from the Autodesk workflow corpus.
+
+The normalizer preserves:
+
+- public compound names and exact ports;
+- overloads and default-overload markers;
+- nested compound topology and port-to-port connections;
+- authored values and value types;
+- documentation text and useful sticky-note/section metadata;
+- internal node-type usage;
+- compound-to-compound dependencies;
+- bundled enum/type definitions.
+
+It removes UI-only layout metadata such as coordinates, z-order, viewport state, node display state, and icons.
+
+Custom compound indexes live under `references/compound-data/`. Use `search_compounds.py` and `inspect_compound.py` for targeted retrieval. `unresolved-dependencies.json` lists names referenced by the corpus that are not themselves defined as compounds in the supplied package; those require a separate installed library or version-specific verification.
+
+
+## Native building lessons update (2026-09-18)
+
+Preserve the original normalized corpus and its provenance. Add the unmodified user-confirmed v3.1 skyscraper and working goo export under `assets/native-examples`, with a manifest of hashes and evidence status. Include the optional baker as source-derived but not user-confirmed. Do not describe these authored case-study graphs as Autodesk-shipped examples.
+
+Preserve all 34 Markdown files from the separately supplied `docs.zip` under `references/ppg-docs/`; keep these distinct from documentation inside the older normalized compound records. See `ppg-documentation-index.md`. Their tutorial links identify videos, not reviewed transcripts. No transcript content was obtained in this conversation.
+
+Use `native-json.md`, `ppg-building-design.md`, and `regression-history.md` for the lessons and boundaries. `native-endpoint-evidence.json` stores observed input/output spellings from the three bundled native examples; it is not an exhaustive Autodesk signature database. The offline validator also consults the existing source-derived type and custom-interface indices, but it does not compile or prove overload compatibility.
+
+Record the latest user confirmation of v3.1 as successful operation and qualitative improvement. There is no supplied numeric runtime or memory benchmark. The earlier v3 static pass missed a local-scope error and is not carried forward as a validity guarantee.
+
+
+## Installed-library index (2026-10-29)
+
+`references/bifrost-3.0.0.0/` is generated by `scripts/build_node_index.py` from the Bifrost 3.0.0.0 install for Maya 2026 (`index-meta.json` records each source file's SHA-256). It takes precedence over the condensed node summaries for names, ports, types, defaults, enums and renames. Built-in nodes have no library definition, so their ports are the spellings observed in shipped compounds and example graphs. The 105 Autodesk example graphs in `workflow-data` are byte-identical to the ones shipped in 3.0's `resources/graphs`.

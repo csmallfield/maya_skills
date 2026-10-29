@@ -1,0 +1,927 @@
+{
+"Core::Array::array_bounds_impl": {
+"library": "Amino",
+"new": {
+"name": "Core::Array::Internal::array_bounds_impl"
+},
+"version": "2.16.0.1"
+},
+"Core::Array::sum_array_impl": {
+"library": "Amino",
+"new": {
+"name": "Core::Array::Internal::sum_array_impl"
+},
+"version": "2.16.0.1"
+},
+"Core::Transform::graph_space": {
+"library": "bif",
+"new": {
+"ports": {
+"graph_world_space": "output.totalTransform"
+}
+},
+"version": "2.15.0.8"
+},
+"Diagnostic::Display::influence_scope": {
+"library": "geometries",
+"new": {
+"ports": {
+"min__bounds": "min_bounds"
+}
+},
+"version": "2.15.0.4"
+},
+"Diagnostic::Display::scalar_field_scope": {
+"library": "geometries",
+"new": {
+"ports": {
+"min__bounds": "min_bounds"
+}
+},
+"version": "2.15.0.4"
+},
+"Diagnostic::Display::vector_field_scope": {
+"library": "geometries",
+"new": {
+"ports": {
+"base_brighness": "base_brightness",
+"min__bounds": "min_bounds"
+}
+},
+"version": "2.15.0.4"
+},
+"File::Project::scene_info": {
+"library": "bif",
+"new": {
+"ports": {
+"has_project": "output.has_project",
+"project_directory": "output.project_directory",
+"scene": "output.scene",
+"scene_directory": "output.scene_directory"
+}
+},
+"version": "2.15.0.7"
+},
+"Geometry::Common::Internal::get_default_interpreted_auto_uvs": {
+"library": "file",
+"new": "Geometry::Common::Internal::get_interpreted_auto_uvs",
+"version": "2.16.0.3"
+},
+"Geometry::Converters::points_to_skeleton": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Converters::points_to_skeleton"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Converters::skeleton_to_points": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Converters::skeleton_to_points"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Converters::skeleton_to_strands": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Converters::skeleton_to_strands"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Converters::strands_to_skeleton": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Converters::strands_to_skeleton"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::Internal::check_chain_joint_indices": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::Internal::check_chain_joint_indices"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::Internal::check_joint_chain_index": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::Internal::check_joint_chain_index"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::Internal::check_joint_children_indices": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::Internal::check_joint_children_indices"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::Internal::set_joint_transform_matrices": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::Internal::set_joint_transform_matrices"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::construct_skeleton": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::construct_skeleton"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::create_skeleton_from_modules": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::create_skeleton_from_modules"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::create_skeleton_from_paths": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::create_skeleton_from_paths"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::get_joint_transform_matrices": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::get_joint_transform_matrices"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::get_skeleton_structure": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::get_skeleton_structure"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::set_joint_operator_matrix": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::set_joint_operator_matrix"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::set_joint_pivot_matrix": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::set_joint_pivot_matrix"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::transform_joints": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::transform_joints"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::update_chain_joint_indices": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::update_chain_joint_indices"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::update_joint_chain_index": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::update_joint_chain_index"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::update_joint_children_indices": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::update_joint_children_indices"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::update_joint_depth": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::update_joint_depth"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::update_joint_length": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::update_joint_length"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::update_joint_path": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::update_joint_path"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::update_joint_position": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::update_joint_position"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::update_joint_transform_matrices": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::update_joint_transform_matrices"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Skeleton::validate_skeleton": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Skeleton::validate_skeleton"
+},
+"version": "2.15.0.5"
+},
+"Geometry::Strands::Internal::update_strands_ratio": {
+"library": "bif",
+"new": "Geometry::Strands::update_strands_ratio",
+"version": "2.16.0.3"
+},
+"Geometry::Tags::Internal::merge_tags": {
+"library": "bif",
+"new": "Geometry::Tags::merge_tag_data",
+"version": "2.16.0.3"
+},
+"Geometry::Tags::tag_by_angle_between_vectors": {
+"library": "geometries",
+"new": {
+"ports": {
+"elements_to_tag": "tag_to_merge"
+}
+},
+"version": "2.15.0.5"
+},
+"Geometry::Tags::tag_by_expression": {
+"library": "geometries",
+"new": {
+"ports": {
+"elements_to_tag": "tag_to_merge"
+}
+},
+"version": "2.15.0.5"
+},
+"Geometry::Tags::tag_by_threshold": {
+"library": "geometries",
+"new": {
+"ports": {
+"elements_to_tag": "tag_to_merge"
+}
+},
+"version": "2.15.0.5"
+},
+"Geometry::Tags::tag_inside_geometry": {
+"library": "geometries",
+"new": {
+"ports": {
+"elements_to_tag": "tag_to_merge"
+}
+},
+"version": "2.15.0.5"
+},
+"Geometry::Tags::tag_randomly": {
+"library": "geometries",
+"new": {
+"ports": {
+"elements_to_tag": "tag_to_merge"
+}
+},
+"version": "2.15.0.5"
+},
+"Rigging::Module::Internal::compute_on_setup_change": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Module::Animation::compute_on_setup_change"
+},
+"version": "2.16.0.11"
+},
+"Rigging::Module::Internal::format_name": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Module::Setup::format_name",
+"ports": {
+"out_name": "formatted"
+}
+},
+"version": "2.16.0.11"
+},
+"Rigging::Module::spine_module": {
+"library": "rigging",
+"new": {
+"ports": {
+"spacial_resampling": "spatial_resampling"
+}
+},
+"version": "2.16.0.11"
+},
+"Rigging::Module::tail_module": {
+"library": "rigging",
+"new": {
+"ports": {
+"spacial_resampling": "spatial_resampling"
+}
+},
+"version": "2.16.0.11"
+},
+"Rigging::Solver::ik_fk_solver": {
+"library": "rigging",
+"new": {
+"name": "Rigging::Solver::solve_limb_IK",
+"ports": {
+"ik_weight": "weight"
+}
+},
+"version": "2.15.0.11"
+},
+"Rigging::Solver::interpolate_matrix_chain": {
+"library": "rigging",
+"new": {
+"ports": {
+"weight": "fraction"
+}
+},
+"version": "2.15.0.11"
+},
+"Simulation::BOSS::Internal::apply_expand_smooth_offset": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::apply_expand_smooth_offset"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::check_wave_map_active": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::check_wave_map_active"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::compute_spectral_depth_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::compute_spectral_depth_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::compute_spectral_wave_velocity": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::compute_spectral_wave_velocity"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::create_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::create_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::cusp_scale": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::cusp_scale"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dilate_mask_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dilate_mask_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dynamic_wave": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dynamic_wave"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dynamic_wave_disable_map": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dynamic_wave_disable_map"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dynamic_wave_reset": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dynamic_wave_reset"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dynamic_wave_set_depth": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dynamic_wave_set_depth"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dynamic_wave_set_drift": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dynamic_wave_set_drift"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dynamic_wave_set_map": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dynamic_wave_set_map"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dynamic_wave_set_properties": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dynamic_wave_set_properties"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::dynamic_wave_solve": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::dynamic_wave_solve"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_dynamic_wave_outputs": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_dynamic_wave_outputs"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_dynamic_wave_settings": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_dynamic_wave_settings"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_image_array_size": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_image_array_size"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_image_neighbors": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_image_neighbors"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_image_size": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_image_size"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_image_uvs": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_image_uvs"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_spectral_wave_outputs": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_spectral_wave_outputs"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_wave_bounds": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_wave_bounds"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_wave_outputs": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_wave_outputs"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::get_wave_positions": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::get_wave_positions"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::image_index_to_uv": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::image_index_to_uv"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::image_index_to_uv_center": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::image_index_to_uv_center"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::image_scope": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::image_scope"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::is_a_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::is_a_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::merge_wave_maps": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::merge_wave_maps"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::offset_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::offset_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::offset_image_color": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::offset_image_color"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::resample_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::resample_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::resize_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::resize_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::sample_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::sample_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::sample_spectral_wave": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::sample_spectral_wave"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::scale_image_resolution": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::scale_image_resolution"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::set_image_property": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::set_image_property"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::set_image_rgba": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::set_image_rgba"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::set_image_scalar_property": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::set_image_scalar_property"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::set_image_vector_property": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::set_image_vector_property"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::set_wave_mapping": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::set_wave_mapping"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::setup_depth_map": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::setup_depth_map"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::setup_drift_map": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::setup_drift_map"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::setup_map_compound": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::setup_map_compound"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::smooth_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::smooth_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::solver_to_wave_image": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::solver_to_wave_image"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::spectral_wave": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::spectral_wave"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::spectral_wave_set_properties": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::spectral_wave_set_properties"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::spectral_wave_set_time": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::spectral_wave_set_time"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::split_image_into_low_high_frequencies": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::split_image_into_low_high_frequencies"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::trace_geo_to_wavemap": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::trace_geo_to_wavemap"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::trace_geometry_wave_map": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::trace_geometry_wave_map"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::wave_compute_eigen_values": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::wave_compute_eigen_values"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::wave_compute_jacobian": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::wave_compute_jacobian"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::wave_compute_max_evector": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::wave_compute_max_evector"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::Internal::wave_compute_normal": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::Internal::wave_compute_normal"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::basic_dynamic_wave_graph": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::basic_dynamic_wave_graph"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::compute_spectral_ocean_volume": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::compute_spectral_ocean_volume"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::create_geo_wave_map": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::create_geo_wave_map"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::create_spectral_waves": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::create_spectral_waves"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::create_wave_map": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::create_wave_map"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::displace_by_wave": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::displace_by_wave"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::dynamic_wave_settings": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::dynamic_wave_settings"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::sample_wave_data": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::sample_wave_data"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::sample_wave_property": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::sample_wave_property"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::scale_wave_height": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::scale_wave_height"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::simulate_dynamic_wave": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::simulate_dynamic_wave"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::simulate_foam": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::simulate_foam"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::source_dynamic_wave": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::source_dynamic_wave"
+},
+"version": "2.15.0.5"
+},
+"Simulation::BOSS::wave_set_foam": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::wave_set_foam"
+},
+"version": "2.15.0.5"
+},
+"Simulation::Liquids::Internal::assign_guided_liquid_matte": {
+"library": "fluids",
+"new": {
+"name": "Simulation::Liquids::assign_guided_liquid_matte"
+},
+"version": "2.16.0.02"
+},
+"Simulation::Liquids::Internal::blend_guided_liquid": {
+"library": "fluids",
+"new": {
+"name": "Simulation::Liquids::blend_guided_liquid"
+},
+"version": "2.16.0.02"
+},
+"Simulation::Liquids::Internal::guided_liquid_alpha_field": {
+"library": "fluids",
+"new": {
+"name": "Simulation::Liquids::guided_liquid_alpha_field"
+},
+"version": "2.15.0.12"
+},
+"Simulation::Liquids::Internal::guided_liquid_settings": {
+"library": "fluids",
+"new": {
+"name": "Simulation::Liquids::guided_liquid_settings"
+},
+"version": "2.15.0.12"
+},
+"Simulation::Liquids::Internal::liquid_guide_spectral_waves": {
+"library": "fluids",
+"new": {
+"name": "Simulation::Liquids::liquid_guide_spectral_waves"
+},
+"version": "2.15.0.12"
+},
+"Simulation::Liquids::Internal::liquid_guide_waves": {
+"library": "fluids",
+"new": {
+"name": "Simulation::Liquids::liquid_guide_waves"
+},
+"version": "2.15.0.12"
+},
+"Simulation::Liquids::guided_liquid_alpha_field": {
+"library": "fluids",
+"new": {
+"name": "Simulation::Liquids::guided_liquid_alpha_field",
+"ports": {
+"simulation_region_volume": {
+"legacyValue": {},
+"legacyValueType": "Object"
+}
+}
+},
+"version": "2.16.0.02"
+},
+"Simulation::Ocean::Internal::compute_wave_volume": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::compute_wave_volume"
+},
+"version": "2.16.0.02"
+},
+"Simulation::Ocean::Internal::displace_by_wave_high_frequencies": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::displace_by_wave_high_frequencies"
+},
+"version": "2.16.0.02"
+},
+"Simulation::Ocean::Internal::split_image_into_low_high_frequencies": {
+"library": "ocean",
+"new": {
+"name": "Simulation::Ocean::split_image_into_low_high_frequencies"
+},
+"version": "2.15.0.12"
+}
+}

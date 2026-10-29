@@ -1,0 +1,2128 @@
+[
+  {
+    "id": "MPM_rubber",
+    "compound_name": "Simulation::MPM::MPM_rubber",
+    "category": "Rubber",
+    "description": "Wrap deform a polygon mesh with moving points from an MPM Rubber simulation.",
+    "documentation_file": "MPM_rubber_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 59,
+      "connections": 112,
+      "values": 214,
+      "compounds": 11
+    }
+  },
+  {
+    "id": "aero_colors",
+    "compound_name": "Graphs::Aero::aero_colors",
+    "category": "Smoke",
+    "description": "This graph shows basic handling of an aero color property for colored smoke effects.",
+    "documentation_file": "aero_colors_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 37,
+      "connections": 49,
+      "values": 123,
+      "compounds": 5
+    }
+  },
+  {
+    "id": "aero_combustion_wedging",
+    "compound_name": "Graphs::Wedging::aero_combustion_wedging",
+    "category": "Wedging",
+    "description": "This graph demonstrates the wedging service",
+    "documentation_file": "aero_combustion_wedging_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9",
+      "wedging": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 56,
+      "connections": 63,
+      "values": 321,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "aero_fields_sourcing",
+    "compound_name": "Simulation::Aero::aero_fields_sourcing",
+    "category": "Smoke",
+    "description": "Using fields to create interesting sources for aero.",
+    "documentation_file": "aero_fields_sourcing_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 59,
+      "connections": 95,
+      "values": 82,
+      "compounds": 6
+    }
+  },
+  {
+    "id": "aero_uvw_field_noise",
+    "compound_name": "Simulation::Aero::aero_uvw_field_noise",
+    "category": "Smoke",
+    "description": "Using uvw texture coordinates with fields to apply noise to aero fog density.",
+    "documentation_file": "aero_uvw_field_noise_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 32,
+      "connections": 38,
+      "values": 75,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "aim_matrix",
+    "compound_name": "Graphs::Rigging::aim_matrix",
+    "category": "Rigging",
+    "description": "Create a grid of transform matrices and aim them toward the primary and secondary target matrices. Additional weights are generated to scale the aim effect more on the matrices closer to the primary target. Finally, the aimed matrices are converted to instances.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "rigging": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 41,
+      "connections": 64,
+      "values": 47,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "arm_module",
+    "compound_name": "Graphs::Rigging::arm_module",
+    "category": "Rigging",
+    "description": "An example graph demonstrating how to setup and use the arm module for rigging and animation. The arm module offers features such as IK/FK blend, roll & twist, double hinge support, adaptive scaling, and more.",
+    "documentation_file": null,
+    "library_dependencies": {},
+    "counts": {
+      "nodes": 0,
+      "connections": 0,
+      "values": 0,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "bake_texture",
+    "compound_name": "Graphs::Texture::bake_texture",
+    "category": "Texture",
+    "description": null,
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 29,
+      "connections": 38,
+      "values": 63,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "basic_raycast_example",
+    "compound_name": "Graphs::Geometry_Queries::basic_raycast_example",
+    "category": "Geometry Queries",
+    "description": "A simple raytracing example which creates a spinning sphere and raycasts from all the normals to a terrain. ",
+    "documentation_file": "basic_raycast_example_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "geometries": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 24,
+      "connections": 35,
+      "values": 33,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "basic_scatter_example",
+    "compound_name": "Graphs::Scatter::basic_scatter_example",
+    "category": "Scatter Pack",
+    "description": "Creates an effect of layered instances by scattering with blue noise and then angling the instanced geometries upward so they lay over each other. ",
+    "documentation_file": "basic_scatter_example_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 36,
+      "connections": 44,
+      "values": 51,
+      "compounds": 5
+    }
+  },
+  {
+    "id": "billowy_smoke_plume",
+    "compound_name": "Graphs::Aero::billowy_smoke_plume",
+    "category": "Smoke",
+    "description": "An aero simulation graph producing a billowy smoke plume",
+    "documentation_file": "billowy_smoke_plume_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 15,
+      "connections": 15,
+      "values": 68,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "biped_modules",
+    "compound_name": "Graphs::Rigging::biped_modules",
+    "category": "Rigging",
+    "description": "A template for a biped rig built from and driven by several rigging modules.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.11",
+      "bif": "2.15.0.11",
+      "rigging": "2.15.0.11"
+    },
+    "counts": {
+      "nodes": 34,
+      "connections": 119,
+      "values": 691,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "blend_matrix",
+    "compound_name": "Graphs::Rigging::blend_matrix",
+    "category": "Rigging",
+    "description": "Blend a matrix with multiple blend targets sequentially.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "rigging": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 18,
+      "connections": 36,
+      "values": 21,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "boiling_noise",
+    "compound_name": "Graphs::Fields::boiling_noise",
+    "category": "Fields",
+    "description": "A boiling effect is created by repeatedly displacing a mesh. This causes bulges to bulge out further and animated the noise creates a boiling effect. \n",
+    "documentation_file": "boiling_noise_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 29,
+      "connections": 44,
+      "values": 75,
+      "compounds": 5
+    }
+  },
+  {
+    "id": "boolean_fracture",
+    "compound_name": "Graphs::Fracture::boolean_fracture",
+    "category": "Fracture",
+    "description": "This graph shows a boolean_fracture example",
+    "documentation_file": "boolean_fracture_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.2",
+      "bif": "2.16.0.2",
+      "fields": "2.16.0.2",
+      "geometries": "2.16.0.2",
+      "scatter": "2.16.0.2",
+      "simulation": "2.16.0.2"
+    },
+    "counts": {
+      "nodes": 1067,
+      "connections": 1933,
+      "values": 994,
+      "compounds": 111
+    }
+  },
+  {
+    "id": "burning_barrel",
+    "compound_name": "Graphs::Aero::burning_barrel",
+    "category": "Fire",
+    "description": "An aero combustion simulation creating a burning barrel effect\n",
+    "documentation_file": "burning_barrel_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 44,
+      "connections": 59,
+      "values": 133,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "cigarette_smoke",
+    "compound_name": "Graphs::Aero::cigarette_smoke",
+    "category": "Smoke",
+    "description": "An aero simulation producing cigarette type smoke",
+    "documentation_file": "cigarette_smoke_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 20,
+      "connections": 31,
+      "values": 109,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "compute_transform_chain",
+    "compound_name": "Graphs::Rigging::compute_transform_chain",
+    "category": "Rigging",
+    "description": "This graphs demonstrates how to use the transform data type to compute transforms as a connected chain rather than as isolated matrices. Consequently, each transform in the sequence inherits movements from its preceding parent transform.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "rigging": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 16,
+      "connections": 18,
+      "values": 12,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "confetti_pop",
+    "compound_name": "Graphs::Particles::confetti_pop",
+    "category": "Particles",
+    "description": "Combines aero and particle systems to create a confetti-popping-out-of-a-bottle effect",
+    "documentation_file": "confetti_pop_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 48,
+      "connections": 53,
+      "values": 176,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "constrain_by_tag",
+    "compound_name": "Graphs::RigidBody::constrain_by_tag",
+    "category": "Rigid Body",
+    "description": "An example of named rigid bodies, constraining and shading by component tag. ",
+    "documentation_file": "constrain_by_tag_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "3.0.0.0",
+      "bif": "3.0.0.0",
+      "file": "3.0.0.0",
+      "geometries": "3.0.0.0",
+      "rigid_bodies": "3.0.0.0",
+      "scatter": "3.0.0.0",
+      "simulation": "3.0.0.0"
+    },
+    "counts": {
+      "nodes": 173,
+      "connections": 305,
+      "values": 432,
+      "compounds": 22
+    }
+  },
+  {
+    "id": "dam_break_foam",
+    "compound_name": "Graphs::Liquids::dam_break_foam",
+    "category": "Liquid",
+    "description": "This graph takes the same setup as in the previous graph (dam_break_particles), meshes it and adds foam to the final result.",
+    "documentation_file": "dam_break_foam_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 56,
+      "connections": 86,
+      "values": 279,
+      "compounds": 8
+    }
+  },
+  {
+    "id": "dam_break_particles",
+    "compound_name": "Graphs::Liquids::dam_break_particles",
+    "category": "Liquid",
+    "description": "Very basic dam break liquid example.  This graph is nothing but setting up and simulating the fluid particles.",
+    "documentation_file": "dam_break_particles_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 31,
+      "connections": 55,
+      "values": 95,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "dancing_skeleton",
+    "compound_name": "Graphs::Rigging::dancing_skeleton",
+    "category": "Rigging",
+    "description": "Procedurally construct a skeleton with a spine and arms, compute its animation. Additionally, get the head joint data to drive the motion of the head mesh.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "rigging": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 84,
+      "connections": 137,
+      "values": 74,
+      "compounds": 9
+    }
+  },
+  {
+    "id": "dry_ice",
+    "compound_name": "Graphs::Aero::dry_ice",
+    "category": "Smoke",
+    "description": "An aero simulation graph producing a dry ice effect",
+    "documentation_file": "dry_ice_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 33,
+      "connections": 43,
+      "values": 126,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "dust_motes",
+    "compound_name": "Graphs::Particles::dust_motes",
+    "category": "Particles",
+    "description": "The purpose of this graph is to show how to use Bifrost particles and instancing to simulate dust motes in the air",
+    "documentation_file": "dust_motes_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.2",
+      "bif": "2.16.0.2",
+      "fields": "2.16.0.2",
+      "geometries": "2.16.0.2",
+      "particles": "2.16.0.2",
+      "simulation": "2.16.0.2"
+    },
+    "counts": {
+      "nodes": 15,
+      "connections": 15,
+      "values": 46,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "dynamic_boat_wake",
+    "compound_name": "Graphs::Ocean::dynamic_boat_wake",
+    "category": "Ocean",
+    "description": "A procedural ocean surface with simulated wake and foam.",
+    "documentation_file": "dynamic_boat_wake_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "ocean": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 38,
+      "connections": 53,
+      "values": 202,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "dynamic_raindrops",
+    "compound_name": "Graphs::Ocean::dynamic_raindrops",
+    "category": "Ocean",
+    "description": "A graph that demonstrates simulating raindrops with two different methods.",
+    "documentation_file": "dynamic_raindrops_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "ocean": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 99,
+      "connections": 183,
+      "values": 248,
+      "compounds": 13
+    }
+  },
+  {
+    "id": "edge_damage_intersection",
+    "compound_name": "Graphs::Fracture::edge_damage_intersection",
+    "category": "Fracture",
+    "description": "A demonstration of edge damage by intersection method",
+    "documentation_file": "edge_damage_intersection_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.2",
+      "bif": "2.16.0.2",
+      "fields": "2.16.0.2",
+      "geometries": "2.16.0.2",
+      "scatter": "2.16.0.2",
+      "simulation": "2.16.0.2"
+    },
+    "counts": {
+      "nodes": 930,
+      "connections": 1708,
+      "values": 899,
+      "compounds": 94
+    }
+  },
+  {
+    "id": "edge_damage_slice",
+    "compound_name": "Graphs::Fracture::edge_damage_slice",
+    "category": "Fracture",
+    "description": "A demonstration of edge damage by boolean slice method",
+    "documentation_file": "edge_damage_slice_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.11",
+      "bif": "2.15.0.11",
+      "fields": "2.15.0.11",
+      "geometries": "2.15.0.11",
+      "scatter": "2.15.0.11"
+    },
+    "counts": {
+      "nodes": 327,
+      "connections": 662,
+      "values": 239,
+      "compounds": 41
+    }
+  },
+  {
+    "id": "elastic_skeleton",
+    "compound_name": "Graphs::Rigging::elastic_skeleton",
+    "category": "Rigging",
+    "description": "An example graph demonstrating how to use the simulate_rods solver to constrain transforms and stretch a whole biped skeleton.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.16.0.7",
+      "bif": "2.16.0.7",
+      "rigging": "2.16.0.7"
+    },
+    "counts": {
+      "nodes": 53,
+      "connections": 78,
+      "values": 61,
+      "compounds": 7
+    }
+  },
+  {
+    "id": "embroidery",
+    "compound_name": "Graphs::Strands::embroidery",
+    "category": "Strands",
+    "description": "A strands example illustrating how strands can be used to make an embroidery-type effect",
+    "documentation_file": "embroidery_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 185,
+      "connections": 431,
+      "values": 208,
+      "compounds": 28
+    }
+  },
+  {
+    "id": "eye_module",
+    "compound_name": "Graphs::Rigging::eye_module",
+    "category": "Rigging",
+    "description": "An example graph demonstrating how to use and setup the eye_module to rig the eyes and eyelids of a character.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.16.0.11",
+      "bif": "2.16.0.11",
+      "rigging": "2.16.0.11"
+    },
+    "counts": {
+      "nodes": 8,
+      "connections": 19,
+      "values": 77,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "fast_aero",
+    "compound_name": "Graphs::Aero::fast_aero",
+    "category": "Smoke",
+    "description": "An aero simulation tailored for maximum performance",
+    "documentation_file": "fast_aero_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 14,
+      "connections": 15,
+      "values": 82,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "fiber_dust_motes",
+    "compound_name": "Graphs::Particles::fiber_dust_motes",
+    "category": "Particles",
+    "description": "Creates floating dust motes as a particle system, generates variations of fibers, and instances them. ",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.16.0.2",
+      "bif": "2.16.0.2",
+      "fields": "2.16.0.2",
+      "geometries": "2.16.0.2",
+      "particles": "2.16.0.2",
+      "simulation": "2.16.0.2"
+    },
+    "counts": {
+      "nodes": 66,
+      "connections": 105,
+      "values": 108,
+      "compounds": 10
+    }
+  },
+  {
+    "id": "fireworks",
+    "compound_name": "Graphs::Particles::fireworks",
+    "category": "Particles",
+    "description": "This graph utilizes the filter_particles node to provide controlled spawning between particle simulation systems and produce a fireworks effect.",
+    "documentation_file": "fireworks_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 214,
+      "connections": 397,
+      "values": 265,
+      "compounds": 45
+    }
+  },
+  {
+    "id": "flame_torch",
+    "compound_name": "Simulation::Aero::flame_torch",
+    "category": "Fire",
+    "description": "This graph uses Aero to produce a torch-style flame",
+    "documentation_file": "flame_torch_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 54,
+      "connections": 73,
+      "values": 169,
+      "compounds": 5
+    }
+  },
+  {
+    "id": "flat_hurricane_noise",
+    "compound_name": "Graphs::Fields::flat_hurricane_noise",
+    "category": "Fields",
+    "description": "Creates a flow field where the flow spirals inward toward \"attractors\" by manipulating noise fields, gradients, and other basic vector operations. Then visualizes the fields with flowlines.  ",
+    "documentation_file": "flat_hurricane_noise_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 29,
+      "connections": 39,
+      "values": 43,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "flocking_solver",
+    "compound_name": "Graphs::Scatter_Pack::flocking_solver",
+    "category": "Scatter Pack",
+    "description": "Basic Flocking Solver",
+    "documentation_file": "flocking_solver_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 269,
+      "connections": 570,
+      "values": 251,
+      "compounds": 33
+    }
+  },
+  {
+    "id": "flowers",
+    "compound_name": "Graphs::Tags::flowers",
+    "category": "Tags",
+    "description": "This graph uses tagging nodes to generate a field of flowers.",
+    "documentation_file": "flowers_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 259,
+      "connections": 399,
+      "values": 503,
+      "compounds": 26
+    }
+  },
+  {
+    "id": "gel_checker",
+    "compound_name": "Graphs::MPM::gel_checker",
+    "category": "Gel",
+    "description": "A gel torus with checkboard material smashes into the ground",
+    "documentation_file": "gel_checker_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 61,
+      "connections": 108,
+      "values": 240,
+      "compounds": 9
+    }
+  },
+  {
+    "id": "generate_data",
+    "compound_name": "Graphs::MachineLearning::generate_data",
+    "category": "Machine Learning",
+    "description": "This graph generates the transform data for the FK to IK Machine Learning Example",
+    "documentation_file": "generate_data_docs_ENU.md",
+    "library_dependencies": {},
+    "counts": {
+      "nodes": 0,
+      "connections": 0,
+      "values": 0,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "glass_shatter",
+    "compound_name": "Graphs::RigidBody::glass_shatter",
+    "category": "Rigid Body",
+    "description": "This graph uses complex fracturing techniques to achieve a shattered glass effect.",
+    "documentation_file": "glass_shatter_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.2",
+      "bif": "2.16.0.2",
+      "fields": "2.16.0.2",
+      "geometries": "2.16.0.2",
+      "rigid_bodies": "2.16.0.2",
+      "scatter": "2.16.0.2",
+      "simulation": "2.16.0.2"
+    },
+    "counts": {
+      "nodes": 395,
+      "connections": 660,
+      "values": 735,
+      "compounds": 41
+    }
+  },
+  {
+    "id": "glue_constraints",
+    "compound_name": "Graphs::RigidBody::glue_constraints",
+    "category": "Rigid Body",
+    "description": "This graph demonstrates glue constraint and control.",
+    "documentation_file": "glue_constraints_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.10",
+      "bif": "2.16.0.10",
+      "geometries": "2.16.0.10",
+      "rigid_bodies": "2.16.0.10",
+      "scatter": "2.16.0.10",
+      "simulation": "2.16.0.10"
+    },
+    "counts": {
+      "nodes": 176,
+      "connections": 298,
+      "values": 400,
+      "compounds": 21
+    }
+  },
+  {
+    "id": "gradient_advection",
+    "compound_name": "Graphs::Particles::gradient_advection",
+    "category": "Particles",
+    "description": "Particle advection by volume gradient",
+    "documentation_file": "gradient_advection_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 57,
+      "connections": 83,
+      "values": 133,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "grass_wind",
+    "compound_name": "Geometry::Strands::grass_wind",
+    "category": "Strands",
+    "description": "This graph generates a field of grass, waving in the wind",
+    "documentation_file": "grass_wind_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 115,
+      "connections": 207,
+      "values": 168,
+      "compounds": 15
+    }
+  },
+  {
+    "id": "ground_mist",
+    "compound_name": "Graphs::Aero::ground_mist",
+    "category": "Smoke",
+    "description": "An aero grah producing a ground mist simulation, with adaptivity for low-res pre-roll.",
+    "documentation_file": "ground_mist_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 199,
+      "connections": 349,
+      "values": 276,
+      "compounds": 22
+    }
+  },
+  {
+    "id": "guided_liquid",
+    "compound_name": "Graphs::Liquids::guided_liquid",
+    "category": "Liquid",
+    "description": "This graph demonstrates a liquid sim informed and guided by a spectral ocean.",
+    "documentation_file": "guided_liquid_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.11",
+      "bif": "2.16.0.11",
+      "fields": "2.16.0.11",
+      "file": "2.16.0.11",
+      "fluids": "2.16.0.11",
+      "geometries": "2.16.0.11",
+      "ocean": "2.16.0.11",
+      "scatter": "2.16.0.11",
+      "simulation": "2.16.0.11"
+    },
+    "counts": {
+      "nodes": 119,
+      "connections": 228,
+      "values": 594,
+      "compounds": 15
+    }
+  },
+  {
+    "id": "ice_cream",
+    "compound_name": "Graphs::MPM::ice_cream",
+    "category": "Gel",
+    "description": "Soft serve icecream is dispensed into a waffle cone",
+    "documentation_file": "ice_cream_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 466,
+      "connections": 777,
+      "values": 574,
+      "compounds": 40
+    }
+  },
+  {
+    "id": "incircle_packing",
+    "compound_name": "Geometry::Instances::incircle_packing",
+    "category": "Scatter Pack",
+    "description": "This graph creates a non-intersecting instance setup using the properties of triangles.",
+    "documentation_file": "incircle_packing_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 363,
+      "connections": 631,
+      "values": 368,
+      "compounds": 39
+    }
+  },
+  {
+    "id": "large_turbulent_fire",
+    "compound_name": "Graphs::Aero::large_turbulent_fire",
+    "category": "Fire",
+    "description": "This graph illustrates how to set up a large-scale simulation of turbulent flames using Aero and how to render it with high detail using a shader network in Arnold.",
+    "documentation_file": "large_turbulent_fire_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.2",
+      "bif": "2.16.0.2",
+      "fields": "2.16.0.2",
+      "fluids": "2.16.0.2",
+      "geometries": "2.16.0.2",
+      "simulation": "2.16.0.2"
+    },
+    "counts": {
+      "nodes": 153,
+      "connections": 259,
+      "values": 390,
+      "compounds": 12
+    }
+  },
+  {
+    "id": "liquid_meshing",
+    "compound_name": "Simulation::MPM::liquid_meshing",
+    "category": "Liquid",
+    "description": "A graph that meshes fluid particle simulations",
+    "documentation_file": "liquid_meshing_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 16,
+      "connections": 19,
+      "values": 142,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "mega_explosion",
+    "compound_name": "Graphs::Aero::mega_explosion",
+    "category": "Fire",
+    "description": "An extensive graph which uses particles and multiple fuel sources to produce a big cascading blast with flaming projectile debris",
+    "documentation_file": "mega_explosion_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 35,
+      "connections": 43,
+      "values": 240,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "missile_hit",
+    "compound_name": "Graphs::Aero::missile_hit",
+    "category": "Fire",
+    "description": "An exploding missile trail aero simulation with debris",
+    "documentation_file": "missile_hit_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 34,
+      "connections": 43,
+      "values": 153,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "multi_constraints",
+    "compound_name": "Graphs::RigidBody::multi_constraints",
+    "category": "Rigid Body",
+    "description": "This graph showcases four RBD constraints:  hinge, slider, spring and cone-twist.",
+    "documentation_file": "multi_constraints_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "3.0.0.0",
+      "bif": "3.0.0.0",
+      "fields": "3.0.0.0",
+      "geometries": "3.0.0.0",
+      "rigid_bodies": "3.0.0.0",
+      "scatter": "3.0.0.0",
+      "simulation": "3.0.0.0"
+    },
+    "counts": {
+      "nodes": 419,
+      "connections": 700,
+      "values": 1933,
+      "compounds": 52
+    }
+  },
+  {
+    "id": "muzzle_flash",
+    "compound_name": "Graphs::Volumes::muzzle_flash",
+    "category": "Volumes",
+    "description": "This graph shows how to combine custom mesh deformation and volume tools to create an animated muzzle-flash.",
+    "documentation_file": "muzzle_flash_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.2",
+      "bif": "2.16.0.2",
+      "geometries": "2.16.0.2"
+    },
+    "counts": {
+      "nodes": 144,
+      "connections": 244,
+      "values": 126,
+      "compounds": 20
+    }
+  },
+  {
+    "id": "neural_network",
+    "compound_name": "Graphs::MachineLearning::neural_network",
+    "category": "Machine Learning",
+    "description": "This graph interprets the trained data from the generate_data browser graph",
+    "documentation_file": "neural_network_docs_ENU.md",
+    "library_dependencies": {},
+    "counts": {
+      "nodes": 0,
+      "connections": 0,
+      "values": 0,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "ocean_wave_with_spray",
+    "compound_name": "Graphs::Ocean::ocean_wave_with_spray",
+    "category": "Ocean",
+    "description": "An ocean with waves and spray",
+    "documentation_file": "ocean_wave_with_spray_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "ocean": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 186,
+      "connections": 381,
+      "values": 346,
+      "compounds": 23
+    }
+  },
+  {
+    "id": "parent_matrix",
+    "compound_name": "Graphs::Rigging::parent_matrix",
+    "category": "Rigging",
+    "description": "Using the \"parent_matrix\" node, dynamically switch a ball's parenting association between two hands. Offset matrices are computed to ensure a smooth and natural transition as it shifts from one hand to the other.",
+    "documentation_file": null,
+    "library_dependencies": {},
+    "counts": {
+      "nodes": 0,
+      "connections": 0,
+      "values": 0,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "pick_matrix",
+    "compound_name": "Graphs::Rigging::pick_matrix",
+    "category": "Rigging",
+    "description": "Select which transform components from an input matrix to keep. ",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "rigging": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 16,
+      "connections": 33,
+      "values": 20,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "plastic_deformation",
+    "compound_name": "Graphs::MPM::plastic_deformation",
+    "category": "Shell",
+    "description": "This graph utilizes the make_mpm_shell source to create a plastic deformation simulation.",
+    "documentation_file": "plastic_deformation_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 20,
+      "connections": 22,
+      "values": 43,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "point_infection",
+    "compound_name": "Graphs::Scatter::point_infection",
+    "category": "Scatter Pack",
+    "description": "Simple space colonisation graph",
+    "documentation_file": "point_infection_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 111,
+      "connections": 203,
+      "values": 144,
+      "compounds": 10
+    }
+  },
+  {
+    "id": "post_aero_refinement",
+    "compound_name": "Graphs::Aero::post_aero_refinement",
+    "category": "Smoke",
+    "description": "This graph utilizes the post_refine_aero compound to refine an aero volume and add more detail after the simulation.",
+    "documentation_file": "post_aero_refinement_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.2",
+      "bif": "2.16.0.2",
+      "fields": "2.16.0.2",
+      "fluids": "2.16.0.2",
+      "geometries": "2.16.0.2"
+    },
+    "counts": {
+      "nodes": 55,
+      "connections": 76,
+      "values": 59,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "powder_explosion",
+    "compound_name": "Graphs::Aero::powder_explosion",
+    "category": "Smoke",
+    "description": "This graph simulates an explosion of colored powder, where colored particles emit into an aero simulation.",
+    "documentation_file": "powder_explosion_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 58,
+      "connections": 71,
+      "values": 158,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "procedural_gear",
+    "compound_name": "Geometry::Tags::procedural_gear",
+    "category": "Tags",
+    "description": "Create a procedural gear using component tags",
+    "documentation_file": "procedural_gear_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "rigging": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 726,
+      "connections": 1437,
+      "values": 708,
+      "compounds": 105
+    }
+  },
+  {
+    "id": "procedural_stream",
+    "compound_name": "Graphs::Liquids::procedural_stream",
+    "category": "Liquid",
+    "description": "This graph showcases the procedural generation of a stream",
+    "documentation_file": "procedural_stream_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "rigging": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 548,
+      "connections": 996,
+      "values": 1078,
+      "compounds": 72
+    }
+  },
+  {
+    "id": "pyroclastic_explosion",
+    "compound_name": "Graphs::Aero::pyroclastic_explosion",
+    "category": "Fire",
+    "description": "This graph shows how to use Bifrost Aero to create a large, pyroclastic explosion.",
+    "documentation_file": "pyroclastic_explosion_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 48,
+      "connections": 64,
+      "values": 141,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "ragged_cloud",
+    "compound_name": "Graphs::Volumes::ragged_cloud",
+    "category": "Volumes",
+    "description": "This graph provides an easy way to turn arbitrary meshes into a cloud-like volume.  Volumes can also be cached to disk as .vdb files.",
+    "documentation_file": "ragged_cloud_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 96,
+      "connections": 167,
+      "values": 163,
+      "compounds": 11
+    }
+  },
+  {
+    "id": "random_particle_rotations",
+    "compound_name": "Graphs::Particles::random_particle_rotations",
+    "category": "Particles",
+    "description": "Demonstrates how to source and randomize particle orientation and spin",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 37,
+      "connections": 62,
+      "values": 108,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "read_texture",
+    "compound_name": "Graphs::Texture::read_texture",
+    "category": "Texture",
+    "description": "A texture is made of one or more images, in a texture-atlas (such as \"UDIM\") space.  This graph illustrates the reading of a file from disk.",
+    "documentation_file": "read_texture_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "file": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 4,
+      "connections": 3,
+      "values": 5,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "resample_matrix_chain",
+    "compound_name": "Graphs::Rigging::resample_matrix_chain",
+    "category": "Rigging",
+    "description": "Resamples a matrix chain to create interpolated matrices between the input matrices.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "rigging": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 48,
+      "connections": 80,
+      "values": 37,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "rigid_body_instances",
+    "compound_name": "Graphs::RigidBody::rigid_body_instances",
+    "category": "Rigid Body",
+    "description": "This graph demontrates rigid body instances",
+    "documentation_file": "rigid_body_instances_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.12",
+      "bif": "2.16.0.12",
+      "fields": "2.16.0.12",
+      "geometries": "2.16.0.12",
+      "rigid_bodies": "2.16.0.12",
+      "scatter": "2.16.0.12",
+      "simulation": "2.16.0.12"
+    },
+    "counts": {
+      "nodes": 97,
+      "connections": 122,
+      "values": 420,
+      "compounds": 6
+    }
+  },
+  {
+    "id": "rope_module",
+    "compound_name": "Graphs::Rigging::rope_module",
+    "category": "Rigging",
+    "description": "An example graph demonstrating how to use and setup the rope_module to rig and simulate a rope.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.16.0.11",
+      "bif": "2.16.0.11",
+      "rigging": "2.16.0.11"
+    },
+    "counts": {
+      "nodes": 2,
+      "connections": 5,
+      "values": 13,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "rubber_helix",
+    "compound_name": "Graphs::MPM::rubber_helix",
+    "category": "Rubber",
+    "description": "MPM rubber scene that shows surfacing workflow",
+    "documentation_file": "rubber_helix_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 203,
+      "connections": 393,
+      "values": 173,
+      "compounds": 27
+    }
+  },
+  {
+    "id": "sample_points_by_radius",
+    "compound_name": "Graphs::Geometry_Queries::sample_points_by_radius",
+    "category": "Geometry Queries",
+    "description": "This example demonstrates weighted sampling between points and a plane",
+    "documentation_file": "sample_points_by_radius_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 17,
+      "connections": 26,
+      "values": 27,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "sand_grain_instances",
+    "compound_name": "Graphs::MPM::sand_grain_instances",
+    "category": "Sand",
+    "description": "MPM sand scene that shows instancing workflow",
+    "documentation_file": "sand_grain_instances_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 99,
+      "connections": 160,
+      "values": 215,
+      "compounds": 10
+    }
+  },
+  {
+    "id": "sand_pile",
+    "compound_name": "Graphs::MPM::sand_pile",
+    "category": "Sand",
+    "description": "A very simple grains simulation, in the form of a pile of sand.",
+    "documentation_file": "sand_pile_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 37,
+      "connections": 42,
+      "values": 57,
+      "compounds": 5
+    }
+  },
+  {
+    "id": "scatter_and_settle",
+    "compound_name": "Graphs::RigidBody::scatter_and_settle",
+    "category": "Rigid Body",
+    "description": "This graph demostrates using RBD to scatter and settle instances.",
+    "documentation_file": "scatter_and_settle_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.9",
+      "bif": "2.16.0.9",
+      "fields": "2.16.0.9",
+      "geometries": "2.16.0.9",
+      "rigid_bodies": "2.16.0.9",
+      "scatter": "2.16.0.9",
+      "simulation": "2.16.0.9"
+    },
+    "counts": {
+      "nodes": 412,
+      "connections": 761,
+      "values": 451,
+      "compounds": 42
+    }
+  },
+  {
+    "id": "scatter_and_settle_instant",
+    "compound_name": "Graphs::RigidBody::scatter_and_settle_instant",
+    "category": "Rigid Body",
+    "description": "This graph demonstrates the use of the RBD solver as pre-roll.",
+    "documentation_file": "scatter_and_settle_instant_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.11",
+      "bif": "2.16.0.11",
+      "fields": "2.16.0.11",
+      "geometries": "2.16.0.11",
+      "rigid_bodies": "2.16.0.11",
+      "scatter": "2.16.0.11",
+      "simulation": "2.16.0.11"
+    },
+    "counts": {
+      "nodes": 549,
+      "connections": 1017,
+      "values": 855,
+      "compounds": 65
+    }
+  },
+  {
+    "id": "scatter_around_strand",
+    "compound_name": "Graphs::Scatter_Pack::scatter_around_strand",
+    "category": "Scatter Pack",
+    "description": "Scatter points around a strand",
+    "documentation_file": "scatter_around_strand_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 140,
+      "connections": 284,
+      "values": 135,
+      "compounds": 21
+    }
+  },
+  {
+    "id": "scatter_in_volume",
+    "compound_name": "Graphs::Scatter::scatter_in_volume",
+    "category": "Scatter Pack",
+    "description": "Simple scatter in volume",
+    "documentation_file": "scatter_in_volume_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 52,
+      "connections": 81,
+      "values": 70,
+      "compounds": 8
+    }
+  },
+  {
+    "id": "scatter_on_points",
+    "compound_name": "Graphs::Scatter_Pack::scatter_on_points",
+    "category": "Scatter Pack",
+    "description": "Scatter points on points",
+    "documentation_file": "scatter_on_points_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 193,
+      "connections": 350,
+      "values": 150,
+      "compounds": 33
+    }
+  },
+  {
+    "id": "scatter_orientations_example",
+    "compound_name": "Graphs::Scatter::scatter_orientations_example",
+    "category": "Scatter Pack",
+    "description": "Demonstrates simply how orientations are generated by scatter_points by instancing some axes onto the scattered points. ",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 34,
+      "connections": 61,
+      "values": 79,
+      "compounds": 4
+    }
+  },
+  {
+    "id": "simple_RBD",
+    "compound_name": "Graphs::RigidBody::simple_RBD",
+    "category": "Rigid Body",
+    "description": "A simple RBD stack example",
+    "documentation_file": "simple_RBD_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.11",
+      "bif": "2.16.0.11",
+      "rigid_bodies": "2.16.0.11",
+      "scatter": "2.16.0.11"
+    },
+    "counts": {
+      "nodes": 44,
+      "connections": 55,
+      "values": 160,
+      "compounds": 5
+    }
+  },
+  {
+    "id": "skeleton_to_strands",
+    "compound_name": "Graphs::Rigging::skeleton_to_strands",
+    "category": "Rigging",
+    "description": "Using Maya joint data, we show the process of reconstructing a skeleton. This demonstration covers both the creation of a skeleton from the joints' full paths and the subsequent conversion of that skeleton into strands.",
+    "documentation_file": null,
+    "library_dependencies": {},
+    "counts": {
+      "nodes": 0,
+      "connections": 0,
+      "values": 0,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "smoke_trail",
+    "compound_name": "Graphs::Aero::smoke_trail",
+    "category": "Smoke",
+    "description": "An aero simulation producing a smoke trail",
+    "documentation_file": "smoke_trail_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 20,
+      "connections": 23,
+      "values": 76,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "snow_activation",
+    "compound_name": "Graphs::MPM::snow_activation",
+    "category": "Snow",
+    "description": "MPM snow simulation that shows dynamic activation of points using an infection solver",
+    "documentation_file": "snow_activation_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "scatter": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 226,
+      "connections": 419,
+      "values": 488,
+      "compounds": 24
+    }
+  },
+  {
+    "id": "snow_aero",
+    "compound_name": "Graphs::MPM::snow_aero",
+    "category": "Snow",
+    "description": "A snowball breaks apart on a wedge",
+    "documentation_file": "snow_aero_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "file": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 81,
+      "connections": 125,
+      "values": 336,
+      "compounds": 9
+    }
+  },
+  {
+    "id": "snow_shadows",
+    "compound_name": "Graphs::Geometry_Queries::snow_shadows",
+    "category": "Geometry Queries",
+    "description": "Puts gloopy melting snow on top of surfaces but not under them (leaving a \"snow shadow\"). Uses scattering, ray-casting, and meshing of volumes.",
+    "documentation_file": "snow_shadows_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 92,
+      "connections": 160,
+      "values": 120,
+      "compounds": 14
+    }
+  },
+  {
+    "id": "snowball_throw",
+    "compound_name": "Graphs::MPM::snowball_throw",
+    "category": "Snow",
+    "description": "An MPM simulation of a snowball being thrown against a wall",
+    "documentation_file": "snowball_throw_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 21,
+      "connections": 25,
+      "values": 53,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "standard_explosion",
+    "compound_name": "Graphs::Aero::standard_explosion",
+    "category": "Fire",
+    "description": "A aero and combustion graph producing a standard explosion",
+    "documentation_file": "standard_explosion_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 10,
+      "connections": 10,
+      "values": 54,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "steamy_breath",
+    "compound_name": "Graphs::Aero::steamy_breath",
+    "category": "Smoke",
+    "description": "An aero graph producing a steamy breath style simulation",
+    "documentation_file": "steamy_breath_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "particles": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 20,
+      "connections": 22,
+      "values": 118,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "surface_tension_explicit",
+    "compound_name": "Graphs::Liquids::surface_tension_explicit",
+    "category": "Liquid",
+    "description": "This graph demonstrates a classic crown splash using an explicit surface tension solver.",
+    "documentation_file": "surface_tension_explicit_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.12",
+      "bif": "2.16.0.12",
+      "fields": "2.16.0.12",
+      "file": "2.16.0.12",
+      "fluids": "2.16.0.12",
+      "geometries": "2.16.0.12",
+      "simulation": "2.16.0.12"
+    },
+    "counts": {
+      "nodes": 53,
+      "connections": 100,
+      "values": 350,
+      "compounds": 7
+    }
+  },
+  {
+    "id": "surface_tension_implicit",
+    "compound_name": "Graphs::Liquids::surface_tension_implicit",
+    "category": "Liquid",
+    "description": "This graph showcases a droplet collision using an implicit surface tension solver.",
+    "documentation_file": "surface_tension_implicit_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.11",
+      "bif": "2.16.0.11",
+      "fields": "2.16.0.11",
+      "fluids": "2.16.0.11",
+      "geometries": "2.16.0.11"
+    },
+    "counts": {
+      "nodes": 33,
+      "connections": 56,
+      "values": 222,
+      "compounds": 6
+    }
+  },
+  {
+    "id": "swinging_coil",
+    "compound_name": "Graphs::Rigging::swinging_coil",
+    "category": "Rigging",
+    "description": "An example graph demonstrating how to use the simulate_rods solver to simulate a transform chain with the shape of a coil realistically.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.16.0.6",
+      "bif": "2.16.0.6",
+      "rigging": "2.16.0.6"
+    },
+    "counts": {
+      "nodes": 58,
+      "connections": 96,
+      "values": 55,
+      "compounds": 6
+    }
+  },
+  {
+    "id": "tearing_cloth",
+    "compound_name": "Graphs::MPM::tearing_cloth",
+    "category": "Cloth",
+    "description": "An MPM simulation of cloth tearing through constraints",
+    "documentation_file": "tearing_cloth_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 18,
+      "connections": 23,
+      "values": 83,
+      "compounds": 2
+    }
+  },
+  {
+    "id": "test_inside_mesh_example",
+    "compound_name": "Graphs::Geometry_Queries::test_inside_mesh_example",
+    "category": "Geometry Queries",
+    "description": "A sample which tests two meshes to see if any points of either mesh are inside the other.\n\nTo do this, it uses a closest_location lookup to see if it finds a rear-facing normal or not. ",
+    "documentation_file": "test_inside_mesh_example_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 118,
+      "connections": 188,
+      "values": 145,
+      "compounds": 13
+    }
+  },
+  {
+    "id": "texture_scatter",
+    "compound_name": "Graphs::Texture::texture_scatter",
+    "category": "Texture",
+    "description": "This graph illustrates the use of read_texture to drive a scatter density and output color.",
+    "documentation_file": "texture_scatter_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "file": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 9,
+      "connections": 10,
+      "values": 50,
+      "compounds": 1
+    }
+  },
+  {
+    "id": "twist_rainbow_shell",
+    "compound_name": "Graphs::MPM::twist_rainbow_shell",
+    "category": "Shell",
+    "description": "An MPM simulation of shell twisting from constraints",
+    "documentation_file": "twist_rainbow_shell_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.16.0.5",
+      "bif": "2.16.0.5",
+      "geometries": "2.16.0.5",
+      "mpm": "2.16.0.5",
+      "scatter": "2.16.0.5"
+    },
+    "counts": {
+      "nodes": 207,
+      "connections": 414,
+      "values": 275,
+      "compounds": 32
+    }
+  },
+  {
+    "id": "valley_forest",
+    "compound_name": "Graphs::Scatter::valley_forest",
+    "category": "Scatter Pack",
+    "description": "Creates a landscape of rolling hills and puts a forest of simple cartoony trees into the valleys of that landscape.",
+    "documentation_file": "valley_forest_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "scatter": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 86,
+      "connections": 114,
+      "values": 128,
+      "compounds": 7
+    }
+  },
+  {
+    "id": "vehicle_exhaust",
+    "compound_name": "Graphs::Aero::vehicle_exhaust",
+    "category": "Smoke",
+    "description": "An aero simulation graph producing a racing vehicle exhaust effect.  ",
+    "documentation_file": "vehicle_exhaust_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 26,
+      "connections": 28,
+      "values": 181,
+      "compounds": 3
+    }
+  },
+  {
+    "id": "view_based_ocean",
+    "compound_name": "Graphs::Ocean::view_based_ocean",
+    "category": "Ocean",
+    "description": "An ocean mesh that is fit to the camera view, more polygons close to the camera, less on the horizon.",
+    "documentation_file": "view_based_ocean_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "ocean": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 220,
+      "connections": 443,
+      "values": 257,
+      "compounds": 38
+    }
+  },
+  {
+    "id": "voronoi_fracture",
+    "compound_name": "Graphs::Fracture::voronoi_fracture",
+    "category": "Fracture",
+    "description": "This graph shows a voronoi_fracture example",
+    "documentation_file": "voronoi_fracture_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.11",
+      "bif": "2.15.0.11",
+      "fields": "2.15.0.11",
+      "geometries": "2.15.0.11",
+      "scatter": "2.15.0.11",
+      "simulation": "2.15.0.11"
+    },
+    "counts": {
+      "nodes": 59,
+      "connections": 95,
+      "values": 122,
+      "compounds": 8
+    }
+  },
+  {
+    "id": "walking_centipede",
+    "compound_name": "Graphs::Rigging::walking_centipede",
+    "category": "Rigging",
+    "description": "Procedurally construct a centipede skeleton with a spine and legs, then compute its animation in two steps. First, solve the spine animation by  driving it from the head and applying inextensibility is applied on it. Then, solve all legs animation by feeding them in an IK solver, and drive the IK target procedurally using a target blending mechanism.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "rigging": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 350,
+      "connections": 716,
+      "values": 285,
+      "compounds": 46
+    }
+  },
+  {
+    "id": "waterfall_mist",
+    "compound_name": "Graphs::MPM::waterfall_mist",
+    "category": "Smoke",
+    "description": "An MPM fluid simulation sourcing aero to produce mist",
+    "documentation_file": "waterfall_mist_docs_ENU.md",
+    "library_dependencies": {
+      "Amino": "2.15.0.9",
+      "bif": "2.15.0.9",
+      "fields": "2.15.0.9",
+      "fluids": "2.15.0.9",
+      "geometries": "2.15.0.9",
+      "mpm": "2.15.0.9",
+      "simulation": "2.15.0.9"
+    },
+    "counts": {
+      "nodes": 51,
+      "connections": 63,
+      "values": 140,
+      "compounds": 5
+    }
+  },
+  {
+    "id": "wobbling_plant",
+    "compound_name": "Graphs::Rigging::wobbling_plant",
+    "category": "Rigging",
+    "description": "An example graph demonstrating how to use the simulate_rods solver to apply secondary animation on a wobbling plant's skeleton.",
+    "documentation_file": null,
+    "library_dependencies": {
+      "Amino": "2.16.0.7",
+      "bif": "2.16.0.7",
+      "rigging": "2.16.0.7"
+    },
+    "counts": {
+      "nodes": 50,
+      "connections": 74,
+      "values": 59,
+      "compounds": 5
+    }
+  }
+]

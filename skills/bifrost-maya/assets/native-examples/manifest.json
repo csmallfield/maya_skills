@@ -1,0 +1,101 @@
+{
+  "update_date": "2026-09-18",
+  "evidence_policy": "User-reported success is not assistant-run Maya validation. Declared library versions are not live installation discovery. No video transcript reviewed.",
+  "examples": [
+    {
+      "file": "cs_green_goo_v5(1).json",
+      "sha256": "ff0778184b901e9d56250050ad06e3627ff324acb42d926a26b679126d1096c5",
+      "compound": "FX::Goo::cs_green_goo_v5",
+      "declared_libraries": {
+        "Amino": "2.15.0.9",
+        "bif": "2.15.0.9",
+        "fields": "2.15.0.9",
+        "file": "2.15.0.9",
+        "geometries": "2.15.0.9",
+        "mpm": "2.15.0.9",
+        "scatter": "2.15.0.9",
+        "simulation": "2.15.0.9"
+      },
+      "provenance": "User-supplied known-working export, returned unchanged",
+      "user_reported_runtime_success": true,
+      "user_reported_performance": null,
+      "assistant_executed_in_maya": false,
+      "numeric_benchmark_available": false,
+      "use": "Known-working native serialization example"
+    },
+    {
+      "file": "ppg_nyc_skyscraper_bake_v3.json",
+      "sha256": "e28f53418297a1f274f0911f55f50ad1f270cb4de227819f15d10436a53a7f83",
+      "compound": "Procedural::Buildings::ppg_nyc_skyscraper_bake_v3",
+      "declared_libraries": {
+        "Amino": "2.15.0.9",
+        "bif": "2.15.0.9",
+        "geometries": "2.15.0.9"
+      },
+      "provenance": "Conversation-generated example, returned unchanged",
+      "user_reported_runtime_success": false,
+      "user_reported_performance": null,
+      "assistant_executed_in_maya": false,
+      "numeric_benchmark_available": false,
+      "use": "Optional geometry handoff; not runtime-confirmed"
+    },
+    {
+      "file": "ppg_nyc_skyscraper_v3_1_fast.json",
+      "sha256": "87d7a5675a4d1fad8e87b77f82616f9125d33d2570ba87ecba19e09086ae4b44",
+      "compound": "Procedural::Buildings::ppg_nyc_skyscraper_v3_1_fast",
+      "declared_libraries": {
+        "Amino": "2.15.0.9",
+        "bif": "2.15.0.9",
+        "geometries": "2.15.0.9"
+      },
+      "provenance": "Conversation-generated example, returned unchanged",
+      "user_reported_runtime_success": true,
+      "user_reported_performance": "Works much much better; qualitative only",
+      "assistant_executed_in_maya": false,
+      "numeric_benchmark_available": false,
+      "use": "Primary native building/loop/instance example"
+    }
+  ],
+  "written_ppg_documentation": {
+    "archive": "docs.zip",
+    "sha256": "219099fe27896fda211b0250621cea7b02420a7dccb3d8aca2b242f084a1fec3",
+    "destination": "../../references/ppg-docs",
+    "file_count": 34,
+    "files": {
+      "PPG_arch.md": "3da21026e08506afd36d5a50a21349dc734167fbceeb606861f5cdbdeb5a4b52",
+      "PPG_diagnostic.md": "ec741f85b2dea8b7bcf2f700fd32d4fc6ba3fa56e97127d097af84e5c6576768",
+      "PPG_dome.md": "30efb89c650b28a61cb6610813de044661048f6605963f4d35b6c19dc22af3c8",
+      "PPG_extrude.md": "9547bb6965831cc8c0119ed65eaed99861f6af17eb17f940d399ef318b6fb32e",
+      "PPG_instance.md": "aa0bc4fafa215cfb6ac90d010a14e4198c5e72b18c83dec5b53a450ff3176bbe",
+      "PPG_multi_cut.md": "1b14855d08feb86ca5a5f9b50af140aae468780a86dca1812a1d019c98e9a20d",
+      "PPG_multi_instance.md": "8f6fc8123e30f1ea35229d8581cf7e56d261f5b83b1b94877be2afaba0125e19",
+      "PPG_sequence_cut.md": "045403c4c5baa0d4d65b3e0b23ac6788ea430f19596e2e25eb1f43e5b9f37538",
+      "PPG_transform.md": "5c71ba16ed922078bbadddb7058e0f6f8d1f50823104085bc7e6f3e92d60fbbd",
+      "PPG_wedge.md": "01332c34d9df0e3578e9a30caa9ebbd7efeee476aa108441b28896043733d2a2",
+      "assign_material_to_tags.md": "d1d7a23e080bdb0d2489655ba11fa5b4be70a7aba666ffc0c23bd7eb6b250cf5",
+      "bulk_assign_material.md": "c2fc49ca9cabba57ac04e5b67081d922f4f0d1ddd365f0fedccf8a25016203d6",
+      "bulk_rename.md": "7437ff6f04c8e30f62b1ea0556824ed5b6d507645beb5f1023c0127e5d9459b1",
+      "cluster_values.md": "a36418918e90ce14eac832f0c2e59683b1a4d9f62f8263aa5412532086d492ce",
+      "create_arch.md": "c49a82625ffc17fdd2d5bf9bd81011b9533d9e4e33f1bca5c32f8e2a4d2b8b83",
+      "create_pattern.md": "ddc6e23b632901ab634cf296c5d1407876d95d840b266ebabccb0d69f256f6d3",
+      "faces_ID_input.md": "7f33081c152ca675cd66889d20152f27169d3f88768638ecf1e200b10ce91a58",
+      "get_face_info.md": "a951c1c9bc40f239381ead6eb024b74cc5771ee5c8d281dfdb1630d0dadaf195",
+      "get_faces_from_tags.md": "1d2dc272e891cb02a226b4a5257a0fcf13f33089c4d42bc7dabfbbf5d723fdef",
+      "get_maya_component_tags.md": "6e03cbf62b554cb9f217b433f15e84f7b98caccddf40e828b93a97a67387e1ac",
+      "get_tag_faces.md": "34df19a2246e584ffc436304154a5c0b6d944e24e7e07dc963df0276b558cc87",
+      "match_expression.md": "67c9330862075e63e5e0bf5000fbd63fb9395172d17b7615e5d27333222edc60",
+      "new_face_tag.md": "ddc03c41327c134e42e7bf655415af1fe6cbd221950ac6117653676153fedcee",
+      "pattern_rename.md": "e8f918559ba5c95eb4dbec59a52c48ce962d574ddf90f77538d00c1275211a88",
+      "rename_face_tag.md": "63de461083d25b2704585459fb047268b7c06a05f4b3e02bdec68bb1d6d201eb",
+      "select_faces_by_area.md": "14cbbae020e9ddc09bf886a7820634f80341317025bdfd817eb778ef248d9aa8",
+      "select_faces_by_field.md": "cae9bc9a16f1dce62bf37a6ed72edb436404f33c4d0a32da79bf6c1d86205d62",
+      "select_faces_by_normal.md": "7af796ba9f10d91658ce97f7ef8d582287ba7c877351f221feef22adc1ae0215",
+      "select_faces_by_shape.md": "46a266d87b04b9f9a12538db72841397da0b989e55f295056cfe79e2fbb18b31",
+      "select_faces_by_visibility.md": "861be8219d8996fe593cac3a75e88dd5d5aa25bb3c851e576450adeb6040a45d",
+      "select_faces_inside_mesh.md": "df266835098aead74c641aa41a05e38ca1dbe32c3082f2a04fc80b66865b2d56",
+      "select_random_faces.md": "fb79cac79a3b3cce84d8b753f785fc713b89370906820884416b0295add05a2a",
+      "set_face_ID_tags.md": "4a5fb4ab7232721dbe98c625e3997901697994cf5484c44d1d6c38bcee977c8d",
+      "set_face_tag.md": "9c212a2ce79844ac16ffa1a4a5c84b66c7f7382ff68fe50b959cc87402c381cf"
+    }
+  }
+}

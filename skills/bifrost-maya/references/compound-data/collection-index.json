@@ -1,0 +1,320 @@
+{
+  "CJS_genRock.json": {
+    "root": [
+      "CJS_genRock"
+    ]
+  },
+  "CJS_makeProxy.json": {
+    "root": [
+      "CJS_makeProxy"
+    ]
+  },
+  "CJS_points_to_USD_points.json": {
+    "root": [
+      "CJS_points_to_USD_points"
+    ]
+  },
+  "CJS_simple_usd_loader.json": {
+    "root": [
+      "CJS_simple_usd_loader"
+    ]
+  },
+  "CJS_usd_scatter.json": {
+    "root": [
+      "CJS_usd_scatter"
+    ]
+  },
+  "GL_replace_point_instancer_prototype.json": {
+    "root": [
+      "GL_replace_point_instancer_prototype"
+    ]
+  },
+  "GL_usd_point_instancer_scope.json": {
+    "root": [
+      "GL_usd_point_instancer_scope"
+    ]
+  },
+  "PPG_V2.0": {
+    "compounds": [
+      "PPG_V2.0__compounds__PPG_arch",
+      "PPG_V2.0__compounds__PPG_chip_off",
+      "PPG_V2.0__compounds__PPG_diagnostc",
+      "PPG_V2.0__compounds__PPG_dome",
+      "PPG_V2.0__compounds__PPG_extrude",
+      "PPG_V2.0__compounds__PPG_instance",
+      "PPG_V2.0__compounds__PPG_multi_cut",
+      "PPG_V2.0__compounds__PPG_multi_instance",
+      "PPG_V2.0__compounds__PPG_sequence_cut",
+      "PPG_V2.0__compounds__PPG_shader",
+      "PPG_V2.0__compounds__PPG_transform",
+      "PPG_V2.0__compounds__PPG_wedge",
+      "PPG_V2.0__compounds__assign_manual_colors",
+      "PPG_V2.0__compounds__assign_material_to_tags",
+      "PPG_V2.0__compounds__assign_random_colors",
+      "PPG_V2.0__compounds__bulk_assign_material",
+      "PPG_V2.0__compounds__check_face_tags",
+      "PPG_V2.0__compounds__cluster_values",
+      "PPG_V2.0__compounds__create_arch",
+      "PPG_V2.0__compounds__create_pattern",
+      "PPG_V2.0__compounds__display_face_tags",
+      "PPG_V2.0__compounds__display_selected_edges",
+      "PPG_V2.0__compounds__edge_selection",
+      "PPG_V2.0__compounds__face_tag_renamer",
+      "PPG_V2.0__compounds__faces_ID_input",
+      "PPG_V2.0__compounds__faces_from_origin_XZ",
+      "PPG_V2.0__compounds__faces_to_origin_XZ",
+      "PPG_V2.0__compounds__get_all_faces",
+      "PPG_V2.0__compounds__get_face_indices",
+      "PPG_V2.0__compounds__get_face_info",
+      "PPG_V2.0__compounds__get_face_orientation",
+      "PPG_V2.0__compounds__get_faces_from_tags",
+      "PPG_V2.0__compounds__get_maya_component_tags",
+      "PPG_V2.0__compounds__get_points_per_face",
+      "PPG_V2.0__compounds__get_tag_faces",
+      "PPG_V2.0__compounds__match_expression",
+      "PPG_V2.0__compounds__merge_vertices_clean",
+      "PPG_V2.0__compounds__merge_vertices_clean_tags",
+      "PPG_V2.0__compounds__new_face_tag",
+      "PPG_V2.0__compounds__pattern_rename",
+      "PPG_V2.0__compounds__remove_A_from_B",
+      "PPG_V2.0__compounds__rename_face_tag",
+      "PPG_V2.0__compounds__reverse_faces",
+      "PPG_V2.0__compounds__rewrite_face_tags",
+      "PPG_V2.0__compounds__select_faces_by_area",
+      "PPG_V2.0__compounds__select_faces_by_field",
+      "PPG_V2.0__compounds__select_faces_by_normal",
+      "PPG_V2.0__compounds__select_faces_by_shape",
+      "PPG_V2.0__compounds__select_faces_by_visibility",
+      "PPG_V2.0__compounds__select_faces_inside_mesh",
+      "PPG_V2.0__compounds__select_random_faces",
+      "PPG_V2.0__compounds__set_face_ID_tags",
+      "PPG_V2.0__compounds__set_face_color",
+      "PPG_V2.0__compounds__set_face_tag"
+    ],
+    "compounds/supporting compounds": [
+      "PPG_V2.0__compounds__supporting_compounds__angle_between_vectors",
+      "PPG_V2.0__compounds__supporting_compounds__any_array_min_max",
+      "PPG_V2.0__compounds__supporting_compounds__any_to_string",
+      "PPG_V2.0__compounds__supporting_compounds__array_info_string",
+      "PPG_V2.0__compounds__supporting_compounds__array_min_max",
+      "PPG_V2.0__compounds__supporting_compounds__autoport_to_array",
+      "PPG_V2.0__compounds__supporting_compounds__case",
+      "PPG_V2.0__compounds__supporting_compounds__commands_and_palette",
+      "PPG_V2.0__compounds__supporting_compounds__create_fast_text_NF",
+      "PPG_V2.0__compounds__supporting_compounds__degrees_to_quaternion",
+      "PPG_V2.0__compounds__supporting_compounds__face_vertex_slice",
+      "PPG_V2.0__compounds__supporting_compounds__float_to_string",
+      "PPG_V2.0__compounds__supporting_compounds__hex_color_palette",
+      "PPG_V2.0__compounds__supporting_compounds__is_odd",
+      "PPG_V2.0__compounds__supporting_compounds__quaternion_to_degrees",
+      "PPG_V2.0__compounds__supporting_compounds__set_print_material",
+      "PPG_V2.0__compounds__supporting_compounds__string_to_ASCII",
+      "PPG_V2.0__compounds__supporting_compounds__test_for_changes",
+      "PPG_V2.0__compounds__supporting_compounds__value_to_hex",
+      "PPG_V2.0__compounds__supporting_compounds__value_to_string"
+    ]
+  },
+  "Stormvn": {
+    "compounds/cloud": [
+      "Stormvn__compounds__cloud__basic_cloud",
+      "Stormvn__compounds__cloud__cloud_advect_field",
+      "Stormvn__compounds__cloud__cloud_source",
+      "Stormvn__compounds__cloud__cloud_volume_shader",
+      "Stormvn__compounds__cloud__create_cloud"
+    ]
+  },
+  "VHH": {
+    "LightBox/compounds": [
+      "VHH__LightBox__compounds__LB_AO",
+      "VHH__LightBox__compounds__LB_ambient",
+      "VHH__LightBox__compounds__LB_area",
+      "VHH__LightBox__compounds__LB_directional",
+      "VHH__LightBox__compounds__LB_display",
+      "VHH__LightBox__compounds__LB_gradient",
+      "VHH__LightBox__compounds__LB_locator_transform",
+      "VHH__LightBox__compounds__LB_pointlight",
+      "VHH__LightBox__compounds__LB_skydome",
+      "VHH__LightBox__compounds__LB_spot"
+    ],
+    "USD": [
+      "VHH__USD__PBR_Preview_Surface"
+    ],
+    "anim": [
+      "VHH__anim__change_on_frame",
+      "VHH__anim__loop_cache",
+      "VHH__anim__move_points_along_strand"
+    ],
+    "array": [
+      "VHH__array__average_array",
+      "VHH__array__find_in_string_array",
+      "VHH__array__fit_array",
+      "VHH__array__pop_from_array",
+      "VHH__array__random_color_array",
+      "VHH__array__random_get_from_array"
+    ],
+    "display": [
+      "VHH__display__HSV2RGB",
+      "VHH__display__RGB",
+      "VHH__display__RGB2HSV",
+      "VHH__display__RGBA",
+      "VHH__display__eval_fCurve_with_mag",
+      "VHH__display__fresnel_viz",
+      "VHH__display__gnomon",
+      "VHH__display__nPointRamp",
+      "VHH__display__pnt_display",
+      "VHH__display__point_color_by_property",
+      "VHH__display__pos_display",
+      "VHH__display__ramp",
+      "VHH__display__show_normals",
+      "VHH__display__switch_ramp"
+    ],
+    "fields": [
+      "VHH__fields__adjust_field_in_place",
+      "VHH__fields__change_range_field",
+      "VHH__fields__falloff_field",
+      "VHH__fields__field_change_range",
+      "VHH__fields__fit_field_range"
+    ],
+    "geo": [
+      "VHH__geo__along_strand",
+      "VHH__geo__bend_strand",
+      "VHH__geo__bezier",
+      "VHH__geo__bf_connectivity",
+      "VHH__geo__bounds",
+      "VHH__geo__construct_circle",
+      "VHH__geo__curve_road",
+      "VHH__geo__delete_components_by_volume",
+      "VHH__geo__exploded_view",
+      "VHH__geo__extrude_and_average",
+      "VHH__geo__extrude_loop",
+      "VHH__geo__fib_sphere",
+      "VHH__geo__get_face_centers",
+      "VHH__geo__mapUV_auto_six",
+      "VHH__geo__mapUV_from_camera",
+      "VHH__geo__property_gradient",
+      "VHH__geo__proximity_sort",
+      "VHH__geo__rockify",
+      "VHH__geo__setup_strand_properties",
+      "VHH__geo__split_strand_by_property",
+      "VHH__geo__split_strand_by_random",
+      "VHH__geo__split_strands",
+      "VHH__geo__strand_to_mesh",
+      "VHH__geo__sweep_strand",
+      "VHH__geo__update_point_curvature",
+      "VHH__geo__update_point_density",
+      "VHH__geo__update_point_gradient",
+      "VHH__geo__vertical_stack",
+      "VHH__geo__voro_split",
+      "VHH__geo__wire_deform"
+    ],
+    "logic": [
+      "VHH__logic__compare",
+      "VHH__logic__switch",
+      "VHH__logic__weighted_activation"
+    ],
+    "math": [
+      "VHH__math__find_point_on_line",
+      "VHH__math__fractal_tiling_noise",
+      "VHH__math__gauss",
+      "VHH__math__gaussian_property_blur",
+      "VHH__math__make_rot_matrix",
+      "VHH__math__make_value",
+      "VHH__math__median_property_blur",
+      "VHH__math__point_inside_sphere",
+      "VHH__math__prime_sequence",
+      "VHH__math__quat_to_forward",
+      "VHH__math__quat_to_left",
+      "VHH__math__quat_to_up",
+      "VHH__math__rk4_solver",
+      "VHH__math__round_to",
+      "VHH__math__set_range",
+      "VHH__math__tiling_noise",
+      "VHH__math__vector_to_color.jason",
+      "VHH__math__vector_to_color",
+      "VHH__math__weighted_average"
+    ],
+    "points": [
+      "VHH__points__points_in_a_circle",
+      "VHH__points__points_in_a_sphere",
+      "VHH__points__quick_grid",
+      "VHH__points__scatter_on_scatter",
+      "VHH__points__update_cloud_neighbors"
+    ],
+    "prototypes": [
+      "VHH__prototypes__WIP_centroid"
+    ],
+    "random": [
+      "VHH__random__jitter_nova",
+      "VHH__random__voronoise",
+      "VHH__random__worley_F1",
+      "VHH__random__worley_F2"
+    ],
+    "tags": [
+      "VHH__tags__tag_by_string"
+    ],
+    "tool": [
+      "VHH__tool__AO_filter",
+      "VHH__tool__aoBox",
+      "VHH__tool__camera_occlude_filter",
+      "VHH__tool__curvature_filter",
+      "VHH__tool__displacer",
+      "VHH__tool__file_path",
+      "VHH__tool__gradient_filter",
+      "VHH__tool__height_filter",
+      "VHH__tool__image_filter",
+      "VHH__tool__import_image",
+      "VHH__tool__noise2d_billow",
+      "VHH__tool__noise2d_cell",
+      "VHH__tool__noise2d_curl",
+      "VHH__tool__noise2d_fractal",
+      "VHH__tool__noise2d_fractal_cell",
+      "VHH__tool__noise2d_simplex",
+      "VHH__tool__noise2d_sine",
+      "VHH__tool__noise3d_curl",
+      "VHH__tool__noise3d_curve",
+      "VHH__tool__noise3d_direction",
+      "VHH__tool__noise3d_outward",
+      "VHH__tool__noise3d_radial_axis",
+      "VHH__tool__noise3d_turbulence",
+      "VHH__tool__optimised_ao",
+      "VHH__tool__rotate_thing",
+      "VHH__tool__scalar_crater",
+      "VHH__tool__scatter_plus",
+      "VHH__tool__steep_filter",
+      "VHH__tool__tag_filter",
+      "VHH__tool__vector_filter"
+    ],
+    "volume": [
+      "VHH__volume__vol_density_fade"
+    ]
+  },
+  "cgside": {
+    "compounds": [
+      "cgside__compounds__custom_scatter_cgs"
+    ]
+  },
+  "color_patterns": {
+    "gradient.json": [
+      "color_patterns__gradient"
+    ],
+    "noise.json": [
+      "color_patterns__noise"
+    ],
+    "polka_dot.json": [
+      "color_patterns__polka_dot"
+    ]
+  },
+  "descend.json": {
+    "root": [
+      "descend"
+    ]
+  },
+  "usd_tutorial3": {
+    "assign_weights.json": [
+      "usd_tutorial3__assign_weights"
+    ],
+    "undulating_ground.json": [
+      "usd_tutorial3__undulating_ground"
+    ]
+  }
+}

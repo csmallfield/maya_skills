@@ -1,0 +1,6291 @@
+{
+"BifrostUsd::ActivatePrim": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"None",
+"False",
+"True"
+]
+},
+"BifrostUsd::ArcType": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Reference",
+"Payload",
+"Inherits",
+"Specializes"
+]
+},
+"BifrostUsd::ExpansionRule": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Default",
+"ExplicitOnly",
+"ExpandPrims",
+"ExpandPrimsAndProperties"
+]
+},
+"BifrostUsd::ImageablePurpose": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Default",
+"Render",
+"Proxy",
+"Guide"
+]
+},
+"BifrostUsd::InitialLoadSet": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"LoadAll",
+"LoadNone"
+]
+},
+"BifrostUsd::InstanceablePrim": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"None",
+"False",
+"True"
+]
+},
+"BifrostUsd::MaterialBindingStrength": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"FallbackStrength",
+"StrongerThanDescendants",
+"WeakerThanDescendants"
+]
+},
+"BifrostUsd::MaterialPurpose": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"All",
+"Preview",
+"Full"
+]
+},
+"BifrostUsd::ModelKind": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"None",
+"Assembly",
+"Component",
+"Group",
+"SubComponent"
+]
+},
+"BifrostUsd::PointInstancerDistribution": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Repeat",
+"Proto Index",
+"Custom Index Array",
+"Random"
+]
+},
+"BifrostUsd::PrimDescendantMode": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"UsdPrimChildren",
+"UsdPrimAllChildren",
+"UsdPrimDescendants",
+"UsdPrimAllDescendants"
+]
+},
+"BifrostUsd::RelationshipTarget": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Add",
+"Remove",
+"Clear"
+]
+},
+"BifrostUsd::SdfSpecifier": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Def",
+"Over",
+"Class"
+]
+},
+"BifrostUsd::SdfValueTypeName": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Invalid",
+"Asset",
+"AssetArray",
+"Bool",
+"BoolArray",
+"Color3f",
+"Color3fArray",
+"Double",
+"DoubleArray",
+"Double2",
+"Double2Array",
+"Double3",
+"Double3Array",
+"Double4",
+"Double4Array",
+"Float",
+"FloatArray",
+"Float2",
+"Float2Array",
+"Float3",
+"Float3Array",
+"Float4",
+"Float4Array",
+"Half",
+"HalfArray",
+"Half2",
+"Half2Array",
+"Half3",
+"Half3Array",
+"Half4",
+"Half4Array",
+"Int",
+"IntArray",
+"Int64",
+"Int64Array",
+"Matrix2d",
+"Matrix2dArray",
+"Matrix3d",
+"Matrix3dArray",
+"Matrix4d",
+"Matrix4dArray",
+"Normal3f",
+"Normal3fArray",
+"Quatd",
+"QuatdArray",
+"Quatf",
+"QuatfArray",
+"Quath",
+"QuathArray",
+"String",
+"StringArray",
+"TexCoord2f",
+"TexCoord2fArray",
+"Token",
+"TokenArray",
+"UChar",
+"UCharArray",
+"UInt",
+"UIntArray",
+"UInt64",
+"UInt64Array"
+]
+},
+"BifrostUsd::SdfVariability": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Varying",
+"Uniform"
+]
+},
+"BifrostUsd::SubdivisionScheme": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"catmullClark",
+"loop",
+"bilinear",
+"none"
+]
+},
+"BifrostUsd::UpAxis": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"Y",
+"Z"
+]
+},
+"BifrostUsd::UsdGeomPrimvarInterpolation": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"PrimVarConstant",
+"PrimVarUniform",
+"PrimVarVarying",
+"PrimVarVertex",
+"PrimVarFaceVarying"
+]
+},
+"BifrostUsd::UsdListPosition": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"UsdListPositionFrontOfPrependList",
+"UsdListPositionBackOfPrependList",
+"UsdListPositionFrontOfAppendList",
+"UsdListPositionBackOfAppendList"
+]
+},
+"BifrostUsd::VolumeFieldFormat": {
+"kind": "enum",
+"library": "packs/usd_pack/0.25.5/resources/jsonLibs/usd_all.json",
+"members": [
+"OpenVDB",
+"Field3D"
+]
+},
+"Core::Array::PrefixSumStyle": {
+"kind": "enum",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+"Inclusive",
+"Exclusive",
+"OffsetArray"
+]
+},
+"Core::Logging::LogLevel": {
+"kind": "enum",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+"Info",
+"Warning",
+"Error"
+]
+},
+"Core::Math::TransformVectorMode": {
+"kind": "enum",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+"As Position",
+"As Direction",
+"As Normal"
+]
+},
+"Core::Object::ExecutionMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"VTT",
+"NanoVTT_CPU",
+"NanoVTT_GPU"
+]
+},
+"Core::Randomization::RandomizeAxis": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"XYZUniform",
+"XYZSeparately",
+"XOnly",
+"YOnly",
+"ZOnly"
+]
+},
+"Core::Transform::Transform": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Core::Transform::TransformUpdateMethod": {
+"kind": "enum",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+"From Pivot",
+"From Operator",
+"From Local",
+"From World"
+]
+},
+"Diagnostic::ColoringMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Color",
+"ColoredProperty",
+"ColoredPropertyInvertNeg",
+"ColoredPropertyMagnitude",
+"Property",
+"NormalVector",
+"Heatmap",
+"Palette"
+]
+},
+"Diagnostic::Display::adjacency_colors": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::adjacency_options": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::diagnostic_geo_options": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::face_edge_colors": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::face_edge_options": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::face_options": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::face_vertices_options": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::mesh_scope_options": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::normals_options": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Diagnostic::Display::points_options": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"File::Common::ExtrapolationReadBehavior": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Ignore",
+"Empty",
+"Hold",
+"Cycle"
+]
+},
+"File::Common::FileOperationKind": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"ReadFile",
+"WriteFile"
+]
+},
+"File::Common::FileOperationMultiResults": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"File::Common::FileOperationSingleResult": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"File::Field3DFileFormat": {
+"kind": "enum",
+"library": "resources/file/jsonLibs/fileio_all.json",
+"members": [
+"Ogawa",
+"HDF5"
+]
+},
+"File::Image::AccumulationMode": {
+"kind": "enum",
+"library": "resources/file/jsonLibs/fileio_all.json",
+"members": [
+"Over",
+"Add"
+]
+},
+"File::Image::BitDepth": {
+"kind": "enum",
+"library": "resources/file/jsonLibs/fileio_all.json",
+"members": [
+"Auto",
+"Int8",
+"Int16",
+"Float16",
+"Float32"
+]
+},
+"File::Image::TextureSamplingType": {
+"kind": "enum",
+"library": "resources/file/jsonLibs/fileio_all.json",
+"members": [
+"Closest",
+"Bilinear",
+"Bicubic"
+]
+},
+"File::Interpolation": {
+"kind": "enum",
+"library": "resources/file/jsonLibs/fileio_all.json",
+"members": [
+"Nearest",
+"Linear",
+"Quadratic",
+"Cubic"
+]
+},
+"File::Project::SceneInfo": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"File::ResolutionRounding": {
+"kind": "enum",
+"library": "resources/file/jsonLibs/fileio_all.json",
+"members": [
+"Up",
+"Down",
+"Nearest"
+]
+},
+"Geometry::Common::Adaptivity": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Automatic",
+"VariedFromProperty",
+"Off"
+]
+},
+"Geometry::Common::DataInterpolationMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Nearest",
+"Linear",
+"DefaultValue"
+]
+},
+"Geometry::Common::GeoLocation": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Geometry::Common::GeometryType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"not_a_geometry",
+"volume",
+"instances",
+"mesh",
+"strands",
+"points"
+]
+},
+"Geometry::Common::RandomizeGeoPropertyType": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"Replace",
+"Scale",
+"Offset"
+]
+},
+"Geometry::Converters::ContouringMethod": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"SurfaceNets",
+"DualMarchingCubes"
+]
+},
+"Geometry::Converters::Interior": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Less",
+"Greater"
+]
+},
+"Geometry::Converters::MeshMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Automatic",
+"Custom"
+]
+},
+"Geometry::Converters::VolumeMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Solid",
+"Shell"
+]
+},
+"Geometry::Mesh::FaceEdge": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Geometry::PointShapes": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Point",
+"Disk",
+"Circle",
+"Quad",
+"Cube",
+"Sphere",
+"Numeric"
+]
+},
+"Geometry::Query::ProximityMethod": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"semi_line",
+"line",
+"segment"
+]
+},
+"Geometry::Query::SamplerType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"kLinear",
+"kCubicC0",
+"kCubicC1"
+]
+},
+"Geometry::Rendering::MotionBlurMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Auto",
+"Velocity",
+"Sampled"
+]
+},
+"Geometry::Sampling::AmountType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Number",
+"Density"
+]
+},
+"Geometry::Sampling::MaskControl": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"ExactRate",
+"MaskByProperty"
+]
+},
+"Geometry::Sampling::SampleMethod": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Interpolated",
+"FromClosest"
+]
+},
+"Geometry::Sampling::SampleType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Surface",
+"Point",
+"Volume"
+]
+},
+"Geometry::StrandShapes": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Wire",
+"Ribbon",
+"Tube"
+]
+},
+"Geometry::Strands::Internal::ResampleStrandsOptions": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Geometry::Strands::end_point_mode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Straight",
+"Curved"
+]
+},
+"Geometry::Strands::resample_mode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Linear",
+"Catmull-Rom",
+"B-Spline"
+]
+},
+"Geometry::TagConversionStyle": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Any",
+"All"
+]
+},
+"Geometry::Tags::DirectionMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Positive",
+"Negative",
+"Both"
+]
+},
+"Geometry::Tags::EndPointMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Index",
+"Length",
+"PointRatio"
+]
+},
+"Geometry::Tags::MergeMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Replace",
+"Union",
+"Intersection",
+"Subtraction"
+]
+},
+"Geometry::Tags::RangeThreshold": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"<",
+"<=",
+">",
+">=",
+"< & >",
+"<= & >",
+"< & =>",
+"<= & =>"
+]
+},
+"Geometry::Transform::GraphTransforms": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+}
+]
+},
+"Geometry::Volume::Adaptivity": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Optimized",
+"VariedFromProperty",
+"Off"
+]
+},
+"Geometry::Volume::AnalyzeMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Gradient",
+"MeanCurvature",
+"Laplacian",
+"ClosestPoint",
+"Divergence",
+"Curl",
+"Magnitude",
+"Normalize"
+]
+},
+"Geometry::Volume::AnalyzeOutputMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"ReplaceExisting",
+"AppendOperator"
+]
+},
+"Geometry::Volume::AutoResolutionType": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Automatic",
+"Absolute",
+"Relative"
+]
+},
+"Geometry::Volume::AutoSubdivisionStructure": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Automatic",
+"Power2",
+"Power5"
+]
+},
+"Geometry::Volume::CoarsenRefineMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"None",
+"Coarsen",
+"Refine",
+"CoarsenRefine"
+]
+},
+"Geometry::Volume::FogDensityMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Add",
+"Subtract",
+"Divide",
+"Multiply",
+"Min",
+"Max",
+"Average",
+"SoftCut",
+"SoftCombine",
+"AlphaBlend"
+]
+},
+"Geometry::Volume::InterpolationMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Linear",
+"QuadraticC0Averaged",
+"CubicC0",
+"CubicC1",
+"CubicC1Monotonic"
+]
+},
+"Geometry::Volume::LevelSetMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Union",
+"Difference",
+"Intersection",
+"AlphaBlendLevelSet"
+]
+},
+"Geometry::Volume::Mode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Solid",
+"Shell"
+]
+},
+"Geometry::Volume::Properties::Mode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Add",
+"Subtract",
+"Divide",
+"Multiply",
+"Min",
+"Max",
+"Average",
+"SoftCut",
+"SoftCombine",
+"AlphaBlend",
+"Automatic",
+"UseFirst",
+"UseSecond"
+]
+},
+"Geometry::Volume::ResolutionField": {
+"kind": "struct",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Geometry::Volume::ResolutionType": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Absolute",
+"Relative"
+]
+},
+"Geometry::Volume::SamplerInterpretation": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"SignedDistanceField",
+"FogDensity"
+]
+},
+"Geometry::Volume::SmoothLevelSetPropertyMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Gaussian",
+"Laplacian",
+"Mean",
+"MeanCurvature",
+"Median"
+]
+},
+"Geometry::Volume::SmoothPropertyMode": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Gaussian",
+"Mean",
+"Median"
+]
+},
+"Geometry::Volume::SplatKernelType": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"kLinearKernel",
+"kQuadraticKernel"
+]
+},
+"Geometry::Volume::SubdivisionStructure": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Power2",
+"Power5"
+]
+},
+"Geometry::Volume::Traits": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Traits2_4",
+"Traits5"
+]
+},
+"Geometry::Volume::VoxelOffset": {
+"kind": "enum",
+"library": "resources/geometries/jsonLibs/geometries_all.json",
+"members": [
+"Center",
+"XFace",
+"YFace",
+"ZEdge",
+"ZFace",
+"YEdge",
+"XEdge",
+"Corner"
+]
+},
+"Math::bool2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::bool4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::char4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::double4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::float4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::int4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::long4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::rotation_order": {
+"kind": "enum",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+"XYZ",
+"YZX",
+"ZXY",
+"XZY",
+"YXZ",
+"ZYX"
+]
+},
+"Math::short2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::short4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uchar4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::uint4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ulong4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort2x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort2x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort2x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort3x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort3x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort3x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort4x2": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort4x3": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Math::ushort4x4": {
+"kind": "struct",
+"library": "resources/amino/jsonLibs/amino_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Modeling::Knits::TemplateInfo": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Modeling::Mesh::BooleanOperation": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Union",
+"Subtraction",
+"Intersection",
+"Slice"
+]
+},
+"Modeling::Mesh::FractureMesh::PatternMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"ClosedMeshes",
+"OpenMeshes"
+]
+},
+"Modeling::Mesh::Internal::extrude_face_adj_cache": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Modeling::Mesh::Internal::extrude_face_group_cache": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Modeling::Mesh::Scheme": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Bilinear",
+"CatmullClark",
+"Loop"
+]
+},
+"Modeling::Mesh::fracture_mesh_options": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Modeling::Points::AmountMode": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"Radius",
+"Number",
+"Density"
+]
+},
+"Modeling::Points::CreateInstancesPreviewGeometry": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"BoundingBox",
+"PreviewGeometry",
+"InstanceGeometry"
+]
+},
+"Modeling::Points::CreateInstancesSelectionMode": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"None",
+"Sequential",
+"Random"
+]
+},
+"Modeling::Points::DensityWeightsMode": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"Random",
+"DistanceBased"
+]
+},
+"Modeling::Points::MaskAndNumberInteraction": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"UseNumberWithMaskEnabled",
+"EnablingMaskConvertsNumberToDensity"
+]
+},
+"Modeling::Points::OrientPointsNormalMode": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"point_normal",
+"face_vertex_normal"
+]
+},
+"Modeling::Points::OrientPointsTangentMode": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"Connectivity",
+"UV"
+]
+},
+"Modeling::Points::ScatteringMode": {
+"kind": "enum",
+"library": "resources/scatter/jsonLibs/scatter_all.json",
+"members": [
+"Random",
+"BlueNoise",
+"BlueNoiseMaximal"
+]
+},
+"Modeling::Primitive::Normals": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"smooth",
+"face"
+]
+},
+"Rendering::Arnold::CurvesBasis": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Default",
+"Linear",
+"B-Spline",
+"Catmull-Rom",
+"Bezier"
+]
+},
+"Rendering::Arnold::CurvesMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Default",
+"Ribbon",
+"Thick",
+"Oriented"
+]
+},
+"Rendering::Arnold::EmissionMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"none",
+"channel",
+"density",
+"blackbody"
+]
+},
+"Rendering::Arnold::EmissionScalingMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"none",
+"opacity",
+"thermodynamic"
+]
+},
+"Rendering::Arnold::ImplicitSolver": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Uniform",
+"Levelset"
+]
+},
+"Rendering::Arnold::Interpolation": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"closest",
+"trilinear",
+"tricubic"
+]
+},
+"Rendering::Arnold::PointsMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Default",
+"Disk",
+"Sphere",
+"Quad"
+]
+},
+"Rendering::Arnold::SubdivAdaptiveMetric": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Auto",
+"Edge Length",
+"Flatness"
+]
+},
+"Rendering::Arnold::SubdivAdaptiveSpace": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Raster",
+"Object"
+]
+},
+"Rendering::Arnold::SubdivType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"None",
+"Catmull-Clark",
+"Linear"
+]
+},
+"Rendering::Arnold::SubdivUVSmoothing": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Pin Corners",
+"Pin Borders",
+"Linear",
+"Smooth"
+]
+},
+"Rendering::Arnold::TransformType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Linear",
+"Rotate about Origin",
+"Rotate about Center"
+]
+},
+"Rigging::Module::AnimationInputs": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::AnimationInputsControls": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::AnimationInputsCustom": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::AnimationInputsInternal": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::AnimationInputsJoints": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::AnimationOutputs": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::AttributeData": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::AttributeDescription": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::AttributeType": {
+"kind": "enum",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+"Vector",
+"Float",
+"Integer",
+"Boolean"
+]
+},
+"Rigging::Module::ControlShape": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::HostTransformConfig": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::Inputs": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::InputsAnimation": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::InputsInternal": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::InputsSetup": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::Module": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::ModuleInternal": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::ModuleSetup": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::ModuleSetupControls": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::ModuleSetupJoints": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::Outputs": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::OutputsAnimation": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::OutputsInternal": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::OutputsSetup": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::OutputsSetupControls": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::OutputsSetupJoints": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::Pin": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::SetupInputs": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Module::TransformUpdateSettings": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Solver::AimMode": {
+"kind": "enum",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+"None",
+"Aim",
+"Align"
+]
+},
+"Rigging::Solver::Axis": {
+"kind": "enum",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+"X",
+"Y",
+"Z"
+]
+},
+"Rigging::Solver::BlendMatrixTarget": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Solver::CosseratRodsConfig": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Solver::CosseratRodsState": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Solver::CosseratRodsStructure": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Solver::LimbData": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Solver::LimbIndexData": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Rigging::Solver::ParentMatrixTarget": {
+"kind": "struct",
+"library": "resources/rigging/jsonLibs/rigging_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Aero::BuoyancyModel": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"BoussinesqMerciBeji",
+"BoussinesqBridson"
+]
+},
+"Simulation::Aero::TransportStyle": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"smooth",
+"fluffy",
+"busy",
+"wispy"
+]
+},
+"Simulation::Collide_Type": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"Automatic",
+"Volume",
+"Mesh_For_Points"
+]
+},
+"Simulation::Combustion::CombustionFlamePropagationParameters": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Combustion::CombustionHeatTransferParameters": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Combustion::CombustionRateScaleParameters": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Combustion::CombustionSootParameters": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Combustion::CombustionTemperatureParameters": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Combustion::FlamePropagationModel": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"reaction_rate_flame",
+"thin_flame"
+]
+},
+"Simulation::Combustion::FlameSpeedMode": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"set_flame_speed",
+"add_flame_speed",
+"multiply_flame_speed"
+]
+},
+"Simulation::Combustion::FuelType": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"butane",
+"ethane",
+"methane",
+"propadiene",
+"propane",
+"propylene",
+"propyne"
+]
+},
+"Simulation::Combustion::RadiationModel": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"point_radiation",
+"volumetric_radiation"
+]
+},
+"Simulation::Combustion::SootFormationModel": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"no_formation",
+"simple",
+"advanced"
+]
+},
+"Simulation::Combustion::SootOxidationModel": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"no_oxidation",
+"magnussen"
+]
+},
+"Simulation::Combustion::ThinFlamePropagationMethod": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"thin_flame_dilation",
+"thin_flame_godunov"
+]
+},
+"Simulation::Combustion::UI::SootFormationModel": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"none",
+"simple",
+"physical"
+]
+},
+"Simulation::Common::VelocityEstimate": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"None",
+"FiniteDifference",
+"AbsoluteOrientation"
+]
+},
+"Simulation::Common::file_cache_mode": {
+"kind": "enum",
+"library": "resources/file/jsonLibs/fileio_all.json",
+"members": [
+"Lazy Mode",
+"Read Mode",
+"Write Mode",
+"Passthrough Mode",
+"Write State Mode"
+]
+},
+"Simulation::Distribution_Type": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"Surface",
+"Volume"
+]
+},
+"Simulation::Emit_Rate_Type": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"Density",
+"Count",
+"Count_Per_Point"
+]
+},
+"Simulation::Filter_Type": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"Surface Collision",
+"Self Collision",
+"Property Values"
+]
+},
+"Simulation::Fluids::AdaptivityParameters": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Fluids::AutoAdaptivityType": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"interior",
+"low_disturbance",
+"low_fog_detail",
+"all"
+]
+},
+"Simulation::Fluids::EmitMode": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"PerVoxel",
+"PerSubVoxel"
+]
+},
+"Simulation::Fluids::GuidePointsMode": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"CollideWithGuide",
+"DragWithGuide"
+]
+},
+"Simulation::Fluids::PressureSolveType": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"kCollocatedFD",
+"kStaggeredFD",
+"kCollocatedFEM"
+]
+},
+"Simulation::Fluids::Reseed::Mode": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"disabled",
+"interior",
+"surface_and_interior"
+]
+},
+"Simulation::Fluids::SourcePropertyMode": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"set",
+"rate",
+"add",
+"subtract",
+"over",
+"min",
+"max",
+"multiply"
+]
+},
+"Simulation::Fluids::SurfaceTensionSolver": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"Explicit",
+"Implicit",
+"SemiImplicit",
+"ImplicitDiffusion",
+"ImplicitExperimental"
+]
+},
+"Simulation::Fluids::TransportInterpolationType": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"kLinear",
+"kQuadraticC0Averaged",
+"kCubicC0",
+"kCubicC1",
+"kCubicC1Monotonic"
+]
+},
+"Simulation::Fluids::TransportStepMode": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"Fixed",
+"AdaptiveNearCollider"
+]
+},
+"Simulation::Fluids::TransportTraceType": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"kFESingleStep",
+"kRK3"
+]
+},
+"Simulation::Fluids::VelocityFilterType": {
+"kind": "enum",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+"kNone",
+"kCornerProjection",
+"kFourthOrderDiffusion",
+"kFourthOrderCornerBasedDiffusion",
+"kWeightedSecondOrderCornerBasedDiffusion"
+]
+},
+"Simulation::Influence::Mask_Shape_Type": {
+"kind": "enum",
+"library": "resources/fields/jsonLibs/riv_all.json",
+"members": [
+"Mesh",
+"Bounding_Box",
+"Bounding_Sphere"
+]
+},
+"Simulation::Influence::Operation_Type": {
+"kind": "enum",
+"library": "resources/fields/jsonLibs/riv_all.json",
+"members": [
+"Replace",
+"Multiply",
+"Add"
+]
+},
+"Simulation::Influence_Point_Scope": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"None",
+"Mask",
+"Kill",
+"Drag",
+"Force Magnitude",
+"Property"
+]
+},
+"Simulation::Influence_Vector_Scope": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"None",
+"Force",
+"Property"
+]
+},
+"Simulation::Internal::AeroSharpeningSettings": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Internal::AeroSolverSettings": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Internal::SourceAir": {
+"kind": "struct",
+"library": "resources/fluids/jsonLibs/fluids_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::MPM::ClothSubdivisionTriangleCenters": {
+"kind": "enum",
+"library": "resources/mpm/jsonLibs/mpm_all.json",
+"members": [
+"centroid",
+"circumcenter",
+"incenter"
+]
+},
+"Simulation::MPM::ClothTearingPostProcess": {
+"kind": "enum",
+"library": "resources/mpm/jsonLibs/mpm_all.json",
+"members": [
+"none",
+"delete_failed_triangles",
+"subdivide_and_split"
+]
+},
+"Simulation::MPM::ConstraintShapeType": {
+"kind": "enum",
+"library": "resources/mpm/jsonLibs/mpm_all.json",
+"members": [
+"Bounding_Box",
+"Bounding_Sphere"
+]
+},
+"Simulation::MPM::PhysicalMaterial": {
+"kind": "enum",
+"library": "resources/mpm/jsonLibs/mpm_all.json",
+"members": [
+"none",
+"fluid",
+"sand",
+"snow",
+"collision",
+"cloth",
+"fiber",
+"shell",
+"gel",
+"rubber"
+]
+},
+"Simulation::MPM::ShellBreakingPostProcess": {
+"kind": "enum",
+"library": "resources/mpm/jsonLibs/mpm_all.json",
+"members": [
+"none"
+]
+},
+"Simulation::MPM::Style": {
+"kind": "enum",
+"library": "resources/mpm/jsonLibs/mpm_all.json",
+"members": [
+"automatic_from_sources",
+"smooth",
+"chunky"
+]
+},
+"Simulation::Nucleus::PointToMeshMethod": {
+"kind": "enum",
+"library": "resources/nucleus/jsonLibs/nucleus_all.json",
+"members": [
+"Cubes",
+"Quads",
+"Tetahedra",
+"AcuteTetrahedra"
+]
+},
+"Simulation::Ocean::BoundsMethod": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"MinMax",
+"SizeCenter",
+"FromGeometry"
+]
+},
+"Simulation::Ocean::DirSpectra": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"Pierson",
+"Jonswap",
+"Mitsuyasu",
+"Krylov",
+"VonMises",
+"Hyperbolic",
+"Doublepeak",
+"Curve"
+]
+},
+"Simulation::Ocean::DynamicWaveMapping": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"Height",
+"Obstruction",
+"VelocityPotential",
+"ProceduralWaves"
+]
+},
+"Simulation::Ocean::FreqSpectra": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"PiersonMoskowitz",
+"Jonswap",
+"ModifiedJonswap",
+"Krylov",
+"Davidian",
+"TMA",
+"Multipeak",
+"Curve"
+]
+},
+"Simulation::Ocean::ImageFitType": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"Stretch",
+"Fill",
+"Fit",
+"Center",
+"Tile"
+]
+},
+"Simulation::Ocean::ImageResampleMethod": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"Set",
+"Sum",
+"Max"
+]
+},
+"Simulation::Ocean::ImageSamplerType": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"Nearest",
+"Linear",
+"Quadratic",
+"Bspline"
+]
+},
+"Simulation::Ocean::VelocityMethod": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"Analytical",
+"FiniteDifference"
+]
+},
+"Simulation::Ocean::WaveType": {
+"kind": "enum",
+"library": "resources/ocean/jsonLibs/ocean_all.json",
+"members": [
+"Spectral",
+"Dynamic"
+]
+},
+"Simulation::Particles::Internal::CollideInfo": {
+"kind": "struct",
+"library": "resources/particles/jsonLibs/particles_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Particles::Internal::OrientationField": {
+"kind": "struct",
+"library": "resources/particles/jsonLibs/particles_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Point_Shape_Type": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"Point",
+"Sphere",
+"Cube"
+]
+},
+"Simulation::RateType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"per_second",
+"per_frame"
+]
+},
+"Simulation::RigidBodies::ActiveState": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Asleep",
+"WakeOnCollide",
+"SleepWhenInactive",
+"Awake"
+]
+},
+"Simulation::RigidBodies::AnimatedColliderOptions": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::RigidBodies::ConstraintType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Glue",
+"PointToPoint",
+"PointToWorld",
+"Hinge",
+"Slider",
+"Generic",
+"ConeTwist",
+"Spring"
+]
+},
+"Simulation::RigidBodies::ConvexDecompositionOptions": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::RigidBodies::ConvexHullOptions": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::RigidBodies::FillMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"FloodFill",
+"SurfaceOnly",
+"RaycastFill"
+]
+},
+"Simulation::RigidBodies::InputPropertyMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Preserve",
+"Modify",
+"Overwrite"
+]
+},
+"Simulation::RigidBodies::NameMode": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"Automatic",
+"Append",
+"FromShapes",
+"New"
+]
+},
+"Simulation::RigidBodies::PrimitiveColliderType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"BoundingBox",
+"BoundingSphere",
+"ConvexDecomposition",
+"ConvexHull",
+"StaticMesh"
+]
+},
+"Simulation::RigidBodies::PrimitiveOptions": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::RigidBodies::PrimitiveType": {
+"kind": "enum",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+"None",
+"Sphere",
+"Box",
+"Cylinder",
+"Capsule"
+]
+},
+"Simulation::RigidBodies::StaticColliderOptions": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::Rotation_Type": {
+"kind": "enum",
+"library": "resources/simulation/jsonLibs/simulation_all.json",
+"members": [
+"Euler",
+"RotationVector"
+]
+},
+"Simulation::Time": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Simulation::TimelineInfo": {
+"kind": "struct",
+"library": "resources/bif/jsonLibs/bif_all.json",
+"members": [
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+},
+{
+"name": null,
+"type": null
+}
+]
+},
+"Wedging::WedgeCacheMode": {
+"kind": "enum",
+"library": "resources/wedging/jsonLibs/wedging_all.json",
+"members": [
+"Read or Passthrough if no File",
+"Read File",
+"Passthrough"
+]
+}
+}

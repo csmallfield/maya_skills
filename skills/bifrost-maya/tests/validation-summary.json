@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-18",
+  "test_command": "python -m unittest discover -s tests -v",
+  "tests_run": 20,
+  "tests_passed": 20,
+  "historical_inputs_checked": {
+    "ppg_modular_skyscraper_compound.json": "NOT_NATIVE_COMPOUND",
+    "ppg_nyc_skyscraper_v3_fast.json": "UNRESOLVED_LOCAL_TYPE at tier_trim_records",
+    "ppg_nyc_skyscraper_v3_1_fast.json": "PASS: 0 structural errors and 0 evidence gaps"
+  },
+  "source_preservation": {
+    "original_files": 369,
+    "missing": [],
+    "changed_original_files": [
+      "SKILL.md",
+      "references/source-notes.md",
+      "references/nodes-core-geometry.md",
+      "references/nodes-core-math-arrays.md",
+      "references/nodes-rigging-specialized.md",
+      "references/compound-concepts.md",
+      "references/concepts.md",
+      "references/nodes-modeling.md",
+      "references/nodes-fields-volumes.md",
+      "references/nodes-simulation-rendering.md",
+      "agents/openai.yaml"
+    ],
+    "unchanged_original_files": 358,
+    "preserved_supplied_docs": 34,
+    "native_examples_byte_identical": 3
+  },
+  "source_derived_catalog_types": 42,
+  "catalog_types_absent_from_original_source_indices": 0,
+  "assistant_maya_execution": false,
+  "numeric_performance_benchmark": false,
+  "user_reported_v3_1_success": true
+}
