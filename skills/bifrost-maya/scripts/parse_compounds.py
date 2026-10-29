@@ -406,7 +406,11 @@ def main():
             lines.append('')
         return '\n'.join(lines)
 
-    (out / 'ppg-overview.md').write_text(make_focus('PPG_V2.0', 'PPG 2.0 Compound Reference'), encoding='utf-8')
+    # The PPG folder name carries its version (PPG_V2.0, PPG_V2.80_beta1, ...).
+    ppg = sorted(c for c in by_collection if c.startswith('PPG_V'))
+    ppg_collection = ppg[-1] if ppg else 'PPG'
+    ppg_title = ppg_collection.replace('PPG_V', 'PPG ').replace('_', ' ')
+    (out / 'ppg-overview.md').write_text(make_focus(ppg_collection, f'{ppg_title} Compound Reference'), encoding='utf-8')
     (out / 'vhh-overview.md').write_text(make_focus('VHH', 'VHH Compound Reference'), encoding='utf-8')
 
     print(f'Normalized {len(records)} compound files from {len(files)} JSON files.')

@@ -37,9 +37,34 @@
       ]
     }
   ],
-  "Hyuu::Geometry::Properties::face_vertex_slice": [
+  "PPG::Hyuu::autoport_to_array": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__face_vertex_slice",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__autoport_to_array",
+      "is_default_overload": null,
+      "overload": 0,
+      "ports": [
+        {
+          "direction": "input",
+          "name": "input",
+          "type": null
+        },
+        {
+          "default": "0",
+          "direction": "input",
+          "name": "size",
+          "type": "long"
+        },
+        {
+          "direction": "output",
+          "name": "resized",
+          "type": null
+        }
+      ]
+    }
+  ],
+  "PPG::Hyuu::face_vertex_slice": [
+    {
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__face_vertex_slice",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -77,9 +102,9 @@
       ]
     }
   ],
-  "Hyuu::Logic::is_odd": [
+  "PPG::Hyuu::is_odd": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__is_odd",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__is_odd",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -96,17 +121,12 @@
       ]
     }
   ],
-  "Hyuu::Utility::autoport_to_array": [
+  "PPG::Hyuu::random_value_array_range": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__autoport_to_array",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__random_value_array_range",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
-        {
-          "direction": "input",
-          "name": "input",
-          "type": null
-        },
         {
           "default": "0",
           "direction": "input",
@@ -115,46 +135,37 @@
         },
         {
           "direction": "output",
-          "name": "resized",
-          "type": null
-        }
-      ]
-    }
-  ],
-  "Hyuu::merge_vertices_clean": [
-    {
-      "id": "PPG_V2.0__compounds__merge_vertices_clean",
-      "is_default_overload": null,
-      "overload": 0,
-      "ports": [
-        {
-          "default": "true",
-          "direction": "input",
-          "name": "enable",
+          "name": "result",
           "type": null
         },
         {
           "direction": "input",
-          "name": "mesh",
-          "type": "Object"
+          "name": "min",
+          "type": null
         },
         {
-          "default": "0.00100000005f",
           "direction": "input",
-          "name": "radius",
+          "name": "max_type",
+          "type": null
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "exponent",
           "type": "float"
         },
         {
-          "direction": "output",
-          "name": "out_mesh",
-          "type": "Object"
+          "default": "0",
+          "direction": "input",
+          "name": "seed",
+          "type": "long"
         }
       ]
     }
   ],
-  "MJCG::Core::Math::angle_between_vectors": [
+  "PPG::MJCG::angle_between_vectors": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__angle_between_vectors",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__angle_between_vectors",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -193,7 +204,7 @@
   ],
   "PPG::PPG_arch": [
     {
-      "id": "PPG_V2.0__compounds__PPG_arch",
+      "id": "PPG_V2.80_beta1__compounds__PPG_arch",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -398,13 +409,19 @@
           "direction": "output",
           "name": "new_geometry",
           "type": "Object"
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_chip_off": [
     {
-      "id": "PPG_V2.0__compounds__PPG_chip_off",
+      "id": "PPG_V2.80_beta1__compounds__PPG_chip_off",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -481,13 +498,19 @@
           "direction": "output",
           "name": "new_geometry",
           "type": "Object"
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_diagnostc": [
     {
-      "id": "PPG_V2.0__compounds__PPG_diagnostc",
+      "id": "PPG_V2.80_beta1__compounds__PPG_diagnostc",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -663,7 +686,7 @@
   ],
   "PPG::PPG_dome": [
     {
-      "id": "PPG_V2.0__compounds__PPG_dome",
+      "id": "PPG_V2.80_beta1__compounds__PPG_dome",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -866,13 +889,19 @@
           "direction": "output",
           "name": "new_geometry",
           "type": "Object"
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "global_scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_extrude": [
     {
-      "id": "PPG_V2.0__compounds__PPG_extrude",
+      "id": "PPG_V2.80_beta1__compounds__PPG_extrude",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -908,7 +937,7 @@
           "default": "0f",
           "direction": "input",
           "name": "offset",
-          "type": "float"
+          "type": null
         },
         {
           "default": "false",
@@ -923,13 +952,13 @@
           "type": "bool"
         },
         {
-          "default": "exf",
+          "default": "extrude_face",
           "direction": "input",
           "name": "extrude_face_tag",
           "type": "string"
         },
         {
-          "default": "exs",
+          "default": "extrude_sides",
           "direction": "input",
           "name": "sides_face_tag",
           "type": "string"
@@ -965,6 +994,12 @@
           "type": "float"
         },
         {
+          "default": "0",
+          "direction": "input",
+          "name": "source_face_mode",
+          "type": "long"
+        },
+        {
           "direction": "output",
           "name": "extruded_mesh",
           "type": "Object"
@@ -975,17 +1010,17 @@
           "type": null
         },
         {
-          "default": "0",
+          "default": "1f",
           "direction": "input",
-          "name": "source_face_mode",
-          "type": "long"
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_instance": [
     {
-      "id": "PPG_V2.0__compounds__PPG_instance",
+      "id": "PPG_V2.80_beta1__compounds__PPG_instance",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -1074,7 +1109,7 @@
           "type": "Math::FCurve"
         },
         {
-          "default": "1",
+          "default": "0",
           "direction": "input",
           "name": "seed",
           "type": "long"
@@ -1182,7 +1217,7 @@
           "type": "Math::float3"
         },
         {
-          "default": "0.200000003f",
+          "default": "0.150000006f",
           "direction": "input",
           "name": "arrowhead_size",
           "type": "float"
@@ -1206,7 +1241,7 @@
           "type": "float"
         },
         {
-          "default": "true",
+          "default": "false",
           "direction": "input",
           "name": "keep_instance_face_tags",
           "type": "bool"
@@ -1248,13 +1283,19 @@
           "direction": "output",
           "name": "new_geometry",
           "type": "Object"
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_multi_cut": [
     {
-      "id": "PPG_V2.0__compounds__PPG_multi_cut",
+      "id": "PPG_V2.80_beta1__compounds__PPG_multi_cut",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -1458,13 +1499,19 @@
           "direction": "output",
           "name": "new_geometry",
           "type": "Object"
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_multi_instance": [
     {
-      "id": "PPG_V2.0__compounds__PPG_multi_instance",
+      "id": "PPG_V2.80_beta1__compounds__PPG_multi_instance",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -1709,13 +1756,19 @@
           "direction": "output",
           "name": "new_geometry",
           "type": "Object"
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_sequence_cut": [
     {
-      "id": "PPG_V2.0__compounds__PPG_sequence_cut",
+      "id": "PPG_V2.80_beta1__compounds__PPG_sequence_cut",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -1907,13 +1960,19 @@
           "direction": "output",
           "name": "new_geometry",
           "type": "Object"
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_shader": [
     {
-      "id": "PPG_V2.0__compounds__PPG_shader",
+      "id": "PPG_V2.80_beta1__compounds__PPG_shader",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -1932,7 +1991,7 @@
   ],
   "PPG::PPG_transform": [
     {
-      "id": "PPG_V2.0__compounds__PPG_transform",
+      "id": "PPG_V2.80_beta1__compounds__PPG_transform",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2138,13 +2197,19 @@
           "direction": "output",
           "name": "pivot_orientation",
           "type": null
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "global_scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::PPG_wedge": [
     {
-      "id": "PPG_V2.0__compounds__PPG_wedge",
+      "id": "PPG_V2.80_beta1__compounds__PPG_wedge",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2301,13 +2366,19 @@
           "direction": "output",
           "name": "new_geometry",
           "type": "Object"
+        },
+        {
+          "default": "0f",
+          "direction": "input",
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::assign_manual_colors": [
     {
-      "id": "PPG_V2.0__compounds__assign_manual_colors",
+      "id": "PPG_V2.80_beta1__compounds__assign_manual_colors",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2447,7 +2518,7 @@
   ],
   "PPG::assign_material_to_tags": [
     {
-      "id": "PPG_V2.0__compounds__assign_material_to_tags",
+      "id": "PPG_V2.80_beta1__compounds__assign_material_to_tags",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2494,7 +2565,7 @@
   ],
   "PPG::assign_random_colors": [
     {
-      "id": "PPG_V2.0__compounds__assign_random_colors",
+      "id": "PPG_V2.80_beta1__compounds__assign_random_colors",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2571,7 +2642,7 @@
   ],
   "PPG::bulk_assign_material": [
     {
-      "id": "PPG_V2.0__compounds__bulk_assign_material",
+      "id": "PPG_V2.80_beta1__compounds__bulk_assign_material",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2603,9 +2674,33 @@
       ]
     }
   ],
+  "PPG::bulk_rename": [
+    {
+      "id": "PPG_V2.80_beta1__compounds__bulk_rename",
+      "is_default_overload": null,
+      "overload": 0,
+      "ports": [
+        {
+          "direction": "input",
+          "name": "mesh",
+          "type": "Object"
+        },
+        {
+          "direction": "output",
+          "name": "renamed_mesh",
+          "type": null
+        },
+        {
+          "direction": "input",
+          "name": "rename_face_tags",
+          "type": "array<string>"
+        }
+      ]
+    }
+  ],
   "PPG::check_face_tags": [
     {
-      "id": "PPG_V2.0__compounds__check_face_tags",
+      "id": "PPG_V2.80_beta1__compounds__check_face_tags",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2624,7 +2719,7 @@
   ],
   "PPG::cluster_values": [
     {
-      "id": "PPG_V2.0__compounds__cluster_values",
+      "id": "PPG_V2.80_beta1__compounds__cluster_values",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2652,6 +2747,12 @@
         {
           "default": "false",
           "direction": "input",
+          "name": "remainder_propagation",
+          "type": "bool"
+        },
+        {
+          "default": "false",
+          "direction": "input",
           "name": "descending_order",
           "type": "bool"
         }
@@ -2660,7 +2761,7 @@
   ],
   "PPG::create_arch": [
     {
-      "id": "PPG_V2.0__compounds__create_arch",
+      "id": "PPG_V2.80_beta1__compounds__create_arch",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2722,7 +2823,7 @@
   ],
   "PPG::create_pattern": [
     {
-      "id": "PPG_V2.0__compounds__create_pattern",
+      "id": "PPG_V2.80_beta1__compounds__create_pattern",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2765,7 +2866,7 @@
   ],
   "PPG::display_face_tags": [
     {
-      "id": "PPG_V2.0__compounds__display_face_tags",
+      "id": "PPG_V2.80_beta1__compounds__display_face_tags",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2866,7 +2967,7 @@
   ],
   "PPG::display_selected_edges": [
     {
-      "id": "PPG_V2.0__compounds__display_selected_edges",
+      "id": "PPG_V2.80_beta1__compounds__display_selected_edges",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -2919,13 +3020,19 @@
           "direction": "input",
           "name": "stem_width_ratio",
           "type": "float"
+        },
+        {
+          "default": "1f",
+          "direction": "input",
+          "name": "scale",
+          "type": "float"
         }
       ]
     }
   ],
   "PPG::edge_selection": [
     {
-      "id": "PPG_V2.0__compounds__edge_selection",
+      "id": "PPG_V2.80_beta1__compounds__edge_selection",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3033,13 +3140,23 @@
           "direction": "output",
           "name": "selected_edge",
           "type": null
+        },
+        {
+          "direction": "output",
+          "name": "face_uvSet_UV",
+          "type": null
+        },
+        {
+          "direction": "output",
+          "name": "dcc_name",
+          "type": null
         }
       ]
     }
   ],
   "PPG::face_tag_renamer": [
     {
-      "id": "PPG_V2.0__compounds__face_tag_renamer",
+      "id": "PPG_V2.80_beta1__compounds__face_tag_renamer",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3138,7 +3255,7 @@
   ],
   "PPG::faces_ID_input": [
     {
-      "id": "PPG_V2.0__compounds__faces_ID_input",
+      "id": "PPG_V2.80_beta1__compounds__faces_ID_input",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3158,7 +3275,7 @@
   ],
   "PPG::faces_from_origin_XZ": [
     {
-      "id": "PPG_V2.0__compounds__faces_from_origin_XZ",
+      "id": "PPG_V2.80_beta1__compounds__faces_from_origin_XZ",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3187,7 +3304,7 @@
   ],
   "PPG::faces_to_origin_XZ": [
     {
-      "id": "PPG_V2.0__compounds__faces_to_origin_XZ",
+      "id": "PPG_V2.80_beta1__compounds__faces_to_origin_XZ",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3216,7 +3333,7 @@
   ],
   "PPG::get_all_faces": [
     {
-      "id": "PPG_V2.0__compounds__get_all_faces",
+      "id": "PPG_V2.80_beta1__compounds__get_all_faces",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3235,7 +3352,7 @@
   ],
   "PPG::get_face_indices": [
     {
-      "id": "PPG_V2.0__compounds__get_face_indices",
+      "id": "PPG_V2.80_beta1__compounds__get_face_indices",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3281,7 +3398,7 @@
   ],
   "PPG::get_face_info": [
     {
-      "id": "PPG_V2.0__compounds__get_face_info",
+      "id": "PPG_V2.80_beta1__compounds__get_face_info",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3460,7 +3577,7 @@
   ],
   "PPG::get_face_orientation": [
     {
-      "id": "PPG_V2.0__compounds__get_face_orientation",
+      "id": "PPG_V2.80_beta1__compounds__get_face_orientation",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3484,7 +3601,7 @@
   ],
   "PPG::get_faces_from_tags": [
     {
-      "id": "PPG_V2.0__compounds__get_faces_from_tags",
+      "id": "PPG_V2.80_beta1__compounds__get_faces_from_tags",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3509,7 +3626,7 @@
   ],
   "PPG::get_maya_component_tags": [
     {
-      "id": "PPG_V2.0__compounds__get_maya_component_tags",
+      "id": "PPG_V2.80_beta1__compounds__get_maya_component_tags",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3559,9 +3676,40 @@
       ]
     }
   ],
+  "PPG::get_maya_face_tags": [
+    {
+      "id": "PPG_V2.80_beta1__compounds__get_maya_face_tags",
+      "is_default_overload": null,
+      "overload": 0,
+      "ports": [
+        {
+          "direction": "input",
+          "name": "mesh",
+          "type": "Object"
+        },
+        {
+          "default": "*",
+          "direction": "input",
+          "name": "tag_expression",
+          "type": "string"
+        },
+        {
+          "default": "\\n",
+          "direction": "input",
+          "name": "multi_tag_separator",
+          "type": "string"
+        },
+        {
+          "direction": "output",
+          "name": "out_mesh",
+          "type": null
+        }
+      ]
+    }
+  ],
   "PPG::get_points_per_face": [
     {
-      "id": "PPG_V2.0__compounds__get_points_per_face",
+      "id": "PPG_V2.80_beta1__compounds__get_points_per_face",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3585,7 +3733,7 @@
   ],
   "PPG::get_tag_faces": [
     {
-      "id": "PPG_V2.0__compounds__get_tag_faces",
+      "id": "PPG_V2.80_beta1__compounds__get_tag_faces",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3608,9 +3756,69 @@
       ]
     }
   ],
+  "PPG::group_face_tags": [
+    {
+      "id": "PPG_V2.80_beta1__compounds__group_face_tags",
+      "is_default_overload": null,
+      "overload": 0,
+      "ports": [
+        {
+          "direction": "input",
+          "name": "mesh",
+          "type": null
+        },
+        {
+          "default": "*",
+          "direction": "input",
+          "name": "tag_expression",
+          "type": "string"
+        },
+        {
+          "direction": "input",
+          "name": "face_indices",
+          "type": null
+        },
+        {
+          "default": "false",
+          "direction": "input",
+          "name": "inherit_source_tag",
+          "type": "bool"
+        },
+        {
+          "default": "group",
+          "direction": "input",
+          "name": "prefix",
+          "type": "string"
+        },
+        {
+          "default": "false",
+          "direction": "input",
+          "name": "invert",
+          "type": "bool"
+        },
+        {
+          "default": "4",
+          "direction": "input",
+          "name": "groups",
+          "type": null
+        },
+        {
+          "direction": "output",
+          "name": "out__mesh",
+          "type": null
+        },
+        {
+          "default": "1",
+          "direction": "input",
+          "name": "seed",
+          "type": "long"
+        }
+      ]
+    }
+  ],
   "PPG::match_expression": [
     {
-      "id": "PPG_V2.0__compounds__match_expression",
+      "id": "PPG_V2.80_beta1__compounds__match_expression",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3641,7 +3849,7 @@
   ],
   "PPG::merge_vertices_clean_tags": [
     {
-      "id": "PPG_V2.0__compounds__merge_vertices_clean_tags",
+      "id": "PPG_V2.80_beta1__compounds__merge_vertices_clean_tags",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3672,7 +3880,7 @@
   ],
   "PPG::new_face_tag": [
     {
-      "id": "PPG_V2.0__compounds__new_face_tag",
+      "id": "PPG_V2.80_beta1__compounds__new_face_tag",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3714,7 +3922,7 @@
   ],
   "PPG::pattern_rename": [
     {
-      "id": "PPG_V2.0__compounds__pattern_rename",
+      "id": "PPG_V2.80_beta1__compounds__pattern_rename",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3774,7 +3982,7 @@
   ],
   "PPG::remove_A_from_B": [
     {
-      "id": "PPG_V2.0__compounds__remove_A_from_B",
+      "id": "PPG_V2.80_beta1__compounds__remove_A_from_B",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3798,7 +4006,7 @@
   ],
   "PPG::rename_face_tag": [
     {
-      "id": "PPG_V2.0__compounds__rename_face_tag",
+      "id": "PPG_V2.80_beta1__compounds__rename_face_tag",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3813,7 +4021,12 @@
           "type": "string"
         },
         {
-          "default": "new_name",
+          "direction": "input",
+          "name": "replace_this_string",
+          "type": "string"
+        },
+        {
+          "default": "new_face_tag",
           "direction": "input",
           "name": "new_face_tag",
           "type": "string"
@@ -3828,7 +4041,7 @@
   ],
   "PPG::reverse_faces": [
     {
-      "id": "PPG_V2.0__compounds__reverse_faces",
+      "id": "PPG_V2.80_beta1__compounds__reverse_faces",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3852,7 +4065,7 @@
   ],
   "PPG::rewrite_face_tags": [
     {
-      "id": "PPG_V2.0__compounds__rewrite_face_tags",
+      "id": "PPG_V2.80_beta1__compounds__rewrite_face_tags",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3871,7 +4084,7 @@
   ],
   "PPG::select_faces_by_area": [
     {
-      "id": "PPG_V2.0__compounds__select_faces_by_area",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_area",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -3942,7 +4155,7 @@
   ],
   "PPG::select_faces_by_field": [
     {
-      "id": "PPG_V2.0__compounds__select_faces_by_field",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_field",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4012,7 +4225,7 @@
   ],
   "PPG::select_faces_by_normal": [
     {
-      "id": "PPG_V2.0__compounds__select_faces_by_normal",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_normal",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4099,7 +4312,7 @@
   ],
   "PPG::select_faces_by_shape": [
     {
-      "id": "PPG_V2.0__compounds__select_faces_by_shape",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_shape",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4202,7 +4415,7 @@
           "type": "bool"
         },
         {
-          "default": "0.100000001f",
+          "default": "0.00100000005f",
           "direction": "input",
           "name": "angular_tolerance",
           "type": null
@@ -4230,7 +4443,7 @@
   ],
   "PPG::select_faces_by_visibility": [
     {
-      "id": "PPG_V2.0__compounds__select_faces_by_visibility",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_visibility",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4317,7 +4530,7 @@
   ],
   "PPG::select_faces_inside_mesh": [
     {
-      "id": "PPG_V2.0__compounds__select_faces_inside_mesh",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_inside_mesh",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4381,7 +4594,7 @@
   ],
   "PPG::select_random_faces": [
     {
-      "id": "PPG_V2.0__compounds__select_random_faces",
+      "id": "PPG_V2.80_beta1__compounds__select_random_faces",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4446,7 +4659,7 @@
   ],
   "PPG::set_face_ID_tags": [
     {
-      "id": "PPG_V2.0__compounds__set_face_ID_tags",
+      "id": "PPG_V2.80_beta1__compounds__set_face_ID_tags",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4470,6 +4683,12 @@
           "default": "false",
           "direction": "input",
           "name": "invert",
+          "type": "bool"
+        },
+        {
+          "default": "false",
+          "direction": "input",
+          "name": "inherit_source_tag",
           "type": "bool"
         },
         {
@@ -4498,7 +4717,7 @@
   ],
   "PPG::set_face_color": [
     {
-      "id": "PPG_V2.0__compounds__set_face_color",
+      "id": "PPG_V2.80_beta1__compounds__set_face_color",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4544,7 +4763,7 @@
   ],
   "PPG::set_face_tag": [
     {
-      "id": "PPG_V2.0__compounds__set_face_tag",
+      "id": "PPG_V2.80_beta1__compounds__set_face_tag",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4574,7 +4793,7 @@
   ],
   "Print::any_array_min_max": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__any_array_min_max",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__any_array_min_max",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4599,7 +4818,7 @@
   ],
   "Print::any_to_string": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__any_to_string",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__any_to_string",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4634,7 +4853,7 @@
   ],
   "Print::array_info_string": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__array_info_string",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__array_info_string",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4669,7 +4888,7 @@
   ],
   "Print::array_min_max": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__array_min_max",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__array_min_max",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4694,7 +4913,7 @@
   ],
   "Print::commands_and_palette": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__commands_and_palette",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__commands_and_palette",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4733,7 +4952,7 @@
   ],
   "Print::create_fast_text_NF": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__create_fast_text_NF",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__create_fast_text_NF",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4798,7 +5017,7 @@
   ],
   "Print::degrees_to_quaternion": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__degrees_to_quaternion",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__degrees_to_quaternion",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4823,7 +5042,7 @@
   ],
   "Print::float_to_string": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__float_to_string",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__float_to_string",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4849,7 +5068,7 @@
   ],
   "Print::hex_color_palette": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__hex_color_palette",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__hex_color_palette",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4863,7 +5082,7 @@
   ],
   "Print::quaternion_to_degrees": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__quaternion_to_degrees",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__quaternion_to_degrees",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4888,7 +5107,7 @@
   ],
   "Print::set_print_material": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__set_print_material",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__set_print_material",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4929,7 +5148,7 @@
   ],
   "Print::string_to_ASCII": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__string_to_ASCII",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__string_to_ASCII",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4959,7 +5178,7 @@
   ],
   "Print::test_for_changes": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__test_for_changes",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__test_for_changes",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -4999,7 +5218,7 @@
   ],
   "Print::value_to_hex": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__value_to_hex",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__value_to_hex",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -5029,7 +5248,7 @@
   ],
   "Print::value_to_string": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__value_to_string",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__value_to_string",
       "is_default_overload": null,
       "overload": 0,
       "ports": [
@@ -5550,7 +5769,7 @@
           "type": "string"
         },
         {
-          "default": "/obj/",
+          "default": "/obj",
           "direction": "input",
           "name": "path",
           "type": "string"
@@ -6019,7 +6238,7 @@
   ],
   "User::Compounds::case": [
     {
-      "id": "PPG_V2.0__compounds__supporting_compounds__case",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__case",
       "is_default_overload": null,
       "overload": 0,
       "ports": [

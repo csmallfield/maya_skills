@@ -16,7 +16,7 @@ Use the strongest source available for each claim, and say which one you used.
 1. **Installed library index** (`references/bifrost-3.0.0.0/`) - generated from the shipped Bifrost 3.0 library JSON. Authoritative for node names, port names, port types, defaults, overload counts, enums and renames. Query it with `scripts/node_info.py`.
 2. **User-confirmed native exports** (`assets/native-examples/`, see `manifest.json`) - authoritative for serialization conventions: envelope, typed literals, loops, dynamic ports, scope.
 3. **Autodesk example graphs** (`references/workflow-data/`) - idiomatic patterns. These are identical to the 105 graphs shipped with 3.0.
-4. **User-supplied compound corpus** (`references/compound-data/`, PPG 2.0, VHH and others) and the 34 PPG docs (`references/ppg-docs/`) - exact interfaces for those libraries.
+4. **User-supplied compound corpus** (`references/compound-data/`: PPG 2.80 beta1 as installed, VHH and others) and the 34 PPG docs (`references/ppg-docs/`) - exact interfaces for those libraries. For a graph written against PPG 2.0, check `references/ppg-2.0-vs-2.80.md`.
 5. **Condensed node summaries** (`references/nodes-*.md`) - discovery and search terms only. Never quote their port names as exact; one of them had the cube's ports wrong.
 6. **Inference** - label it as a design recommendation.
 
@@ -56,6 +56,7 @@ Version facts from the 3.0 install: operators declare `Amino 3.0.0.0`, while shi
 - `references/workflow-patterns.md` is a frequency hint, not a recommendation.
 - `references/compound-data/ppg-overview.md` and `vhh-overview.md` let you browse those families. `interface-index.json` gives exact custom signatures, and `type-definitions.json` gives custom enums.
 - `references/compound-data/unresolved-dependencies.json` lists custom-corpus references that aren't defined anywhere: MJCG, Hyuu and Deep_Learning nodes, which need their own libraries.
+- `references/installed-compounds-3.0.md` says which of the user's installed compounds compile on 3.0. `cg_flat_layout_v001` has real type errors.
 - `references/source-notes.md` covers provenance. `references/regression-history.md` covers the native-format, layout, performance and helper-scope lessons.
 
 ## Reasoning rules
@@ -83,9 +84,15 @@ Use this structure when it helps: **Intent and output**, **Inputs**, **Main data
 
 A request for a compound JSON to load in Maya means native Bifrost serialization, not a blueprint. Follow `references/native-json.md`. Use the user-confirmed v3.1 example for layout, loop, dynamic-input and literal conventions.
 
-Before delivery, run `python -I scripts/validate_native_graph.py FILE --strict-evidence --json-report REPORT`. Fix structural errors and look into evidence gaps. The validator is a static preflight, not a compiler. Every private helper must resolve in the scope that calls it, not just somewhere in the file. When the validator or bundled examples change, run `python -I -m unittest discover -s tests -v`.
+Before delivery, run `python -I scripts/verify_compound.py FILE [--set PORT=VALUE]` and fix everything it reports. It runs three stages and gives one verdict:
 
-Deliver the actual file, its exact registered name, dependencies, expected output and any untested behavior. For a scope or registration fix, use a fresh versioned name rather than assuming an existing scene node picks up the replaced file.
+1. **static**: `validate_native_graph.py --strict-evidence`, which checks format, local scope and exact 3.0 ports on shipped nodes. Every private helper must resolve in the scope that calls it, not just somewhere in the file.
+2. **compile**: `bifcmd` loads and compiles the file directly, in about 10 s.
+3. **evaluate**: a headless Maya loads the file from a scratch library, unpacks the compound and reads its outputs, in about 40 s.
+
+Claim a file works only when the verdict is VERIFIED. Then say what was read, such as output values or mesh counts, and what wasn't, such as array outputs or the look. `--fast` skips evaluate and gives PARTIAL. If the compound is already installed under the same name, the script checks a renamed temporary copy, because a duplicate name crashes `bifcmd`. When the validator or bundled examples change, run `python -I -m unittest discover -s tests -v`.
+
+Deliver the actual file, its exact registered name, dependencies, the verify verdict with its outputs, and any untested behavior. For a scope or registration fix, use a fresh versioned name rather than assuming an existing scene node picks up the replaced file. Installing a file means copying it into the user's compounds folder, and Maya only sees it after the Bifrost plugin reloads or Maya restarts. Ask before writing there.
 
 ## PPG performance gate
 
@@ -111,7 +118,10 @@ Read `references/maya-graph-commands.md` before building graphs with commands. I
 ## Scripts
 
 - `node_info.py` - exact node lookup against the installed-library index (see above).
-- `bifrost_headless.py SPEC [--json]` - build and evaluate graph specs in a separate headless Maya.
+- `verify_compound.py FILE [--compound NAME] [--set PORT=VALUE] [--fast]` - static, compile and evaluate checks with one verdict.
+- `bifcmd_check.py [FILE] [--compound-name NAME] [--run]` - compile (or run) a compound file, or an installed compound by name, with bifcmd.
+- `scan_compounds.py [FOLDER] [--out REPORT.md]` - compile-check every installed compound in a folder.
+- `bifrost_headless.py SPEC [--library FILE] [--json]` - build and evaluate graph specs in a separate headless Maya.
 - `maya_exec.py [-c CODE | FILE | -] [--port N] [--persist]` - run Python in the user's live Maya through its command port.
 - `build_node_index.py BIFROST_ROOT [--out DIR]` - rebuild that index from an install.
 - `search_graph_examples.py QUERY [--limit N]` / `inspect_graph.py GRAPH_ID [--connections N]` - Autodesk example graphs.

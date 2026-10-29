@@ -6,514 +6,535 @@
       "overload": 0
     }
   ],
-  "Hyuu::Geometry::Properties::face_vertex_slice": [
+  "PPG::Hyuu::autoport_to_array": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__face_vertex_slice",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__autoport_to_array",
       "overload": 0
     }
   ],
-  "Hyuu::Logic::is_odd": [
+  "PPG::Hyuu::face_vertex_slice": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__is_odd",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__face_vertex_slice",
       "overload": 0
     }
   ],
-  "Hyuu::Utility::autoport_to_array": [
+  "PPG::Hyuu::is_odd": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__autoport_to_array",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__is_odd",
       "overload": 0
     }
   ],
-  "Hyuu::merge_vertices_clean": [
+  "PPG::Hyuu::random_value_array_range": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__merge_vertices_clean",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__random_value_array_range",
       "overload": 0
     }
   ],
-  "MJCG::Core::Math::angle_between_vectors": [
+  "PPG::MJCG::angle_between_vectors": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__angle_between_vectors",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__angle_between_vectors",
       "overload": 0
     }
   ],
   "PPG::PPG_arch": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_arch",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_arch",
       "overload": 0
     }
   ],
   "PPG::PPG_chip_off": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_chip_off",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_chip_off",
       "overload": 0
     }
   ],
   "PPG::PPG_diagnostc": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_diagnostc",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_diagnostc",
       "overload": 0
     }
   ],
   "PPG::PPG_dome": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_dome",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_dome",
       "overload": 0
     }
   ],
   "PPG::PPG_extrude": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_extrude",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_extrude",
       "overload": 0
     }
   ],
   "PPG::PPG_instance": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_instance",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_instance",
       "overload": 0
     }
   ],
   "PPG::PPG_multi_cut": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_multi_cut",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_multi_cut",
       "overload": 0
     }
   ],
   "PPG::PPG_multi_instance": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_multi_instance",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_multi_instance",
       "overload": 0
     }
   ],
   "PPG::PPG_sequence_cut": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_sequence_cut",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_sequence_cut",
       "overload": 0
     }
   ],
   "PPG::PPG_shader": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_shader",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_shader",
       "overload": 0
     }
   ],
   "PPG::PPG_transform": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_transform",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_transform",
       "overload": 0
     }
   ],
   "PPG::PPG_wedge": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__PPG_wedge",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__PPG_wedge",
       "overload": 0
     }
   ],
   "PPG::assign_manual_colors": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__assign_manual_colors",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__assign_manual_colors",
       "overload": 0
     }
   ],
   "PPG::assign_material_to_tags": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__assign_material_to_tags",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__assign_material_to_tags",
       "overload": 0
     }
   ],
   "PPG::assign_random_colors": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__assign_random_colors",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__assign_random_colors",
       "overload": 0
     }
   ],
   "PPG::bulk_assign_material": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__bulk_assign_material",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__bulk_assign_material",
+      "overload": 0
+    }
+  ],
+  "PPG::bulk_rename": [
+    {
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__bulk_rename",
       "overload": 0
     }
   ],
   "PPG::check_face_tags": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__check_face_tags",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__check_face_tags",
       "overload": 0
     }
   ],
   "PPG::cluster_values": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__cluster_values",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__cluster_values",
       "overload": 0
     }
   ],
   "PPG::create_arch": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__create_arch",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__create_arch",
       "overload": 0
     }
   ],
   "PPG::create_pattern": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__create_pattern",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__create_pattern",
       "overload": 0
     }
   ],
   "PPG::display_face_tags": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__display_face_tags",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__display_face_tags",
       "overload": 0
     }
   ],
   "PPG::display_selected_edges": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__display_selected_edges",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__display_selected_edges",
       "overload": 0
     }
   ],
   "PPG::edge_selection": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__edge_selection",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__edge_selection",
       "overload": 0
     }
   ],
   "PPG::face_tag_renamer": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__face_tag_renamer",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__face_tag_renamer",
       "overload": 0
     }
   ],
   "PPG::faces_ID_input": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__faces_ID_input",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__faces_ID_input",
       "overload": 0
     }
   ],
   "PPG::faces_from_origin_XZ": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__faces_from_origin_XZ",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__faces_from_origin_XZ",
       "overload": 0
     }
   ],
   "PPG::faces_to_origin_XZ": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__faces_to_origin_XZ",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__faces_to_origin_XZ",
       "overload": 0
     }
   ],
   "PPG::get_all_faces": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__get_all_faces",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_all_faces",
       "overload": 0
     }
   ],
   "PPG::get_face_indices": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__get_face_indices",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_face_indices",
       "overload": 0
     }
   ],
   "PPG::get_face_info": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__get_face_info",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_face_info",
       "overload": 0
     }
   ],
   "PPG::get_face_orientation": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__get_face_orientation",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_face_orientation",
       "overload": 0
     }
   ],
   "PPG::get_faces_from_tags": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__get_faces_from_tags",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_faces_from_tags",
       "overload": 0
     }
   ],
   "PPG::get_maya_component_tags": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__get_maya_component_tags",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_maya_component_tags",
+      "overload": 0
+    }
+  ],
+  "PPG::get_maya_face_tags": [
+    {
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_maya_face_tags",
       "overload": 0
     }
   ],
   "PPG::get_points_per_face": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__get_points_per_face",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_points_per_face",
       "overload": 0
     }
   ],
   "PPG::get_tag_faces": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__get_tag_faces",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__get_tag_faces",
+      "overload": 0
+    }
+  ],
+  "PPG::group_face_tags": [
+    {
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__group_face_tags",
       "overload": 0
     }
   ],
   "PPG::match_expression": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__match_expression",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__match_expression",
       "overload": 0
     }
   ],
   "PPG::merge_vertices_clean_tags": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__merge_vertices_clean_tags",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__merge_vertices_clean_tags",
       "overload": 0
     }
   ],
   "PPG::new_face_tag": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__new_face_tag",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__new_face_tag",
       "overload": 0
     }
   ],
   "PPG::pattern_rename": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__pattern_rename",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__pattern_rename",
       "overload": 0
     }
   ],
   "PPG::remove_A_from_B": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__remove_A_from_B",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__remove_A_from_B",
       "overload": 0
     }
   ],
   "PPG::rename_face_tag": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__rename_face_tag",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__rename_face_tag",
       "overload": 0
     }
   ],
   "PPG::reverse_faces": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__reverse_faces",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__reverse_faces",
       "overload": 0
     }
   ],
   "PPG::rewrite_face_tags": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__rewrite_face_tags",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__rewrite_face_tags",
       "overload": 0
     }
   ],
   "PPG::select_faces_by_area": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__select_faces_by_area",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_area",
       "overload": 0
     }
   ],
   "PPG::select_faces_by_field": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__select_faces_by_field",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_field",
       "overload": 0
     }
   ],
   "PPG::select_faces_by_normal": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__select_faces_by_normal",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_normal",
       "overload": 0
     }
   ],
   "PPG::select_faces_by_shape": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__select_faces_by_shape",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_shape",
       "overload": 0
     }
   ],
   "PPG::select_faces_by_visibility": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__select_faces_by_visibility",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_by_visibility",
       "overload": 0
     }
   ],
   "PPG::select_faces_inside_mesh": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__select_faces_inside_mesh",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__select_faces_inside_mesh",
       "overload": 0
     }
   ],
   "PPG::select_random_faces": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__select_random_faces",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__select_random_faces",
       "overload": 0
     }
   ],
   "PPG::set_face_ID_tags": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__set_face_ID_tags",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__set_face_ID_tags",
       "overload": 0
     }
   ],
   "PPG::set_face_color": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__set_face_color",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__set_face_color",
       "overload": 0
     }
   ],
   "PPG::set_face_tag": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__set_face_tag",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__set_face_tag",
       "overload": 0
     }
   ],
   "Print::any_array_min_max": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__any_array_min_max",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__any_array_min_max",
       "overload": 0
     }
   ],
   "Print::any_to_string": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__any_to_string",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__any_to_string",
       "overload": 0
     }
   ],
   "Print::array_info_string": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__array_info_string",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__array_info_string",
       "overload": 0
     }
   ],
   "Print::array_min_max": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__array_min_max",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__array_min_max",
       "overload": 0
     }
   ],
   "Print::commands_and_palette": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__commands_and_palette",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__commands_and_palette",
       "overload": 0
     }
   ],
   "Print::create_fast_text_NF": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__create_fast_text_NF",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__create_fast_text_NF",
       "overload": 0
     }
   ],
   "Print::degrees_to_quaternion": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__degrees_to_quaternion",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__degrees_to_quaternion",
       "overload": 0
     }
   ],
   "Print::float_to_string": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__float_to_string",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__float_to_string",
       "overload": 0
     }
   ],
   "Print::hex_color_palette": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__hex_color_palette",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__hex_color_palette",
       "overload": 0
     }
   ],
   "Print::quaternion_to_degrees": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__quaternion_to_degrees",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__quaternion_to_degrees",
       "overload": 0
     }
   ],
   "Print::set_print_material": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__set_print_material",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__set_print_material",
       "overload": 0
     }
   ],
   "Print::string_to_ASCII": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__string_to_ASCII",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__string_to_ASCII",
       "overload": 0
     }
   ],
   "Print::test_for_changes": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__test_for_changes",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__test_for_changes",
       "overload": 0
     }
   ],
   "Print::value_to_hex": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__value_to_hex",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__value_to_hex",
       "overload": 0
     }
   ],
   "Print::value_to_string": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__value_to_string",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__value_to_string",
       "overload": 0
     }
   ],
@@ -610,8 +631,8 @@
   ],
   "User::Compounds::case": [
     {
-      "collection": "PPG_V2.0",
-      "id": "PPG_V2.0__compounds__supporting_compounds__case",
+      "collection": "PPG_V2.80_beta1",
+      "id": "PPG_V2.80_beta1__compounds__supporting_compounds__case",
       "overload": 0
     }
   ],

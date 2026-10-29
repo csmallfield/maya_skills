@@ -1,6 +1,6 @@
 # Bifrost Compound Library Corpus
 
-Normalized compound files: **226**
+Normalized compound files: **229**
 Type/enum definition records: **8**
 
 Use `scripts/search_compounds.py` for retrieval and `scripts/inspect_compound.py` for exact interfaces/topology.
@@ -24,9 +24,9 @@ Use `scripts/search_compounds.py` for retrieval and `scripts/inspect_compound.py
 - `USD` — 1 files
 - `volume` — 1 files
 
-### PPG_V2.0 (74)
-- `compounds` — 54 files
-- `compounds/supporting compounds` — 20 files
+### PPG_V2.80_beta1 (77)
+- `compounds` — 56 files
+- `compounds/supporting compounds` — 21 files
 
 ### Stormvn (5)
 - `compounds/cloud` — 5 files

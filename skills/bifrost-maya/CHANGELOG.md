@@ -1,3 +1,12 @@
+# Bifrost Maya skill - 3.0 verification and PPG 2.80, 2026-10-29
+
+- `scripts/verify_compound.py`: one verdict (VERIFIED / PARTIAL / FAILED) from three stages: static validation, bifcmd compile, and headless evaluation that reads outputs. It renames installed duplicates, since a duplicate name crashes bifcmd.
+- `scripts/bifcmd_check.py`: compiles or runs a compound file, or an installed compound by name, with bifcmd. Filters library noise from the log and summarizes geometry outputs.
+- `scripts/scan_compounds.py`: compile-checks every installed compound in a folder.
+- `validate_native_graph.py`: ports on shipped nodes are now checked against the exact 3.0 index, so an unknown port is an error (`UNKNOWN_LIBRARY_PORT`), and renamed 2.x node types give a warning. Fixed two false errors that affected Autodesk's own graphs: untyped iteration targets, and the implicit `looping_condition` of do-while loops. All 105 shipped 3.0 graphs now pass, and a test covers that.
+- Compound corpus rebuilt with the installed PPG 2.80 beta1 in place of 2.0 (`references/ppg-2.0-vs-2.80.md` lists the changes). `parse_compounds.py` now picks up the PPG version from the folder name.
+- Opt-in bifcmd regression: the helper-scope defect fails at compile with Maya's own error, and the intact skyscraper compiles.
+
 # Bifrost Maya skill - Maya connection, 2026-10-29
 
 - `scripts/maya_exec.py`: runs Python in live Maya over the command port. Returns the result, stdout and traceback as JSON. Source goes through a temp file, so the port's buffer size can't truncate it.

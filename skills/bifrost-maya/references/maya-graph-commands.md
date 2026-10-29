@@ -97,7 +97,10 @@ The JSON log reports `compoundLoadedOk`, `compilationOk` and `executionOk` separ
 - A test compound file that was never installed loaded, compiled and ran. `--set-port width 5` gave `point_position` from -2.5 to 2.5.
 - The v3.1 skyscraper **compiled** with `--list-ports`, but bifcmd **crashed** (0xC0000005) when it executed. The same compound evaluates fine in mayapy.
 
-Use bifcmd as a fast load-and-compile check for compound files, and to run simple compounds. Use mayapy (`bifrost_headless.py`) to execute real graphs, and for anything needing Maya inputs or USD. bifcmd can't run compounds with overloads or `auto` ports.
+- bifcmd **crashes** (0xC0000005, empty log) when the file redefines a compound that is already installed under the same name. A renamed copy compiles. `verify_compound.py` renames automatically. To check an installed compound, give no file, just `--compound-name`, and bifcmd compiles it from the libraries.
+- With `--list-ports`, compile errors come back exactly as Maya reports them. For example, the old helper-scope bug gives *"Node 'tier_trim_records' has an unknown node definition 'nyc_affine_box_points'"*.
+
+`scripts/bifcmd_check.py` wraps all of this. Use bifcmd as a fast load-and-compile check for compound files, and to run simple compounds. Use mayapy (`bifrost_headless.py`) to execute real graphs, and for anything needing Maya inputs or USD. bifcmd can't run compounds with overloads or `auto` ports.
 
 ## Not yet verified
 

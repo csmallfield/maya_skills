@@ -100,8 +100,18 @@ class NativeGraphTests(unittest.TestCase):
         lib = child(d["compounds"][0], "nyc_shared_module_library")
         v = next(v for v in lib["values"] if v["valueName"] == "one_unit_cube.width")
         v["valueName"] = "one_unit_cube.size"
-        warnings = self.check(d)["evidence_warnings"]
-        self.assertTrue(any(x["code"] == "UNOBSERVED_EXTERNAL_PORT" and "create_mesh_cube.size" in x["detail"] for x in warnings))
+        # The installed-library index makes shipped ports exact, so the summary's port is an error.
+        errors = self.check(d)["errors"]
+        self.assertTrue(any(x["code"] == "UNKNOWN_LIBRARY_PORT" and "create_mesh_cube.size" in x["detail"] for x in errors))
+
+    def test_12b_shipped_autodesk_graphs_have_no_structural_errors(self):
+        graphs = sorted(Path(r"C:/Program Files/Autodesk/Bifrost/Maya2026/3.0.0.0/bifrost/resources/graphs").glob("*/*.json"))
+        if not graphs:
+            self.skipTest("Bifrost 3.0 install not found")
+        evidence = load_evidence()
+        failures = [(g.name, r["errors"][0]) for g in graphs
+                    if (r := validate_document(json.loads(g.read_text(encoding="utf-8-sig")), evidence))["errors"]]
+        self.assertEqual(failures, [])
 
     def test_13_fan_child_and_missing_declaration(self):
         for remove_all in (False, True):

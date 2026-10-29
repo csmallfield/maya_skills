@@ -6,7 +6,9 @@ The offline tests parse canned mayapy output. The live test starts mayapy
 from __future__ import annotations
 
 import importlib.util
+import json
 import os
+import sys
 import unittest
 from pathlib import Path
 
@@ -79,6 +81,47 @@ class LiveTests(unittest.TestCase):
         self.assertEqual(cube["outputs"]["mesh"]["bbox"][0], -1.5)
         self.assertFalse(bad["ok"])
         self.assertGreaterEqual(bad.get("compile_errors", 0), 1)
+
+
+@unittest.skipUnless(os.environ.get("BIFROST_HEADLESS_TESTS") == "1", "set BIFROST_HEADLESS_TESTS=1 to run bifcmd")
+class BifcmdTests(unittest.TestCase):
+    """The helper-scope defect from regression-history.md must fail at compile, as it did in Maya."""
+
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import bifcmd_check
+        cls.check = staticmethod(bifcmd_check.check)
+
+    def write(self, document, name):
+        import tempfile
+        folder = Path(tempfile.mkdtemp(prefix="bifcmd_test_"))
+        path = folder / name
+        path.write_text(json.dumps(document), encoding="utf-8")
+        return path
+
+    def skyscraper(self, suffix):
+        document = json.loads((ROOT / "assets/native-examples/ppg_nyc_skyscraper_v3_1_fast.json").read_text(encoding="utf-8-sig"))
+        document["compounds"][0]["name"] += suffix  # an installed duplicate name crashes bifcmd
+        return document
+
+    def test_scope_bug_fails_compile_and_intact_file_compiles(self):
+        good = self.skyscraper("__test_ok")
+        result, code = self.check(self.write(good, "ok.json"), good["compounds"][0]["name"], False, [], None, False, 300)
+        self.assertEqual(code, 0, result)
+
+        bad = self.skyscraper("__test_scope")
+
+        def walk(scope):
+            yield scope
+            for child in scope.get("compounds", []) or []:
+                yield from walk(child)
+        tier = next(s for s in walk(bad["compounds"][0]) if s.get("name") == "nyc_for_each_tier")
+        tier["compounds"] = [c for c in tier["compounds"] if c.get("name") != "nyc_affine_box_points"]
+        result, code = self.check(self.write(bad, "bad.json"), bad["compounds"][0]["name"], False, [], None, False, 300)
+        self.assertEqual(code, 1)
+        self.assertFalse(result["stages"]["compilationOk"])
+        self.assertTrue(any("unknown node definition 'nyc_affine_box_points'" in e for e in result["errors"]))
 
 
 if __name__ == "__main__":

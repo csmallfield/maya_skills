@@ -46,7 +46,32 @@ def load_evidence() -> dict[str, Any]:
                 key = {"input": "inputs", "output": "outputs"}.get(port.get("direction"))
                 if key:
                     entry[key].add(port["name"])
+    add_installed_library(evidence)
     return evidence
+
+
+def add_installed_library(evidence: dict[str, Any]) -> None:
+    """Add exact port names for shipped nodes from the newest installed-library index.
+
+    Library operators and compounds get `exact` set, so an unknown port on one
+    is an error rather than an evidence gap. Built-ins only have observed port
+    spellings and stay non-exact. Renamed 2.x names are recorded for a warning.
+    """
+    indexes = sorted(ROOT.glob("references/bifrost-*/node-index.json"),
+                     key=lambda p: tuple(int(x) for x in p.parent.name.split("-")[-1].split(".") if x.isdigit()))
+    if not indexes:
+        return
+    version = indexes[-1].parent.name.removeprefix("bifrost-")
+    for name, record in read_json(indexes[-1]).items():
+        entry = evidence.setdefault(name, {"inputs": set(), "outputs": set()})
+        for port in record["ports"]:
+            entry["inputs" if port["dir"] == "input" else "outputs"].add(port["name"])
+        if record["kind"] != "builtin":
+            entry["exact"] = version
+    renames = indexes[-1].parent / "renames.json"
+    if renames.is_file():
+        for old_name, record in read_json(renames).items():
+            evidence.setdefault(old_name, {"inputs": set(), "outputs": set()})["renamed_to"] = record["new"]
 
 
 def validate_document(document: Any, evidence: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -79,7 +104,7 @@ def validate_document(document: Any, evidence: dict[str, Any] | None = None) -> 
                 "limits": ["Not Maya/Bifrost compilation or execution.",
                            "No overload/type inference, PPG evaluation, render or timing validation.",
                            "Immediate-scope rules are a conservative authoring profile.",
-                           "Observed endpoint evidence is partial and version-specific."]}
+                           "Shipped-node ports are exact for the installed index; built-in and custom evidence is partial."]}
 
     if not isinstance(document, dict) or not isinstance(document.get("header"), dict) or not isinstance(document.get("compounds"), list) or not document["compounds"]:
         issue("NOT_NATIVE_COMPOUND", "$", "Expected a native header and nonempty compounds array, not a graph blueprint.")
@@ -149,6 +174,9 @@ def validate_document(document: Any, evidence: dict[str, Any] | None = None) -> 
                     external.add(kind)
                     if kind not in evidence:
                         issue("UNKNOWN_EXTERNAL_TYPE", path, kind, warning=True)
+                    elif evidence[kind].get("renamed_to"):
+                        issue("RENAMED_NODE_TYPE", path, f"{kind} is {evidence[kind]['renamed_to']} in the installed Bifrost",
+                              warning=True)
             elif kind:
                 issue("UNRESOLVED_LOCAL_TYPE", path, f"{name} -> {kind}; no definition in the calling scope.")
             elif not n.get("valueType"):
@@ -167,7 +195,9 @@ def validate_document(document: Any, evidence: dict[str, Any] | None = None) -> 
             if not isinstance(marker, dict) or not isinstance(marker.get("ports"), list):
                 issue("BAD_FOR_EACH_MARKER", path, "Expected native forEachCompound.ports array.")
             for p in ports.values():
-                if p.get("portIterationTarget") in (True, "true") and not str(p.get("portType", "")).startswith("array<"):
+                # Untyped (auto) ports are valid iteration targets; Autodesk's graphs use them throughout.
+                ptype = p.get("portType")
+                if p.get("portIterationTarget") in (True, "true") and ptype and not str(ptype).startswith("array<"):
                     issue("NON_ARRAY_ITERATION_TARGET", path, p["portName"])
 
         def endpoint(ep: Any, direction: str) -> str | None:
@@ -182,6 +212,8 @@ def validate_document(document: Any, evidence: dict[str, Any] | None = None) -> 
                 return None
             if not node_name:
                 expected = "input" if direction == "output" else "output"
+                if port == "looping_condition" and "whileCompound" in compound:
+                    return None  # implicit output of a do-while loop compound
                 if port not in ports:
                     issue("UNKNOWN_INTERFACE_PORT", path, ep)
                 elif ports[port].get("portDirection") != expected:
@@ -206,7 +238,11 @@ def validate_document(document: Any, evidence: dict[str, Any] | None = None) -> 
                 entry = evidence.get(kind)
                 key = "outputs" if direction == "output" else "inputs"
                 if entry is not None and port not in entry.get(key, set()):
-                    issue("UNOBSERVED_EXTERNAL_PORT", path, f"{kind}.{port} ({direction})", warning=True)
+                    if entry.get("exact"):
+                        issue("UNKNOWN_LIBRARY_PORT", path,
+                              f"{kind}.{port} ({direction}) is not a port in installed Bifrost {entry['exact']}")
+                    else:
+                        issue("UNOBSERVED_EXTERNAL_PORT", path, f"{kind}.{port} ({direction})", warning=True)
             if direction == "input" and len(parts) > 1:
                 fan = node.get("fanInPortNames", {})
                 observed = evidence.get(node.get("nodeType", ""), {})

@@ -7,14 +7,6 @@
       "id": "VHH__tool__scatter_plus"
     }
   ],
-  "Hyuu::Logic::and_conditional": [
-    {
-      "collection": "PPG_V2.0",
-      "compound": "Hyuu::merge_vertices_clean",
-      "count": 1,
-      "id": "PPG_V2.0__compounds__merge_vertices_clean"
-    }
-  ],
   "MJCG::Core::Array::array_average": [
     {
       "collection": "VHH",
@@ -110,15 +102,15 @@
     },
     {
       "collection": "VHH",
-      "compound": "VHH::USD::define_usd_pbr_preview_surface",
-      "count": 73,
-      "id": "VHH__USD__PBR_Preview_Surface"
-    },
-    {
-      "collection": "VHH",
       "compound": "VHH::Tool::AOBox",
       "count": 2,
       "id": "VHH__tool__aoBox"
+    },
+    {
+      "collection": "VHH",
+      "compound": "VHH::USD::define_usd_pbr_preview_surface",
+      "count": 73,
+      "id": "VHH__USD__PBR_Preview_Surface"
     }
   ],
   "USD::Attribute::define_usd_display_color": [

@@ -6,7 +6,7 @@ Use this reference when a task involves the user-provided compound library rathe
 
 The compound corpus is user-provided and is separate from the Autodesk/Maya-shipped example corpus. Treat it as direct evidence of the supplied compound implementations and documentation, not as Autodesk documentation unless a node used internally is covered by the bundled Autodesk node reference.
 
-The normalized corpus contains 226 compound-bearing JSON files from 235 JSON files total, plus 8 VHH enum/type definition files. The largest collections are PPG 2.0 and VHH.
+The normalized corpus contains 229 compound-bearing JSON files from 238 JSON files total, plus 8 VHH enum/type definition files. The largest collections are VHH and PPG 2.80 beta1. PPG 2.80 is the version installed in the user's Maya; it replaced Astra's PPG 2.0 copy, and `references/ppg-2.0-vs-2.80.md` lists what changed.
 
 ## Retrieval workflow
 
@@ -18,7 +18,7 @@ The normalized corpus contains 226 compound-bearing JSON files from 235 JSON fil
 6. Use `references/compound-data/type-definitions.json` for bundled VHH enum definitions.
 7. If a dependency appears in `unresolved-dependencies.json`, treat it as external or otherwise absent from this corpus and do not invent its implementation.
 
-## PPG 2.0
+## PPG 2.80 beta1
 
 PPG compounds use the `PPG::` namespace for the main polygon-procedural toolkit, with supporting compounds in additional namespaces where supplied by the source collection.
 
