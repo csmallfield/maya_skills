@@ -1,3 +1,12 @@
+# Bifrost Maya skill - phase 6: speed, simulations, USD, install, 2026-10-29
+
+- Persistent headless worker (`_headless_worker.py`): `bifrost_headless.py` starts it on first use (about 35 s), then runs take 1 to 2 s. Each graph gets a new scene, and a crash is reported and restarts the worker on the next run. Options: `--no-worker`, `--stop-worker`; it exits after 30 idle minutes.
+- Simulations: `"frames"` and `"sample_frames"` in specs, and `verify_compound.py --frames`. Async evaluation is off and every frame is pulled in order; without that, every sample returned frame 1. Proven on `Graphs::MPM::sand_pile` (the column falls from 8.07 to 1.98 units over 24 frames).
+- Automatic `<port>__points` counts on Object outputs, so particles, volumes and instances get numbers.
+- USD: `bifcmd_check.usd_environment()` puts MayaUSD's matching `USD_<ver>` libraries and Maya's `bin` on PATH, so the USD pack loads in bifcmd with nothing downloaded. The installed-compound scan now covers all 22: 16 compile, 5 have auto inputs, 1 fails.
+- `install_compound.py`: verify, install with a backup, and optional live plugin reload, refused while the scene has unsaved changes. It needs `--yes`.
+- Tests: install refusal, worker speed, simulation advance, and USD compile.
+
 # Bifrost Maya skill - phase 5 real-task testing, 2026-10-29
 
 - New rule: Bifrost drops a literal on a multi-input child port (`multiply.first.in_1`) and treats it as 0. `validate_native_graph.py` reports `MULTI_INPUT_CHILD_LITERAL` as an error. This was the root cause of both bugs in `cg_flat_layout_v001`, and it is a latent defect in the v3.1 skyscraper (`minimum_opening_dimension`). There is an offline test, plus a live bifcmd proof (literal gives 0, a wired value node gives 10).

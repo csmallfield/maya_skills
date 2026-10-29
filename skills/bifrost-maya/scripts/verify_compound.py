@@ -10,7 +10,8 @@
               unpacks the compound as a graph and reads its outputs: scalar
               values, or mesh/vertex/face counts for Object outputs. About 40 s.
 
-`--fast` skips stage 3. `--set` sets compound input values for stage 3
+`--frames START END` simulates that range for stage 3 (every frame computed in
+order) and reports outputs at the start, middle and end frames. `--fast` skips stage 3. `--set` sets compound input values for stage 3
 (Bifrost literals such as `floors=12`). Array<Object> outputs are merged and
 counted. Later stages still run after an
 earlier failure so one report shows everything, except that stage 3 is
@@ -82,7 +83,8 @@ def renamed_copy(document: dict, name: str, folder: Path) -> tuple[Path, str]:
     return path, new_name
 
 
-def evaluation_spec(name: str, outputs: dict[str, str], sets: list[str]) -> tuple[dict, set[str]]:
+def evaluation_spec(name: str, outputs: dict[str, str], sets: list[str],
+                    frames: list[int] | None = None) -> tuple[dict, set[str]]:
     """Headless spec that places the compound as a node and wires every readable output.
 
     Scalars and Object outputs are wired straight to graph outputs. An
@@ -107,12 +109,17 @@ def evaluation_spec(name: str, outputs: dict[str, str], sets: list[str]) -> tupl
         else:
             continue
         readable.add(port)
+    if frames:
+        start, end = frames
+        spec["frames"] = [start, end]
+        spec["sample_frames"] = sorted({start, (start + end) // 2, end})
     return spec, readable
 
 
 
 
-def verify(path: Path, compound_name: str | None, sets: list[str], fast: bool) -> dict:
+def verify(path: Path, compound_name: str | None, sets: list[str], fast: bool,
+           frames: list[int] | None = None) -> dict:
     document = json.loads(path.read_text(encoding="utf-8-sig"))
     report = {"file": str(path), "stages": {}}
 
@@ -147,12 +154,13 @@ def verify(path: Path, compound_name: str | None, sets: list[str], fast: bool) -
     elif not compiled.get("ok"):
         report["stages"]["evaluate"] = {"skipped": "compile failed"}
     else:
-        spec, readable = evaluation_spec(name, outputs, sets)
+        spec, readable = evaluation_spec(name, outputs, sets, frames)
         session, _ = bifrost_headless.run([spec], timeout=900, library_files=[str(path)])
         graph = (session.get("graphs") or [{}])[0]
         report["stages"]["evaluate"] = {
             "ok": bool(graph.get("ok")) and not session.get("fatal"),
             "outputs": graph.get("outputs", {}),
+            "frames": graph.get("frames"),
             "not_read": sorted(set(outputs) - readable),
             "failed_steps": [s for s in graph.get("steps", []) if "error" in s],
             "log": graph.get("log", [])[:20],
@@ -189,8 +197,13 @@ def summarize(report: dict) -> str:
             lines.append(f"      step failed: {step['step']}: {step.get('error')}")
         for line in data.get("log", [])[:10]:
             lines.append(f"      maya: {line}")
-        for port, value in data.get("outputs", {}).items():
-            lines.append(f"      {port} = {json.dumps(value)}")
+        if data.get("frames"):
+            for frame, values in data["frames"].items():
+                lines.append(f"      frame {frame}:")
+                lines += [f"        {port} = {json.dumps(value)}" for port, value in values.items()]
+        else:
+            for port, value in data.get("outputs", {}).items():
+                lines.append(f"      {port} = {json.dumps(value)}")
         if data.get("not_read"):
             lines.append(f"      not read (array or custom types): {', '.join(data['not_read'])}")
     return "\n".join(lines)
@@ -203,10 +216,12 @@ def main() -> int:
     parser.add_argument("--set", action="append", default=[], metavar="PORT=VALUE",
                         help="compound input value for the evaluate stage")
     parser.add_argument("--fast", action="store_true", help="skip the headless evaluate stage")
+    parser.add_argument("--frames", nargs=2, type=int, metavar=("START", "END"),
+                        help="simulate this frame range and read outputs at start, middle and end")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    report = verify(args.file.resolve(), args.compound, args.set, args.fast)
+    report = verify(args.file.resolve(), args.compound, args.set, args.fast, args.frames)
     print(json.dumps(report, indent=1, default=repr) if args.json else summarize(report))
     return 0 if report["verdict"] == "VERIFIED" or (args.fast and report["verdict"] == "PARTIAL") else 1
 

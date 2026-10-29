@@ -7,8 +7,15 @@ touching a live session.
 
     bifrost_headless.py spec.json [--library compound.json ...] [--json] [--timeout SECONDS]
 
-The file holds one spec, or a list of specs that run as separate graphs in
-one mayapy session (startup takes about 35 s, so batch related tests).
+The file holds one spec, or a list of specs; each runs as its own graph in a
+new scene. Runs go to a persistent background mayapy worker that starts on
+first use (about 35 s) and then answers in seconds; it exits after 30 idle
+minutes, or with --stop-worker. --no-worker runs a one-shot mayapy instead.
+If the worker crashes, the run reports it and the next run starts a new one.
+
+Simulations: `"frames": [start, end]` steps the timeline frame by frame and
+reads outputs at `"sample_frames"` (default: the last frame), reported per
+frame under `frames`.
 
 Spec (every key optional except what you need):
 
@@ -44,6 +51,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import socket
 import subprocess
 import sys
 import tempfile
@@ -147,7 +155,114 @@ def library_env(tmp: Path, library_files: list[str]) -> dict:
     return env
 
 
-def run(specs, timeout: float, library_files: list[str] | None = None) -> tuple[dict, int]:
+WORKER_DIR = Path(tempfile.gettempdir()) / "bifrost_headless_worker"
+WORKER_STATE = WORKER_DIR / "state.json"
+
+
+def worker_state() -> dict | None:
+    """The running worker's state, or None if there is none (stale state is removed)."""
+    try:
+        state = json.loads(WORKER_STATE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    try:
+        with socket.create_connection(("127.0.0.1", state["port"]), timeout=2):
+            return state
+    except OSError:
+        WORKER_STATE.unlink(missing_ok=True)
+        return None
+
+
+def start_worker(timeout: float = 300) -> dict:
+    """Start the persistent mayapy worker (about 35 s) and wait until it is ready."""
+    WORKER_DIR.mkdir(exist_ok=True)
+    library_dir = WORKER_DIR / "library"
+    library_dir.mkdir(exist_ok=True)
+    config = WORKER_DIR / "scratch_library_config.json"
+    config.write_text(json.dumps({"AminoConfigurations": [{
+        "vendorName": "Claude", "libraryName": "claude_scratch", "libraryVersion": "1.0",
+        "jsonLibs": [{"path": library_dir.as_posix()}]}]}), encoding="utf-8")
+    env = dict(os.environ)
+    existing = env.get("BIFROST_LIB_CONFIG_FILES")
+    env["BIFROST_LIB_CONFIG_FILES"] = str(config) + (os.pathsep + existing if existing else "")
+    WORKER_STATE.unlink(missing_ok=True)
+    log = WORKER_DIR / "worker.log"
+    flags = getattr(subprocess, "CREATE_NO_WINDOW", 0) | getattr(subprocess, "DETACHED_PROCESS", 0)
+    with log.open("wb") as stream:
+        subprocess.Popen([str(find_mayapy()), "-I", str(HERE / "_headless_worker.py"), str(WORKER_STATE),
+                          str(library_dir), str(log)], stdout=stream, stderr=subprocess.STDOUT,
+                         stdin=subprocess.DEVNULL, env=env, cwd=str(WORKER_DIR), creationflags=flags)
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        state = worker_state()
+        if state:
+            return state
+        time.sleep(1)
+    raise RuntimeError(f"headless worker did not start within {timeout}s; see {log}")
+
+
+def stop_worker() -> bool:
+    state = worker_state()
+    if not state:
+        return False
+    try:
+        with socket.create_connection(("127.0.0.1", state["port"]), timeout=10) as sock:
+            sock.sendall(b'{"stop": true}\n')
+            sock.recv(1024)
+    except OSError:
+        pass
+    WORKER_STATE.unlink(missing_ok=True)
+    return True
+
+
+def tail_log(lines: int = 15) -> list[str]:
+    try:
+        return (WORKER_DIR / "worker.log").read_text(encoding="utf-8", errors="replace").splitlines()[-lines:]
+    except OSError:
+        return []
+
+
+def run_in_worker(specs, timeout: float, library_files: list[str]) -> tuple[dict, int]:
+    """Run specs in the persistent worker, starting it if needed."""
+    start = time.time()
+    state = worker_state()
+    started = False
+    if not state:
+        state = start_worker()
+        started = True
+    request = {"specs": specs if isinstance(specs, list) else [specs],
+               "library": [str(Path(f).resolve()) for f in library_files]}
+    try:
+        with socket.create_connection(("127.0.0.1", state["port"]), timeout=timeout) as sock:
+            sock.sendall(json.dumps(request).encode("utf-8") + b"\n")
+            data = b""
+            while not data.endswith(b"\n"):
+                chunk = sock.recv(1 << 20)
+                if not chunk:
+                    break
+                data += chunk
+        session = json.loads(data.decode("utf-8"))
+    except (OSError, ValueError) as exc:
+        WORKER_STATE.unlink(missing_ok=True)
+        return {"graphs": [], "timing": {}, "fatal": f"headless worker crashed or hung ({exc}); "
+                "the next run starts a new one", "output_tail": tail_log()}, 2
+    attach_logs(session, session.pop("output", ""))
+    add_hints(session)
+    if started:
+        session["timing"]["worker_startup"] = state.get("startup")
+    session["timing"]["total"] = round(time.time() - start, 3)
+    if session.get("fatal"):
+        return session, 2
+    return session, 0 if all(graph.get("ok") for graph in session["graphs"]) else 1
+
+
+def run(specs, timeout: float, library_files: list[str] | None = None, worker: bool = True) -> tuple[dict, int]:
+    """Evaluate specs headless: in the persistent worker by default, or a one-shot mayapy."""
+    for name in library_files or []:
+        if not Path(name).is_file():
+            sys.exit(f"library file not found: {name}")
+    if worker:
+        return run_in_worker(specs, timeout, library_files or [])
     with tempfile.TemporaryDirectory(prefix="bifrost_headless_") as tmp:
         spec_path, result_path = Path(tmp) / "spec.json", Path(tmp) / "result.json"
         spec_path.write_text(json.dumps(specs), encoding="utf-8")
@@ -210,15 +325,22 @@ def summarize(session: dict) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Evaluate Bifrost graph specs in headless Maya.")
-    parser.add_argument("spec", help="spec JSON file (one spec or a list), or - for stdin")
+    parser.add_argument("spec", nargs="?", help="spec JSON file (one spec or a list), or - for stdin")
     parser.add_argument("--json", action="store_true", help="print the full JSON report")
     parser.add_argument("--timeout", type=float, default=600)
     parser.add_argument("--library", action="append", default=[], metavar="FILE",
                         help="compound JSON to load into a scratch library for this run (repeatable)")
+    parser.add_argument("--no-worker", action="store_true", help="one-shot mayapy instead of the persistent worker")
+    parser.add_argument("--stop-worker", action="store_true", help="stop the persistent worker and exit")
     args = parser.parse_args()
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if args.stop_worker:
+        print("worker stopped" if stop_worker() else "no worker running")
+        return 0
+    if not args.spec:
+        parser.error("give a spec file")
     text = sys.stdin.read() if args.spec == "-" else Path(args.spec).read_text(encoding="utf-8")
-    session, code = run(json.loads(text), args.timeout, args.library)
+    session, code = run(json.loads(text), args.timeout, args.library, worker=not args.no_worker)
     print(json.dumps(session, indent=1, default=repr) if args.json else summarize(session))
     return code
 

@@ -6,8 +6,8 @@
 FOLDER defaults to the user's compounds folder (~/Autodesk/Bifrost/Compounds).
 Each top-level compound in each JSON file is compiled by name with bifcmd from
 the installed libraries (about 10 s each), so the files are never copied or
-changed. Compounds using USD types are listed as needing the USD pack, which
-bifcmd runs without here, and compounds with untyped (auto) inputs are listed
+changed. Compounds using USD types are compiled with the USD pack when MayaUSD
+is installed (otherwise listed as needing it), and compounds with untyped (auto) inputs are listed
 separately because bifcmd can't compile them outside a graph. Python stdlib only.
 """
 from __future__ import annotations
@@ -34,12 +34,13 @@ def compounds_in(path: Path) -> list[str]:
 
 def scan(folder: Path, recursive: bool) -> list[dict]:
     files = sorted(folder.rglob("*.json") if recursive else folder.glob("*.json"))
+    usd_available = bifcmd_check.usd_environment(bifcmd_check.bifrost_root()) is not None
     rows = []
     for path in files:
         text = path.read_text(encoding="utf-8-sig", errors="replace")
         for name in compounds_in(path):
             row = {"file": str(path.relative_to(folder)), "compound": name}
-            if "BifrostUsd::" in text:
+            if "BifrostUsd::" in text and not usd_available:
                 row["status"] = "needs USD pack"
                 rows.append(row)
                 continue

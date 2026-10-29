@@ -154,5 +154,55 @@ class BifcmdMultiInputTests(BifcmdTests):
     test_scope_bug_fails_compile_and_intact_file_compiles = None
 
 
+class InstallTests(unittest.TestCase):
+    def test_install_refuses_without_yes(self):
+        import subprocess, tempfile
+        folder = tempfile.mkdtemp(prefix="install_test_")
+        result = subprocess.run([sys.executable, "-I", str(ROOT / "scripts/install_compound.py"),
+                                 str(ROOT / "assets/native-examples/cs_green_goo_v5(1).json"), "--folder", folder],
+                                capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("Refusing", result.stdout)
+        self.assertEqual(list(Path(folder).iterdir()), [])
+
+
+@unittest.skipUnless(os.environ.get("BIFROST_HEADLESS_TESTS") == "1", "set BIFROST_HEADLESS_TESTS=1 to run mayapy")
+class Phase6LiveTests(unittest.TestCase):
+    def test_worker_repeat_runs_are_fast(self):
+        spec = {"nodes": [{"type": "Modeling::Primitive::create_mesh_cube", "name": "cube"}],
+                "outputs": {"mesh": "Object"}, "connections": [["cube.cube_mesh", ".mesh"]]}
+        headless.run([spec], timeout=600)
+        start = __import__("time").time()
+        session, code = headless.run([spec], timeout=600)
+        self.assertEqual(code, 0, session)
+        self.assertEqual(session["graphs"][0]["outputs"]["mesh__points"], 8)
+        self.assertLess(__import__("time").time() - start, 15)
+
+    def test_simulation_advances_over_frames(self):
+        # Without async off and per-frame pulls, every sample returned the frame-1 state.
+        spec = {"nodes": [{"type": "Graphs::MPM::sand_pile", "name": "sim"},
+                          {"type": "Modeling::Common::merge_geometry", "name": "merge"},
+                          {"type": "Geometry::Points::get_bounding_box", "name": "bounds"}],
+                "outputs": {"bounds": "Object"},
+                "connections": [["sim.out_geometry", "merge.geometry"], ["merge.merged", "bounds.points"],
+                                ["bounds.aabb_mesh", ".bounds"]],
+                "frames": [1, 6], "sample_frames": [1, 6], "point_counts": False}
+        session, code = headless.run([spec], timeout=900)
+        self.assertEqual(code, 0, session)
+        frames = session["graphs"][0]["frames"]
+        top = lambda f: frames[f]["bounds"]["bbox"][4]
+        self.assertLess(top("6"), top("1") - 0.5)
+
+    def test_usd_compound_compiles_in_bifcmd(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import bifcmd_check
+        if not bifcmd_check.usd_environment(bifcmd_check.bifrost_root()):
+            self.skipTest("MayaUSD not installed")
+        # A USD compound with typed ports (create_usd_stage has an auto input bifcmd cannot compile alone).
+        result, code = bifcmd_check.check(None, "User::Compounds::CJS_simple_usd_loader", False, [], None, False, 300)
+        self.assertEqual(code, 0, result)
+        self.assertTrue(result["usd_pack"])
+
+
 if __name__ == "__main__":
     unittest.main()

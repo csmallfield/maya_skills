@@ -11,8 +11,10 @@ fine in Maya, so treat a run crash as "use bifrost_headless.py", not as a
 broken file.
 
 Warnings are filtered to the ones that mention a compound defined in FILE, so
-noise from the user's installed libraries stays out. The USD pack is disabled
-unless --keep-usd is given (it needs MayaUSD's libraries on PATH).
+noise from the user's installed libraries stays out. The USD pack loads when
+MayaUSD's USD libraries matching the pack version are installed: they, and
+Maya's bin folder, go on PATH for bifcmd. Otherwise, or with --no-usd, the
+pack is disabled and USD compounds can't be checked.
 
 Exit code: 0 loaded and compiled (and ran, with --run), 1 a stage failed,
 2 bifcmd crashed or could not start. Python stdlib only.
@@ -40,6 +42,22 @@ def bifrost_root() -> Path:
     return root
 
 
+def usd_environment(root: Path) -> dict | None:
+    """PATH and plugin-path additions that let bifcmd load the USD pack, or None.
+
+    The pack in bifrost/packs/usd_pack/<ver> needs MayaUSD's USD_<ver> libraries
+    and Maya's own bin folder; nothing extra is downloaded.
+    """
+    packs = sorted((root / "packs" / "usd_pack").glob("*/bin"), key=lambda p: [int(x) for x in re.findall(r"\d+", p.parent.name)])
+    maya_bin = Path(os.environ.get("MAYA_LOCATION", r"C:\Program Files\Autodesk\Maya2026")) / "bin"
+    for pack in reversed(packs):
+        version = pack.parent.name
+        for usd in sorted(Path(r"C:\Program Files\Autodesk\MayaUSD").glob(f"*/*/mayausd/USD_{version}"), reverse=True):
+            if (usd / "lib").is_dir() and maya_bin.is_dir():
+                return {"path": [usd / "lib", usd / "bin", maya_bin], "plugins": usd / "lib" / "usd", "version": version}
+    return None
+
+
 def defined_compounds(path: Path) -> list[str]:
     def walk(scope):
         yield scope.get("name", "")
@@ -50,12 +68,18 @@ def defined_compounds(path: Path) -> list[str]:
 
 
 def check(path: Path | None, compound: str | None, run: bool, set_ports: list[list[str]],
-          frames: list[str] | None, keep_usd: bool, timeout: float) -> tuple[dict, int]:
+          frames: list[str] | None, no_usd: bool, timeout: float) -> tuple[dict, int]:
     root = bifrost_root()
     env = dict(os.environ)
-    env["PATH"] = os.pathsep.join([str(root / "bin"), str(root / "thirdparty" / "bin"), env.get("PATH", "")])
-    if not keep_usd:
+    paths = [root / "bin", root / "thirdparty" / "bin"]
+    usd = None if no_usd else usd_environment(root)
+    if usd:
+        paths += usd["path"]
+        env["PXR_PLUGINPATH_NAME"] = os.pathsep.join(filter(None, [str(usd["plugins"]), env.get("PXR_PLUGINPATH_NAME")]))
+        env.pop("BIFROST_DISABLE_PACKS", None)
+    else:
         env["BIFROST_DISABLE_PACKS"] = "usd_pack"
+    env["PATH"] = os.pathsep.join([*map(str, paths), env.get("PATH", "")])
     names = defined_compounds(path) if path else [compound]
     with tempfile.TemporaryDirectory(prefix="bifcmd_check_") as tmp:
         log = Path(tmp) / "log.json"
@@ -101,6 +125,7 @@ def check(path: Path | None, compound: str | None, run: bool, set_ports: list[li
         "outputs": [{"name": p.get("name"), "type": p.get("type"), "value": p.get("value")}
                     for p in report.get("outputPorts", [])],
         "exit_code": proc.returncode,
+        "usd_pack": usd["version"] if usd else None,
     }
     if proc.returncode < 0 or proc.returncode > 255:
         result["ok"] = False
@@ -144,7 +169,7 @@ def main() -> int:
     parser.add_argument("--run", action="store_true", help="execute too, not just compile")
     parser.add_argument("--set-port", nargs=2, action="append", default=[], metavar=("NAME", "VALUE"))
     parser.add_argument("--frames", nargs=2, metavar=("BEGIN", "END"))
-    parser.add_argument("--keep-usd", action="store_true", help="don't disable the USD pack")
+    parser.add_argument("--no-usd", action="store_true", help="disable the USD pack even if MayaUSD is installed")
     parser.add_argument("--timeout", type=float, default=300)
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
@@ -152,7 +177,7 @@ def main() -> int:
     if not args.file and not args.compound_name:
         parser.error("give a file or --compound-name")
     result, code = check(args.file.resolve() if args.file else None, args.compound_name, args.run, args.set_port, args.frames,
-                         args.keep_usd, args.timeout)
+                         args.no_usd, args.timeout)
     print(json.dumps(result, indent=1) if args.json else summarize(result))
     return code
 

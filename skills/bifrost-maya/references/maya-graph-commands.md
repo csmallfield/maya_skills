@@ -130,3 +130,17 @@ The JSON log reports `compoundLoadedOk`, `compilationOk` and `executionOk` separ
 ## Not yet verified
 
 `bifrostGraph` flags `importGraph` (by name it returned the name but added no nodes), `serializeGraph` (returns a binary int array), `executionCounter` and `compilationCounter`, `vnnPort` fan-in flags, loops, terminals, and reloading the plugin in the live session.
+
+
+## Simulations headless
+
+Verified 2026-10-29 on `Graphs::MPM::sand_pile`, `dust_motes` and `simple_RBD`. A graph with time-dependent nodes gets a `Simulation__time` attribute that Maya connects to `time1.outTime`, headless too. Stepping `cmds.currentTime` alone isn't enough:
+
+- **Turn off async evaluation:** `cmds.bifrostGraph(g, enableAsync=False)`.
+- **Pull outputs on every frame, in order.** Read every output (`getAttr`, mesh queries) at every frame, not just the frames you report.
+
+If you skip either, every sampled frame returns the frame-1 state, and each frame "takes" about 1 ms. A per-frame time of milliseconds for a real sim is a sign that nothing is being computed.
+
+## USD pack outside Maya
+
+bifcmd only loads `packs/usd_pack/<ver>` when these are on PATH: MayaUSD's `C:/Program Files/Autodesk/MayaUSD/Maya2026/<mayausd>/mayausd/USD_<ver>/lib` and `.../bin`, and `C:/Program Files/Autodesk/Maya2026/bin`. Also set `PXR_PLUGINPATH_NAME` to `.../USD_<ver>/lib/usd`. Without these, the pack fails with "Default value function not found for value of type 'BifrostUsd::Stage'" and `configFilesLoadedOk` is false. `bifcmd_check.usd_environment()` finds them. Headless mayapy needs none of this.
