@@ -79,7 +79,7 @@ cmds.playblast(completeFilename="C:/tmp/look.png", format="image", compression="
                widthHeight=[960, 540], percent=100, viewer=False, showOrnaments=False, forceOverwrite=True, offScreen=True)
 ```
 
-This moves the user's `persp` camera, so say so, or use a new camera. Bifrost instances display directly from the graph shape, with no conversion.
+This moves the user's `persp` camera, so say so, or use a new camera. For large scenes, set the camera shape's `nearClipPlane` to 1 or even 10 (`cmds.setAttr(shape + ".nearClipPlane", 1)`). Maya's default 0.1 with a far clip in the thousands produces black hatching and z-fighting on coplanar or near-coplanar faces. It's a depth-precision problem, so don't move the geometry to fix it (user tip, confirmed on the CityGen city in 2026-10). Bifrost instances display directly from the graph shape, with no conversion.
 
 ## What crashes Maya
 

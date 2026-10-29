@@ -88,3 +88,7 @@ Count evaluated modeling invocations and source faces, not just root nodes or JS
 Record user feedback precisely: v3.1 was reported to work "much much better". No numeric timing, speedup multiplier, memory measurement or renderer coverage was supplied. Do not present that feedback as an assistant-run benchmark.
 
 For new benchmarks, separate initial compilation, warm parameter evaluation, viewport update and bake. Disconnect the older version and baker. Compare a layout edit, a module edit and placement/scale edits at the same output detail. Increasing instance count still has placement/display cost; retained instancing removes repeated detailed topology work, not all growth with building size.
+
+## PPG USD exports carry placement metadata (user files, generator 4.3, read 2026-10-29)
+
+The user's PPG building exports (`/Building` default prim, binary .usdc) store `citygenInput:*` custom data on `/Building`: `storeys`, `frontLocal` (0,0,1), `entranceLocal`, `usage`, `selectionWeight`, `minBuildingGapM`, `minStreetSetbackM`, plus `facadeId`, `footprintId`, `massingId` and version keys. There is no footprint size; take it from the bounds of `/Building/Proxy` (the render bounds add about 0.9 m of storefront overhang). Values are in metres, but the stage declares `metersPerUnit` 0.01, so resolve the scale before referencing these files into a metre-based scene. Inside, `/Building/Render` already uses per-material PointInstancers. Read them with pxr in live Maya (`maya_exec.py`), since `mayapy -I` has no pxr.

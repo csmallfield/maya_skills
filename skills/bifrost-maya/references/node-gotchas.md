@@ -16,3 +16,8 @@ Verified while building CityGen (bifrost_citygen repo) on 2026-10-29 with verify
 - **Yaw from a direction:** `axis_angle_to_quaternion(axis (0,1,0), radians = atan_2D(y, x))`. To map +X onto (dx, dz), use `atan_2D(-dz, dx)`. To map +Z onto (dx, dz), use `atan_2D(dx, dz)`.
 - **Concatenate arrays:** `flatten_nested_array(build_array(a, b))`.
 - **Per-element constant property:** `multiply(length(unit_vectors), value)` gives an array of `value` matching another array's length.
+- **Snap to the nearest vertex:** `get_closest_point(...).point_indices` feeds `get_from_array(point_position, ...)` to get the matching vertex positions (`locations` is a sampling handle for `sample_property`, not positions). Mask the result with `.found`.
+- **Greedy non-overlap of equal rectangles:** an iterate loop over candidates keeps the accepted centres and fronts as state. Run a 2D separating-axis test of the new rectangle against all kept ones at once (four axes, with `absolute_value(dot(...))` projections), reduce with `any_true_in_array`, and append with `flatten_nested_array(build_array(kept, build_array(new)))`. In CityGen it took overlapping building pairs from 49 to 0 on 138 candidates in about 1 s. Check results outside Bifrost too: `bifrost_citygen/tests/check_overlaps.py` re-runs the SAT on an exported .usda.
+
+## Comparing exported USD
+- `export_stage_to_file` writes `.usda` text. Instancer arrays (`positions`, `orientations` as `quath` real first, `scales`, `protoIndices`) can be parsed with stdlib regex for independent checks, without pxr.
