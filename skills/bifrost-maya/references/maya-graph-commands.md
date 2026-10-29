@@ -103,7 +103,7 @@ When you find another crash, reproduce it headless, then add it here and to `tes
 
 - Every JSON in the user's compounds folder (`~/Autodesk/Bifrost/Compounds`, library "UserCompounds") loads when the plugin loads, in headless sessions too. A compound there can be added by its full name. For example, `Procedural::Buildings::ppg_nyc_skyscraper_v3_1_fast` evaluates headless on 3.0 to `bay_count` 832 and `total_height` 166.9 in about 1.2 s.
 - `bifrostGraph(importGraphAsShape=...)` takes a compound **name** that is already in a library, not a file path. It unpacks that compound into an editable graph, which is what Maya's Bifrost Browser does with examples. `importGraphAsShape="Graphs::Scatter::basic_scatter_example"` and `"FX::Goo::cs_green_goo_v5"` both work. A file path fails with "Fail to load bifrost graph", even for Autodesk's own example files.
-- Compound files only register when the plugin loads. In a running session, a file added later stays invisible: `vnn(flushProxies="BifrostGraph")` doesn't help. Unloading and reloading the plugin does pick it up (verified headless with `file(new=True, force=True)`, `unloadPlugin("bifrostGraph", force=True)`, then `loadPlugin`). That avoids a full Maya restart but needs a new scene. Not yet tried in the live session.
+- Compound files only register when the plugin loads. In a running session, a file added later stays invisible: `vnn(flushProxies="BifrostGraph")` doesn't help. Unloading and reloading the plugin does pick it up (verified headless with `file(new=True, force=True)`, `unloadPlugin("bifrostGraph", force=True)`, then `loadPlugin`). That avoids a full Maya restart but needs a new scene. Verified live on 2026-10-29: `install_compound.py --yes --reload` installed `cg_flat_layout_v002` and reloaded Bifrost in the user's Maya (about 1 minute including verification). The compound was available straight away, and `importGraphAsShape` by name built it.
 - **Testing a file without installing it:** `bifrost_headless.py --library FILE` copies the file into a scratch library and points `BIFROST_LIB_CONFIG_FILES` at it for that run. A fresh mayapy loads it at startup, and the user's compounds folder is never touched. A scratch library config is just `{"AminoConfigurations": [{"vendorName": ..., "libraryName": ..., "libraryVersion": ..., "jsonLibs": [{"path": FOLDER}]}]}`.
 
 ## bifcmd.exe (command-line runner)
@@ -129,7 +129,7 @@ The JSON log reports `compoundLoadedOk`, `compilationOk` and `executionOk` separ
 
 ## Not yet verified
 
-`bifrostGraph` flags `importGraph` (by name it returned the name but added no nodes), `serializeGraph` (returns a binary int array), `executionCounter` and `compilationCounter`, `vnnPort` fan-in flags, loops, terminals, and reloading the plugin in the live session.
+`bifrostGraph` flags `importGraph` (by name it returned the name but added no nodes), `serializeGraph` (returns a binary int array), `executionCounter` and `compilationCounter`, `vnnPort` fan-in flags, loops and terminals.
 
 
 ## Simulations headless

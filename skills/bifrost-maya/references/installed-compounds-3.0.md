@@ -33,6 +33,6 @@ Bifrost 3.0.0.0, compiled by name with bifcmd (2026-10-29). 5 auto inputs (needs
 
 - **compiles**: loads and compiles on 3.0 with bifcmd, with the USD pack loaded from MayaUSD's libraries. Not executed; use `verify_compound.py` for that.
 - **auto inputs (needs a graph)**: bifcmd can't compile a compound with untyped inputs (or outputs) on its own. In Maya the connected ports give them types, so this is not a 3.0 failure. Check one inside a headless graph with real inputs before relying on it.
-- **fails**: real compile errors. `cg_flat_layout_v001` has values on multi-input ports (regression-history.md, Case E). The fixed `cg_flat_layout_v002` is in the repo's `work/` folder, VERIFIED, and not installed.
+- **fails**: real compile errors. `cg_flat_layout_v001` has values on multi-input ports (regression-history.md, Case E). The fixed `cg_flat_layout_v002` (repo `work/` folder, VERIFIED) was installed alongside it on 2026-10-29 with the user's go-ahead, and checked live with a playblast.
 
 Regenerate with `python -I scripts/scan_compounds.py --out references/installed-compounds-3.0.md`; that writes the table only.

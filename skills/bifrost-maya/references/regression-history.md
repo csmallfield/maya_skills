@@ -56,7 +56,7 @@ Lessons: predict outputs before verifying, and create PPG tags before selecting 
 
 ## Phase 5 test tasks (2026-10-29)
 
-1. **Fix `cg_flat_layout_v001`** (Case E). Result: `work/cg_flat_layout/cg_flat_layout_v002.json` in the repo, VERIFIED, not installed.
+1. **Fix `cg_flat_layout_v001`** (Case E). Result: `work/cg_flat_layout/cg_flat_layout_v002.json` in the repo, VERIFIED. Installed with the user's go-ahead and reloaded live. A playblast showed the 2×2 block layout with ground, roads, junctions, sidewalks, lot guides and IDs; faint hatching at the outer road edges looked like viewport z-fighting and wasn't investigated further.
 2. **Scatter graph from scratch.** Headless, then live (`claude_scatterShape`): 200 points, and the baked mesh had 1600 vertices and 1200 faces (8 and 6 per cube). A playblast confirmed the look. This needed the fan-in recipe for `create_instances.instance_geometries`. Two self-inflicted port-name errors were caught by node-index hints.
 3. **PPG compound from scratch** (Case F). Result: `work/ppg_inset_block/ppg_inset_block_v002.json`, VERIFIED with the predicted counts.
 
