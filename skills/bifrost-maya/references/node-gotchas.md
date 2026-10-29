@@ -36,3 +36,8 @@ Verified while building CityGen (bifrost_citygen repo) on 2026-10-29 with verify
 - `boolean_meshes` time grows with the number of cutter boxes, not with the slab. Halving the boxes (road segments every 36 m instead of 18 m) cut a 1200 m city's block boolean from 10.0 s to 3.3 s with identical islands.
 - `fix_self_intersections=false` with overlapping cutters baked into one mesh returns an **empty** mesh. Leave it on whenever the cutters overlap each other.
 - For a fast approximate region split, rasterise instead: a `create_mesh_plane` grid, `get_closest_point(...).found` on the face centres (with a cutoff), then `delete_faces(faces_to_delete = that array<bool>)`. This took 0.43 s against 3.3 s at 1200 m, but the edges are stepped at the cell size and small regions can vanish.
+
+## Numbers and literals (2026-10-29, CityGen v011)
+- **`to_long` / `to_int` truncate.** `to_long(length(unit_vector))` is often 0, because the length comes out as 0.99999. Use `round_to_nearest` before converting whenever the value should be a whole number. In CityGen this silently relabelled some lots as asset 0 for four versions.
+- **Bool values through `cmds.vnnNode(..., setPortDefaultValues=(port, value))`: use `"1"` / `"0"`.** `"true"` was accepted without error but left the port false (seen on `ppg_urban_multistyle_v4_3.usd_write`). In native JSON, the literal `"true"` is fine.
+- **Pulling a `BifrostUsd::Stage` output headless:** `bifrost_headless.py` can't read a Stage output. To force a compound's stage (and its export) to evaluate, wire it through `USD::Layer::get_root_layer` and then `get_layer_identifier`, and read that string output.

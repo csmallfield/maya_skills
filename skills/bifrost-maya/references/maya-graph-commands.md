@@ -158,3 +158,9 @@ Verified 2026-10-29 (CityGen slice, `.usda` written by `export_stage_to_file`): 
 ## Library files with several compounds
 
 A file that holds a whole pipeline (several top-level compounds, one chaining the others) installs as one file: `install_compound.py FILE --compound NS::top --yes --reload`. `verify_compound.py` renames **every** top-level compound in the file that is already installed (and rewrites calls to them), so re-verifying after install works. Before that fix, the siblings failed compile with "overloaded operator ... has the same input ports signature as a previously defined operator".
+
+## USD layers in live Maya: what not to do from the command port (2026-10-29)
+
+- `Sdf.Layer.Find(path).Reload()` on a layer that a mayaUsdProxyShape's stage composes raises "Detected usd threading violation. Concurrent changes to layer(s) composed in stage ...".
+- Wrapping that in `maya.utils.executeInMainThreadWithResult` **hung Maya**: the process stayed alive but the command port stopped answering. Command-port code already runs on the main thread, so the call waits on itself.
+- Deleting and recreating the proxy shape does **not** pick up changed asset files: the referenced layers stay loaded in the session's layer registry (`Sdf.Layer.GetLoadedLayers()` still lists them). Changed assets show after a new scene/Maya start. Ask the user before anything that could block their session.
