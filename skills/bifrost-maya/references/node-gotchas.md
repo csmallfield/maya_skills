@@ -31,3 +31,8 @@ Verified while building CityGen (bifrost_citygen repo) on 2026-10-29 with verify
 - **Viewing the result:** a `mayaUsdProxyShape` with `.filePath` shows the assets' proxy purpose by default. Set `drawRenderPurpose 1` and `drawProxyPurpose 0` to see render geometry.
 - **`export_layer_to_file(relative_path=true)` does not relativise references**, only sublayers. Asset paths stay absolute. Rewrite them afterwards with pxr `UsdUtils.ModifyAssetPaths(layer, fn)` in live Maya (`bifrost_citygen/tools/relativize_usd.py`). When checking that prototypes compose, remember that referenced assets can hold their own PointInstancers, whose prototypes are leaf gprims with no children.
 - **Vertex-based distance tests miss long segments.** `get_closest_point` finds the nearest *vertex*, so a polyline with a long straight segment (for example a road end moved by snapping) is invisible along its length. Resample the strands (`resample_strands`, every 2 m) before querying distances.
+
+## Booleans (measured 2026-10-29, CityGen v010)
+- `boolean_meshes` time grows with the number of cutter boxes, not with the slab. Halving the boxes (road segments every 36 m instead of 18 m) cut a 1200 m city's block boolean from 10.0 s to 3.3 s with identical islands.
+- `fix_self_intersections=false` with overlapping cutters baked into one mesh returns an **empty** mesh. Leave it on whenever the cutters overlap each other.
+- For a fast approximate region split, rasterise instead: a `create_mesh_plane` grid, `get_closest_point(...).found` on the face centres (with a cutoff), then `delete_faces(faces_to_delete = that array<bool>)`. This took 0.43 s against 3.3 s at 1200 m, but the edges are stepped at the cell size and small regions can vanish.
