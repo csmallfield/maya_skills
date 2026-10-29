@@ -21,3 +21,11 @@ Verified while building CityGen (bifrost_citygen repo) on 2026-10-29 with verify
 
 ## Comparing exported USD
 - `export_stage_to_file` writes `.usda` text. Instancer arrays (`positions`, `orientations` as `quath` real first, `scales`, `protoIndices`) can be parsed with stdlib regex for independent checks, without pxr.
+
+## USD pack (verified 2026-10-29, CityGen v007)
+- **Instancing referenced assets:** for each asset, `define_usd_reference_from_file(file)` feeds `define_usd_prim(path="/<name>", reference_definitions=[ref])`. Pass those prim definitions to `define_usd_point_instancer.prototype_definitions`, with `instance_id_override` = per-point asset index (the points carry no `point_instance_id`). The prototypes land under `<instancer>/prototypes/<name>`.
+- **The prototypes relationship comes out reversed:** definitions [a, b, c] are written as targets [c, b, a], and `protoIndices` index the targets. Feed the definitions through `reverse_array` so that index k is asset k. Check with pxr: `PointInstancer.GetPrototypesRel().GetTargets()`.
+- **Prototype paths need a leading `/`.** A bare `name` produced targets like `/City/Buildings/prototypesname`.
+- **`export_stage_to_file` flattens.** References are resolved and their content is copied in. To keep the composition arcs, export `USD::Layer::get_root_layer(stage)` with `export_layer_to_file` (`relative_path=false` keeps absolute asset paths).
+- **`create_usd_stage.file_format` defaults to `Binary`**, whatever the file extension. Set it to `ASCII` (the UI values are `Binary` and `ASCII`) for text you can grep.
+- **Viewing the result:** a `mayaUsdProxyShape` with `.filePath` shows the assets' proxy purpose by default. Set `drawRenderPurpose 1` and `drawProxyPurpose 0` to see render geometry.
