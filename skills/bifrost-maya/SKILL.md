@@ -57,6 +57,7 @@ Version facts from the 3.0 install: operators declare `Amino 3.0.0.0`, while shi
 - `references/compound-data/ppg-overview.md` and `vhh-overview.md` let you browse those families. `interface-index.json` gives exact custom signatures, and `type-definitions.json` gives custom enums.
 - `references/compound-data/unresolved-dependencies.json` lists custom-corpus references that aren't defined anywhere: MJCG, Hyuu and Deep_Learning nodes, which need their own libraries.
 - `references/installed-compounds-3.0.md` says which of the user's installed compounds compile on 3.0. `cg_flat_layout_v001` has real type errors.
+- `references/node-gotchas.md` lists node type-inference traps and proven vectorised idioms (closest-point cutoff tests, boolean cutters from instances, strand segment pairs).
 - `references/source-notes.md` covers provenance. `references/regression-history.md` covers the native-format, layout, performance and helper-scope lessons.
 
 ## Reasoning rules
