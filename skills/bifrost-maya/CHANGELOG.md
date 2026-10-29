@@ -1,3 +1,11 @@
+# Bifrost Maya skill - Maya connection, 2026-10-29
+
+- `scripts/maya_exec.py`: runs Python in live Maya over the command port. Returns the result, stdout and traceback as JSON. Source goes through a temp file, so the port's buffer size can't truncate it.
+- `scripts/bifrost_headless.py` and `_headless_runner.py`: build and evaluate graph specs in a separate mayapy, so crashes are isolated. Reports steps, outputs, compile errors, hints and timing. Runs batches in one session.
+- `references/maya-graph-commands.md`: the verified recipe and command reference, taken from Autodesk's own scripts and tested headless and live on 3.0. Records the crash (`createOutputPort` on the graph root) and the fact that type errors print instead of raising.
+- The v3.1 skyscraper evaluates headless on 3.0 (`bay_count` 832, `total_height` 166.9).
+- `tests/test_headless_harness.py`: offline log and hint parsing, plus an opt-in mayapy test.
+
 # Bifrost Maya skill - Claude port, 2026-10-29
 
 ## Ported from the Astra (ChatGPT) skill

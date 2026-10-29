@@ -95,21 +95,28 @@ Don't assume `PPG_instance` keeps native instances; check its supplied implement
 
 ## Maya execution
 
-The user's Maya 2026 opens a Python command port on `localhost:7001`. Send code over that socket and read back the value of the last expression.
+Read `references/maya-graph-commands.md` before building graphs with commands. It has the verified recipe, the command reference, the known crash, and how errors show up.
 
-- **Maya can crash.** One attempt to build a graph through `createNode('bifrostGraphShape')` plus `vnnCompound` / `vnnNode` / `vnnConnect` took Maya down. Before any live Bifrost edit, ask the user to save. Work in a scratch scene, and check each graph-editing command on its own before chaining them.
-- Check the Bifrost version first (`cmds.pluginInfo('bifrostGraph', q=True, version=True)`) if node availability matters.
+**Test headless first.** `scripts/bifrost_headless.py SPEC` builds and evaluates graphs from a JSON spec in a separate `mayapy` process. A crash there can't touch the user's session. It reports each step, outputs (scalar values, or mesh, vertex and face counts with bounds), compile errors and timing. Startup takes about 35 s, so put related graphs in one spec list. Installed user compounds (`~/Autodesk/Bifrost/Compounds`) are available there too.
+
+**Then use live Maya.** The user's Maya opens a Python command port on `localhost:7001`. `scripts/maya_exec.py -c CODE` (or a file, or `-` for stdin) runs code there with `cmds` and `mel` already imported. It returns the last expression's value, printed output and any traceback as JSON.
+
+- Only send live calls that already passed headless. Ask the user to save before editing their scene. `vnnNode(g, "/", createOutputPort=...)` crashes Maya: graph ports go on `/output` (`createInputPort`) or `/input` (`createOutputPort`).
+- Type errors don't raise. Bifrost prints them when the graph compiles and still returns default outputs. Trust a result only after a headless run reports no compile errors.
+- Check the Bifrost version (`cmds.pluginInfo('bifrostGraph', q=True, version=True)`) when node availability matters.
 - Build a minimal graph that produces inspectable output, then add one logical block at a time and check after each major block.
-- Keep node names meaningful and compound boundaries intact. Don't make scene changes the request didn't ask for.
-- Report what was actually created and tested separately from what is still a proposal.
+- Keep node names meaningful and compound boundaries intact. Don't make scene changes the request didn't ask for, and don't write into the user's compounds folder without asking.
+- Report what you created and tested (headless or live) separately from what is still a proposal.
 
 ## Scripts
 
 - `node_info.py` - exact node lookup against the installed-library index (see above).
+- `bifrost_headless.py SPEC [--json]` - build and evaluate graph specs in a separate headless Maya.
+- `maya_exec.py [-c CODE | FILE | -] [--port N] [--persist]` - run Python in the user's live Maya through its command port.
 - `build_node_index.py BIFROST_ROOT [--out DIR]` - rebuild that index from an install.
 - `search_graph_examples.py QUERY [--limit N]` / `inspect_graph.py GRAPH_ID [--connections N]` - Autodesk example graphs.
 - `search_compounds.py QUERY [--limit N] [--collection NAME]` / `inspect_compound.py COMPOUND_OR_ID` - custom compound corpus.
 - `inspect_native_graph.py FILE [--tree] [--path PATH]` - one native compound scope, including loop flags and dynamic ports.
 - `validate_native_graph.py FILE [--strict-evidence] [--json-report PATH]` - offline native-file preflight.
 - `parse_graphs.py` / `parse_compounds.py SOURCE_DIR OUT_DIR` - rebuild the normalized corpora.
-- `python -I -m unittest discover -s tests -v` - regression suite.
+- `python -I -m unittest discover -s tests -v` - regression suite. Set `BIFROST_HEADLESS_TESTS=1` to also run the mayapy test, which takes about 45 s.
