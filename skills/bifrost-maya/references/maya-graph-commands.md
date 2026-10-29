@@ -77,9 +77,28 @@ When you find another crash, reproduce it headless, then add it here and to `tes
 ## Loading compound files
 
 - Every JSON in the user's compounds folder (`~/Autodesk/Bifrost/Compounds`, library "UserCompounds") loads when the plugin loads, in headless sessions too. A compound there can be added by its full name. For example, `Procedural::Buildings::ppg_nyc_skyscraper_v3_1_fast` evaluates headless on 3.0 to `bay_count` 832 and `total_height` 166.9 in about 1.2 s.
-- `bifrostGraph(importGraphAsShape=file)` fails with "Fail to load bifrost graph" for library compound files such as the skyscraper and goo exports. Those are compound definitions, not saved graphs.
-- To test a new compound file without installing it into the user's folder, the next step is a temporary library config (`BIFROST_LIB_CONFIG_FILES`); that isn't built yet. Until then, don't write into the user's compounds folder without asking.
+- `bifrostGraph(importGraphAsShape=...)` takes a compound **name** that is already in a library, not a file path. It unpacks that compound into an editable graph, which is what Maya's Bifrost Browser does with examples. `importGraphAsShape="Graphs::Scatter::basic_scatter_example"` and `"FX::Goo::cs_green_goo_v5"` both work. A file path fails with "Fail to load bifrost graph", even for Autodesk's own example files.
+- Compound files only register when the plugin loads. In a running session, a file added later stays invisible: `vnn(flushProxies="BifrostGraph")` doesn't help. Unloading and reloading the plugin does pick it up (verified headless with `file(new=True, force=True)`, `unloadPlugin("bifrostGraph", force=True)`, then `loadPlugin`). That avoids a full Maya restart but needs a new scene. Not yet tried in the live session.
+- **Testing a file without installing it:** `bifrost_headless.py --library FILE` copies the file into a scratch library and points `BIFROST_LIB_CONFIG_FILES` at it for that run. A fresh mayapy loads it at startup, and the user's compounds folder is never touched. A scratch library config is just `{"AminoConfigurations": [{"vendorName": ..., "libraryName": ..., "libraryVersion": ..., "jsonLibs": [{"path": FOLDER}]}]}`.
+
+## bifcmd.exe (command-line runner)
+
+`bifrost/bin/bifcmd.exe` loads a definition JSON file **directly**, then compiles and optionally runs it, in about 10 s with no Maya. It needs two things:
+
+- `bifrost/thirdparty/bin` on PATH. That's where `aic_1_2.dll` is; without it the exe exits with 0xC0000135.
+- `BIFROST_DISABLE_PACKS=usd_pack`, unless the MayaUSD libraries are on PATH. Otherwise the USD pack fails to load and `configFilesLoadedOk` is false.
+
+```
+bifcmd.exe FILE.json [--compound-name NS::name] [--list-ports] [--set-port NAME VALUE] [--frames A B] --log-file LOG.json
+```
+
+The JSON log reports `compoundLoadedOk`, `compilationOk` and `executionOk` separately, with error and warning messages and an output summary (component counts, plus min, max and average of each property). Results:
+
+- A test compound file that was never installed loaded, compiled and ran. `--set-port width 5` gave `point_position` from -2.5 to 2.5.
+- The v3.1 skyscraper **compiled** with `--list-ports`, but bifcmd **crashed** (0xC0000005) when it executed. The same compound evaluates fine in mayapy.
+
+Use bifcmd as a fast load-and-compile check for compound files, and to run simple compounds. Use mayapy (`bifrost_headless.py`) to execute real graphs, and for anything needing Maya inputs or USD. bifcmd can't run compounds with overloads or `auto` ports.
 
 ## Not yet verified
 
-`bifrostGraph` flags `importGraph`, `serializeGraph`, `executionCounter` and `compilationCounter` (the counters may need a different call form), `vnnPort` fan-in flags, loops, terminals, and `bifcmd.exe`. `bifcmd.exe` fails to start here with a missing-DLL error (0xC0000135), even with Maya's `bin` on PATH.
+`bifrostGraph` flags `importGraph` (by name it returned the name but added no nodes), `serializeGraph` (returns a binary int array), `executionCounter` and `compilationCounter`, `vnnPort` fan-in flags, loops, terminals, and reloading the plugin in the live session.

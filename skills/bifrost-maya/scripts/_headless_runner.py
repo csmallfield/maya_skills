@@ -65,7 +65,15 @@ def run_graph(index, spec):
     # The wrapper collects Maya's Warning/Error lines between these markers,
     # so library-loading noise from startup stays out of the report.
     print(f"@@BIFROST_GRAPH_START {index}", flush=True)
-    graph = cmds.createNode("bifrostGraphShape")
+    if spec.get("graph"):
+        graph, ok = step(f"import graph {spec['graph']}",
+                         lambda: cmds.bifrostGraph(importGraphAsShape=spec["graph"]))
+        if not ok:
+            print(f"@@BIFROST_GRAPH_END {index}", flush=True)
+            return
+        report["graph_nodes"] = cmds.vnnCompound(graph, "/", listNodes=True)
+    else:
+        graph = cmds.createNode("bifrostGraphShape")
     report["graph"] = graph
     for scene in spec.get("import", []):
         step(f"import {scene}", lambda: cmds.file(scene, i=True))
@@ -91,7 +99,10 @@ def run_graph(index, spec):
     for port, ptype in spec.get("inputs", {}).items():
         step(f"graph input {port}: {ptype}",
              lambda: cmds.vnnNode(graph, "/input", createOutputPort=(port, ptype)))
+    existing = set(cmds.listAttr(graph, userDefined=True) or []) if spec.get("graph") else set()
     for port, ptype in spec.get("outputs", {}).items():
+        if port in existing:
+            continue
         step(f"graph output {port}: {ptype}",
              lambda: cmds.vnnNode(graph, "/output", createInputPort=(port, ptype)))
 

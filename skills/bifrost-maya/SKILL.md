@@ -97,7 +97,7 @@ Don't assume `PPG_instance` keeps native instances; check its supplied implement
 
 Read `references/maya-graph-commands.md` before building graphs with commands. It has the verified recipe, the command reference, the known crash, and how errors show up.
 
-**Test headless first.** `scripts/bifrost_headless.py SPEC` builds and evaluates graphs from a JSON spec in a separate `mayapy` process. A crash there can't touch the user's session. It reports each step, outputs (scalar values, or mesh, vertex and face counts with bounds), compile errors and timing. Startup takes about 35 s, so put related graphs in one spec list. Installed user compounds (`~/Autodesk/Bifrost/Compounds`) are available there too.
+**Test headless first.** `scripts/bifrost_headless.py SPEC [--library FILE]` builds and evaluates graphs from a JSON spec in a separate `mayapy` process. `--library` loads a compound file that isn't installed, and `"graph": "NS::name"` unpacks a library compound into an editable graph. A crash there can't touch the user's session. It reports each step, outputs (scalar values, or mesh, vertex and face counts with bounds), compile errors and timing. Startup takes about 35 s, so put related graphs in one spec list. Installed user compounds (`~/Autodesk/Bifrost/Compounds`) are available there too.
 
 **Then use live Maya.** The user's Maya opens a Python command port on `localhost:7001`. `scripts/maya_exec.py -c CODE` (or a file, or `-` for stdin) runs code there with `cmds` and `mel` already imported. It returns the last expression's value, printed output and any traceback as JSON.
 
