@@ -42,6 +42,15 @@ Bifrost has no maps or pointer-chasing loops that are cheap, but sorting, `prefi
 - `prefix_sum` won't produce `array<uint>` from `array<long>` ("can't pass a value of type 'array<long>'"); convert with `Core::Type_Conversion::to_unsigned_int` (port `.unsigned_int`; there is no `to_uint`). `uint` input can produce `uint` offsets (`PrefixSumStyle` `OffsetArray`) for `construct_strands`.
 - `USD::Prim::define_usd_curves` does not export custom point properties (an `edge_half_width` float per point was dropped).
 
+## Building meshes from polygons (verified 2026-10-30, CityGen v023/v024 block slabs)
+- `Geometry::Mesh::construct_mesh(point_position, face_offset, face_vertex)`: both index arrays are `array<uint>` (`face_offset` has faces + 1 entries, starting at 0). Build long indices and convert with `to_unsigned_int`.
+- **Winding for y-up:** a loop that is counter-clockwise by the x-z cross (a.x b.z - b.x a.z > 0, interior on the left) gives a face normal pointing **down**. Reverse it for an upward top. For a side quad on edge a -> b, the order (a, a_top, b_top, b) faces right of the edge, which is outward for such a loop.
+- **Interleaving per-element quads** without integer division: concatenate the 4 corner arrays, give each a double key `element * 4 + slot`, then `sort_array_with_indices`.
+- **Polygon inset with per-edge distances:** one offset line per edge, corners where neighbouring lines meet, and vectorised passes that remove every line whose edge comes out reversed. Two cases need extra lines:
+  - where the outline turns back on itself (a spike), a cap line beyond the tip;
+  - where consecutive edges are nearly parallel but have different offsets, a step line across. Otherwise the parallel lines never meet and the fallback corner cuts diagonally.
+- **`Geometry::Mesh::triangulate_mesh` is not robust on concave n-gons.** With runs of exactly collinear corners it flipped triangles; with those removed it still covered 0.26 % more than the polygons' area (triangles across notches). MayaUSD's viewport fans n-gons from their first corner, which is wrong for many concave polygons (a sliver drawn over the neighbouring road). Maya's own mesh draws them correctly. A Newell-normal check passes on all of these, so test separately whether a fan from corner 0 covers exactly the polygon's area. Remove collinear corners (sine of the turn < 1e-3) before meshing in any case: in CityGen that turned most grid-block tops into 4-corner quads.
+
 ## Comparing exported USD
 - `export_stage_to_file` writes `.usda` text. Instancer arrays (`positions`, `orientations` as `quath` real first, `scales`, `protoIndices`) can be parsed with stdlib regex for independent checks, without pxr.
 
