@@ -145,6 +145,10 @@ If you skip either, every sampled frame returns the frame-1 state, and each fram
 
 bifcmd only loads `packs/usd_pack/<ver>` when these are on PATH: MayaUSD's `C:/Program Files/Autodesk/MayaUSD/Maya2026/<mayausd>/mayausd/USD_<ver>/lib` and `.../bin`, and `C:/Program Files/Autodesk/Maya2026/bin`. Also set `PXR_PLUGINPATH_NAME` to `.../USD_<ver>/lib/usd`. Without these, the pack fails with "Default value function not found for value of type 'BifrostUsd::Stage'" and `configFilesLoadedOk` is false. `bifcmd_check.usd_environment()` finds them. Headless mayapy needs none of this.
 
+## Setting a compound's inputs in a headless spec
+
+`"graph": "NS::compound"` unpacks the compound, and its inputs become graph-boundary ports with no node path: `"values": {"size": "2000"}` fails with "The node path /size was not found", and the graph still evaluates with the defaults (seen 2026-10-30, CityGen v017). To run a compound with other input values, place it as a node instead: `"nodes": [{"type": "NS::compound", "name": "city"}]`, set `"city.size"`, and wire the outputs you read (`["city.lot_count", ".lot_count"]`). Read only scalar outputs when timing: Object outputs are converted to Maya geometry, which adds time. Put the same spec twice in the list to get a warm second run.
+
 ## Multi-input math in headless specs
 
 `vnnConnect` can't wire the operands of multi-input operators (`Core::Math::add`, `subtract`, `multiply`, `divide`, `max`, `Core::Array::build_array`) in a fresh graph: `add.first` fails with "A port named first was not found", and `add.first[]` fails the same way. The node then compiles with "the multi-in node add has no input port". So a `bifrost_headless.py` spec can't build math chains yet (seen 2026-10-29). Write those graphs as native compound JSON instead (`first.in_0`, `first.in_1` listed in `multiInPortNames`; subtract and divide take the first child minus or divided by the rest), and test them with `verify_compound.py`, or with `--library FILE` plus a spec that places the compound as a node.
