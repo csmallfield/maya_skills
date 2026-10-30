@@ -167,6 +167,7 @@ A file that holds a whole pipeline (several top-level compounds, one chaining th
 
 - `Sdf.Layer.Find(path).Reload()` on a layer that a mayaUsdProxyShape's stage composes raises "Detected usd threading violation. Concurrent changes to layer(s) composed in stage ...".
 - Wrapping that in `maya.utils.executeInMainThreadWithResult` **hung Maya**: the process stayed alive but the command port stopped answering. Command-port code already runs on the main thread, so the call waits on itself.
+- **A Bifrost USD write fails silently onto a path still loaded in the session's layer registry** (seen 2026-10-30): after a previous write and a `layer.Reload()` of that file, the graph's written flag came back false and the file was unchanged, even in a new scene. Writing to a new file name worked; with no proxy shape using the old file, moving the new file over it on disk is safe. Check the written flag, not just the file's existence.
 - Deleting and recreating the proxy shape does **not** pick up changed asset files: the referenced layers stay loaded in the session's layer registry (`Sdf.Layer.GetLoadedLayers()` still lists them). Changed assets show after a new scene/Maya start. Ask the user before anything that could block their session.
 
 ## Reading Maya geometry into a graph by path (verified live 2026-10-29)
