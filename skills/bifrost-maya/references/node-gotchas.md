@@ -22,6 +22,14 @@ Verified while building CityGen (bifrost_citygen repo) on 2026-10-29 with verify
 - **Snap to the nearest vertex:** `get_closest_point(...).point_indices` feeds `get_from_array(point_position, ...)` to get the matching vertex positions (`locations` is a sampling handle for `sample_property`, not positions). Mask the result with `.found`.
 - **Greedy non-overlap of equal rectangles:** an iterate loop over candidates keeps the accepted centres and fronts as state. Run a 2D separating-axis test of the new rectangle against all kept ones at once (four axes, with `absolute_value(dot(...))` projections), reduce with `any_true_in_array`, and append with `flatten_nested_array(build_array(kept, build_array(new)))`. In CityGen it took overlapping building pairs from 49 to 0 on 138 candidates in about 1 s. Check results outside Bifrost too: `bifrost_citygen/tests/check_overlaps.py` re-runs the SAT on an exported .usda.
 
+- **Exact grid bucketing inside a sequential greedy loop:** when items can only interact within a distance R, use cells at least R wide and test only the 3 x 3 cells around each candidate. The result is the same as testing everything. Keep the kept items as `array<array<T>>` loop states, one per field, plus each item's acceptance index:
+  - **Before the loop:** compute each candidate's cell index (`round_to_floor`, `to_long`, with a 1-cell border so neighbours never fall off) and the 9 neighbour offsets.
+  - **Each iteration:** `get_from_array(nested, cell + offsets)` gives the 9 cells; `flatten_nested_array` gives the local kept items. On accept, `set_in_array(nested, cell, concat(own_cell, [new]))`.
+  - **After the loop:** flatten, then `sort_array_with_indices` on the acceptance index to restore the original order.
+
+  In CityGen v019 (SAT on 164k candidates at 2000 m) this cut the loop from 3.3 s to 1.3 s, and from 14.9 s to 1.9 s at 3000 m, with an identical result. Below about 200 kept items it is slightly slower than testing them all.
+- **Seeding an `array<array<T>>`:** `build_array(empty array<T>)` resolves to `array<T>`, and the following `resize_array` fails with "no common type promotion exists between 'Math::float3' and 'array<Math::float3>'". Use an `array<array<T>>` value node holding `[]` as `resize_array.array`, with the empty `array<T>` as `default` and the cell count as `new_size`.
+
 ## Comparing exported USD
 - `export_stage_to_file` writes `.usda` text. Instancer arrays (`positions`, `orientations` as `quath` real first, `scales`, `protoIndices`) can be parsed with stdlib regex for independent checks, without pxr.
 
