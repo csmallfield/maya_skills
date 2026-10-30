@@ -12,7 +12,9 @@ so it is never run by accident. Steps:
 1. verify_compound.py (static, compile, evaluate); refuse unless VERIFIED.
 2. Copy into the compounds folder (default ~/Autodesk/Bifrost/Compounds). A
    different existing file with the same name is renamed to
-   `<name>.bak-<timestamp>.json`, never overwritten.
+   `<name>.json.bak-<timestamp>`, never overwritten. The backup must not end in
+   `.json`: Bifrost loads every .json in the folder, and a backup holding the same
+   compound names shadowed the new install (seen with CityGen v029, 2026-10-30).
 3. With --reload: Bifrost only reads compound files when its plugin loads, so in
    the live Maya (command port) the plugin is unloaded and reloaded. That needs
    a new scene, so it refuses when the scene has unsaved changes; a saved scene
@@ -99,7 +101,7 @@ def main() -> int:
         if filecmp.cmp(source, target, shallow=False):
             print(f"Already installed, identical: {target}")
         else:
-            backup = target.with_name(f"{target.stem}.bak-{time.strftime('%Y%m%d-%H%M%S')}.json")
+            backup = target.with_name(f"{target.name}.bak-{time.strftime('%Y%m%d-%H%M%S')}")
             target.rename(backup)
             print(f"Existing file kept as {backup}")
     if not target.exists():
