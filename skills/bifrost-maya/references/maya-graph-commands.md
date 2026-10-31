@@ -197,3 +197,5 @@ cmds.vnnConnect(g, "/" + port, "/some_node.mesh")
   export and MayaUSD share the in-process layer registry. View a copy of the file, or clear `usd_file` before
   opening it in a proxy. Also: a graph output port that nothing pulls is never computed, so a `usd_file` set on a
   graph whose `usd_written` isn't exposed (and read) writes nothing.
+
+- **pxr without live Maya** (verified 2026-10-31, CityGen asset scan): headless `mayapy` with `maya.standalone.initialize()` and `cmds.loadPlugin("mayaUsdPlugin")` imports `pxr` (USD 0.24.11 in Maya 2026), so USD scans and checks need no command port. A Bifrost graph shape built in headless mayapy also reads Maya meshes and colour sets by path (`pathinfo` ports), and `polyColorPerVertex(..., rgb=..., a=1)` paints vertices that Bifrost then reads, so a scene setup script can be tested end to end there.
