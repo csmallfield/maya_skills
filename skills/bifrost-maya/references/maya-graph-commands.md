@@ -199,3 +199,10 @@ cmds.vnnConnect(g, "/" + port, "/some_node.mesh")
   graph whose `usd_written` isn't exposed (and read) writes nothing.
 
 - **pxr without live Maya** (verified 2026-10-31, CityGen asset scan): headless `mayapy` with `maya.standalone.initialize()` and `cmds.loadPlugin("mayaUsdPlugin")` imports `pxr` (USD 0.24.11 in Maya 2026), so USD scans and checks need no command port. A Bifrost graph shape built in headless mayapy also reads Maya meshes and colour sets by path (`pathinfo` ports), and `polyColorPerVertex(..., rgb=..., a=1)` paints vertices that Bifrost then reads, so a scene setup script can be tested end to end there.
+
+- **Arnold stills of a USD file without live Maya** (verified 2026-10-31, CityGen; recipe in bifrost_citygen `tools/render_stills.py`):
+  - In headless mayapy, `loadPlugin("mtoa")`, `mtoa.core.createOptions()`, then an `aiStandIn` whose `dso` is the .usda. Arnold's USD procedural reads it directly with render purpose. Meshes without a material render with their `displayColor` through a glossy default shader.
+  - Sun: Maya's `directionalLight` (`aiAngle` for soft shadows). There is no `aiDirectionalLight` node type. An `aiPhysicalSky` texture on an `aiSkyDomeLight` lit nothing in batch; a plain-colour sky dome works.
+  - Render with `arnoldRender(camera=shape, width, height, batch=True)` after setting `defaultArnoldDriver.aiTranslator` to "png" and `defaultRenderGlobals.imageFilePrefix`.
+  - mayapy crashes during its own shutdown after Arnold renders (a GIL error), so end the script with `os._exit(0)`.
+  - `exactWorldBoundingBox` of a stand-in reads all zeros in batch, so place cameras from known sizes.
