@@ -190,3 +190,10 @@ cmds.vnnConnect(g, "/" + port, "/some_node.mesh")
 - In one probe, a pathinfo port on the `input` node that `addIONode` returned in a **fresh** graph read an empty Object, while the same port on `input1` (a graph that already had `input`) worked. If a by-path port reads empty, add the probe nodes to a graph whose by-path input already works.
 - Probing live: `vnnNode(..., setPortDataType=("type", "array<Math::float4>"))` types an `auto` port such as `get_geo_property.type`. `getAttr` on an `array<string>` graph output returned `[[]]`; read `array_size` and then each element through `get_from_array` into a `string` output.
 - Shipped graphs (`generate_data_example.ma`) store locator inputs as `array<Math::float4x4>` ports with space-separated `/`-style paths. Recreating that from a script returned no matrices; unresolved.
+
+- **A graph writing the file a proxy shape shows can crash Maya** (2026-10-31, CityGen v037): a bifrostGraphShape
+  with `usd_file` set and its `usd_written` output exposed wrote `city_live.usda`; creating a `mayaUsdProxyShape` on
+  that file and then hiding the graph (which re-evaluates it) killed Maya within the same command. Bifrost's USD
+  export and MayaUSD share the in-process layer registry. View a copy of the file, or clear `usd_file` before
+  opening it in a proxy. Also: a graph output port that nothing pulls is never computed, so a `usd_file` set on a
+  graph whose `usd_written` isn't exposed (and read) writes nothing.
