@@ -133,3 +133,13 @@ An iterate loop is a local compound definition with an `iterateCompound` block, 
 Nested loops work the same way: the inner iterate definition goes in the outer loop's own `compounds` array, the scope that calls it. In CityGen v003 an outer loop over candidate seeds carries the growing road point and offset arrays as state, and an inner loop traces each seed. Use `Core::Array::array_bounds.min_bound` over `length(points - p)` for a nearest-distance test, and guard an empty array with `array_is_empty` before trusting the result. Joining and filtering use `filter_array` (bool mask), `reverse_array`, `slice_array`, and `flatten_nested_array` over `build_array(a, b)` to concatenate.
 
 `verify_compound.py` treats a call into a compound installed in the user's library (another file of the same tool, say) as resolved rather than as an evidence gap, and lists it as "uses installed compound". Compile and evaluate load the installed libraries, so they check the call for real.
+
+## Do-while loops (verified 2026-10-31, CityGen v044)
+
+Bifrost's do-while loop serializes like an iterate loop, but with `"whileCompound": {"ports": [...]}` in place of
+`"iterateCompound"` (same `portKind: "state"` entries, same `portIterationLimit` / `portIterationCounter` port
+flags). The loop condition is an **undeclared** output: wire a bool to `.looping_condition` (Autodesk's
+`find_first_non_empty` in bif_all.json does exactly this, with no port entry). The body runs at least once, then
+repeats while the condition is true, up to the limit port. Use it when an iterate loop would mostly run empty
+passes: CityGen's streamline placer went from one pass per candidate seed (17,800) to one per clear seed (a few
+hundred) and stopped when none was left.
